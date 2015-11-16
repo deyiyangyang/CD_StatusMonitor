@@ -34,6 +34,8 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.chkMessageShow = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.chkAgentGraph = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // chkMonitorShow
@@ -94,17 +96,39 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "メッセージポップアップ";
             // 
+            // chkAgentGraph
+            // 
+            this.chkAgentGraph.AutoSize = true;
+            this.chkAgentGraph.Location = new System.Drawing.Point(171, 95);
+            this.chkAgentGraph.Name = "chkAgentGraph";
+            this.chkAgentGraph.Size = new System.Drawing.Size(48, 16);
+            this.chkAgentGraph.TabIndex = 13;
+            this.chkAgentGraph.Text = "表示";
+            this.chkAgentGraph.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(36, 96);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 12);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "エージェントグラフ表示";
+            // 
             // OtherSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 229);
+            this.Controls.Add(this.chkAgentGraph);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.chkMessageShow);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.chkMonitorShow);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnOK);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OtherSettingForm";
@@ -123,5 +147,7 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.CheckBox chkMessageShow;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox chkAgentGraph;
+        private System.Windows.Forms.Label label3;
     }
 }

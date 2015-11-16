@@ -111,6 +111,7 @@ namespace StatusMonitor
         public string SettingFields_KyoKuGroupShow = "";
         public string SettingFields_MonitorTabShow = "";
         public string SettingFields_MessagePop = "";
+        public string SettingFields_AgentGraphShow = "";
         public Dictionary<string, string> Dic_SettingFields_SkillQuecall = new Dictionary<string, string>();
 
 
@@ -121,6 +122,7 @@ namespace StatusMonitor
             //IniProfile = new TksProfileAcxLib.TksProfileClass();
            // IniProfile.Load(MyTool.GetModuleIniPath());
             SettingFields_MessagePop = IniProfile.GetStringDefault(ConstEntity.MESSAGEPOP, "");
+            SettingFields_AgentGraphShow = IniProfile.GetStringDefault(ConstEntity.AGENTGRAPH, "");
             //IniProfile.SelectSection("Alert");
             //SettingFields_AlertTotal = IniProfile.GetLongDefault("nTotal", 100);
             //SettingFields_AlertGroup = IniProfile.GetLongDefault("nGroup", 100);

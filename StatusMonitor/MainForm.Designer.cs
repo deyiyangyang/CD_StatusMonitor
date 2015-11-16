@@ -342,6 +342,7 @@
             this.agentPie.Size = new System.Drawing.Size(503, 98);
             this.agentPie.TabIndex = 14;
             this.agentPie.TabStop = false;
+            this.agentPie.VisibleChanged += new System.EventHandler(this.agentPie_VisibleChanged);
             // 
             // label7
             // 

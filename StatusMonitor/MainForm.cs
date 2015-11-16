@@ -1,4 +1,4 @@
-/**
+ï»¿/**
  * 2010/02/13   AM_SHOWAGENT
  * 
  * 
@@ -71,6 +71,12 @@ namespace StatusMonitor
         public string IdlePeriodVoiceLongString = "";
         private int DtMonitorRowsCount = 0;
         private DataTable _MonitorDataTable;
+
+        private int AgentIconListHeight = 0;
+        private int AgentIconListWeight = 0;
+        private int AgentPieHeigh = 0;
+        private int AgentPieWeight = 0;
+        private Image CurrentAgentPie = null;
         //end added
 
         //added by Zhu 2014/03/31
@@ -164,8 +170,8 @@ namespace StatusMonitor
 
         private string ShowCol = "1000001111111111";
 
-        private string OptionName1 = "‹’“_";
-        private string OptionName2 = "í•Ê";
+        private string OptionName1 = "æ‹ ç‚¹";
+        private string OptionName2 = "ç¨®åˆ¥";
         private string OptionName3 = "";
         private string OptionName4 = "";
         private string OptionName5 = "";
@@ -194,30 +200,30 @@ namespace StatusMonitor
         private bool MontorSortFlag = false;
 
 
-        public string MonitorCol1 = "ƒXƒLƒ‹ƒOƒ‹[ƒv";
-        public string MonitorCol2 = "ƒƒOƒIƒ“l”";
-        public string MonitorCol3 = "’…ÀOP”";
-        public string MonitorCol4 = "—£È”";
-        public string MonitorCol5 = "OPŒÄo”";
-        public string MonitorCol6 = "OP‰“š”";
-        public string MonitorCol7 = "‰“š—¦";
-        public string MonitorCol8 = "‘¦“š”";
-        public string MonitorCol9 = "‘¦“š—¦";
-        public string MonitorCol10 = "‘ÒŒÄ”";
-        public string MonitorCol11 = "ó•t‰Â”";
-        public string MonitorCol12 = "•úŠüŒÄ";
-        public string MonitorCol13 = "•úŠü—¦";
+        public string MonitorCol1 = "ã‚¹ã‚­ãƒ«ã‚°ãƒ«ãƒ¼ãƒ—";
+        public string MonitorCol2 = "ãƒ­ã‚°ã‚ªãƒ³äººæ•°";
+        public string MonitorCol3 = "ç€åº§OPæ•°";
+        public string MonitorCol4 = "é›¢å¸­æ•°";
+        public string MonitorCol5 = "OPå‘¼å‡ºæ•°";
+        public string MonitorCol6 = "OPå¿œç­”æ•°";
+        public string MonitorCol7 = "å¿œç­”ç‡";
+        public string MonitorCol8 = "å³ç­”æ•°";
+        public string MonitorCol9 = "å³ç­”ç‡";
+        public string MonitorCol10 = "å¾…å‘¼æ•°";
+        public string MonitorCol11 = "å—ä»˜å¯æ•°";
+        public string MonitorCol12 = "æ”¾æ£„å‘¼";
+        public string MonitorCol13 = "æ”¾æ£„ç‡";
 
         private bool RetSetCallInfo = false;
-        private string ShowBackColorForCol9 = ""; //1 ‘¦“š—ñ ”wŒi‚ ‚éA
-        private string MonitorGroupList = ""; //1 ‘¦“š—ñ ”wŒi‚ ‚éA
+        private string ShowBackColorForCol9 = ""; //1 å³ç­”åˆ— èƒŒæ™¯ã‚ã‚‹ã€
+        private string MonitorGroupList = ""; //1 å³ç­”åˆ— èƒŒæ™¯ã‚ã‚‹ã€
 
         //add,2014/03,S
-        public string ShowAgentF = "";//AgentList Rule 5Œ… 0‘S•”
-        public string ShowCallTagF = "0";//1:‰ñüTag”ñ•\¦        
-        public string ShowChatF = "0";//0:show,1chat@•s‰Â
-        public string ShowMonitorF = "0";//0:show,1:MonitorTag”ñ•\¦  
-        //public string QueCallRingF = "0";//0:show,1:MonitorTag”ñ•\¦  
+        public string ShowAgentF = "";//AgentList Rule 5æ¡ 0å…¨éƒ¨
+        public string ShowCallTagF = "0";//1:å›ç·šTagéè¡¨ç¤º        
+        public string ShowChatF = "0";//0:show,1chatã€€ä¸å¯
+        public string ShowMonitorF = "0";//0:show,1:MonitorTagéè¡¨ç¤º  
+        //public string QueCallRingF = "0";//0:show,1:MonitorTagéè¡¨ç¤º  
 
         public string QuePeriod1 = "";
         public string QuePeriodVoice1 = "";
@@ -299,7 +305,7 @@ namespace StatusMonitor
             UpdateContinueTimer.Elapsed += new System.Timers.ElapsedEventHandler(ContinueTimer); ;
 
             //end added
-            writeLog("current version is 6.3.3");
+            writeLog("current version is 6.3.4");
         }
 
 
@@ -315,7 +321,7 @@ namespace StatusMonitor
             const int WM_SYSCOMMAND = 0x00000112;
             const int SC_CLOSE = 0x0000F060;
 
-            // •Â‚¶‚é ƒ{ƒ^ƒ“‚ÅI—¹‚µ‚È‚¢‚Å‰B‚·(ƒ^ƒXƒNƒgƒŒƒCƒAƒCƒRƒ“‚¾‚¯‚É‚·‚é)
+            // é–‰ã˜ã‚‹ ãƒœã‚¿ãƒ³ã§çµ‚äº†ã—ãªã„ã§éš ã™(ã‚¿ã‚¹ã‚¯ãƒˆãƒ¬ã‚¤ã‚¢ã‚¤ã‚³ãƒ³ã ã‘ã«ã™ã‚‹)
             if ((msg.Msg == WM_SYSCOMMAND) && (msg.WParam.ToInt32() == SC_CLOSE))
             {
                 this.Visible = false;
@@ -358,6 +364,11 @@ namespace StatusMonitor
 
                 // Set Title
                 iniForm();
+                this.AgentIconListWeight = this.agentIconListView.Width;
+                this.AgentIconListHeight = this.agentIconListView.Height;
+                this.AgentPieWeight = this.agentPie.Width;
+                this.AgentPieHeigh = this.agentPie.Height;
+
                 mainNotifyIcon.Text = res.GetString(NOTIFYICON_TEXT);
                 mainNotifyIcon.Icon = this.Icon;
 
@@ -377,17 +388,17 @@ namespace StatusMonitor
 
                 //agentStatusListView.Columns.Add("AgentName", res.GetString("SM0020020"), 100, HorizontalAlignment.Center, -1);
                 //added by zhu 2014/04/17
-                agentStatusListView.Columns.Add("Extension", "“àü”Ô†", 100, HorizontalAlignment.Center, -1);
+                agentStatusListView.Columns.Add("Extension", "å†…ç·šç•ªå·", 100, HorizontalAlignment.Center, -1);
                 //added end
                 agentStatusListView.Columns.Add("GroupName", res.GetString("SM0020019"), 100, HorizontalAlignment.Left, -1);
                 agentStatusListView.Columns.Add("Status", res.GetString("SM0020021"), 70, HorizontalAlignment.Center, -1);
                 agentStatusListView.Columns.Add("StatusTime", res.GetString("SM0020022"), 60, HorizontalAlignment.Center, -1);
                 agentStatusListView.Columns.Add("StatusContinueTime", res.GetString("SM0020061"), 60, HorizontalAlignment.Center, -1);
-                agentStatusListView.Columns.Add("Conntype", "”­’…M", 100, HorizontalAlignment.Center, -1);
+                agentStatusListView.Columns.Add("Conntype", "ç™ºç€ä¿¡", 100, HorizontalAlignment.Center, -1);
                 agentStatusListView.Columns.Add("Caller", res.GetString("SM0020023"), 100, HorizontalAlignment.Center, -1);
                 agentStatusListView.Columns.Add("Help", res.GetString("SM0020024"), 50, HorizontalAlignment.Center, -1);
                 agentStatusListView.Columns.Add("LoginTime", res.GetString("SM0020025"), 80, HorizontalAlignment.Center, -1);
-                agentStatusListView.Columns.Add("MyMsg", "ƒRƒƒ“ƒg", 80, HorizontalAlignment.Center, -1);
+                agentStatusListView.Columns.Add("MyMsg", "ã‚³ãƒ¡ãƒ³ãƒˆ", 80, HorizontalAlignment.Center, -1);
 
                 // Init ItemSorter
                 agentStatusListView.ListViewItemSorter = new StatusListViewItemComparer(0, true);
@@ -400,11 +411,11 @@ namespace StatusMonitor
                 lineStatusListView.TileSize = new Size(130, 110);
                 lineStatusListView.MultiSelect = false;
                 lineStatusListView.FullRowSelect = true;
-                //modified by zhu 2015/06/08 ƒXƒLƒ‹ƒOƒ‹[ƒv=>‹Ç”ÔƒOƒ‹[ƒv
+                //modified by zhu 2015/06/08 ã‚¹ã‚­ãƒ«ã‚°ãƒ«ãƒ¼ãƒ—=>å±€ç•ªã‚°ãƒ«ãƒ¼ãƒ—
                 //lineStatusListView.Columns.Add("GroupName", res.GetString("SM0020026"), 100, HorizontalAlignment.Left, -1);
-                lineStatusListView.Columns.Add("GroupName", "‹Ç”ÔƒOƒ‹[ƒv", 100, HorizontalAlignment.Left, -1);
+                lineStatusListView.Columns.Add("GroupName", "å±€ç•ªã‚°ãƒ«ãƒ¼ãƒ—", 100, HorizontalAlignment.Left, -1);
                 //end modified
-                lineStatusListView.Columns.Add("Conntype", "”­’…M", 100, HorizontalAlignment.Left, -1);
+                lineStatusListView.Columns.Add("Conntype", "ç™ºç€ä¿¡", 100, HorizontalAlignment.Left, -1);
                 lineStatusListView.Columns.Add("Caller", res.GetString("SM0020027"), 100, HorizontalAlignment.Center, -1);
                 lineStatusListView.Columns.Add("Callee", res.GetString("SM0020028"), 100, HorizontalAlignment.Center, -1);
                 lineStatusListView.Columns.Add("ConnectedTime", res.GetString("SM0020029"), 80, HorizontalAlignment.Center, -1);
@@ -450,6 +461,12 @@ namespace StatusMonitor
                 ShowBackColorForCol9 = IniProfile.GetStringDefault("ShowBackColorForCol9", "");
                 MonitorGroupList = IniProfile.GetStringDefault("MonitorGroupList", "");
                 SettingFields_KyoKuGroupShow = IniProfile.GetStringDefault(ConstEntity.KYOKUGROUPSHOWKEY, "");
+                if(SettingFields_AgentGraphShow!="1")
+                {
+                    this.agentPie.Visible = false;
+                    //this.agentIconListView.Height = 60;
+                    this.agentIconListView.Dock = DockStyle.Bottom;
+                }
                 //add,2014/03,S
                 string strSetExtend = IniProfile.GetStringDefault("sSetExtend", "");
                 if (strSetExtend.Length > 0)
@@ -617,8 +634,8 @@ namespace StatusMonitor
 
                 GroupInfo groupInfo7 = new GroupInfo(-1, res.GetString("SM0020040"));
                 comboBox7.Items.Add(groupInfo7);
-                AddOption(7, comboBox7.Items.Count, "’Êí");
-                AddOption(7, comboBox7.Items.Count, "ƒwƒ‹ƒv’†");
+                AddOption(7, comboBox7.Items.Count, "é€šå¸¸");
+                AddOption(7, comboBox7.Items.Count, "ãƒ˜ãƒ«ãƒ—ä¸­");
                 comboBox7.SelectedIndex = 0;
             }
             catch (Exception ex)
@@ -731,7 +748,7 @@ namespace StatusMonitor
             }
         }
         //add,xzg,2011/06/20,S
-        // Ú‘±æCpfmsgsrv‚Æ‚ÌØ’f
+        // æ¥ç¶šå…ˆCpfmsgsrvã¨ã®åˆ‡æ–­æ™‚
         private void axCpfMsgUp_OnClose()
         {
             // DebugPrint("axCpfMsgUp_OnClose");
@@ -741,7 +758,7 @@ namespace StatusMonitor
             try
             {
 
-                writeLog("axCpfMsgUp_OnClose:Ø’f");
+                writeLog("axCpfMsgUp_OnClose:åˆ‡æ–­");
 
 
             }
@@ -751,7 +768,7 @@ namespace StatusMonitor
             }
         }
 
-        // ƒNƒ‰ƒCƒAƒ“ƒg‚©‚ç‚ÌLogonƒƒbƒZ[ƒWóM
+        // ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰ã®Logonãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å—ä¿¡æ™‚
         private void axCpfMsgUp_OnLogon(string sChannel, string sAppl, string sPhase, string sLogin)
         {
             //DebugPrint("axCpfMsgUp_OnLogon sChannel = [{0}], sAppl = [{1}], sPhase = [{2}], sLogin = [{3}]",
@@ -761,13 +778,13 @@ namespace StatusMonitor
                 //lstChannel.Add(sChannel);
 
                 //updateAllStatus = true;
-                //AgentMonitor‚ªÚ‘±‚·‚é‚ÆAÄ•\¦
+                //AgentMonitorãŒæ¥ç¶šã™ã‚‹ã¨ã€å†è¡¨ç¤º
                 //CpfParams cpfParam = new CpfParams();
                 //axCpfMsg.SendEvent("", "", "AM_SHOWAGENT", cpfParam);
 
-                ////AgentMonitor‚ªÚ‘±‚·‚é‚ÆAStatus‚Ìî•ñ‚ğAgentMonitor‚É‘—MiNGCPƒT[ƒo‚Ö‚Ì‘—M‚Í‚µ‚È‚¢j
+                ////AgentMonitorãŒæ¥ç¶šã™ã‚‹ã¨ã€Statusã®æƒ…å ±ã‚’AgentMonitorã«é€ä¿¡ï¼ˆNGCPã‚µãƒ¼ãƒã¸ã®é€ä¿¡ã¯ã—ãªã„ï¼‰
                 //update,xzg,2011/09/15,S
-                //ƒƒOƒIƒ“‚ÌChannel‚É‘—M
+                //ãƒ­ã‚°ã‚ªãƒ³ã®Channelã«é€ä¿¡
                 //sendFirstMsg(sChannel);
                 writeLog("axCpfMsgUp_OnLogon:" + sChannel);
                 sendFirstMsg(sChannel);
@@ -780,13 +797,13 @@ namespace StatusMonitor
                 writeLog("axCpfMsgUp_OnLogon:" + ex.Message);
             }
         }
-        //AgentMonitor‚ªÚ‘±‚·‚é‚ÆAStatus‚Ìî•ñ‚ğAgentMonitor‚É‘—M
+        //AgentMonitorãŒæ¥ç¶šã™ã‚‹ã¨ã€Statusã®æƒ…å ±ã‚’AgentMonitorã«é€ä¿¡
         private void sendFirstMsg(string sChannel)
         {
             try
             {
 
-                ////©•ª‚Ìƒeƒiƒ“ƒgî•ñ‚ğ‘—M
+                ////è‡ªåˆ†ã®ãƒ†ãƒŠãƒ³ãƒˆæƒ…å ±ã‚’é€ä¿¡
                 ////String strTenant = MyTenant;
                 //CpfParams cpfParam1 = new CpfParams();
                 //cpfParam1.AddString("MyTenant", MyTenant);
@@ -907,7 +924,7 @@ namespace StatusMonitor
             }
 
         }
-        // ƒNƒ‰ƒCƒAƒ“ƒg‚©‚ç‚ÌLogoffƒƒbƒZ[ƒWóM
+        // ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰ã®Logoffãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å—ä¿¡æ™‚
         private void axCpfMsgUp_OnLogoff(string sChannel)
         {
             //DebugPrint("axCpfMsgUp_OnLogoff sChannel = [{0}]", sChannel);
@@ -921,7 +938,7 @@ namespace StatusMonitor
             }
         }
 
-        // ƒNƒ‰ƒCƒAƒ“ƒg‚©‚ç‚ÌEventƒƒbƒZ[ƒWóM
+        // ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰ã®Eventãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å—ä¿¡æ™‚
         void axCpfMsgUp_OnEvent(string sChannel, string sPhase, string sField, string sEvent, string sCpfParams)
         {
             //DebugPrint("axCpfMsgUp_OnEvent sChannel = [{0}], sEvent = [{1}], sCpfParams = [{2}]",
@@ -929,7 +946,7 @@ namespace StatusMonitor
             try
             {
                 //add,xzg,2011/09/15,S
-                // add AgentMonitor ‚©‚ç‚Ì AM_SHOWAGENT ‚Í StatusMonitor ‚Ìî•ñ‚ÅXV‚·‚é
+                // add AgentMonitor ã‹ã‚‰ã® AM_SHOWAGENT ã¯ StatusMonitor ã®æƒ…å ±ã§æ›´æ–°ã™ã‚‹
                 //if (sEvent == "AM_SHOWAGENT")
                 //{
                 //    sendFirstMsg(sChannel);
@@ -937,7 +954,7 @@ namespace StatusMonitor
                 //}
                 ////add,xzg,2011/09/15,E
 
-                //// ƒNƒ‰ƒCƒAƒ“ƒg‚©‚çƒ}ƒXƒ^[‘¤‚ÌCpfmsgsrv‚É‘—‚éê‡
+                //// ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰ãƒã‚¹ã‚¿ãƒ¼å´ã®Cpfmsgsrvã«é€ã‚‹å ´åˆ
                 //CpfParams objCpfParams = new CpfParams();
                 //objCpfParams.SetParams(sCpfParams);
                 //axCpfMsg.SendEvent(sPhase, sField, sEvent, objCpfParams);
@@ -1017,17 +1034,17 @@ namespace StatusMonitor
                 Rectangle clientRect = ctrl.ClientRectangle;
                 int value = (int)ctrl.Tag;
 
-                // ”wŒi‚Ì•`‰æ
+                // èƒŒæ™¯ã®æç”»
                 SolidBrush backBrush = new SolidBrush(this.BackColor);
                 e.Graphics.FillRectangle(backBrush, clientRect);
 
-                // ƒo[‚Ì•`‰æ
+                // ãƒãƒ¼ã®æç”»
                 Rectangle barRect = ctrl.ClientRectangle;
                 barRect.Width = (int)(barRect.Width * (value / 100.0));
                 SolidBrush barBrush = new SolidBrush(Color.Blue);
                 e.Graphics.FillRectangle(barBrush, barRect);
 
-                // Text‚Ì•`‰æ
+                // Textã®æç”»
                 string text = String.Format("{0:d} %", value);
                 SolidBrush textBrush = new SolidBrush(Color.White);
                 // Make StringFormat
@@ -1108,8 +1125,8 @@ namespace StatusMonitor
                 SettingFields_LineCutShow = IniProfile.GetStringDefault(ConstEntity.LINECUT, "");
                 SettingFields_MonitorTabShow = IniProfile.GetStringDefault(ConstEntity.MONITORTAB, "");
 
-                OptionName1 = IniProfile.GetStringDefault("Option1", "‹’“_");
-                OptionName2 = IniProfile.GetStringDefault("Option2", "í•Ê");
+                OptionName1 = IniProfile.GetStringDefault("Option1", "æ‹ ç‚¹");
+                OptionName2 = IniProfile.GetStringDefault("Option2", "ç¨®åˆ¥");
                 OptionName3 = IniProfile.GetStringDefault("Option3", "Option3");
                 OptionName4 = IniProfile.GetStringDefault("Option4", "Option4");
                 OptionName5 = IniProfile.GetStringDefault("Option5", "Option5");
@@ -1334,8 +1351,8 @@ namespace StatusMonitor
         {
             // Check formClosing
             if (formClosing) return;
-            // I—¹Šm”F
-            //DialogResult ret = MessageBox.Show("I—¹‚µ‚Ü‚·‚©H", this.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            // çµ‚äº†ç¢ºèª
+            //DialogResult ret = MessageBox.Show("çµ‚äº†ã—ã¾ã™ã‹ï¼Ÿ", this.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             //if (ret == DialogResult.Cancel) e.Cancel = true;
             //add,xzg,2009/02/06,S----------------
             else
@@ -1410,7 +1427,7 @@ namespace StatusMonitor
                 IniProfile.SelectSection("SessMain");
                 string server = IniProfile.GetString("sServer");
                 //update,xzg,2012/08/23,S
-                //string media = iniProfile.GetString("sMedia") + "S"; //S cpfMsg‚Qd‰»Ú‘±‚ğ”ğ‚¯‚é‚½‚ß 2013/09/03
+                //string media = iniProfile.GetString("sMedia") + "S"; //S cpfMsgï¼’é‡åŒ–æ¥ç¶šã‚’é¿ã‘ã‚‹ãŸã‚ 2013/09/03
                 string media = IniProfile.GetStringDefault("sMediaSet", "");
                 if (string.IsNullOrEmpty(media) || media == "null")
                 {
@@ -1428,7 +1445,7 @@ namespace StatusMonitor
                 axCpfMsg.Open(cpfmsgsvrAddr, cpfmsgsvrPort, server, media, name, appl, phase, logon);
 
                 // Set Title
-                //this.Text = "NGCP ó‘Ôƒ‚ƒjƒ^";
+                //this.Text = "NGCP çŠ¶æ…‹ãƒ¢ãƒ‹ã‚¿";
 
                 //add,xzg,2013/11/28,S
                 keepAlivetimer.Interval = 1000;
@@ -1509,7 +1526,7 @@ namespace StatusMonitor
             //MessageBox.Show("axCpfMsg_OnClose");
 
             // Set Title
-            //this.Text = "NGCP ó‘Ôƒ‚ƒjƒ^ - –¢Ú‘±";
+            //this.Text = "NGCP çŠ¶æ…‹ãƒ¢ãƒ‹ã‚¿ - æœªæ¥ç¶š";
             //del,xzg,2009/12/07,S---------
             //setFrmText(MonitorStatus);
             //mainNotifyIcon.Text = res.GetString(NOTIFYICON_TEXT);
@@ -1622,7 +1639,7 @@ namespace StatusMonitor
         {
 
 
-            //if (MessageBox.Show("’Ê˜b‚ğƒ‚ƒjƒ^[‚µ‚Ü‚·‚©H", "NGCP", MessageBoxButtons.OKCancel) == DialogResult.Cancel )
+            //if (MessageBox.Show("é€šè©±ã‚’ãƒ¢ãƒ‹ã‚¿ãƒ¼ã—ã¾ã™ã‹ï¼Ÿ", "NGCP", MessageBoxButtons.OKCancel) == DialogResult.Cancel )
             //{
             //    return;
             //}
@@ -1844,7 +1861,7 @@ namespace StatusMonitor
             {
                 if (!string.IsNullOrEmpty(vSelectedAgentID))
                 {
-                    if ((vCurrentAgentState != "0" && vCurrentAgentState != "1" && vCurrentAgentState != "5" && vCurrentAgentState != "6") && MessageBox.Show("‘ÎÛ‚ÌƒG[ƒWƒFƒ“ƒg‚Í’Ê˜b’†‚Å‚·‚ªAI—¹‚µ‚Ü‚·‚©H", "alert", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                    if ((vCurrentAgentState != "0" && vCurrentAgentState != "1" && vCurrentAgentState != "5" && vCurrentAgentState != "6") && MessageBox.Show("å¯¾è±¡ã®ã‚¨ãƒ¼ã‚¸ã‚§ãƒ³ãƒˆã¯é€šè©±ä¸­ã§ã™ãŒã€çµ‚äº†ã—ã¾ã™ã‹ï¼Ÿ", "alert", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                     {
                         return;
                     }
@@ -1855,7 +1872,7 @@ namespace StatusMonitor
 
                     vSelectedAgentID = "";
                     System.Threading.Thread.Sleep(50);
-                    //added by zhu 2014/12/09 only get the command AGENTCOUNTC then can do again
+                    //added by zhu 2014/12/09 only get the command AGENTCOUNTï¼Œ then can do again
                     if (this.ReShowsFlag)
                     {
                         ReShowsFlag = false;
@@ -1915,7 +1932,7 @@ namespace StatusMonitor
 
 
                     //
-                    //writeLog("keepAlivetimer_Tick:axCpfMsgUp:ÄOpen");
+                    //writeLog("keepAlivetimer_Tick:axCpfMsgUp:å†Open");
                     //axCpfMsgUp.Open("127.0.0.1", 18210);
 
                 }
@@ -1923,7 +1940,7 @@ namespace StatusMonitor
                 if (refreshTime <= refreshCount)
                 {
                     refreshCount = 0;
-                    //update Œp‘±ŠÔ
+                    //update ç¶™ç¶šæ™‚é–“
                     //deleted by zhu 2014/09/01
                     //use system.timers to do the update
                     updateContinue();
@@ -2310,7 +2327,7 @@ namespace StatusMonitor
         {
             try
             {
-                //added by zhu 2014/12/09 only get the command AGENTCOUNTC then can do again
+                //added by zhu 2014/12/09 only get the command AGENTCOUNTï¼Œ then can do again
                 if (this.ReShowsFlag)
                 {
                     ReShowsFlag = false;
@@ -2387,7 +2404,7 @@ namespace StatusMonitor
         {
             try
             {
-                return;//ƒT[ƒrƒX‚ğ’â~‚µ‚È‚¢‚æ‚¤‚É•ÏX
+                return;//ã‚µãƒ¼ãƒ“ã‚¹ã‚’åœæ­¢ã—ãªã„ã‚ˆã†ã«å¤‰æ›´
                 System.ServiceProcess.ServiceController sc = new System.ServiceProcess.ServiceController("CpfNameSvr");
                 if (sc.Status == System.ServiceProcess.ServiceControllerStatus.Running)
                     sc.Stop();
@@ -2579,7 +2596,7 @@ namespace StatusMonitor
 
             try
             {
-                iTime = int.Parse(iTimeSS) * 60; //’PˆÊ•ª‚Ì‚ÅA–60
+                iTime = int.Parse(iTimeSS) * 60; //å˜ä½åˆ†ã®ã§ã€ï¼Š60
                 iTimeTemp = iTime % 3600;
                 iHH = iTime / 3600;
                 if (iHH > 0)
@@ -2813,7 +2830,7 @@ namespace StatusMonitor
             try
             {
                 if (string.IsNullOrEmpty(LineID)) return;
-                if (vCurrentLineStatusName == res.GetString("SM0020045") && MessageBox.Show("‘ÎÛ‚Ì‰ñü‚Í’Ê˜b’†‚Å‚·‚ªAØ’f‚µ‚Ü‚·‚©H", "alert", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                if (vCurrentLineStatusName == res.GetString("SM0020045") && MessageBox.Show("å¯¾è±¡ã®å›ç·šã¯é€šè©±ä¸­ã§ã™ãŒã€åˆ‡æ–­ã—ã¾ã™ã‹ï¼Ÿ", "alert", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
                 {
                     return;
                 }
@@ -3083,13 +3100,13 @@ namespace StatusMonitor
             try
             {
                 //if this.MaximumSize 
-                //mainNotifyIcon.BalloonTipTitle = "ƒG[ƒWƒFƒ“ƒgƒ‚ƒjƒ^[";
+                //mainNotifyIcon.BalloonTipTitle = "ã‚¨ãƒ¼ã‚¸ã‚§ãƒ³ãƒˆãƒ¢ãƒ‹ã‚¿ãƒ¼";
                 string strMsg = "";
                 strMsg = Environment.NewLine + agent;
                 strMsg = strMsg + Environment.NewLine + msg;
 
                 mainNotifyIcon.BalloonTipText = strMsg;
-                mainNotifyIcon.ShowBalloonTip(20, "ó‘Ôƒ‚ƒjƒ^", strMsg, ToolTipIcon.Info);
+                mainNotifyIcon.ShowBalloonTip(20, "çŠ¶æ…‹ãƒ¢ãƒ‹ã‚¿", strMsg, ToolTipIcon.Info);
 
                 mainNotifyIcon.Visible = true;
                 this.Focus();
@@ -3339,7 +3356,7 @@ namespace StatusMonitor
                 }
                 else
                 {
-                    //Report‚ÌˆÈŠO‚Ìƒ^ƒO‚ğŠJ‚¢‚Ä‚àAƒf[ƒ^—v‹ƒRƒ}ƒ“ƒh‚à”­s‚µ‚Ü‚·B
+                    //Reportã®ä»¥å¤–ã®ã‚¿ã‚°ã‚’é–‹ã„ã¦ã‚‚ã€ãƒ‡ãƒ¼ã‚¿è¦æ±‚ã‚³ãƒãƒ³ãƒ‰ã‚‚ç™ºè¡Œã—ã¾ã™ã€‚
                     reportForTimeHas = true;
                 }
             }
@@ -3496,7 +3513,7 @@ namespace StatusMonitor
 
 
         //        column = new DataGridViewTextBoxColumn();
-        //        column.HeaderText = "ŠÔ";
+        //        column.HeaderText = "æ™‚é–“";
         //        column.SortMode = DataGridViewColumnSortMode.NotSortable;
 
         //        column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -3504,18 +3521,10 @@ namespace StatusMonitor
         //        dvReport.Columns.Add(column);
 
 
-        //        //’…M
-        //        //ŠÔ“à
+        //        //ç€ä¿¡
+        //        //æ™‚é–“å†…
         //        column = new DataGridViewTextBoxColumn();
-        //        column.HeaderText = "’…M";
-        //        column.SortMode = DataGridViewColumnSortMode.NotSortable;
-        //        column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        //        column.DefaultCellStyle.BackColor = Color.LightBlue;
-        //        column.Width = 50;
-        //        dvReport.Columns.Add(column);
-
-        //        column = new DataGridViewTextBoxColumn();
-        //        column.HeaderText = "•úŠü";
+        //        column.HeaderText = "ç€ä¿¡";
         //        column.SortMode = DataGridViewColumnSortMode.NotSortable;
         //        column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         //        column.DefaultCellStyle.BackColor = Color.LightBlue;
@@ -3523,16 +3532,24 @@ namespace StatusMonitor
         //        dvReport.Columns.Add(column);
 
         //        column = new DataGridViewTextBoxColumn();
-        //        column.HeaderText = "Š®—¹";
+        //        column.HeaderText = "æ”¾æ£„";
         //        column.SortMode = DataGridViewColumnSortMode.NotSortable;
         //        column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         //        column.DefaultCellStyle.BackColor = Color.LightBlue;
         //        column.Width = 50;
         //        dvReport.Columns.Add(column);
 
-        //        //—İŒv
         //        column = new DataGridViewTextBoxColumn();
-        //        column.HeaderText = "’…M(—İ)";
+        //        column.HeaderText = "å®Œäº†";
+        //        column.SortMode = DataGridViewColumnSortMode.NotSortable;
+        //        column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        //        column.DefaultCellStyle.BackColor = Color.LightBlue;
+        //        column.Width = 50;
+        //        dvReport.Columns.Add(column);
+
+        //        //ç´¯è¨ˆ
+        //        column = new DataGridViewTextBoxColumn();
+        //        column.HeaderText = "ç€ä¿¡(ç´¯)";
         //        column.SortMode = DataGridViewColumnSortMode.NotSortable;
         //        column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         //        column.DefaultCellStyle.BackColor = Color.LightBlue;
@@ -3540,7 +3557,7 @@ namespace StatusMonitor
         //        dvReport.Columns.Add(column);
 
         //        column = new DataGridViewTextBoxColumn();
-        //        column.HeaderText = "•úŠü(—İ)";
+        //        column.HeaderText = "æ”¾æ£„(ç´¯)";
         //        column.SortMode = DataGridViewColumnSortMode.NotSortable;
         //        column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         //        column.DefaultCellStyle.BackColor = Color.LightBlue;
@@ -3548,17 +3565,17 @@ namespace StatusMonitor
         //        dvReport.Columns.Add(column);
 
         //        column = new DataGridViewTextBoxColumn();
-        //        column.HeaderText = "Š®—¹(—İ)";
+        //        column.HeaderText = "å®Œäº†(ç´¯)";
         //        column.SortMode = DataGridViewColumnSortMode.NotSortable;
         //        column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         //        column.DefaultCellStyle.BackColor = Color.LightBlue;
         //        column.Width = 60;
         //        dvReport.Columns.Add(column);
 
-        //        //”­M
-        //        //ŠÔ“à
+        //        //ç™ºä¿¡
+        //        //æ™‚é–“å†…
         //        column = new DataGridViewTextBoxColumn();
-        //        column.HeaderText = "”­M";
+        //        column.HeaderText = "ç™ºä¿¡";
         //        column.SortMode = DataGridViewColumnSortMode.NotSortable;
         //        column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         //        column.DefaultCellStyle.BackColor = Color.LightGray;
@@ -3566,16 +3583,16 @@ namespace StatusMonitor
         //        dvReport.Columns.Add(column);
 
         //        column = new DataGridViewTextBoxColumn();
-        //        column.HeaderText = "Š®—¹";
+        //        column.HeaderText = "å®Œäº†";
         //        column.SortMode = DataGridViewColumnSortMode.NotSortable;
         //        column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         //        column.DefaultCellStyle.BackColor = Color.LightGray;
         //        column.Width = 50;
         //        dvReport.Columns.Add(column);
 
-        //        //—İŒv
+        //        //ç´¯è¨ˆ
         //        column = new DataGridViewTextBoxColumn();
-        //        column.HeaderText = "”­M(—İ)";
+        //        column.HeaderText = "ç™ºä¿¡(ç´¯)";
         //        column.SortMode = DataGridViewColumnSortMode.NotSortable;
         //        column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         //        column.DefaultCellStyle.BackColor = Color.LightGray;
@@ -3583,7 +3600,7 @@ namespace StatusMonitor
         //        dvReport.Columns.Add(column);
 
         //        column = new DataGridViewTextBoxColumn();
-        //        column.HeaderText = "Š®—¹(—İ)";
+        //        column.HeaderText = "å®Œäº†(ç´¯)";
         //        column.SortMode = DataGridViewColumnSortMode.NotSortable;
         //        column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         //        column.DefaultCellStyle.BackColor = Color.LightGray;
@@ -3592,7 +3609,7 @@ namespace StatusMonitor
 
 
         //        column = new DataGridViewTextBoxColumn();
-        //        column.HeaderText = "Å‘å“¯’Ê˜b”";
+        //        column.HeaderText = "æœ€å¤§åŒæ™‚é€šè©±æ•°";
         //        column.SortMode = DataGridViewColumnSortMode.NotSortable;
         //        column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         //        column.DefaultCellStyle.BackColor = Color.LightYellow;
@@ -3751,7 +3768,7 @@ namespace StatusMonitor
         //    try
         //    {
 
-        //        //
+        //        //æ™‚
         //        string temp = "";
         //        for (int i = 0; i < 24; i++)
         //        {
@@ -3762,7 +3779,7 @@ namespace StatusMonitor
         //        cmbReportDateS.SelectedIndex = 0;
         //        cmbReportDateE.SelectedIndex = cmbReportDateE.Items.Count - 1;
 
-        //        //•ª
+        //        //åˆ†
         //        for (int i = 0; i < 60; i++)
         //        {
         //            temp = i.ToString("00");
@@ -3785,7 +3802,7 @@ namespace StatusMonitor
         //    try
         //    {
         //        cmbReportGrop.Items.Clear();
-        //        GroupInfo groupInfo = new GroupInfo(-1, "‘S‘Ì");
+        //        GroupInfo groupInfo = new GroupInfo(-1, "å…¨ä½“");
         //        cmbReportGrop.Items.Add(groupInfo);
         //        cmbReportGrop.SelectedIndex = 0;
         //    }
@@ -3889,12 +3906,12 @@ namespace StatusMonitor
         //        this.dvReportShow();
         //        curDateE = reportDateE;
         //        GetReport();
-        //        //if (sMsgFlag.ToUpper() == "S")    //ƒƒbƒZ[ƒWŠJn
+        //        //if (sMsgFlag.ToUpper() == "S")    //ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸é–‹å§‹
         //        //{
         //        //    ReportList.Clear();
         //        //    ReportList.Add(curReport);
         //        //}
-        //        //else if (sMsgFlag.ToUpper() == "E") //ƒƒbƒZ[ƒWŠJnI—¹
+        //        //else if (sMsgFlag.ToUpper() == "E") //ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸é–‹å§‹çµ‚äº†
         //        //{
         //        //    ReportList.Add(curReport);
         //        //    this.dvReportShow(ReportList);
@@ -4084,8 +4101,8 @@ namespace StatusMonitor
                 csDataRow1 = dsMontor.Tables["dtGroupPersonal"].NewRow(); //dtGroupPersonal.NewRow();
                 csDataRow1[0] = "-1";
                 //modified by zhu 2014/04/17
-                //csDataRow1[1] = "‘‡Œv";
-                csDataRow1[1] = "  ‘‡Œv";
+                //csDataRow1[1] = "ç·åˆè¨ˆ";
+                csDataRow1[1] = "  ç·åˆè¨ˆ";
                 //end modified 2014/04/17
                 //dtGroupPersonal.Rows.Add(csDataRow1);
                 dsMontor.Tables["dtGroupPersonal"].Rows.Add(csDataRow1);
@@ -4315,7 +4332,7 @@ namespace StatusMonitor
 
                 column = new DataGridViewTextBoxColumn();
                 //modified by zhu 2014/05/12
-                //column.HeaderText = MonitorCol1;// "ƒXƒLƒ‹ƒOƒ‹[ƒv";
+                //column.HeaderText = MonitorCol1;// "ã‚¹ã‚­ãƒ«ã‚°ãƒ«ãƒ¼ãƒ—";
                 column.HeaderText = _MonitorItemManager.MonitorItems[0].DisplayName;
                 //end modified
                 column.Name = "groupName";
@@ -4332,9 +4349,9 @@ namespace StatusMonitor
 
 
 
-                //ƒƒOƒIƒ“l”
+                //ãƒ­ã‚°ã‚ªãƒ³äººæ•°
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[1].DisplayName; //"ƒƒOƒIƒ“l”";
+                column.HeaderText = _MonitorItemManager.MonitorItems[1].DisplayName; //"ãƒ­ã‚°ã‚ªãƒ³äººæ•°";
                 column.Name = "allLogon";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4347,7 +4364,7 @@ namespace StatusMonitor
                 dvMonitor.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[2].DisplayName;// "’…ÀOP”";
+                column.HeaderText = _MonitorItemManager.MonitorItems[2].DisplayName;// "ç€åº§OPæ•°";
                 column.Name = "opCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4361,7 +4378,7 @@ namespace StatusMonitor
 
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[3].DisplayName;// "—£È”";
+                column.HeaderText = _MonitorItemManager.MonitorItems[3].DisplayName;// "é›¢å¸­æ•°";
                 column.Name = "seatLeaveCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4374,8 +4391,8 @@ namespace StatusMonitor
                 dvMonitor.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                //column.HeaderText = "ACD’…M”";
-                column.HeaderText = _MonitorItemManager.MonitorItems[4].DisplayName; //"OPŒÄo”";@@//’Ê˜b”->’…M”->OPŒÄo”
+                //column.HeaderText = "ACDç€ä¿¡æ•°";
+                column.HeaderText = _MonitorItemManager.MonitorItems[4].DisplayName; //"OPå‘¼å‡ºæ•°";ã€€ã€€//é€šè©±æ•°->ç€ä¿¡æ•°->OPå‘¼å‡ºæ•°
                 column.Name = "acdCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4389,7 +4406,7 @@ namespace StatusMonitor
 
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[5].DisplayName;// "OP‰“š”";//‰“š”
+                column.HeaderText = _MonitorItemManager.MonitorItems[5].DisplayName;// "OPå¿œç­”æ•°";//å¿œç­”æ•°
                 column.Name = "answerCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4402,7 +4419,7 @@ namespace StatusMonitor
                 dvMonitor.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[6].DisplayName;// "‰“š—¦";
+                column.HeaderText = _MonitorItemManager.MonitorItems[6].DisplayName;// "å¿œç­”ç‡";
                 column.Name = "answerPer";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4416,7 +4433,7 @@ namespace StatusMonitor
 
                 //add,S
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[7].DisplayName;// "‘¦“š”";
+                column.HeaderText = _MonitorItemManager.MonitorItems[7].DisplayName;// "å³ç­”æ•°";
                 column.Name = "answerNowCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4429,12 +4446,12 @@ namespace StatusMonitor
                 dvMonitor.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[8].DisplayName;// "‘¦“š—¦";
+                column.HeaderText = _MonitorItemManager.MonitorItems[8].DisplayName;// "å³ç­”ç‡";
                 column.Name = "answerNowPer";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-                //“Á’èƒ†[ƒU‚¾‚¯Aİ’è
+                //ç‰¹å®šãƒ¦ãƒ¼ã‚¶ã ã‘ã€è¨­å®š
                 if (ShowBackColorForCol9 == "1")
                     column.DefaultCellStyle.BackColor = Color.LightBlue;
 
@@ -4448,7 +4465,7 @@ namespace StatusMonitor
                 //add,E
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[9].DisplayName;// "‘ÒŒÄ”";
+                column.HeaderText = _MonitorItemManager.MonitorItems[9].DisplayName;// "å¾…å‘¼æ•°";
                 column.Name = "queCallCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4462,7 +4479,7 @@ namespace StatusMonitor
 
                 //added by zhu 2014/05/12
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[10].DisplayName;//Œo‰ßŠÔ
+                column.HeaderText = _MonitorItemManager.MonitorItems[10].DisplayName;//çµŒéæ™‚é–“
                 column.Name = "queCallContinueTime";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -4474,7 +4491,7 @@ namespace StatusMonitor
                 //end added
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[11].DisplayName;// "ó•t‰Â”";
+                column.HeaderText = _MonitorItemManager.MonitorItems[11].DisplayName;// "å—ä»˜å¯æ•°";
                 column.Name = "waitCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4488,7 +4505,7 @@ namespace StatusMonitor
 
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[12].DisplayName;// "•úŠü”";
+                column.HeaderText = _MonitorItemManager.MonitorItems[12].DisplayName;// "æ”¾æ£„æ•°";
                 column.Name = "failCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4501,7 +4518,7 @@ namespace StatusMonitor
                 dvMonitor.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[13].DisplayName;// "•úŠü—¦";
+                column.HeaderText = _MonitorItemManager.MonitorItems[13].DisplayName;// "æ”¾æ£„ç‡";
                 column.Name = "failPer";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4515,7 +4532,7 @@ namespace StatusMonitor
 
 
                 //column = new DataGridViewTextBoxColumn();
-                //column.HeaderText = "—£È”";
+                //column.HeaderText = "é›¢å¸­æ•°";
                 //column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 //column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 //column.DefaultCellStyle.BackColor = Color.LightGray;
@@ -4588,7 +4605,7 @@ namespace StatusMonitor
 
 
                 dtMontor.Columns.Add("iSessionProfileID", typeof(int));
-                dtMontor.Columns.Add("groupKId", typeof(int)); //‹Ç”ÔID
+                dtMontor.Columns.Add("groupKId", typeof(int)); //å±€ç•ªID
 
 
                 //dtMontor.Columns["allLogon"].Expression = "sum(child(relation).status)";
@@ -4604,7 +4621,7 @@ namespace StatusMonitor
                 //test,s
 
                 //csDataRow1["id"] = 1;
-                //csDataRow1[0] = "ƒXƒLƒ‹ƒOƒ‹[ƒv1";
+                //csDataRow1[0] = "ã‚¹ã‚­ãƒ«ã‚°ãƒ«ãƒ¼ãƒ—1";
                 //csDataRow1[1] = "3";
                 //csDataRow1[2] = "3";
                 //csDataRow1[3] = "2";
@@ -4621,7 +4638,7 @@ namespace StatusMonitor
 
 
                 //csDataRow1 = dtMontor.NewRow();
-                //csDataRow1[0] = "ƒXƒLƒ‹ƒOƒ‹[ƒv2";
+                //csDataRow1[0] = "ã‚¹ã‚­ãƒ«ã‚°ãƒ«ãƒ¼ãƒ—2";
                 //csDataRow1[1] = "3";
                 //csDataRow1[2] = "3";
                 //csDataRow1[3] = "2";
@@ -4636,7 +4653,7 @@ namespace StatusMonitor
                 //dtMontor.Rows.Add(csDataRow1);
 
                 //csDataRow1 = dtMontor.NewRow();
-                //csDataRow1[0] = "ƒXƒLƒ‹ƒOƒ‹[ƒv3";
+                //csDataRow1[0] = "ã‚¹ã‚­ãƒ«ã‚°ãƒ«ãƒ¼ãƒ—3";
                 //csDataRow1[1] = "3";
                 //csDataRow1[2] = "3";
                 //csDataRow1[3] = "2";
@@ -4686,7 +4703,7 @@ namespace StatusMonitor
             try
             {
 
-                System.Threading.Thread callThread = new System.Threading.Thread(delegate() { setMonitorCall1(); });
+                System.Threading.Thread callThread = new System.Threading.Thread(delegate () { setMonitorCall1(); });
                 callThread.IsBackground = true;
                 callThread.Start();
 
@@ -4705,7 +4722,7 @@ namespace StatusMonitor
                 if (displayGroupPre == displayGroup) return;
                 displayGroupPre = displayGroup;
 
-                System.Threading.Thread callThread = new System.Threading.Thread(delegate() { setMonitorCall1(); });
+                System.Threading.Thread callThread = new System.Threading.Thread(delegate () { setMonitorCall1(); });
                 callThread.IsBackground = true;
                 callThread.Start();
 
@@ -4730,10 +4747,10 @@ namespace StatusMonitor
 
                 ArrayList rs = new ArrayList();
                 ArrayList rsPre = new ArrayList();
-                //dtAcdcall‚ª‚ ‚é,acdCallLocalDB‚É“o˜^
+                //dtAcdcallãŒã‚ã‚‹æ™‚,acdCallLocalDBã«ç™»éŒ²
 
                 //addCallInfo(lineStatus);
-                //if (lineStatus.Status != 0) return; //’Ê˜bŠ®—¹ŒãAŒvZ
+                //if (lineStatus.Status != 0) return; //é€šè©±å®Œäº†å¾Œã€è¨ˆç®—
                 //if (displayGroup == -1)
 
                 //    rs = getCallInfo("".ToString(), "");
@@ -4876,7 +4893,7 @@ namespace StatusMonitor
                     }
 
                 }
-                //‘‡Œv
+                //ç·åˆè¨ˆ
                 if (DtMonitorRowsCount > 0)
                 {
                     //deleted by Zhu 2014/04/01
@@ -5083,7 +5100,7 @@ namespace StatusMonitor
                     }
 
                 }
-                //‘‡Œv
+                //ç·åˆè¨ˆ
                 if (DtMonitorRowsCount > 0)
                 {
                     //added by Zhu 2014/04/01
@@ -5130,10 +5147,10 @@ namespace StatusMonitor
 
                 ArrayList rs = new ArrayList();
                 ArrayList rsPre = new ArrayList();
-                //dtAcdcall‚ª‚ ‚é,acdCallLocalDB‚É“o˜^
+                //dtAcdcallãŒã‚ã‚‹æ™‚,acdCallLocalDBã«ç™»éŒ²
 
                 addCallInfo(lineStatus);
-                if (lineStatus.Status != 0) return; //’Ê˜bŠ®—¹ŒãAŒvZ
+                if (lineStatus.Status != 0) return; //é€šè©±å®Œäº†å¾Œã€è¨ˆç®—
                 if (displayGroup == -1)
                 {
                     rs = getCallInfo(lineStatus.iSkillGroupID.ToString(), "");
@@ -5234,7 +5251,7 @@ namespace StatusMonitor
                     }
 
                 }
-                //‘‡Œv
+                //ç·åˆè¨ˆ
                 if (DtMonitorRowsCount > 0)
                 {
                     //added by Zhu 2014/04/01
@@ -5650,7 +5667,7 @@ namespace StatusMonitor
 
                 }
 
-                //‘‡Œv
+                //ç·åˆè¨ˆ
                 if (DtMonitorRowsCount > 0)
                 {
                     SetDvTotalRow("QUECALL", false);
@@ -5686,10 +5703,10 @@ namespace StatusMonitor
                     curGroupID = dsMontor.Tables["dtMonitor"].Rows[i]["groupId"].ToString();
 
 
-                    //‘‡Œv
+                    //ç·åˆè¨ˆ
                     if (curGroupID == "-1")
                     {
-                        //ƒG[ƒWƒFƒ“ƒg‚Ì‘‡Œv‚Í–â‘è‚ª‚ ‚è‚Ü‚·B
+                        //ã‚¨ãƒ¼ã‚¸ã‚§ãƒ³ãƒˆã®ç·åˆè¨ˆã¯å•é¡ŒãŒã‚ã‚Šã¾ã™ã€‚
                         continue;
 
                     }
@@ -5702,7 +5719,7 @@ namespace StatusMonitor
                     showSkillGroupIds += ",'" + curGroupID + "'";
                     //end added
 
-                    //added by zhu 2014/06/02 avoid  SysteError:DataTable ‚Ì“à•”ƒCƒ“ƒfƒbƒNƒX‚ª”j‘¹‚µ‚Ä‚¢‚Ü‚·B'5' 
+                    //added by zhu 2014/06/02 avoid  SysteError:DataTable ã®å†…éƒ¨ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ãŒç ´æã—ã¦ã„ã¾ã™ã€‚'5' 
 
                     DataTable tempTable = dsMontor.Tables["dtGroupPersonal"].Copy();
                     //lock (tempTable)
@@ -5713,21 +5730,21 @@ namespace StatusMonitor
                     viewTemp.RowFilter = strWhere;
                     DataTable tblTemp = viewTemp.ToTable(false, "status");
 
-                    //ƒƒOƒIƒ“
+                    //ãƒ­ã‚°ã‚ªãƒ³
                     DataRow[] foundRows = tblTemp.Select(" status>0");
 
                     dsMontor.Tables["dtMonitor"].Rows[i]["allLogon"] = foundRows.Length;
 
-                    //—£È
+                    //é›¢å¸­
                     DataRow[] foundRows1 = tblTemp.Select(" status=6");
                     dsMontor.Tables["dtMonitor"].Rows[i]["seatLeaveCnt"] = foundRows1.Length;
 
 
-                    //’…ÀOP”ƒƒOƒCƒ“OPE”\—£ÈOPE”
+                    //ç€åº§OPæ•°ï¼ãƒ­ã‚°ã‚¤ãƒ³OPEæ•°â€•é›¢å¸­OPEæ•°
                     //dsMontor.Tables["dtMonitor"].Columns["opCnt"].Expression = "allLogon";
                     dsMontor.Tables["dtMonitor"].Rows[i]["opCnt"] = foundRows.Length - foundRows1.Length;
 
-                    //ó•t‰Â
+                    //å—ä»˜å¯
                     DataRow[] foundRows2 = tblTemp.Select(" status=1");
                     dsMontor.Tables["dtMonitor"].Rows[i]["waitCnt"] = foundRows2.Length;
 
@@ -5738,7 +5755,7 @@ namespace StatusMonitor
                     //}
                 }
 
-                //‘‡Œv
+                //ç·åˆè¨ˆ
                 //
                 if (DtMonitorRowsCount > 0)
                 {
@@ -5769,7 +5786,7 @@ namespace StatusMonitor
 
 
                 //System.Threading.Thread getCall = new System.Threading.Thread(new System.Threading.ThreadStart(getCallData));
-                System.Threading.Thread getCall = new System.Threading.Thread(delegate() { getCallData(strData); });
+                System.Threading.Thread getCall = new System.Threading.Thread(delegate () { getCallData(strData); });
                 getCall.IsBackground = true;
                 getCall.Start();
 
@@ -6386,7 +6403,7 @@ namespace StatusMonitor
         //}
         //end deleted
 
-        //‘‡Œv
+        //ç·åˆè¨ˆ
         private void SetDvTotalRow(string command, bool threadFlag)
         {
             try
@@ -6559,6 +6576,7 @@ namespace StatusMonitor
             {
                 SettingFields_MonitorTabShow = frm.MonitorTab;
                 SettingFields_MessagePop = frm.MessagePop;
+                SettingFields_AgentGraphShow = frm.AgentGraphShow;
                 if (SettingFields_MonitorTabShow == "0")
                 {
                     if (statusTabCtrl.TabPages.Contains(tabMonitor))
@@ -6571,11 +6589,26 @@ namespace StatusMonitor
                         statusTabCtrl.TabPages.Insert(2, tabMonitor);
                 }
 
+                if(SettingFields_AgentGraphShow=="1")
+                {
+                    this.agentPie.Visible = true;
+                    this.agentIconListView.Width = this.AgentIconListWeight;
+                    this.agentIconListView.Height = this.AgentIconListHeight;
+                    this.agentPie.Width = this.AgentPieWeight;
+                    this.agentPie.Height = this.AgentPieHeigh;
+                }
+                else
+                {
+                    this.agentPie.Visible = false;
+                    //this.agentIconListView.Height = 60;
+                    this.agentIconListView.Dock = DockStyle.Bottom;
+                }
+
             }
         }
 
         /// <summary>
-        /// ‹Ç”ÔƒOƒ‹[ƒv‚¾‚¯‚ğæ‚é
+        /// å±€ç•ªã‚°ãƒ«ãƒ¼ãƒ—ã ã‘ã‚’å–ã‚‹
         /// </summary>
         public void GetGroupInfo()
         {
@@ -6669,7 +6702,7 @@ namespace StatusMonitor
                     dsMontor.Tables["dtMonitor"].Rows.Clear();
                     setGroup();
                     listMonitorShow();
-                    MessageBox.Show("ó‘Ôƒ‚ƒjƒ^‚ğÄ‹N“®‚­‚¾‚³‚¢", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("çŠ¶æ…‹ãƒ¢ãƒ‹ã‚¿ã‚’å†èµ·å‹•ãã ã•ã„", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -6946,6 +6979,14 @@ namespace StatusMonitor
                 return null;
             }
         }
+
+        private void agentPie_VisibleChanged(object sender, EventArgs e)
+        {
+            if (agentPie.Visible)
+            {
+                agentPie.Image = CurrentAgentPie;
+            }
+        }
         #endregion
 
         #region TotalListView
@@ -7092,8 +7133,9 @@ namespace StatusMonitor
 
             return true;
         }
-        #endregion
 
+
+        #endregion
 
 
     }

@@ -1713,7 +1713,7 @@ namespace StatusMonitor
                     subCaller.Name = "Caller";
                     item.SubItems.Add(subCaller);
 
-                    ListViewItem.ListViewSubItem subHelp = new ListViewItem.ListViewSubItem(item, obj.Help ? "Åõ" : "Å|");
+                    ListViewItem.ListViewSubItem subHelp = new ListViewItem.ListViewSubItem(item, obj.Help ? "Åõ" : "-");
                     subHelp.Name = "Help";
                     item.SubItems.Add(subHelp);
 
@@ -1823,8 +1823,13 @@ namespace StatusMonitor
                     agentIconListView.Items["Transfer"].Text = res.GetString("SM0020056");
 
                 //added by zhu add pie
-                Image pie = CreateAgentPie(waitCount, workCount, telCount, holdCount, offeringCount, seatLeaveCount, makeCallCount, transCallCount);
-                agentPie.Image = pie;
+
+                CurrentAgentPie = CreateAgentPie(waitCount, workCount, telCount, holdCount, offeringCount, seatLeaveCount, makeCallCount, transCallCount);
+                if(agentPie.Visible )
+                {
+                    agentPie.Image = CurrentAgentPie;
+                }
+                
                 //end adde 
             }
             catch (Exception ex)

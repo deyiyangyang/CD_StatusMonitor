@@ -13,6 +13,7 @@ namespace StatusMonitor.SettingFile
         public const string LINECUT = "LineCut";
         public const string MONITORTAB = "MonitorTabShow";
         public const string MESSAGEPOP = "MessagePopShow";
+        public const string AGENTGRAPH = "AgentGraphShow";
 
         public const string STATUSTIMEIDLE1 = "StatusOverIdelTime1";
         public const string STATUSTIMEIDLE2 = "StatusOverIdelTime2";
