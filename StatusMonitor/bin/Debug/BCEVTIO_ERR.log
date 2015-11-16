@@ -1,0 +1,14 @@
+CClientSock::RecvData (stCpfmsgHeader.dwHeaderId != CPFMSG_HEADER_ID) 
+CClientSock::RecvData 8FCC8809 
+CClientSock::CryptoRecv recv() == 0 errno=0
+CClientSock::CryptoRecv recv() == 0 errno=0
+CClientSock::CryptoRecv recv() == 0 errno=0
+CClientSock::CryptoRecv recv() == 0 errno=0
+CClientSock::CryptoRecv recv() == 0 errno=0
+CClientSock::CryptoRecv recv() == 0 errno=0
+CClientSock::CryptoRecv recv() == 0 errno=0
+CClientSock::CryptoRecv recv() == 0 errno=0
+CClientSock::CryptoRecv recv() == 0 errno=0
+CClientSock::CryptoRecv recv() == 0 errno=0
+CClientSock::CryptoRecv recv() == 0 errno=0
+CClientSock::RecvData (nRet <= 0) 

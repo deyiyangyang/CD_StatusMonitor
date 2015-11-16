@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{610C5556-B8F5-4633-AD4A-3AD89F53884A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StatusMonitor</RootNamespace>
+    <AssemblyName>StatusMonitor</AssemblyName>
+    <SignManifests>false</SignManifests>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>false</GenerateManifests>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169, 0219</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169, 0219</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <NoWarn>0169, 0219</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>0169, 0219</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.Cpfmsgacxa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgentState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgentState.Designer.cs">
+      <DependentUpon>AgentState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConstEntity.cs" />
+    <Compile Include="frmLineCutSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLineCutSet.Designer.cs">
+      <DependentUpon>frmLineCutSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\CTe1Helper.cs" />
+    <Compile Include="Helper\FormHelper.cs" />
+    <Compile Include="Helper\LanguageResourceManager.cs" />
+    <Compile Include="Helper\LogManager.cs" />
+    <Compile Include="Helper\RegeditManager.cs" />
+    <Compile Include="Helper\UtilityHelper.cs" />
+    <Compile Include="KyoKuGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KyoKuGroupForm.Designer.cs">
+      <DependentUpon>KyoKuGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\AgentStatusEnum.cs" />
+    <Compile Include="Model\LineStatusEnum.cs" />
+    <Compile Include="Model\MonitorItem.cs" />
+    <Compile Include="Model\SkillGroup.cs" />
+    <Compile Include="MonitorItemSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonitorItemSet.Designer.cs">
+      <DependentUpon>MonitorItemSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherSettingForm.Designer.cs">
+      <DependentUpon>OtherSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingFile\ConstEntity.cs" />
+    <Compile Include="SkillQueCallSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkillQueCallSetForm.Designer.cs">
+      <DependentUpon>SkillQueCallSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SkillShowSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkillShowSet.Designer.cs">
+      <DependentUpon>SkillShowSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SkillQueCallSoundPlayerManager.cs" />
+    <Compile Include="SkillSoundPlayerManager.cs" />
+    <Compile Include="ColSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColSelect.Designer.cs">
+      <DependentUpon>ColSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database.cs" />
+    <Compile Include="frmMonitorTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMonitorTitle.Designer.cs">
+      <DependentUpon>frmMonitorTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetPhone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetPhone.Designer.cs">
+      <DependentUpon>frmSetPhone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageResourceManager.cs" />
+    <Compile Include="MainProg.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonitorDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonitorDetail.Designer.cs">
+      <DependentUpon>MonitorDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionName.Designer.cs">
+      <DependentUpon>OptionName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AgentState.resx">
+      <DependentUpon>AgentState.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColSelect.resx">
+      <DependentUpon>ColSelect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLineCutSet.resx">
+      <DependentUpon>frmLineCutSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMonitorTitle.resx">
+      <DependentUpon>frmMonitorTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetPhone.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetPhone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KyoKuGroupForm.resx">
+      <DependentUpon>KyoKuGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonitorDetail.resx">
+      <DependentUpon>MonitorDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonitorItemSet.resx">
+      <DependentUpon>MonitorItemSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionName.resx">
+      <DependentUpon>OptionName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherSettingForm.resx">
+      <DependentUpon>OtherSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueCallSet.resx">
+      <DependentUpon>QueCallSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuickAnswerSet.resx">
+      <DependentUpon>QuickAnswerSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Refresh.resx">
+      <DependentUpon>Refresh.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkillIdleSet.resx">
+      <DependentUpon>SkillIdleSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkillQueCallSetForm.resx">
+      <DependentUpon>SkillQueCallSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkillShowSet.resx">
+      <DependentUpon>SkillShowSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusOverTimeSet.resx">
+      <DependentUpon>StatusOverTimeSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPage\QueueCallForm.resx">
+      <DependentUpon>QueueCallForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaiteTime.resx">
+      <DependentUpon>WaiteTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="QueCallSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueCallSet.Designer.cs">
+      <DependentUpon>QueCallSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuickAnswerSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuickAnswerSet.Designer.cs">
+      <DependentUpon>QuickAnswerSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Refresh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Refresh.designer.cs">
+      <DependentUpon>Refresh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SkillIdleSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkillIdleSet.Designer.cs">
+      <DependentUpon>SkillIdleSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatusOverTimeSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatusOverTimeSet.Designer.cs">
+      <DependentUpon>StatusOverTimeSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPage\QueueCallForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPage\QueueCallForm.Designer.cs">
+      <DependentUpon>QueueCallForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolsBasic.cs" />
+    <Compile Include="ToolsPrevApp.cs" />
+    <Compile Include="WaiteTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaiteTime.Designer.cs">
+      <DependentUpon>WaiteTime.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Cpfmsgacxa">
+      <Guid>{747E5489-2007-4B29-9D8C-33DF20214E84}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="CpfMsgUpAcxaLib">
+      <Guid>{7F377613-1EC7-423C-B296-441404E56BC0}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="TksProfileAcxLib">
+      <Guid>{C9ADDD53-E521-48EC-A475-E888160331AF}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Icons\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

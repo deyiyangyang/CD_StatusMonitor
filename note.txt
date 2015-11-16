@@ -1,0 +1,98 @@
+2014/06/19 
+1,connect to axMsg after set group
+2,modify the sql when click total count to popup detail 
+2014/09/02
+1, change the continuetime = localtime-status time when the call is quecall in quecall tab and line tab
+
+2014/09/11
+1,add color change function in queue tab
+2,add color change setting time in menu->alram setting 
+
+
+2014/12/26
+1，copy from buffalo
+1，messageForm get or send message, the textbox scrollbar scroll to ScrollToCaret
+
+2015/01/07
+1，messageForm get or send message, the textbox scrollbar scroll to ScrollToCaret
+
+2015/01/27
+1，messageForm use enter key to send message
+
+
+2015/01/28
+1，messageForm use enter key to send message and then input messagebox still has foucs
+
+2015/05/27
+1，agentlist show iskillgroupID
+
+2015/06/08
+1. 「回線状態」タブの「スキルグループ」項目名を「局番グループ」に変更
+2. xie-san created install file
+
+2015/07/07
+1，待ち呼警告の着信スキルグループごとの設定.
+
+2015/07/29
+1. change seatoff icon 16*16 and 32*32
+
+2015/08/06
+1.add line cut setting form
+2,change IconOpeOffering32.png
+
+2015/08/31
+1.display total, if lineStatusList has no quecall, the queue call count is 0 in display total 
+
+2015/09/07
+1，message form set default group if there is no seleted skill in dropdownlist
+
+2015/09/15
+1, add inboundcall or outboundcall text in agent tab and line tab
+2, dont show skill in total list if set skill not show
+
+2015/09/24
+1，change the version to 6.3.3
+
+2015/09/26
+1 fix a bug , double click agent ,use state rather than status as paramters to message form
+
+2015/09/28
+1，show seatoff reason in messag form
+
+2015/10/07
+1，add pie under agent tab
+
+2015/10/08
+1，メッセージ受信時、Nameが2aの場合、すべて受信、送信も
+2，add quecall continue time in total list
+
+2015/10/09
+1，add on/off for monitor tab
+
+2015/10/22
+1,add  局番グループ表示設定
+
+2015/10/23
+1, change help on color from white to green in agent tab
+
+2015/10/26
+1，fix bug of PlaySkillQuecallSound
+
+2015/10/30
+1. fix 再表示 in agent command
+
+2015/11/04
+1. when draw pie, set start angle from 270
+
+2015/11/06
+1. モニタ上の待ち呼を右クリックし、表示されたメニューに後処理、受付可のオペレータのリストを表示し、選択したオペレータに、選択した待ち呼を分配するといった機能です。
+UM_POPQUE vAgentID='XXXXX',iSessionProfileID=XXXX vAgentIDは分配先のエージェントID 
+
+2015/11/09
+1, add messge pop setting
+
+2015/11/10
+1，fix messge pop form status name for 保留,電話中,転送中
+
+2015/11/11
+1，fix icons of agnet status

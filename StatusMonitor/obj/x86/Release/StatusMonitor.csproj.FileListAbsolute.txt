@@ -1,0 +1,616 @@
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\bin\x86\Release\StatusMonitor.exe.config
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\ResolveAssemblyReference.cache
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.5b_Report\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\ResolveAssemblyReference.cache
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\D\Work\CTe1\src\multiLanguage\64bit\連携版Monitor\Cte1Suite\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.csprojResolveAssemblyReference.cache
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\From Xie-san\code source\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.csprojResolveAssemblyReference.cache
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\SourceControl\StatusMonitor5.7_Report\CDStatusMonitor5.7_report\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\SourceControl\zhu\StatusMonitor5.7_Report\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\zhu\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\zhu\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\zhu\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\zhu\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\zhu\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\zhu\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\zhu\StatusMonitor5.7_Report\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor2\StatusMonitor\obj\x86\Release\StatusMonitor.csprojResolveAssemblyReference.cache
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\SourceControl\zhu\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\SourceControl\Development\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csprojResolveAssemblyReference.cache
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\buffalo\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csprojResolveAssemblyReference.cache
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\SourceControl\backup\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\コナミデジタルエンタテインメント\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csprojResolveAssemblyReference.cache
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\SourceControl\Development\latest Send TO Xie\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillQueCallSetForm.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\東京ガスリックリビング 05038189321\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmLineCutSet.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmLineCutSet.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillQueCallSetForm.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\SourceControl\Development\社内test\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csprojResolveAssemblyReference.cache
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmLineCutSet.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillQueCallSetForm.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\SourceControl\Development\jast\CD_StatusMonitor5.9.1\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.frmLineCutSet.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.SkillQueCallSetForm.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.frmLineCutSet.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.SkillQueCallSetForm.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.OtherSettingForm.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.KyoKuGroupForm.resources
+C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.csprojResolveAssemblyReference.cache
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.KyoKuGroupForm.resources
+C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.OtherSettingForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.WMPLib.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.AgentState.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.ColSelect.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.frmLineCutSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.KyoKuGroupForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.MainForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.MessageForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.OptionName.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.OtherSettingForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.QueCallSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.SkillQueCallSetForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.WMPLib.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.exe
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.pdb
