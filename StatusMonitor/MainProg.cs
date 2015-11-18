@@ -1,4 +1,4 @@
-using System;
+Ôªøusing System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -178,7 +178,7 @@ namespace StatusMonitor
         //    //new AgentStatusEnum(60, "SM0020058", "IconTelMonitor"),
         //    //end deleted
         //    //del,xzg,2008/12/09,S---
-        //    //new AgentStatusEnum(70, "í òbò^âπíÜ", "IconTelRecord"),
+        //    //new AgentStatusEnum(70, "ÈÄöË©±Èå≤Èü≥‰∏≠", "IconTelRecord"),
         //    //del,xzg,2008/12/09,E---
         //};
 
@@ -438,7 +438,7 @@ namespace StatusMonitor
                                 {
                                     vStatus = tempAgent.vReason;
                                     if (string.IsNullOrEmpty(vStatus))
-                                        vStatus = "ó£ê»";
+                                        vStatus = "Èõ¢Â∏≠";
                                 }
                                 else
                                 {
@@ -485,7 +485,7 @@ namespace StatusMonitor
                                 }
                                 if (msgIndex >= 0)
                                 {
-                                    MessageForm msgFrom;//= new MessageForm(); //ÉRÉÅÉìÉg
+                                    MessageForm msgFrom;//= new MessageForm(); //„Ç≥„É°„É≥„Éà
                                     msgFrom = (MessageForm)msgFromList[msgIndex];
                                     //msgFrom.MessageInfo = vMessage;
                                     msgFrom.setMsg(vMessage);
@@ -547,7 +547,7 @@ namespace StatusMonitor
                             axCpfMsg.Open(cpfmsgsvrAddr, cpfmsgsvrPort, server, media, name, appl, phase, logon);
 
                             // Set Title
-                            //this.Text = "NGCP èÛë‘ÉÇÉjÉ^";                    
+                            //this.Text = "NGCP Áä∂ÊÖã„É¢„Éã„Çø";                    
                             this.Text = res.GetString(NOTIFYICON_TEXT);
                             mainNotifyIcon.Text = res.GetString(NOTIFYICON_TEXT);
                             // Stop connectTimer
@@ -696,12 +696,12 @@ namespace StatusMonitor
                             agentStatus.Help = recvParams.GetLongDefault("iHelp", 0) != 0;
 
                             //add,xzg,2013/09/11,S
-                            string strHelp = "í èÌ";
+                            string strHelp = "ÈÄöÂ∏∏";
                             if (agentStatus.Help == true)
                             {
-                                strHelp = "ÉwÉãÉvíÜ";
+                                strHelp = "„Éò„É´„Éó‰∏≠";
                                 if (!string.IsNullOrEmpty(agentStatus.AgentName))
-                                    ShowBalloonTipHelp("ÉwÉãÉv", agentStatus.AgentName);
+                                    ShowBalloonTipHelp("„Éò„É´„Éó", agentStatus.AgentName);
                             }
 
                             //add,xzg,2013/09/11,E
@@ -792,7 +792,7 @@ namespace StatusMonitor
                                 }
                                 if (msgIndex >= 0)
                                 {
-                                    MessageForm msgFrom;//= new MessageForm(); //ÉRÉÅÉìÉg
+                                    MessageForm msgFrom;//= new MessageForm(); //„Ç≥„É°„É≥„Éà
                                     msgFrom = (MessageForm)msgFromList[msgIndex];
                                     msgFrom.setStatus(vStatus);
                                     //added by zhu 2015/09/28
@@ -1240,7 +1240,7 @@ namespace StatusMonitor
                     //ListViewItem iteme = new ListViewItem();
                     //iteme.Text = total.GroupName;
                     //iteme.BackColor = Color.White;
-                    ////Debug.WriteLine("ë“Çøåƒ:" + total.GroupName + total.QueueCount);
+                    ////Debug.WriteLine("ÂæÖ„Å°Âëº:" + total.GroupName + total.QueueCount);
                     ////if(total.QueueCount > alertGroup) iteme.BackColor = Color.Pink;
                     //if (total.QueueCount > 0) iteme.BackColor = Color.Magenta;
                     //iteme.SubItems.Add(total.WaitCount.ToString());
@@ -1583,7 +1583,7 @@ namespace StatusMonitor
 
                     //update,xzg,2011/07/04,S
                     //item.SubItems.Add(res.GetString(status.StatusName));
-                    //ó£ê»óùóRï\é¶
+                    //Èõ¢Â∏≠ÁêÜÁî±Ë°®Á§∫
                     ListViewItem.ListViewSubItem subState = new ListViewItem.ListViewSubItem(item, "");
                     string strState = "";
                     if (!string.IsNullOrEmpty(obj.vReason) && obj.Status == 6)
@@ -1595,8 +1595,8 @@ namespace StatusMonitor
                     item.SubItems.Add(subState);
 
                     string strHelp = "";
-                    if (obj.Help) strHelp = "ÉwÉãÉvíÜ";
-                    else strHelp = "í èÌ";
+                    if (obj.Help) strHelp = "„Éò„É´„Éó‰∏≠";
+                    else strHelp = "ÈÄöÂ∏∏";
 
 
                     GroupInfo groupInfo6 = (GroupInfo)this.comboBox6.SelectedItem;
@@ -1713,7 +1713,7 @@ namespace StatusMonitor
                     subCaller.Name = "Caller";
                     item.SubItems.Add(subCaller);
 
-                    ListViewItem.ListViewSubItem subHelp = new ListViewItem.ListViewSubItem(item, obj.Help ? "Åõ" : "-");
+                    ListViewItem.ListViewSubItem subHelp = new ListViewItem.ListViewSubItem(item, obj.Help ? "‚óã" : "-");
                     subHelp.Name = "Help";
                     item.SubItems.Add(subHelp);
 
@@ -1854,7 +1854,7 @@ namespace StatusMonitor
             item.ImageKey = status.Image;
             item.BackColor = Color.White;
 
-            //íÖêMorî≠êM
+            //ÁùÄ‰ø°orÁô∫‰ø°
             ListViewItem.ListViewSubItem connType = new ListViewItem.ListViewSubItem(item, CTe1Helper.GetConnType(callInfo.Conntype));
             connType.Name = "Conntype";
             item.SubItems.Add(connType);

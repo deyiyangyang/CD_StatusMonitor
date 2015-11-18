@@ -6596,6 +6596,7 @@ namespace StatusMonitor
                     this.agentIconListView.Height = this.AgentIconListHeight;
                     this.agentPie.Width = this.AgentPieWeight;
                     this.agentPie.Height = this.AgentPieHeigh;
+                    this.agentPie.Location = new Point(this.agentPie.Location.X, this.agentIconListView.Location.Y);
                 }
                 else
                 {
