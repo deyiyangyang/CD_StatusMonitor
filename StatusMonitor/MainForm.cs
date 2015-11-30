@@ -238,6 +238,7 @@ namespace StatusMonitor
         public bool ReShowsFlag = true;
         public string KyokuGroup = "";
 
+        //AutoSizeFormClass Asc;
         //added by Zhu 2014/04/21
         List<Form> ListTabPagesForms;
         //end added
@@ -294,6 +295,7 @@ namespace StatusMonitor
 
         public MainForm()
         {
+            //Asc = new AutoSizeFormClass();
             InitializeComponent();
             //DebugPrint("Start");
 
@@ -585,6 +587,8 @@ namespace StatusMonitor
                 //CommandThread = new System.Threading.Thread(DoCommandUpdate);
                 //CommandThread.IsBackground = true;
                 //CommandThread.Start();
+
+                //Asc.controllInitializeSize(this);
             }
             catch (Exception ex)
             {
@@ -4023,6 +4027,7 @@ namespace StatusMonitor
         {
             try
             {
+                
                 Microsoft.Win32.RegistryKey Reg;
                 Reg = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("Software\\NGCPADAPTER");
                 if (Reg == null)
@@ -4031,7 +4036,10 @@ namespace StatusMonitor
                     if (Reg == null) return;
                 }
 
-                string webServer = Reg.GetValue("WebServer", "").ToString();
+                // changed by zhu 2015/11/30 use url from ini file
+                //string webServer = Reg.GetValue("WebServer", "").ToString();
+                string webServer = GetServerUrl();
+                //end changed
                 string tid = Reg.GetValue("TenantID", "").ToString();
                 string tpwd = Reg.GetValue("TenantPass", "").ToString();
                 Reg.Close();
@@ -5825,7 +5833,10 @@ namespace StatusMonitor
                     if (Reg == null) return;
                 }
 
-                string webServer = Reg.GetValue("WebServer", "").ToString();
+                // changed by zhu 2015/11/30 use url from ini file
+                //string webServer = Reg.GetValue("WebServer", "").ToString();
+                string webServer = GetServerUrl();
+                //end changed
                 string tid = Reg.GetValue("TenantID", "").ToString();
                 string tpwd = Reg.GetValue("TenantPass", "").ToString();
                 Reg.Close();
@@ -6608,6 +6619,23 @@ namespace StatusMonitor
             }
         }
 
+        public string GetServerUrl()
+        {
+            if(string.IsNullOrEmpty(SettingFields_WebServer))
+            {
+                Microsoft.Win32.RegistryKey Reg;
+                Reg = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("Software\\NGCPADAPTER");
+                if (Reg == null)
+                {
+                    Reg = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\\NGCPADAPTER");
+                    if (Reg == null) return "";
+                }
+
+                SettingFields_WebServer = Reg.GetValue("WebServer", "").ToString();
+            }
+            return SettingFields_WebServer;
+        }
+
         /// <summary>
         /// 局番グループだけを取る
         /// </summary>
@@ -6623,7 +6651,10 @@ namespace StatusMonitor
                     if (Reg == null) return;
                 }
 
-                string webServer = Reg.GetValue("WebServer", "").ToString();
+                // changed by zhu 2015/11/30 use url from ini file
+                //string webServer = Reg.GetValue("WebServer", "").ToString();
+                string webServer = GetServerUrl();
+                //end changed
                 string tid = Reg.GetValue("TenantID", "").ToString();
                 string tpwd = Reg.GetValue("TenantPass", "").ToString();
                 Reg.Close();
@@ -7136,9 +7167,13 @@ namespace StatusMonitor
         }
 
 
+
         #endregion
 
-
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            //Asc.controlAutoSize(this);
+        }
     }
 
     class DoubleBufferListView : ListView

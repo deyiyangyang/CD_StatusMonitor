@@ -112,6 +112,7 @@ namespace StatusMonitor
         public string SettingFields_MonitorTabShow = "";
         public string SettingFields_MessagePop = "";
         public string SettingFields_AgentGraphShow = "";
+        public string SettingFields_WebServer = "";
         public Dictionary<string, string> Dic_SettingFields_SkillQuecall = new Dictionary<string, string>();
 
 
@@ -123,6 +124,7 @@ namespace StatusMonitor
            // IniProfile.Load(MyTool.GetModuleIniPath());
             SettingFields_MessagePop = IniProfile.GetStringDefault(ConstEntity.MESSAGEPOP, "");
             SettingFields_AgentGraphShow = IniProfile.GetStringDefault(ConstEntity.AGENTGRAPH, "");
+            SettingFields_WebServer = IniProfile.GetStringDefault(ConstEntity.WEBSERVER, "");
             //IniProfile.SelectSection("Alert");
             //SettingFields_AlertTotal = IniProfile.GetLongDefault("nTotal", 100);
             //SettingFields_AlertGroup = IniProfile.GetLongDefault("nGroup", 100);

@@ -445,6 +445,8 @@ namespace StatusMonitor
                                     AgentStatusEnum status = CTe1Helper.GetAgentStatusEnum(iStatus);
                                     vStatus = res.GetString(status.StatusName);
                                 }
+                                //2015/11/18 from xie-san's request
+                                vSkillName = tempAgent.GroupName;
                             }
                             else
                             {
