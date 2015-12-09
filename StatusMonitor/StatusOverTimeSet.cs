@@ -27,31 +27,31 @@ namespace StatusMonitor
             try
             {
                   
-                if (!checkTime(txtTime1)) return;
-                if (!checkTime(txtTime2)) return;
-                if (!checkTime(txtTime3)) return;
-                if (!checkTime(txtTime4)) return;
-                if (!checkTime(txtTime5)) return;
-                if (!checkTime(txtTime6)) return;
-                if (!checkTime(txtTime7)) return;
-                if (!checkTime(txtTime8)) return;
-                if (!checkTime(txtTime9)) return;
-                if (!checkTime(txtTime10)) return;
+                if (!checkTime(txtIdleOverTime1)) return;
+                if (!checkTime(txtIdleOverTime2)) return;
+                if (!checkTime(txtWorkTimeOVerTime1)) return;
+                if (!checkTime(txtWorkTimeOverTime2)) return;
+                if (!checkTime(txtLeaveOverTime1)) return;
+                if (!checkTime(txtLeaveOverTime2)) return;
+                if (!checkTime(txtTalkOverTime1)) return;
+                if (!checkTime(txtTalkOverTime2)) return;
+                if (!checkTime(txtHoldOverTime1)) return;
+                if (!checkTime(txtHoldOverTime2)) return;
                 //added by zhu 2014/09/11
                 if (!checkTime(this.txtQueCallOverTime1)) return;
                 if (!checkTime(this.txtQueCallOverTime2)) return;
                 //end added
 
-                string time1 = this.txtTime1.Text.Trim();
-                string time2 = this.txtTime2.Text.Trim();
-                string time3 = this.txtTime3.Text.Trim();
-                string time4 = this.txtTime4.Text.Trim();
-                string time5 = this.txtTime5.Text.Trim();
-                string time6 = this.txtTime6.Text.Trim();
-                string time7 = this.txtTime7.Text.Trim();
-                string time8 = this.txtTime8.Text.Trim();
-                string time9= this.txtTime9.Text.Trim();
-                string time10 = this.txtTime10.Text.Trim();
+                string time1 = this.txtIdleOverTime1.Text.Trim();
+                string time2 = this.txtIdleOverTime2.Text.Trim();
+                string time3 = this.txtWorkTimeOVerTime1.Text.Trim();
+                string time4 = this.txtWorkTimeOverTime2.Text.Trim();
+                string time5 = this.txtLeaveOverTime1.Text.Trim();
+                string time6 = this.txtLeaveOverTime2.Text.Trim();
+                string time7 = this.txtTalkOverTime1.Text.Trim();
+                string time8 = this.txtTalkOverTime2.Text.Trim();
+                string time9= this.txtHoldOverTime1.Text.Trim();
+                string time10 = this.txtHoldOverTime2.Text.Trim();
                 //added by zhu 2014/09/11
                 string time11 = this.txtQueCallOverTime1.Text.Trim();
                 string time12 = this.txtQueCallOverTime2.Text.Trim();
@@ -91,24 +91,24 @@ namespace StatusMonitor
         {
             try
             {
-                txtTime1.Text = int.Parse(mainF.StatusOverTime1).ToString();
-                txtTime2.Text = int.Parse(mainF.StatusOverTime2).ToString();
+                txtIdleOverTime1.Text = int.Parse(mainF.SettingFields_StatusOverIdelTime1).ToString();
+                txtIdleOverTime2.Text = int.Parse(mainF.SettingFields_StatusOverIdelTime2).ToString();
 
-                txtTime3.Text = int.Parse(mainF.StatusOverTime3).ToString();
-                txtTime4.Text = int.Parse(mainF.StatusOverTime4).ToString();
+                txtWorkTimeOVerTime1.Text = int.Parse(mainF.SettingFields_StatusOverWorkTime1).ToString();
+                txtWorkTimeOverTime2.Text = int.Parse(mainF.SettingFields_StatusOverWorkTime2).ToString();
 
-                txtTime5.Text = int.Parse(mainF.StatusOverTime5).ToString();
-                txtTime6.Text =int.Parse( mainF.StatusOverTime6).ToString();
+                txtLeaveOverTime1.Text = int.Parse(mainF.SettingFields_StatusOverLeaveTime1).ToString();
+                txtLeaveOverTime2.Text =int.Parse( mainF.SettingFields_StatusOverLeaveTime2).ToString();
 
-                txtTime7.Text = int.Parse(mainF.StatusOverTime7).ToString();
-                txtTime8.Text = int.Parse(mainF.StatusOverTime8).ToString();
+                txtTalkOverTime1.Text = int.Parse(mainF.SettingFields_StatusOverTalkTime1).ToString();
+                txtTalkOverTime2.Text = int.Parse(mainF.SettingFields_StatusOverTalkTime2).ToString();
 
-                txtTime9.Text = int.Parse(mainF.StatusOverTime9).ToString();
-                txtTime10.Text = int.Parse(mainF.StatusOverTime10).ToString();
+                txtHoldOverTime1.Text = int.Parse(mainF.SettingFields_StatusOverHoldTime1).ToString();
+                txtHoldOverTime2.Text = int.Parse(mainF.SettingFields_StatusOverHoldTime2).ToString();
 
                 //added by zhu 2014/09/11
-                txtQueCallOverTime1.Text = int.Parse(mainF.QueCallStatusOverTime1).ToString();
-                txtQueCallOverTime2.Text = int.Parse(mainF.QueCallStatusOverTime2).ToString();
+                txtQueCallOverTime1.Text = int.Parse(mainF.SettingFields_StatusOverQuecallTime1).ToString();
+                txtQueCallOverTime2.Text = int.Parse(mainF.SettingFields_StatusOverQuecallTime2).ToString();
                 //end added
             }
             catch 

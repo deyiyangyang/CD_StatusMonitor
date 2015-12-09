@@ -29,40 +29,40 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTime1 = new System.Windows.Forms.TextBox();
+            this.txtIdleOverTime1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTime2 = new System.Windows.Forms.TextBox();
+            this.txtIdleOverTime2 = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtTime3 = new System.Windows.Forms.TextBox();
+            this.txtWorkTimeOVerTime1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtTime4 = new System.Windows.Forms.TextBox();
+            this.txtWorkTimeOverTime2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtTime5 = new System.Windows.Forms.TextBox();
+            this.txtLeaveOverTime1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtTime6 = new System.Windows.Forms.TextBox();
+            this.txtLeaveOverTime2 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtTime7 = new System.Windows.Forms.TextBox();
+            this.txtTalkOverTime1 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtTime8 = new System.Windows.Forms.TextBox();
+            this.txtTalkOverTime2 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.txtTime9 = new System.Windows.Forms.TextBox();
+            this.txtHoldOverTime1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtTime10 = new System.Windows.Forms.TextBox();
+            this.txtHoldOverTime2 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -89,13 +89,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "超過時間(黄色)";
             // 
-            // txtTime1
+            // txtIdleOverTime1
             // 
-            this.txtTime1.Location = new System.Drawing.Point(103, 18);
-            this.txtTime1.MaxLength = 3;
-            this.txtTime1.Name = "txtTime1";
-            this.txtTime1.Size = new System.Drawing.Size(64, 19);
-            this.txtTime1.TabIndex = 1;
+            this.txtIdleOverTime1.Location = new System.Drawing.Point(103, 18);
+            this.txtIdleOverTime1.MaxLength = 4;
+            this.txtIdleOverTime1.Name = "txtIdleOverTime1";
+            this.txtIdleOverTime1.Size = new System.Drawing.Size(64, 19);
+            this.txtIdleOverTime1.TabIndex = 1;
             // 
             // label2
             // 
@@ -106,13 +106,13 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "超過時間(赤色)";
             // 
-            // txtTime2
+            // txtIdleOverTime2
             // 
-            this.txtTime2.Location = new System.Drawing.Point(103, 40);
-            this.txtTime2.MaxLength = 3;
-            this.txtTime2.Name = "txtTime2";
-            this.txtTime2.Size = new System.Drawing.Size(64, 19);
-            this.txtTime2.TabIndex = 1;
+            this.txtIdleOverTime2.Location = new System.Drawing.Point(103, 40);
+            this.txtIdleOverTime2.MaxLength = 4;
+            this.txtIdleOverTime2.Name = "txtIdleOverTime2";
+            this.txtIdleOverTime2.Size = new System.Drawing.Size(64, 19);
+            this.txtIdleOverTime2.TabIndex = 1;
             // 
             // btnOK
             // 
@@ -141,7 +141,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 12);
             this.label4.TabIndex = 0;
-            this.label4.Text = "分";
+            this.label4.Text = "秒";
             // 
             // label5
             // 
@@ -150,14 +150,14 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(17, 12);
             this.label5.TabIndex = 0;
-            this.label5.Text = "分";
+            this.label5.Text = "秒";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtTime1);
+            this.groupBox1.Controls.Add(this.txtIdleOverTime1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtTime2);
+            this.groupBox1.Controls.Add(this.txtIdleOverTime2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -169,10 +169,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtTime3);
+            this.groupBox2.Controls.Add(this.txtWorkTimeOVerTime1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.txtTime4);
+            this.groupBox2.Controls.Add(this.txtWorkTimeOverTime2);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(12, 84);
@@ -182,13 +182,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "後処理";
             // 
-            // txtTime3
+            // txtWorkTimeOVerTime1
             // 
-            this.txtTime3.Location = new System.Drawing.Point(103, 18);
-            this.txtTime3.MaxLength = 3;
-            this.txtTime3.Name = "txtTime3";
-            this.txtTime3.Size = new System.Drawing.Size(64, 19);
-            this.txtTime3.TabIndex = 1;
+            this.txtWorkTimeOVerTime1.Location = new System.Drawing.Point(103, 18);
+            this.txtWorkTimeOVerTime1.MaxLength = 4;
+            this.txtWorkTimeOVerTime1.Name = "txtWorkTimeOVerTime1";
+            this.txtWorkTimeOVerTime1.Size = new System.Drawing.Size(64, 19);
+            this.txtWorkTimeOVerTime1.TabIndex = 1;
             // 
             // label3
             // 
@@ -206,15 +206,15 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(17, 12);
             this.label6.TabIndex = 0;
-            this.label6.Text = "分";
+            this.label6.Text = "秒";
             // 
-            // txtTime4
+            // txtWorkTimeOverTime2
             // 
-            this.txtTime4.Location = new System.Drawing.Point(103, 40);
-            this.txtTime4.MaxLength = 3;
-            this.txtTime4.Name = "txtTime4";
-            this.txtTime4.Size = new System.Drawing.Size(64, 19);
-            this.txtTime4.TabIndex = 1;
+            this.txtWorkTimeOverTime2.Location = new System.Drawing.Point(103, 40);
+            this.txtWorkTimeOverTime2.MaxLength = 4;
+            this.txtWorkTimeOverTime2.Name = "txtWorkTimeOverTime2";
+            this.txtWorkTimeOverTime2.Size = new System.Drawing.Size(64, 19);
+            this.txtWorkTimeOverTime2.TabIndex = 1;
             // 
             // label7
             // 
@@ -223,7 +223,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(17, 12);
             this.label7.TabIndex = 0;
-            this.label7.Text = "分";
+            this.label7.Text = "秒";
             // 
             // label8
             // 
@@ -236,10 +236,10 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txtTime5);
+            this.groupBox3.Controls.Add(this.txtLeaveOverTime1);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.txtTime6);
+            this.groupBox3.Controls.Add(this.txtLeaveOverTime2);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Location = new System.Drawing.Point(12, 156);
@@ -249,13 +249,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "離席";
             // 
-            // txtTime5
+            // txtLeaveOverTime1
             // 
-            this.txtTime5.Location = new System.Drawing.Point(103, 18);
-            this.txtTime5.MaxLength = 3;
-            this.txtTime5.Name = "txtTime5";
-            this.txtTime5.Size = new System.Drawing.Size(64, 19);
-            this.txtTime5.TabIndex = 1;
+            this.txtLeaveOverTime1.Location = new System.Drawing.Point(103, 18);
+            this.txtLeaveOverTime1.MaxLength = 4;
+            this.txtLeaveOverTime1.Name = "txtLeaveOverTime1";
+            this.txtLeaveOverTime1.Size = new System.Drawing.Size(64, 19);
+            this.txtLeaveOverTime1.TabIndex = 1;
             // 
             // label9
             // 
@@ -273,15 +273,15 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(17, 12);
             this.label10.TabIndex = 0;
-            this.label10.Text = "分";
+            this.label10.Text = "秒";
             // 
-            // txtTime6
+            // txtLeaveOverTime2
             // 
-            this.txtTime6.Location = new System.Drawing.Point(103, 40);
-            this.txtTime6.MaxLength = 3;
-            this.txtTime6.Name = "txtTime6";
-            this.txtTime6.Size = new System.Drawing.Size(64, 19);
-            this.txtTime6.TabIndex = 1;
+            this.txtLeaveOverTime2.Location = new System.Drawing.Point(103, 40);
+            this.txtLeaveOverTime2.MaxLength = 4;
+            this.txtLeaveOverTime2.Name = "txtLeaveOverTime2";
+            this.txtLeaveOverTime2.Size = new System.Drawing.Size(64, 19);
+            this.txtLeaveOverTime2.TabIndex = 1;
             // 
             // label11
             // 
@@ -290,7 +290,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(17, 12);
             this.label11.TabIndex = 0;
-            this.label11.Text = "分";
+            this.label11.Text = "秒";
             // 
             // label12
             // 
@@ -303,10 +303,10 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.txtTime7);
+            this.groupBox4.Controls.Add(this.txtTalkOverTime1);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.txtTime8);
+            this.groupBox4.Controls.Add(this.txtTalkOverTime2);
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Location = new System.Drawing.Point(221, 12);
@@ -316,13 +316,13 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "電話中";
             // 
-            // txtTime7
+            // txtTalkOverTime1
             // 
-            this.txtTime7.Location = new System.Drawing.Point(103, 18);
-            this.txtTime7.MaxLength = 3;
-            this.txtTime7.Name = "txtTime7";
-            this.txtTime7.Size = new System.Drawing.Size(64, 19);
-            this.txtTime7.TabIndex = 1;
+            this.txtTalkOverTime1.Location = new System.Drawing.Point(103, 18);
+            this.txtTalkOverTime1.MaxLength = 4;
+            this.txtTalkOverTime1.Name = "txtTalkOverTime1";
+            this.txtTalkOverTime1.Size = new System.Drawing.Size(64, 19);
+            this.txtTalkOverTime1.TabIndex = 1;
             // 
             // label13
             // 
@@ -340,15 +340,15 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(17, 12);
             this.label14.TabIndex = 0;
-            this.label14.Text = "分";
+            this.label14.Text = "秒";
             // 
-            // txtTime8
+            // txtTalkOverTime2
             // 
-            this.txtTime8.Location = new System.Drawing.Point(103, 40);
-            this.txtTime8.MaxLength = 3;
-            this.txtTime8.Name = "txtTime8";
-            this.txtTime8.Size = new System.Drawing.Size(64, 19);
-            this.txtTime8.TabIndex = 1;
+            this.txtTalkOverTime2.Location = new System.Drawing.Point(103, 40);
+            this.txtTalkOverTime2.MaxLength = 4;
+            this.txtTalkOverTime2.Name = "txtTalkOverTime2";
+            this.txtTalkOverTime2.Size = new System.Drawing.Size(64, 19);
+            this.txtTalkOverTime2.TabIndex = 1;
             // 
             // label15
             // 
@@ -357,7 +357,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(17, 12);
             this.label15.TabIndex = 0;
-            this.label15.Text = "分";
+            this.label15.Text = "秒";
             // 
             // label16
             // 
@@ -370,10 +370,10 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.txtTime9);
+            this.groupBox5.Controls.Add(this.txtHoldOverTime1);
             this.groupBox5.Controls.Add(this.label17);
             this.groupBox5.Controls.Add(this.label18);
-            this.groupBox5.Controls.Add(this.txtTime10);
+            this.groupBox5.Controls.Add(this.txtHoldOverTime2);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Location = new System.Drawing.Point(221, 84);
@@ -383,13 +383,13 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "保留中";
             // 
-            // txtTime9
+            // txtHoldOverTime1
             // 
-            this.txtTime9.Location = new System.Drawing.Point(103, 18);
-            this.txtTime9.MaxLength = 3;
-            this.txtTime9.Name = "txtTime9";
-            this.txtTime9.Size = new System.Drawing.Size(64, 19);
-            this.txtTime9.TabIndex = 1;
+            this.txtHoldOverTime1.Location = new System.Drawing.Point(103, 18);
+            this.txtHoldOverTime1.MaxLength = 4;
+            this.txtHoldOverTime1.Name = "txtHoldOverTime1";
+            this.txtHoldOverTime1.Size = new System.Drawing.Size(64, 19);
+            this.txtHoldOverTime1.TabIndex = 1;
             // 
             // label17
             // 
@@ -407,15 +407,15 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(17, 12);
             this.label18.TabIndex = 0;
-            this.label18.Text = "分";
+            this.label18.Text = "秒";
             // 
-            // txtTime10
+            // txtHoldOverTime2
             // 
-            this.txtTime10.Location = new System.Drawing.Point(103, 40);
-            this.txtTime10.MaxLength = 3;
-            this.txtTime10.Name = "txtTime10";
-            this.txtTime10.Size = new System.Drawing.Size(64, 19);
-            this.txtTime10.TabIndex = 1;
+            this.txtHoldOverTime2.Location = new System.Drawing.Point(103, 40);
+            this.txtHoldOverTime2.MaxLength = 4;
+            this.txtHoldOverTime2.Name = "txtHoldOverTime2";
+            this.txtHoldOverTime2.Size = new System.Drawing.Size(64, 19);
+            this.txtHoldOverTime2.TabIndex = 1;
             // 
             // label19
             // 
@@ -424,7 +424,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(17, 12);
             this.label19.TabIndex = 0;
-            this.label19.Text = "分";
+            this.label19.Text = "秒";
             // 
             // label20
             // 
@@ -453,7 +453,7 @@
             // txtQueCallOverTime1
             // 
             this.txtQueCallOverTime1.Location = new System.Drawing.Point(103, 18);
-            this.txtQueCallOverTime1.MaxLength = 3;
+            this.txtQueCallOverTime1.MaxLength = 4;
             this.txtQueCallOverTime1.Name = "txtQueCallOverTime1";
             this.txtQueCallOverTime1.Size = new System.Drawing.Size(64, 19);
             this.txtQueCallOverTime1.TabIndex = 1;
@@ -474,12 +474,12 @@
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(17, 12);
             this.label22.TabIndex = 0;
-            this.label22.Text = "分";
+            this.label22.Text = "秒";
             // 
             // txtQueCallOverTime2
             // 
             this.txtQueCallOverTime2.Location = new System.Drawing.Point(103, 40);
-            this.txtQueCallOverTime2.MaxLength = 3;
+            this.txtQueCallOverTime2.MaxLength = 4;
             this.txtQueCallOverTime2.Name = "txtQueCallOverTime2";
             this.txtQueCallOverTime2.Size = new System.Drawing.Size(64, 19);
             this.txtQueCallOverTime2.TabIndex = 1;
@@ -491,7 +491,7 @@
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(17, 12);
             this.label23.TabIndex = 0;
-            this.label23.Text = "分";
+            this.label23.Text = "秒";
             // 
             // label24
             // 
@@ -541,40 +541,40 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTime1;
+        private System.Windows.Forms.TextBox txtIdleOverTime1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTime2;
+        private System.Windows.Forms.TextBox txtIdleOverTime2;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtTime3;
+        private System.Windows.Forms.TextBox txtWorkTimeOVerTime1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTime4;
+        private System.Windows.Forms.TextBox txtWorkTimeOverTime2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtTime5;
+        private System.Windows.Forms.TextBox txtLeaveOverTime1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtTime6;
+        private System.Windows.Forms.TextBox txtLeaveOverTime2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txtTime7;
+        private System.Windows.Forms.TextBox txtTalkOverTime1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtTime8;
+        private System.Windows.Forms.TextBox txtTalkOverTime2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox txtTime9;
+        private System.Windows.Forms.TextBox txtHoldOverTime1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtTime10;
+        private System.Windows.Forms.TextBox txtHoldOverTime2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox6;

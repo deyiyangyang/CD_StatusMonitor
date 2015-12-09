@@ -43,6 +43,8 @@ namespace StatusMonitor.TabPage
             lineStatusListView.Columns.Add("StatusTime", _resourceManager.GetString("SM0020031"), 80, HorizontalAlignment.Center, -1);
             lineStatusListView.Columns.Add("StatusContinueTime", _resourceManager.GetString("SM0020061"), 80, HorizontalAlignment.Center, -1);
             //lineStatusListView.Columns.Add("Service", _resourceManager.GetString("SM0020032"), 100, HorizontalAlignment.Center, -1);
+
+            lineStatusListViewOrder = new bool[lineStatusListView.Columns.Count];
             lineStatusListView.ListViewItemSorter = new StatusListViewItemComparer(0, true);
             FormHelper.SetDoubleBuffered(lineStatusListView, true);
         }
@@ -619,16 +621,16 @@ namespace StatusMonitor.TabPage
             try
             {
                 //added by zhu 2014/09/11
-                if (_MainForm.QueCallStatusOverTime1 != "000")
+                if (_MainForm.SettingFields_StatusOverQuecallTime1 != _MainForm.DefaultOverTime)
                 {
-                    if (strTime.CompareTo(ConvertTimeHHMMSS(_MainForm.QueCallStatusOverTime1)) >= 0)
+                    if (strTime.CompareTo(UtilityHelper.ConvertTimeHHMMSSFromSecond(int.Parse(_MainForm.SettingFields_StatusOverQuecallTime1))) >= 0)
                     {
                         item.BackColor = Color.LightYellow;
                     }
                 }
-                if (_MainForm.QueCallStatusOverTime2 != "000")
+                if (_MainForm.SettingFields_StatusOverQuecallTime2 != _MainForm.DefaultOverTime)
                 {
-                    if (strTime.CompareTo(ConvertTimeHHMMSS(_MainForm.QueCallStatusOverTime2)) >= 0)
+                    if (strTime.CompareTo(UtilityHelper.ConvertTimeHHMMSSFromSecond(int.Parse(_MainForm.SettingFields_StatusOverQuecallTime2))) >= 0)
                     {
                         item.BackColor = Color.LightPink;
                     }

@@ -144,21 +144,21 @@ namespace StatusMonitor
         //update,xzg,2011/09/16,E
 
         //add,xzg,2012/08/01,S
-        public string StatusOverTime1 = "";
-        public string StatusOverTime2 = "";
-        public string StatusOverTime3 = "";
-        public string StatusOverTime4 = "";
-        public string StatusOverTime5 = "";
-        public string StatusOverTime6 = "";
-        public string StatusOverTime7 = "";
-        public string StatusOverTime8 = "";
-        public string StatusOverTime9 = "";
-        public string StatusOverTime10 = "";
+        //public string StatusOverTime1 = "";
+        //public string StatusOverTime2 = "";
+        //public string StatusOverTime3 = "";
+        //public string StatusOverTime4 = "";
+        //public string StatusOverTime5 = "";
+        //public string StatusOverTime6 = "";
+        //public string StatusOverTime7 = "";
+        //public string StatusOverTime8 = "";
+        //public string StatusOverTime9 = "";
+        //public string SettingFields_StatusOverHoldTime2 = "";
         //added by zhu 2014/09/11
-        public string QueCallStatusOverTime1 = "";
-        public string QueCallStatusOverTime2 = "";
+        //public string QueCallStatusOverTime1 = "";
+        //public string QueCallStatusOverTime2 = "";
         //end added
-
+        public string DefaultOverTime = "0000";
         public string LineID = "";
         private string vCurrentLineStatusName = "";
         private string WaitTimes = "";
@@ -237,7 +237,9 @@ namespace StatusMonitor
         public int QueueCountAll = 0;
         public bool ReShowsFlag = true;
         public string KyokuGroup = "";
-
+        private bool[] AgentStatusListViewOrder = new bool[15]; //8->14 14->15 modified by zhu 2014/05/08
+        private bool[] TotalListViewOrder = new bool[5];
+        private bool[] lineStatusListViewOrder = new bool[8]; //xzg,2012/02/09,7->8
         //AutoSizeFormClass Asc;
         //added by Zhu 2014/04/21
         List<Form> ListTabPagesForms;
@@ -407,7 +409,7 @@ namespace StatusMonitor
                 //add,xzg,2013/08/27,S
                 setDoubleBuffered(agentStatusListView, true);
                 //add,xzg,2013/08/27,E
-
+                AgentStatusListViewOrder = new bool[agentStatusListView.Columns.Count];
                 // Init lineStatusListView
                 lineStatusListView.View = View.Details;
                 lineStatusListView.TileSize = new Size(130, 110);
@@ -427,6 +429,9 @@ namespace StatusMonitor
                 lineStatusListView.Columns.Add("StatusContinueTime", res.GetString("SM0020061"), 80, HorizontalAlignment.Center, -1);
                 //add,xzg,2012/02/09,E
                 lineStatusListView.Columns.Add("Service", res.GetString("SM0020032"), 100, HorizontalAlignment.Center, -1);
+
+
+                lineStatusListViewOrder = new bool[lineStatusListView.Columns.Count];
                 // Init ItemSorter
                 lineStatusListView.ListViewItemSorter = new StatusListViewItemComparer(0, true);
                 //add,xzg,2013/08/27,S
@@ -446,6 +451,7 @@ namespace StatusMonitor
                 //add,xzg,2013/08/27,S
                 setDoubleBuffered(totalListView, true);
                 //add,xzg,2013/08/27,E
+                TotalListViewOrder = new bool[totalListView.Columns.Count];
                 // Init ItemSorter
                 totalListView.ListViewItemSorter = new TotalListViewItemComparer(0, true);
 
@@ -1138,38 +1144,37 @@ namespace StatusMonitor
 
 
                 //add,xzg,2012/08/01,S
-                StatusOverTime1 = "000" + IniProfile.GetStringDefault("StatusOverTime1", "000");
-                StatusOverTime2 = "000" + IniProfile.GetStringDefault("StatusOverTime2", "000");
-
-                StatusOverTime3 = "000" + IniProfile.GetStringDefault("StatusOverTime3", "000");
-                StatusOverTime4 = "000" + IniProfile.GetStringDefault("StatusOverTime4", "000");
-                StatusOverTime5 = "000" + IniProfile.GetStringDefault("StatusOverTime5", "000");
-                StatusOverTime6 = "000" + IniProfile.GetStringDefault("StatusOverTime6", "000");
-                StatusOverTime7 = "000" + IniProfile.GetStringDefault("StatusOverTime7", "000");
-                StatusOverTime8 = "000" + IniProfile.GetStringDefault("StatusOverTime8", "000");
-                StatusOverTime9 = "000" + IniProfile.GetStringDefault("StatusOverTime9", "000");
-                StatusOverTime10 = "000" + IniProfile.GetStringDefault("StatusOverTime10", "000");
+                SettingFields_StatusOverIdelTime1  = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMEIDLE1, DefaultOverTime);
+                SettingFields_StatusOverIdelTime2 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMEIDLE2, DefaultOverTime);
+                SettingFields_StatusOverWorkTime1 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMEWORKTIME1, DefaultOverTime);
+                SettingFields_StatusOverWorkTime2 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMEWORKTIME2, DefaultOverTime);
+                SettingFields_StatusOverLeaveTime1 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMELEAVE1, DefaultOverTime);
+                SettingFields_StatusOverLeaveTime2 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMELEAVE2, DefaultOverTime);
+                SettingFields_StatusOverTalkTime1 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMETALK1, DefaultOverTime);
+                SettingFields_StatusOverTalkTime2 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMETALK2, DefaultOverTime);
+                SettingFields_StatusOverHoldTime1 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMEHOLD1, DefaultOverTime);
+                SettingFields_StatusOverHoldTime2 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMEHOLD2, DefaultOverTime);
                 //added by zhu 2014/09/11
-                QueCallStatusOverTime1 = "000" + IniProfile.GetStringDefault("QueCallStatusOverTime1", "000");
-                QueCallStatusOverTime2 = "000" + IniProfile.GetStringDefault("QueCallStatusOverTime2", "000");
+                SettingFields_StatusOverQuecallTime1 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMEQUECALL1, DefaultOverTime);
+                SettingFields_StatusOverQuecallTime2 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMEQUECALL2, DefaultOverTime);
                 //end added
 
-                StatusOverTime1 = StatusOverTime1.Substring(StatusOverTime1.Length - 3);
-                StatusOverTime2 = StatusOverTime2.Substring(StatusOverTime2.Length - 3);
+                SettingFields_StatusOverIdelTime1 = SettingFields_StatusOverIdelTime1.Substring(SettingFields_StatusOverIdelTime1.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverIdelTime2 = SettingFields_StatusOverIdelTime2.Substring(SettingFields_StatusOverIdelTime2.Length- DefaultOverTime.Length);
 
-                StatusOverTime3 = StatusOverTime3.Substring(StatusOverTime3.Length - 3);
-                StatusOverTime4 = StatusOverTime4.Substring(StatusOverTime4.Length - 3);
-                StatusOverTime5 = StatusOverTime5.Substring(StatusOverTime5.Length - 3);
-                StatusOverTime6 = StatusOverTime6.Substring(StatusOverTime6.Length - 3);
-                StatusOverTime7 = StatusOverTime7.Substring(StatusOverTime7.Length - 3);
-                StatusOverTime8 = StatusOverTime8.Substring(StatusOverTime8.Length - 3);
-                StatusOverTime9 = StatusOverTime9.Substring(StatusOverTime9.Length - 3);
-                StatusOverTime10 = StatusOverTime10.Substring(StatusOverTime10.Length - 3);
+                SettingFields_StatusOverWorkTime1 = SettingFields_StatusOverWorkTime1.Substring(SettingFields_StatusOverWorkTime1.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverWorkTime2 = SettingFields_StatusOverWorkTime2.Substring(SettingFields_StatusOverWorkTime2.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverLeaveTime1 = SettingFields_StatusOverLeaveTime1.Substring(SettingFields_StatusOverLeaveTime1.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverLeaveTime2 = SettingFields_StatusOverLeaveTime2.Substring(SettingFields_StatusOverLeaveTime2.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverTalkTime1 = SettingFields_StatusOverTalkTime1.Substring(SettingFields_StatusOverTalkTime1.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverTalkTime2 = SettingFields_StatusOverTalkTime2.Substring(SettingFields_StatusOverTalkTime2.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverHoldTime1 = SettingFields_StatusOverHoldTime1.Substring(SettingFields_StatusOverHoldTime1.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverHoldTime2 = SettingFields_StatusOverHoldTime2.Substring(SettingFields_StatusOverHoldTime2.Length- DefaultOverTime.Length);
                 //add,xzg,2012/08/01,E
 
                 //added by zhu 2014/09/11
-                QueCallStatusOverTime1 = QueCallStatusOverTime1.Substring(QueCallStatusOverTime1.Length - 3);
-                QueCallStatusOverTime2 = QueCallStatusOverTime2.Substring(QueCallStatusOverTime2.Length - 3);
+                SettingFields_StatusOverQuecallTime1 = SettingFields_StatusOverQuecallTime1.Substring(SettingFields_StatusOverQuecallTime1.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverQuecallTime2 = SettingFields_StatusOverQuecallTime2.Substring(SettingFields_StatusOverQuecallTime2.Length- DefaultOverTime.Length);
                 //end added
 
                 QuickAnswerMinutes = IniProfile.GetStringDefault("QuickAnswerMinutes", "0");
@@ -1691,8 +1696,6 @@ namespace StatusMonitor
             catch (Exception ex)
             {
                 writeLog("agentStatusListView_DoubleClick:" + ex.Message);
-
-
             }
 
         }
@@ -1741,16 +1744,16 @@ namespace StatusMonitor
             }
         }
 
-        private bool[] agentStatusListViewOrder = new bool[15]; //8->14 14->15 modified by zhu 2014/05/08
+        
         private void agentStatusListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
 
-            bool order = !agentStatusListViewOrder[e.Column];
-            agentStatusListViewOrder[e.Column] = order;
+            bool order = !AgentStatusListViewOrder[e.Column];
+            AgentStatusListViewOrder[e.Column] = order;
             ((ListView)sender).ListViewItemSorter = new StatusListViewItemComparer(e.Column, order);
         }
 
-        private bool[] lineStatusListViewOrder = new bool[8]; //xzg,2012/02/09,7->8
+        
         private void lineStatusListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             bool order = !lineStatusListViewOrder[e.Column];
@@ -1763,7 +1766,7 @@ namespace StatusMonitor
             private int Column = 0;
             private bool Ascending = true;
             //private static bool[] ColumnItemInt = { false, true, true, true, true };
-            private static bool[] ColumnItemInt = { false, true, true, true, true, true, true, true, true, true, true };
+            private static bool[] ColumnItemInt = { false, true, true, true, true, false, true, true, true, true, true };
 
             public TotalListViewItemComparer(int column, bool ascending)
             {
@@ -1800,18 +1803,18 @@ namespace StatusMonitor
         }
 
 
-        private bool[] totalListViewOrder = new bool[5];
+        
         private void totalListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             try
             {
-                bool order = !totalListViewOrder[e.Column];
-                totalListViewOrder[e.Column] = order;
+                bool order = !TotalListViewOrder[e.Column];
+                TotalListViewOrder[e.Column] = order;
                 ((ListView)sender).ListViewItemSorter = new TotalListViewItemComparer(e.Column, order);
             }
-            catch
+            catch(Exception ex)
             {
-
+                writeLog("totalListView_ColumnClick system error:" + ex.Message);
             }
         }
 
@@ -2020,82 +2023,7 @@ namespace StatusMonitor
                     {
                         string status = item.SubItems["Status"].Text;//10->15,modified by zhu 2014/04/17 15->16
                         agentStatusListView.Items[i].BackColor = Color.Empty;
-                        if (status == "1")
-                        {
-                            if (StatusOverTime1 != "000")
-                            {
-
-                                //if (strTime.CompareTo("00:" + StatusOverTime1 + ":00") >= 0)// agentStatusListView.Items[i].BackColor = Color.Yellow;
-                                if (strTime.CompareTo(ConvertTimeHHMMSS(StatusOverTime1)) >= 0)// agentStatusListView.Items[i].BackColor = Color.Yellow;
-                                    agentStatusListView.Items[i].BackColor = Color.LightYellow;
-                            }
-                            if (StatusOverTime2 != "000")
-                            {
-                                //if (strTime.CompareTo("00:" + StatusOverTime2 + ":00") >= 0)// agentStatusListView.Items[i].BackColor = Color.Red;
-                                if (strTime.CompareTo(ConvertTimeHHMMSS(StatusOverTime2)) >= 0)// agentStatusListView.Items[i].BackColor = Color.Red;
-                                    agentStatusListView.Items[i].BackColor = Color.LightPink;
-                            }
-                        }
-                        else if (status == "5")
-                        {
-                            if (StatusOverTime3 != "000")
-                            {
-                                //if (strTime.CompareTo("000:" + StatusOverTime3 + ":00") >= 0) //agentStatusListView.Items[i].BackColor = Color.Yellow;
-                                if (strTime.CompareTo(ConvertTimeHHMMSS(StatusOverTime3)) >= 0) //agentStatusListView.Items[i].BackColor = Color.Yellow;
-                                    agentStatusListView.Items[i].BackColor = Color.LightYellow;
-                            }
-                            if (StatusOverTime4 != "000")
-                            {
-                                //if (strTime.CompareTo("00:" + StatusOverTime4 + ":00") >= 0) //agentStatusListView.Items[i].BackColor = Color.Red;
-                                if (strTime.CompareTo(ConvertTimeHHMMSS(StatusOverTime4)) >= 0) //agentStatusListView.Items[i].BackColor = Color.Red;
-                                    agentStatusListView.Items[i].BackColor = Color.LightPink;
-                            }
-                        }
-                        else if (status == "6")
-                        {
-                            if (StatusOverTime5 != "000")
-                            {
-                                //if (strTime.CompareTo("00:" + StatusOverTime5 + ":00") >= 0) //agentStatusListView.Items[i].BackColor = Color.Yellow;
-                                if (strTime.CompareTo(ConvertTimeHHMMSS(StatusOverTime5)) >= 0) //agentStatusListView.Items[i].BackColor = Color.Yellow;
-                                    agentStatusListView.Items[i].BackColor = Color.LightYellow;
-                            }
-                            if (StatusOverTime6 != "000")
-                            {
-                                //if (strTime.CompareTo("00:" + StatusOverTime6 + ":00") >= 0) //agentStatusListView.Items[i].BackColor = Color.Red;
-                                if (strTime.CompareTo(ConvertTimeHHMMSS(StatusOverTime6)) >= 0) //agentStatusListView.Items[i].BackColor = Color.Red;
-                                    agentStatusListView.Items[i].BackColor = Color.LightPink;
-                            }
-                        }
-                        else if (status == "10")
-                        {
-                            if (StatusOverTime7 != "000")
-                            {
-                                //if (strTime.CompareTo("00:" + StatusOverTime7 + ":00") >= 0) //agentStatusListView.Items[i].BackColor = Color.Yellow;
-                                if (strTime.CompareTo(ConvertTimeHHMMSS(StatusOverTime7)) >= 0) //agentStatusListView.Items[i].BackColor = Color.Yellow;
-                                    agentStatusListView.Items[i].BackColor = Color.LightYellow;
-                            }
-                            if (StatusOverTime8 != "000")
-                            {
-                                //if (strTime.CompareTo("00:" + StatusOverTime8 + ":00") >= 0) //agentStatusListView.Items[i].BackColor = Color.Red;
-                                if (strTime.CompareTo(ConvertTimeHHMMSS(StatusOverTime8)) >= 0) //agentStatusListView.Items[i].BackColor = Color.Red;
-                                    agentStatusListView.Items[i].BackColor = Color.LightPink;
-                            }
-                        }
-                        else if (status == "30") //hold
-                        {
-                            if (StatusOverTime9 != "000")
-                            {
-                                //if (strTime.CompareTo("00:" + StatusOverTime9 + ":00") >= 0) //agentStatusListView.Items[i].BackColor = Color.Yellow;
-                                if (strTime.CompareTo(ConvertTimeHHMMSS(StatusOverTime9)) >= 0) //agentStatusListView.Items[i].BackColor = Color.Yellow;
-                                    agentStatusListView.Items[i].BackColor = Color.LightYellow;
-                            }
-                            if (StatusOverTime10 != "000")
-                            {
-                                //if (strTime.CompareTo("00:" + StatusOverTime10 + ":00") >= 0) //agentStatusListView.Items[i].BackColor = Color.Red;
-                                if (strTime.CompareTo(ConvertTimeHHMMSS(StatusOverTime10)) >= 0) //agentStatusListView.Items[i].BackColor = Color.Red;
-                                    agentStatusListView.Items[i].BackColor = Color.LightPink;
-                            }
-                        }
+                        agentStatusListView.Items[i].BackColor = GetAgentListItemBackColor(strTime, int.Parse(status));
                     }
 
 
@@ -2771,51 +2699,51 @@ namespace StatusMonitor
         {
             try
             {
-                StatusOverTime1 = "000" + time1;
-                StatusOverTime2 = "000" + time2;
-                StatusOverTime3 = "000" + time3;
-                StatusOverTime4 = "000" + time4;
-                StatusOverTime5 = "000" + time5;
-                StatusOverTime6 = "000" + time6;
-                StatusOverTime7 = "000" + time7;
-                StatusOverTime8 = "000" + time8;
-                StatusOverTime9 = "000" + time9;
-                StatusOverTime10 = "000" + time10;
+                SettingFields_StatusOverIdelTime1 = DefaultOverTime + time1;
+                SettingFields_StatusOverIdelTime2 = DefaultOverTime + time2;
+                SettingFields_StatusOverWorkTime1 = DefaultOverTime + time3;
+                SettingFields_StatusOverWorkTime2 = DefaultOverTime + time4;
+                SettingFields_StatusOverLeaveTime1 = DefaultOverTime + time5;
+                SettingFields_StatusOverLeaveTime2 = DefaultOverTime + time6;
+                SettingFields_StatusOverTalkTime1 = DefaultOverTime + time7;
+                SettingFields_StatusOverTalkTime2 = DefaultOverTime + time8;
+                SettingFields_StatusOverHoldTime1 = DefaultOverTime + time9;
+                SettingFields_StatusOverHoldTime2 = DefaultOverTime + time10;
                 //added by zhu 2014/09/11
-                QueCallStatusOverTime1 = "000" + time11;
-                QueCallStatusOverTime2 = "000" + time12;
+                SettingFields_StatusOverQuecallTime1 = DefaultOverTime + time11;
+                SettingFields_StatusOverQuecallTime2 = DefaultOverTime + time12;
                 //end added
 
-                StatusOverTime1 = StatusOverTime1.Substring(StatusOverTime1.Length - 3);
-                StatusOverTime2 = StatusOverTime2.Substring(StatusOverTime2.Length - 3);
-                StatusOverTime3 = StatusOverTime3.Substring(StatusOverTime3.Length - 3);
-                StatusOverTime4 = StatusOverTime4.Substring(StatusOverTime4.Length - 3);
-                StatusOverTime5 = StatusOverTime5.Substring(StatusOverTime5.Length - 3);
-                StatusOverTime6 = StatusOverTime6.Substring(StatusOverTime6.Length - 3);
-                StatusOverTime7 = StatusOverTime7.Substring(StatusOverTime7.Length - 3);
-                StatusOverTime8 = StatusOverTime8.Substring(StatusOverTime8.Length - 3);
-                StatusOverTime9 = StatusOverTime9.Substring(StatusOverTime9.Length - 3);
-                StatusOverTime10 = StatusOverTime10.Substring(StatusOverTime10.Length - 3);
+                SettingFields_StatusOverIdelTime1 = SettingFields_StatusOverIdelTime1.Substring(SettingFields_StatusOverIdelTime1.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverIdelTime2 = SettingFields_StatusOverIdelTime2.Substring(SettingFields_StatusOverIdelTime2.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverWorkTime1 = SettingFields_StatusOverWorkTime1.Substring(SettingFields_StatusOverWorkTime1.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverWorkTime2 = SettingFields_StatusOverWorkTime2.Substring(SettingFields_StatusOverWorkTime2.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverLeaveTime1 = SettingFields_StatusOverLeaveTime1.Substring(SettingFields_StatusOverLeaveTime1.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverLeaveTime2 = SettingFields_StatusOverLeaveTime2.Substring(SettingFields_StatusOverLeaveTime2.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverTalkTime1 = SettingFields_StatusOverTalkTime1.Substring(SettingFields_StatusOverTalkTime1.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverTalkTime2 = SettingFields_StatusOverTalkTime2.Substring(SettingFields_StatusOverTalkTime2.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverHoldTime1 = SettingFields_StatusOverHoldTime1.Substring(SettingFields_StatusOverHoldTime1.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverHoldTime2 = SettingFields_StatusOverHoldTime2.Substring(SettingFields_StatusOverHoldTime2.Length- DefaultOverTime.Length);
 
                 //added by zhu 2014/09/11
-                QueCallStatusOverTime1 = QueCallStatusOverTime1.Substring(QueCallStatusOverTime1.Length - 3);
-                QueCallStatusOverTime2 = QueCallStatusOverTime2.Substring(QueCallStatusOverTime2.Length - 3);
+                SettingFields_StatusOverQuecallTime1 = SettingFields_StatusOverQuecallTime1.Substring(SettingFields_StatusOverQuecallTime1.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverQuecallTime2 = SettingFields_StatusOverQuecallTime2.Substring(SettingFields_StatusOverQuecallTime2.Length- DefaultOverTime.Length);
                 //end added
 
                 IniProfile.SelectSection("SVSet");
-                IniProfile.SetString("StatusOverTime1", time1);
-                IniProfile.SetString("StatusOverTime2", time2);
-                IniProfile.SetString("StatusOverTime3", time3);
-                IniProfile.SetString("StatusOverTime4", time4);
-                IniProfile.SetString("StatusOverTime5", time5);
-                IniProfile.SetString("StatusOverTime6", time6);
-                IniProfile.SetString("StatusOverTime7", time7);
-                IniProfile.SetString("StatusOverTime8", time8);
-                IniProfile.SetString("StatusOverTime9", time9);
-                IniProfile.SetString("StatusOverTime10", time10);
+                IniProfile.SetString(ConstEntity.STATUSTIMEIDLE1, time1);
+                IniProfile.SetString(ConstEntity.STATUSTIMEIDLE2, time2);
+                IniProfile.SetString(ConstEntity.STATUSTIMEWORKTIME1, time3);
+                IniProfile.SetString(ConstEntity.STATUSTIMEWORKTIME2, time4);
+                IniProfile.SetString(ConstEntity.STATUSTIMELEAVE1, time5);
+                IniProfile.SetString(ConstEntity.STATUSTIMELEAVE2, time6);
+                IniProfile.SetString(ConstEntity.STATUSTIMETALK1, time7);
+                IniProfile.SetString(ConstEntity.STATUSTIMETALK2, time8);
+                IniProfile.SetString(ConstEntity.STATUSTIMEHOLD1, time9);
+                IniProfile.SetString(ConstEntity.STATUSTIMEHOLD2, time10);
                 //added by zhu 2014/09/11
-                IniProfile.SetString("QueCallStatusOverTime1", time11);
-                IniProfile.SetString("QueCallStatusOverTime2", time12);
+                IniProfile.SetString(ConstEntity.STATUSTIMEQUECALL1, time11);
+                IniProfile.SetString(ConstEntity.STATUSTIMEQUECALL2, time12);
                 //end added
 
                 IniProfile.Save(MyTool.GetModuleIniPath());
@@ -7017,6 +6945,119 @@ namespace StatusMonitor
             if (agentPie.Visible)
             {
                 agentPie.Image = CurrentAgentPie;
+            }
+        }
+
+        public Color GetAgentListItemBackColor(string strContinueTime, int iStatus)
+        {
+            Color returnValue = Color.Empty;
+            try
+            {
+                //idle
+                if (iStatus == 1)
+                {
+                    if (SettingFields_StatusOverIdelTime1 != DefaultOverTime)
+                    {
+                        if (strContinueTime.CompareTo(UtilityHelper.ConvertTimeHHMMSSFromSecond(int.Parse(SettingFields_StatusOverIdelTime1))) >= 0)
+                        {
+                            returnValue = Color.LightYellow;
+                        }
+
+                    }
+                    if (SettingFields_StatusOverIdelTime2 != DefaultOverTime)
+                    {
+                        if (strContinueTime.CompareTo(UtilityHelper.ConvertTimeHHMMSSFromSecond(int.Parse(SettingFields_StatusOverIdelTime2))) >= 0)
+                        {
+                            returnValue = Color.LightPink;
+                        }
+                    }
+                    return returnValue;
+                }
+
+                //worktime
+                if (iStatus == 5)
+                {
+                    if (SettingFields_StatusOverWorkTime1 != DefaultOverTime)
+                    {
+                        if (strContinueTime.CompareTo(UtilityHelper.ConvertTimeHHMMSSFromSecond(int.Parse(SettingFields_StatusOverWorkTime1))) >= 0)
+                        {
+                            returnValue = Color.LightYellow;
+                        }
+                    }
+                    if (SettingFields_StatusOverWorkTime2 != DefaultOverTime)
+                    {
+                        if (strContinueTime.CompareTo(UtilityHelper.ConvertTimeHHMMSSFromSecond(int.Parse(SettingFields_StatusOverWorkTime2))) >= 0)
+                        {
+                            returnValue = Color.LightPink;
+                        }
+                    }
+                    return returnValue;
+                }
+
+                //leave
+                if (iStatus == 6)
+                {
+                    if (SettingFields_StatusOverLeaveTime1 != DefaultOverTime)
+                    {
+                        if (strContinueTime.CompareTo(UtilityHelper.ConvertTimeHHMMSSFromSecond(int.Parse(SettingFields_StatusOverLeaveTime1))) >= 0)
+                        {
+                            returnValue = Color.LightYellow; ;
+                        }
+                    }
+                    if (SettingFields_StatusOverLeaveTime2 != DefaultOverTime)
+                    {
+                        if (strContinueTime.CompareTo(UtilityHelper.ConvertTimeHHMMSSFromSecond(int.Parse(SettingFields_StatusOverLeaveTime2))) >= 0)
+                        {
+                            returnValue = Color.LightPink;
+                        }
+                    }
+                    return returnValue;
+                }
+
+                //talk
+                if (iStatus == 10)
+                {
+                    if (SettingFields_StatusOverTalkTime1 != DefaultOverTime)
+                    {
+                        if (strContinueTime.CompareTo(UtilityHelper.ConvertTimeHHMMSSFromSecond(int.Parse(SettingFields_StatusOverTalkTime1))) >= 0)
+                        {
+                            returnValue = Color.LightYellow ;
+                        }
+                    }
+                    if (SettingFields_StatusOverTalkTime2 != DefaultOverTime)
+                    {
+                        if (strContinueTime.CompareTo(UtilityHelper.ConvertTimeHHMMSSFromSecond(int.Parse(SettingFields_StatusOverTalkTime2))) >= 0)
+                        {
+                            returnValue = Color.LightPink;
+                        }
+                    }
+                    return returnValue;
+                }
+
+                //hold
+                if (iStatus == 30)
+                {
+                    if (SettingFields_StatusOverHoldTime1 != DefaultOverTime)
+                    {
+                        if (strContinueTime.CompareTo(UtilityHelper.ConvertTimeHHMMSSFromSecond(int.Parse(SettingFields_StatusOverHoldTime1))) >= 0)
+                        {
+                            returnValue = Color.LightYellow;
+                        }
+                    }
+                    if (SettingFields_StatusOverHoldTime2 != DefaultOverTime)
+                    {
+                        if (strContinueTime.CompareTo(UtilityHelper.ConvertTimeHHMMSSFromSecond(int.Parse(SettingFields_StatusOverHoldTime2))) >= 0)
+                        {
+                            returnValue = Color.LightPink;
+                        }
+                    }
+                    return returnValue;
+                }
+                return Color.Empty;
+            }
+            catch
+            {
+                return Color.Empty;
             }
         }
         #endregion
