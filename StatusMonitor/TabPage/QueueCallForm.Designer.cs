@@ -52,7 +52,7 @@
             // quecallRightMenu
             // 
             this.quecallRightMenu.Name = "quecallRightMenu";
-            this.quecallRightMenu.Size = new System.Drawing.Size(153, 26);
+            this.quecallRightMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // QueueCallForm
             // 
@@ -62,6 +62,7 @@
             this.Controls.Add(this.lineStatusListView);
             this.Name = "QueueCallForm";
             this.Text = "QueueCallForm";
+            this.Load += new System.EventHandler(this.QueueCallForm_Load);
             this.ResumeLayout(false);
 
         }

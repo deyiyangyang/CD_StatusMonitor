@@ -141,23 +141,7 @@ namespace StatusMonitor
         private bool updateAgentStatus = false;
         private bool updateLineStatus = false;
         private bool updateQueStatus = false;
-        //update,xzg,2011/09/16,E
 
-        //add,xzg,2012/08/01,S
-        //public string StatusOverTime1 = "";
-        //public string StatusOverTime2 = "";
-        //public string StatusOverTime3 = "";
-        //public string StatusOverTime4 = "";
-        //public string StatusOverTime5 = "";
-        //public string StatusOverTime6 = "";
-        //public string StatusOverTime7 = "";
-        //public string StatusOverTime8 = "";
-        //public string StatusOverTime9 = "";
-        //public string SettingFields_StatusOverHoldTime2 = "";
-        //added by zhu 2014/09/11
-        //public string QueCallStatusOverTime1 = "";
-        //public string QueCallStatusOverTime2 = "";
-        //end added
         public string DefaultOverTime = "0000";
         public string LineID = "";
         private string vCurrentLineStatusName = "";
@@ -233,7 +217,10 @@ namespace StatusMonitor
 
         public string QuePeriod3 = "";
         public string QuePeriodVoice3 = "";
-
+        private Dictionary<string, int> DicOriginAgentListViewColumnWidth = new Dictionary<string, int>();
+        private Dictionary<string, int> DicOriginLineListViewColumnWidth = new Dictionary<string, int>();
+        private Dictionary<string, int> DicOriginTotalListViewColumnWidth = new Dictionary<string, int>();
+        private Dictionary<string, int> DicOriginMonitorGridColumnWidth = new Dictionary<string, int>();
         public int QueueCountAll = 0;
         public bool ReShowsFlag = true;
         public string KyokuGroup = "";
@@ -376,84 +363,9 @@ namespace StatusMonitor
                 mainNotifyIcon.Text = res.GetString(NOTIFYICON_TEXT);
                 mainNotifyIcon.Icon = this.Icon;
 
-                // Init agentStatusListView
-                agentStatusListView.View = View.Details;
-                //agentStatusListView.TileSize = new Size(130, 90);
-                agentStatusListView.TileSize = new Size(130, 130);
-                agentStatusListView.MultiSelect = false;
-                agentStatusListView.FullRowSelect = true;
-                //agentStatusListView.Columns.Add("GroupName", res.GetString("SM0020019"), 100, HorizontalAlignment.Left, -1);
-                agentStatusListView.Columns.Add("AgentName", res.GetString("SM0020020"), 100, HorizontalAlignment.Center, -1);
-                agentStatusListView.Columns.Add("Option1", "Option1", 100, HorizontalAlignment.Center, -1);
-                agentStatusListView.Columns.Add("Option2", "Option2", 100, HorizontalAlignment.Center, -1);
-                agentStatusListView.Columns.Add("Option3", "Option3", 100, HorizontalAlignment.Center, -1);
-                agentStatusListView.Columns.Add("Option4", "Option4", 100, HorizontalAlignment.Center, -1);
-                agentStatusListView.Columns.Add("Option5", "Option5", 100, HorizontalAlignment.Center, -1);
-
-                //agentStatusListView.Columns.Add("AgentName", res.GetString("SM0020020"), 100, HorizontalAlignment.Center, -1);
-                //added by zhu 2014/04/17
-                agentStatusListView.Columns.Add("Extension", "内線番号", 100, HorizontalAlignment.Center, -1);
-                //added end
-                agentStatusListView.Columns.Add("GroupName", res.GetString("SM0020019"), 100, HorizontalAlignment.Left, -1);
-                agentStatusListView.Columns.Add("Status", res.GetString("SM0020021"), 70, HorizontalAlignment.Center, -1);
-                agentStatusListView.Columns.Add("StatusTime", res.GetString("SM0020022"), 60, HorizontalAlignment.Center, -1);
-                agentStatusListView.Columns.Add("StatusContinueTime", res.GetString("SM0020061"), 60, HorizontalAlignment.Center, -1);
-                agentStatusListView.Columns.Add("Conntype", "発着信", 100, HorizontalAlignment.Center, -1);
-                agentStatusListView.Columns.Add("Caller", res.GetString("SM0020023"), 100, HorizontalAlignment.Center, -1);
-                agentStatusListView.Columns.Add("Help", res.GetString("SM0020024"), 50, HorizontalAlignment.Center, -1);
-                agentStatusListView.Columns.Add("LoginTime", res.GetString("SM0020025"), 80, HorizontalAlignment.Center, -1);
-                agentStatusListView.Columns.Add("MyMsg", "コメント", 80, HorizontalAlignment.Center, -1);
-
-                // Init ItemSorter
-                agentStatusListView.ListViewItemSorter = new StatusListViewItemComparer(0, true);
-                //add,xzg,2013/08/27,S
-                setDoubleBuffered(agentStatusListView, true);
-                //add,xzg,2013/08/27,E
-                AgentStatusListViewOrder = new bool[agentStatusListView.Columns.Count];
-                // Init lineStatusListView
-                lineStatusListView.View = View.Details;
-                lineStatusListView.TileSize = new Size(130, 110);
-                lineStatusListView.MultiSelect = false;
-                lineStatusListView.FullRowSelect = true;
-                //modified by zhu 2015/06/08 スキルグループ=>局番グループ
-                //lineStatusListView.Columns.Add("GroupName", res.GetString("SM0020026"), 100, HorizontalAlignment.Left, -1);
-                lineStatusListView.Columns.Add("GroupName", "局番グループ", 100, HorizontalAlignment.Left, -1);
-                //end modified
-                lineStatusListView.Columns.Add("Conntype", "発着信", 100, HorizontalAlignment.Left, -1);
-                lineStatusListView.Columns.Add("Caller", res.GetString("SM0020027"), 100, HorizontalAlignment.Center, -1);
-                lineStatusListView.Columns.Add("Callee", res.GetString("SM0020028"), 100, HorizontalAlignment.Center, -1);
-                lineStatusListView.Columns.Add("ConnectedTime", res.GetString("SM0020029"), 80, HorizontalAlignment.Center, -1);
-                lineStatusListView.Columns.Add("Status", res.GetString("SM0020030"), 60, HorizontalAlignment.Center, -1);
-                lineStatusListView.Columns.Add("StatusTime", res.GetString("SM0020031"), 80, HorizontalAlignment.Center, -1);
-                //add,xzg,2012/02/09,S            
-                lineStatusListView.Columns.Add("StatusContinueTime", res.GetString("SM0020061"), 80, HorizontalAlignment.Center, -1);
-                //add,xzg,2012/02/09,E
-                lineStatusListView.Columns.Add("Service", res.GetString("SM0020032"), 100, HorizontalAlignment.Center, -1);
-
-
-                lineStatusListViewOrder = new bool[lineStatusListView.Columns.Count];
-                // Init ItemSorter
-                lineStatusListView.ListViewItemSorter = new StatusListViewItemComparer(0, true);
-                //add,xzg,2013/08/27,S
-                setDoubleBuffered(lineStatusListView, true);
-                //add,xzg,2013/08/27,E
-
-                // Init totalListView
-                totalListView.View = View.Details;
-                totalListView.MultiSelect = false;
-                totalListView.FullRowSelect = true;
-                totalListView.Columns.Add("GroupName", res.GetString("SM0020033"), 100, HorizontalAlignment.Left, -1);
-                totalListView.Columns.Add("WaitCount", res.GetString("SM0020034"), 60, HorizontalAlignment.Center, -1);
-                totalListView.Columns.Add("ConnectCount", res.GetString("SM0020035"), 60, HorizontalAlignment.Center, -1);
-                totalListView.Columns.Add("OtherCount", res.GetString("SM0020036"), 60, HorizontalAlignment.Center, -1);
-                totalListView.Columns.Add("QueueCount", res.GetString("SM0020037"), 60, HorizontalAlignment.Center, -1);
-                totalListView.Columns.Add("MaxQuecallContinueTime", res.GetString("SM0020061"), 60, HorizontalAlignment.Center, -1);
-                //add,xzg,2013/08/27,S
-                setDoubleBuffered(totalListView, true);
-                //add,xzg,2013/08/27,E
-                TotalListViewOrder = new bool[totalListView.Columns.Count];
-                // Init ItemSorter
-                totalListView.ListViewItemSorter = new TotalListViewItemComparer(0, true);
+                InitAgentListView();
+                InitLineListView();
+                InitTotalListView();
 
                 IniProfile.Load(MyTool.GetModuleIniPath());
 
@@ -469,7 +381,7 @@ namespace StatusMonitor
                 ShowBackColorForCol9 = IniProfile.GetStringDefault("ShowBackColorForCol9", "");
                 MonitorGroupList = IniProfile.GetStringDefault("MonitorGroupList", "");
                 SettingFields_KyoKuGroupShow = IniProfile.GetStringDefault(ConstEntity.KYOKUGROUPSHOWKEY, "");
-                if(SettingFields_AgentGraphShow!="1")
+                if (SettingFields_AgentGraphShow != "1")
                 {
                     this.agentPie.Visible = false;
                     //this.agentIconListView.Height = 60;
@@ -595,6 +507,8 @@ namespace StatusMonitor
                 //CommandThread.Start();
 
                 //Asc.controllInitializeSize(this);
+
+                
             }
             catch (Exception ex)
             {
@@ -1144,7 +1058,7 @@ namespace StatusMonitor
 
 
                 //add,xzg,2012/08/01,S
-                SettingFields_StatusOverIdelTime1  = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMEIDLE1, DefaultOverTime);
+                SettingFields_StatusOverIdelTime1 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMEIDLE1, DefaultOverTime);
                 SettingFields_StatusOverIdelTime2 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMEIDLE2, DefaultOverTime);
                 SettingFields_StatusOverWorkTime1 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMEWORKTIME1, DefaultOverTime);
                 SettingFields_StatusOverWorkTime2 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMEWORKTIME2, DefaultOverTime);
@@ -1159,22 +1073,22 @@ namespace StatusMonitor
                 SettingFields_StatusOverQuecallTime2 = DefaultOverTime + IniProfile.GetStringDefault(ConstEntity.STATUSTIMEQUECALL2, DefaultOverTime);
                 //end added
 
-                SettingFields_StatusOverIdelTime1 = SettingFields_StatusOverIdelTime1.Substring(SettingFields_StatusOverIdelTime1.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverIdelTime2 = SettingFields_StatusOverIdelTime2.Substring(SettingFields_StatusOverIdelTime2.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverIdelTime1 = SettingFields_StatusOverIdelTime1.Substring(SettingFields_StatusOverIdelTime1.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverIdelTime2 = SettingFields_StatusOverIdelTime2.Substring(SettingFields_StatusOverIdelTime2.Length - DefaultOverTime.Length);
 
-                SettingFields_StatusOverWorkTime1 = SettingFields_StatusOverWorkTime1.Substring(SettingFields_StatusOverWorkTime1.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverWorkTime2 = SettingFields_StatusOverWorkTime2.Substring(SettingFields_StatusOverWorkTime2.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverLeaveTime1 = SettingFields_StatusOverLeaveTime1.Substring(SettingFields_StatusOverLeaveTime1.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverLeaveTime2 = SettingFields_StatusOverLeaveTime2.Substring(SettingFields_StatusOverLeaveTime2.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverTalkTime1 = SettingFields_StatusOverTalkTime1.Substring(SettingFields_StatusOverTalkTime1.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverTalkTime2 = SettingFields_StatusOverTalkTime2.Substring(SettingFields_StatusOverTalkTime2.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverHoldTime1 = SettingFields_StatusOverHoldTime1.Substring(SettingFields_StatusOverHoldTime1.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverHoldTime2 = SettingFields_StatusOverHoldTime2.Substring(SettingFields_StatusOverHoldTime2.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverWorkTime1 = SettingFields_StatusOverWorkTime1.Substring(SettingFields_StatusOverWorkTime1.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverWorkTime2 = SettingFields_StatusOverWorkTime2.Substring(SettingFields_StatusOverWorkTime2.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverLeaveTime1 = SettingFields_StatusOverLeaveTime1.Substring(SettingFields_StatusOverLeaveTime1.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverLeaveTime2 = SettingFields_StatusOverLeaveTime2.Substring(SettingFields_StatusOverLeaveTime2.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverTalkTime1 = SettingFields_StatusOverTalkTime1.Substring(SettingFields_StatusOverTalkTime1.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverTalkTime2 = SettingFields_StatusOverTalkTime2.Substring(SettingFields_StatusOverTalkTime2.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverHoldTime1 = SettingFields_StatusOverHoldTime1.Substring(SettingFields_StatusOverHoldTime1.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverHoldTime2 = SettingFields_StatusOverHoldTime2.Substring(SettingFields_StatusOverHoldTime2.Length - DefaultOverTime.Length);
                 //add,xzg,2012/08/01,E
 
                 //added by zhu 2014/09/11
-                SettingFields_StatusOverQuecallTime1 = SettingFields_StatusOverQuecallTime1.Substring(SettingFields_StatusOverQuecallTime1.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverQuecallTime2 = SettingFields_StatusOverQuecallTime2.Substring(SettingFields_StatusOverQuecallTime2.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverQuecallTime1 = SettingFields_StatusOverQuecallTime1.Substring(SettingFields_StatusOverQuecallTime1.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverQuecallTime2 = SettingFields_StatusOverQuecallTime2.Substring(SettingFields_StatusOverQuecallTime2.Length - DefaultOverTime.Length);
                 //end added
 
                 QuickAnswerMinutes = IniProfile.GetStringDefault("QuickAnswerMinutes", "0");
@@ -1245,6 +1159,8 @@ namespace StatusMonitor
                 this.UpdateContinueTimer.Interval = this.refreshTime * 1000;
                 //this.UpdateContinueTimer.Start();
                 //end added;
+
+                AjustListFontSize();
             }
             catch (Exception ex)
             {
@@ -1744,7 +1660,7 @@ namespace StatusMonitor
             }
         }
 
-        
+
         private void agentStatusListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
 
@@ -1753,7 +1669,7 @@ namespace StatusMonitor
             ((ListView)sender).ListViewItemSorter = new StatusListViewItemComparer(e.Column, order);
         }
 
-        
+
         private void lineStatusListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             bool order = !lineStatusListViewOrder[e.Column];
@@ -1803,7 +1719,7 @@ namespace StatusMonitor
         }
 
 
-        
+
         private void totalListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             try
@@ -1812,7 +1728,7 @@ namespace StatusMonitor
                 TotalListViewOrder[e.Column] = order;
                 ((ListView)sender).ListViewItemSorter = new TotalListViewItemComparer(e.Column, order);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 writeLog("totalListView_ColumnClick system error:" + ex.Message);
             }
@@ -2714,20 +2630,20 @@ namespace StatusMonitor
                 SettingFields_StatusOverQuecallTime2 = DefaultOverTime + time12;
                 //end added
 
-                SettingFields_StatusOverIdelTime1 = SettingFields_StatusOverIdelTime1.Substring(SettingFields_StatusOverIdelTime1.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverIdelTime2 = SettingFields_StatusOverIdelTime2.Substring(SettingFields_StatusOverIdelTime2.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverWorkTime1 = SettingFields_StatusOverWorkTime1.Substring(SettingFields_StatusOverWorkTime1.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverWorkTime2 = SettingFields_StatusOverWorkTime2.Substring(SettingFields_StatusOverWorkTime2.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverLeaveTime1 = SettingFields_StatusOverLeaveTime1.Substring(SettingFields_StatusOverLeaveTime1.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverLeaveTime2 = SettingFields_StatusOverLeaveTime2.Substring(SettingFields_StatusOverLeaveTime2.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverTalkTime1 = SettingFields_StatusOverTalkTime1.Substring(SettingFields_StatusOverTalkTime1.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverTalkTime2 = SettingFields_StatusOverTalkTime2.Substring(SettingFields_StatusOverTalkTime2.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverHoldTime1 = SettingFields_StatusOverHoldTime1.Substring(SettingFields_StatusOverHoldTime1.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverHoldTime2 = SettingFields_StatusOverHoldTime2.Substring(SettingFields_StatusOverHoldTime2.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverIdelTime1 = SettingFields_StatusOverIdelTime1.Substring(SettingFields_StatusOverIdelTime1.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverIdelTime2 = SettingFields_StatusOverIdelTime2.Substring(SettingFields_StatusOverIdelTime2.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverWorkTime1 = SettingFields_StatusOverWorkTime1.Substring(SettingFields_StatusOverWorkTime1.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverWorkTime2 = SettingFields_StatusOverWorkTime2.Substring(SettingFields_StatusOverWorkTime2.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverLeaveTime1 = SettingFields_StatusOverLeaveTime1.Substring(SettingFields_StatusOverLeaveTime1.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverLeaveTime2 = SettingFields_StatusOverLeaveTime2.Substring(SettingFields_StatusOverLeaveTime2.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverTalkTime1 = SettingFields_StatusOverTalkTime1.Substring(SettingFields_StatusOverTalkTime1.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverTalkTime2 = SettingFields_StatusOverTalkTime2.Substring(SettingFields_StatusOverTalkTime2.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverHoldTime1 = SettingFields_StatusOverHoldTime1.Substring(SettingFields_StatusOverHoldTime1.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverHoldTime2 = SettingFields_StatusOverHoldTime2.Substring(SettingFields_StatusOverHoldTime2.Length - DefaultOverTime.Length);
 
                 //added by zhu 2014/09/11
-                SettingFields_StatusOverQuecallTime1 = SettingFields_StatusOverQuecallTime1.Substring(SettingFields_StatusOverQuecallTime1.Length- DefaultOverTime.Length);
-                SettingFields_StatusOverQuecallTime2 = SettingFields_StatusOverQuecallTime2.Substring(SettingFields_StatusOverQuecallTime2.Length- DefaultOverTime.Length);
+                SettingFields_StatusOverQuecallTime1 = SettingFields_StatusOverQuecallTime1.Substring(SettingFields_StatusOverQuecallTime1.Length - DefaultOverTime.Length);
+                SettingFields_StatusOverQuecallTime2 = SettingFields_StatusOverQuecallTime2.Substring(SettingFields_StatusOverQuecallTime2.Length - DefaultOverTime.Length);
                 //end added
 
                 IniProfile.SelectSection("SVSet");
@@ -2857,6 +2773,10 @@ namespace StatusMonitor
                 IniProfile.SelectSection("SVSet");
                 IniProfile.SetString("ShowCol", ShowCol);
                 IniProfile.Save(MyTool.GetModuleIniPath());
+
+                //added by zhu 2015/12/21 ajust the column width
+                AjustAgentListSize();
+                // end added
 
             }
             catch (Exception ex)
@@ -3955,7 +3875,7 @@ namespace StatusMonitor
         {
             try
             {
-                
+
                 Microsoft.Win32.RegistryKey Reg;
                 Reg = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("Software\\NGCPADAPTER");
                 if (Reg == null)
@@ -4489,6 +4409,7 @@ namespace StatusMonitor
 
                 column = new DataGridViewTextBoxColumn();
                 column.HeaderText = "";
+                column.Name = "iSessionProfileID";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 //column.DefaultCellStyle.BackColor = Color.LightGray;
@@ -4499,6 +4420,7 @@ namespace StatusMonitor
 
                 column = new DataGridViewTextBoxColumn();
                 column.HeaderText = "";
+                column.Name = "groupKId";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 //column.DefaultCellStyle.BackColor = Color.LightGray;
@@ -4607,6 +4529,12 @@ namespace StatusMonitor
                 //added by Zhu 2014/04/09
                 setDoubleBuffered(this.dvMonitor, true);
                 //end added
+
+                DicOriginMonitorGridColumnWidth.Clear();
+                foreach (DataGridViewColumn col in dvMonitor.Columns)
+                {
+                    DicOriginMonitorGridColumnWidth.Add(col.Name, col.Width);
+                }
 
             }
             catch (Exception ex)
@@ -6516,6 +6444,7 @@ namespace StatusMonitor
                 SettingFields_MonitorTabShow = frm.MonitorTab;
                 SettingFields_MessagePop = frm.MessagePop;
                 SettingFields_AgentGraphShow = frm.AgentGraphShow;
+                SettingFields_ListFontSize = frm.ListFontSize;
                 if (SettingFields_MonitorTabShow == "0")
                 {
                     if (statusTabCtrl.TabPages.Contains(tabMonitor))
@@ -6528,7 +6457,7 @@ namespace StatusMonitor
                         statusTabCtrl.TabPages.Insert(2, tabMonitor);
                 }
 
-                if(SettingFields_AgentGraphShow=="1")
+                if (SettingFields_AgentGraphShow == "1")
                 {
                     this.agentPie.Visible = true;
                     this.agentIconListView.Width = this.AgentIconListWeight;
@@ -6544,12 +6473,17 @@ namespace StatusMonitor
                     this.agentIconListView.Dock = DockStyle.Bottom;
                 }
 
+                if (frm.FontSizeChanged)
+                {
+                    AjustListFontSize();
+                }
+
             }
         }
 
         public string GetServerUrl()
         {
-            if(string.IsNullOrEmpty(SettingFields_WebServer))
+            if (string.IsNullOrEmpty(SettingFields_WebServer))
             {
                 Microsoft.Win32.RegistryKey Reg;
                 Reg = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("Software\\NGCPADAPTER");
@@ -6564,6 +6498,108 @@ namespace StatusMonitor
             return SettingFields_WebServer;
         }
 
+        private void InitAgentListView()
+        {
+            // Init agentStatusListView
+            agentStatusListView.View = View.Details;
+            //agentStatusListView.TileSize = new Size(130, 90);
+            agentStatusListView.TileSize = new Size(130, 130);
+            agentStatusListView.MultiSelect = false;
+            agentStatusListView.FullRowSelect = true;
+            //agentStatusListView.Columns.Add("GroupName", res.GetString("SM0020019"), 100, HorizontalAlignment.Left, -1);
+            agentStatusListView.Columns.Add("AgentName", res.GetString("SM0020020"), 100, HorizontalAlignment.Center, -1);
+            agentStatusListView.Columns.Add("Option1", "Option1", 100, HorizontalAlignment.Center, -1);
+            agentStatusListView.Columns.Add("Option2", "Option2", 100, HorizontalAlignment.Center, -1);
+            agentStatusListView.Columns.Add("Option3", "Option3", 100, HorizontalAlignment.Center, -1);
+            agentStatusListView.Columns.Add("Option4", "Option4", 100, HorizontalAlignment.Center, -1);
+            agentStatusListView.Columns.Add("Option5", "Option5", 100, HorizontalAlignment.Center, -1);
+
+            //agentStatusListView.Columns.Add("AgentName", res.GetString("SM0020020"), 100, HorizontalAlignment.Center, -1);
+            //added by zhu 2014/04/17
+            agentStatusListView.Columns.Add("Extension", "内線番号", 100, HorizontalAlignment.Center, -1);
+            //added end
+            agentStatusListView.Columns.Add("GroupName", res.GetString("SM0020019"), 100, HorizontalAlignment.Left, -1);
+            agentStatusListView.Columns.Add("Status", res.GetString("SM0020021"), 70, HorizontalAlignment.Center, -1);
+            agentStatusListView.Columns.Add("StatusTime", res.GetString("SM0020022"), 60, HorizontalAlignment.Center, -1);
+            agentStatusListView.Columns.Add("StatusContinueTime", res.GetString("SM0020061"), 60, HorizontalAlignment.Center, -1);
+            agentStatusListView.Columns.Add("Conntype", "発着信", 100, HorizontalAlignment.Center, -1);
+            agentStatusListView.Columns.Add("Caller", res.GetString("SM0020023"), 100, HorizontalAlignment.Center, -1);
+            agentStatusListView.Columns.Add("Help", res.GetString("SM0020024"), 50, HorizontalAlignment.Center, -1);
+            agentStatusListView.Columns.Add("LoginTime", res.GetString("SM0020025"), 80, HorizontalAlignment.Center, -1);
+            agentStatusListView.Columns.Add("MyMsg", "コメント", 80, HorizontalAlignment.Center, -1);
+
+            // Init ItemSorter
+            agentStatusListView.ListViewItemSorter = new StatusListViewItemComparer(0, true);
+            //add,xzg,2013/08/27,S
+            setDoubleBuffered(agentStatusListView, true);
+            //add,xzg,2013/08/27,E
+            AgentStatusListViewOrder = new bool[agentStatusListView.Columns.Count];
+
+            foreach (ColumnHeader col in agentStatusListView.Columns)
+            {
+                DicOriginAgentListViewColumnWidth.Add(col.Name, col.Width);
+            }
+        }
+
+        private void InitLineListView()
+        {
+            // Init lineStatusListView
+            lineStatusListView.View = View.Details;
+            lineStatusListView.TileSize = new Size(130, 110);
+            lineStatusListView.MultiSelect = false;
+            lineStatusListView.FullRowSelect = true;
+            //modified by zhu 2015/06/08 スキルグループ=>局番グループ
+            //lineStatusListView.Columns.Add("GroupName", res.GetString("SM0020026"), 100, HorizontalAlignment.Left, -1);
+            lineStatusListView.Columns.Add("GroupName", "局番グループ", 100, HorizontalAlignment.Left, -1);
+            //end modified
+            lineStatusListView.Columns.Add("Conntype", "発着信", 100, HorizontalAlignment.Left, -1);
+            lineStatusListView.Columns.Add("Caller", res.GetString("SM0020027"), 100, HorizontalAlignment.Center, -1);
+            lineStatusListView.Columns.Add("Callee", res.GetString("SM0020028"), 100, HorizontalAlignment.Center, -1);
+            lineStatusListView.Columns.Add("ConnectedTime", res.GetString("SM0020029"), 80, HorizontalAlignment.Center, -1);
+            lineStatusListView.Columns.Add("Status", res.GetString("SM0020030"), 60, HorizontalAlignment.Center, -1);
+            lineStatusListView.Columns.Add("StatusTime", res.GetString("SM0020031"), 80, HorizontalAlignment.Center, -1);
+            //add,xzg,2012/02/09,S            
+            lineStatusListView.Columns.Add("StatusContinueTime", res.GetString("SM0020061"), 80, HorizontalAlignment.Center, -1);
+            //add,xzg,2012/02/09,E
+            lineStatusListView.Columns.Add("Service", res.GetString("SM0020032"), 100, HorizontalAlignment.Center, -1);
+
+
+            lineStatusListViewOrder = new bool[lineStatusListView.Columns.Count];
+            // Init ItemSorter
+            lineStatusListView.ListViewItemSorter = new StatusListViewItemComparer(0, true);
+            //add,xzg,2013/08/27,S
+            setDoubleBuffered(lineStatusListView, true);
+            //add,xzg,2013/08/27,E
+
+            foreach (ColumnHeader col in lineStatusListView.Columns)
+            {
+                DicOriginLineListViewColumnWidth.Add(col.Name, col.Width);
+            }
+        }
+        private void InitTotalListView()
+        {
+            // Init totalListView
+            totalListView.View = View.Details;
+            totalListView.MultiSelect = false;
+            totalListView.FullRowSelect = true;
+            totalListView.Columns.Add("GroupName", res.GetString("SM0020033"), 100, HorizontalAlignment.Left, -1);
+            totalListView.Columns.Add("WaitCount", res.GetString("SM0020034"), 60, HorizontalAlignment.Center, -1);
+            totalListView.Columns.Add("ConnectCount", res.GetString("SM0020035"), 60, HorizontalAlignment.Center, -1);
+            totalListView.Columns.Add("OtherCount", res.GetString("SM0020036"), 60, HorizontalAlignment.Center, -1);
+            totalListView.Columns.Add("QueueCount", res.GetString("SM0020037"), 60, HorizontalAlignment.Center, -1);
+            totalListView.Columns.Add("MaxQuecallContinueTime", res.GetString("SM0020061"), 60, HorizontalAlignment.Center, -1);
+            //add,xzg,2013/08/27,S
+            setDoubleBuffered(totalListView, true);
+            //add,xzg,2013/08/27,E
+            TotalListViewOrder = new bool[totalListView.Columns.Count];
+            // Init ItemSorter
+            totalListView.ListViewItemSorter = new TotalListViewItemComparer(0, true);
+
+            foreach (ColumnHeader col in totalListView.Columns)
+            {
+                DicOriginTotalListViewColumnWidth.Add(col.Name, col.Width);
+            }
+        }
         /// <summary>
         /// 局番グループだけを取る
         /// </summary>
@@ -6845,7 +6881,54 @@ namespace StatusMonitor
                 writeLog("MenuIdle_Click Error:" + ex.StackTrace);
             }
         }
+
+
         #endregion
+
+        private void AjustListFontSize()
+        {
+            try
+            {
+                //return;
+                float size = 9f;
+                AjustAgentListSize();
+
+                lineStatusListView.Font = new Font(this.lineStatusListView.Font.FontFamily, size * SettingFields_ListFontSize);
+                foreach (ColumnHeader col in this.lineStatusListView.Columns)
+                {
+                    col.Width = DicOriginLineListViewColumnWidth[col.Name] * SettingFields_ListFontSize;
+                }
+
+                this.totalListView.Font = new Font(this.totalListView.Font.FontFamily, size * SettingFields_ListFontSize);
+                foreach (ColumnHeader col in this.totalListView.Columns)
+                {
+                    col.Width = DicOriginTotalListViewColumnWidth[col.Name] * SettingFields_ListFontSize;
+                }
+
+                this.dvMonitor.Font = new Font(this.dvMonitor.Font.FontFamily, size * SettingFields_ListFontSize);
+                foreach (DataGridViewColumn col in this.dvMonitor.Columns)
+                {
+                    col.Width = DicOriginMonitorGridColumnWidth[col.Name] * SettingFields_ListFontSize;
+                }
+
+                (this.ListTabPagesForms[0] as QueueCallForm).AjustListFontSize();
+            }
+            catch (Exception ex)
+            {
+                writeLog("AjustListFontSize system error:" + ex.Message.ToString()+ex.StackTrace);
+            }
+
+        }
+
+        private void AjustAgentListSize()
+        {
+            float size = 9.0f;
+            agentStatusListView.Font = new Font(this.agentStatusListView.Font.FontFamily, size * SettingFields_ListFontSize,this.agentStatusListView.Font.Style);
+            foreach (ColumnHeader col in this.agentStatusListView.Columns)
+            {
+                col.Width = DicOriginAgentListViewColumnWidth[col.Name] * SettingFields_ListFontSize;
+            }
+        }
         #endregion
 
         #region Agent TAB
@@ -7021,7 +7104,7 @@ namespace StatusMonitor
                     {
                         if (strContinueTime.CompareTo(UtilityHelper.ConvertTimeHHMMSSFromSecond(int.Parse(SettingFields_StatusOverTalkTime1))) >= 0)
                         {
-                            returnValue = Color.LightYellow ;
+                            returnValue = Color.LightYellow;
                         }
                     }
                     if (SettingFields_StatusOverTalkTime2 != DefaultOverTime)
@@ -7215,6 +7298,7 @@ namespace StatusMonitor
         {
             //Asc.controlAutoSize(this);
         }
+
     }
 
     class DoubleBufferListView : ListView

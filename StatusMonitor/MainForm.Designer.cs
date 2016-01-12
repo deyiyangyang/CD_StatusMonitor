@@ -482,6 +482,7 @@
             // 
             // agentStatusListView
             // 
+            //this.agentStatusListView.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.agentStatusListView.GridLines = true;
             this.agentStatusListView.LargeImageList = this.largeImageList;
             this.agentStatusListView.Location = new System.Drawing.Point(3, 59);
@@ -659,6 +660,7 @@
             // 
             // totalListView
             // 
+            this.totalListView.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.totalListView.FullRowSelect = true;
             this.totalListView.GridLines = true;
             this.totalListView.Location = new System.Drawing.Point(660, 96);

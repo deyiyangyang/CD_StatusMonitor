@@ -115,6 +115,7 @@
       <DependentUpon>frmLineCutSet.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\AutoSizeFormClass.cs" />
+    <Compile Include="Helper\ComboBoxItem.cs" />
     <Compile Include="Helper\CTe1Helper.cs" />
     <Compile Include="Helper\FormHelper.cs" />
     <Compile Include="Helper\LanguageResourceManager.cs" />

@@ -15,6 +15,7 @@ namespace StatusMonitor.SettingFile
         public const string MESSAGEPOP = "MessagePopShow";
         public const string AGENTGRAPH = "AgentGraphShow";
         public const string WEBSERVER = "sWebServer";
+        public const string LISTFONTSIZE = "ListFontSize";
 
         public const string STATUSTIMEIDLE1 = "StatusOverIdelTime1";
         public const string STATUSTIMEIDLE2 = "StatusOverIdelTime2";

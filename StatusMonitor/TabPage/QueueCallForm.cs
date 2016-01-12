@@ -17,6 +17,7 @@ namespace StatusMonitor.TabPage
         private MainForm _MainForm;
         private LanguageResourceManager _resourceManager;
         private bool[] lineStatusListViewOrder = new bool[8];
+        private Dictionary<string, int> DicListViewColumnWidth = new Dictionary<string, int>();
         public QueueCallForm(Form frm)
         {
             InitializeComponent();
@@ -47,6 +48,15 @@ namespace StatusMonitor.TabPage
             lineStatusListViewOrder = new bool[lineStatusListView.Columns.Count];
             lineStatusListView.ListViewItemSorter = new StatusListViewItemComparer(0, true);
             FormHelper.SetDoubleBuffered(lineStatusListView, true);
+            InitListViewWidth();
+        }
+
+        private void InitListViewWidth()
+        {
+            foreach(ColumnHeader col in lineStatusListView.Columns)
+            {
+                DicListViewColumnWidth.Add(col.Name, col.Width);
+            }
         }
 
         private void AutoCtlSize()
@@ -544,7 +554,7 @@ namespace StatusMonitor.TabPage
                     System.Diagnostics.Trace.WriteLine(strPickUpID);
                     List<AgentStatus> agentStatusList = new List<AgentStatus>();
                     agentStatusList = _MainForm.agentStatusList.FindAll(p => p.Status == 0 || p.Status == 5);
-                    agentStatusList.Sort(delegate(AgentStatus a, AgentStatus b) { return a.Agent.CompareTo(b.Agent); });
+                    agentStatusList.Sort(delegate (AgentStatus a, AgentStatus b) { return a.Agent.CompareTo(b.Agent); });
                     quecallRightMenu.Items.Clear();
                     foreach (var agent in agentStatusList)
                     {
@@ -642,6 +652,22 @@ namespace StatusMonitor.TabPage
                 _MainForm.writeLog("SetRowBackColor system error:" + ex.Message + ex.StackTrace);
                 item.BackColor = Color.White;
             }
+        }
+
+
+        public void AjustListFontSize()
+        {
+            float size = 9.75f;
+            lineStatusListView.Font = new Font(this.lineStatusListView.Font.FontFamily, size * this._MainForm.SettingFields_ListFontSize);
+            foreach (ColumnHeader col in this.lineStatusListView.Columns)
+            {
+                col.Width = DicListViewColumnWidth[col.Name] * this._MainForm.SettingFields_ListFontSize;
+            }
+        }
+
+        private void QueueCallForm_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }
