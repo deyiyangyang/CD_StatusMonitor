@@ -432,6 +432,8 @@ namespace StatusMonitor
                 if (statusTabCtrl.TabPages.Contains(tabMonitor))
                 {
                     SettingFields_MonitorTabShow = IniProfile.GetStringDefault(ConstEntity.MONITORTAB, "");
+                    //only for worksmobile san the flag of sho monitor always 0
+                    SettingFields_MonitorTabShow = "0";
                     if (SettingFields_MonitorTabShow == "0")
                     {
                         statusTabCtrl.TabPages.Remove(tabMonitor);
@@ -1048,6 +1050,8 @@ namespace StatusMonitor
 
                 SettingFields_LineCutShow = IniProfile.GetStringDefault(ConstEntity.LINECUT, "");
                 SettingFields_MonitorTabShow = IniProfile.GetStringDefault(ConstEntity.MONITORTAB, "");
+                //only for worksmobile san the flag of sho monitor always 0
+                SettingFields_MonitorTabShow = "0";
 
                 OptionName1 = IniProfile.GetStringDefault("Option1", "拠点");
                 OptionName2 = IniProfile.GetStringDefault("Option2", "種別");
@@ -6441,7 +6445,7 @@ namespace StatusMonitor
             OtherSettingForm frm = new OtherSettingForm(IniProfile);
             if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                SettingFields_MonitorTabShow = frm.MonitorTab;
+                SettingFields_MonitorTabShow = "0";
                 SettingFields_MessagePop = frm.MessagePop;
                 SettingFields_AgentGraphShow = frm.AgentGraphShow;
                 SettingFields_ListFontSize = frm.ListFontSize;

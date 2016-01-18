@@ -657,7 +657,7 @@ namespace StatusMonitor.TabPage
 
         public void AjustListFontSize()
         {
-            float size = 9.75f;
+            float size = 9f;
             lineStatusListView.Font = new Font(this.lineStatusListView.Font.FontFamily, size * this._MainForm.SettingFields_ListFontSize);
             foreach (ColumnHeader col in this.lineStatusListView.Columns)
             {
