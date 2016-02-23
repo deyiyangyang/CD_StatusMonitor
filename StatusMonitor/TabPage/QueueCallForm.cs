@@ -31,29 +31,29 @@ namespace StatusMonitor.TabPage
         private void InitListView()
         {
             //this.lineStatusListView.LargeImageList = _MainForm.largeImageList;
-            this.lineStatusListView.SmallImageList = _MainForm.smallImageList;
-            lineStatusListView.View = View.Details;
-            lineStatusListView.TileSize = new Size(130, 110);
-            lineStatusListView.MultiSelect = false;
-            lineStatusListView.FullRowSelect = true;
-            lineStatusListView.Columns.Add("GroupName", _resourceManager.GetString("SM0020026"), 100, HorizontalAlignment.Left, -1);
-            lineStatusListView.Columns.Add("Caller", _resourceManager.GetString("SM0020027"), 100, HorizontalAlignment.Center, -1);
-            lineStatusListView.Columns.Add("Callee", _resourceManager.GetString("SM0020028"), 100, HorizontalAlignment.Center, -1);
-            lineStatusListView.Columns.Add("ConnectedTime", _resourceManager.GetString("SM0020029"), 80, HorizontalAlignment.Center, -1);
+            this.quecallStatusListView.SmallImageList = _MainForm.smallImageList;
+            quecallStatusListView.View = View.Details;
+            quecallStatusListView.TileSize = new Size(130, 110);
+            quecallStatusListView.MultiSelect = false;
+            quecallStatusListView.FullRowSelect = true;
+            quecallStatusListView.Columns.Add("GroupName", _resourceManager.GetString("SM0020026"), 100, HorizontalAlignment.Left, -1);
+            quecallStatusListView.Columns.Add("Caller", _resourceManager.GetString("SM0020027"), 100, HorizontalAlignment.Center, -1);
+            quecallStatusListView.Columns.Add("Callee", _resourceManager.GetString("SM0020028"), 100, HorizontalAlignment.Center, -1);
+            quecallStatusListView.Columns.Add("ConnectedTime", _resourceManager.GetString("SM0020029"), 80, HorizontalAlignment.Center, -1);
             //lineStatusListView.Columns.Add("Status", _resourceManager.GetString("SM0020030"), 60, HorizontalAlignment.Center, -1);
-            lineStatusListView.Columns.Add("StatusTime", _resourceManager.GetString("SM0020031"), 80, HorizontalAlignment.Center, -1);
-            lineStatusListView.Columns.Add("StatusContinueTime", _resourceManager.GetString("SM0020061"), 80, HorizontalAlignment.Center, -1);
+            quecallStatusListView.Columns.Add("StatusTime", _resourceManager.GetString("SM0020031"), 80, HorizontalAlignment.Center, -1);
+            quecallStatusListView.Columns.Add("StatusContinueTime", _resourceManager.GetString("SM0020061"), 80, HorizontalAlignment.Center, -1);
             //lineStatusListView.Columns.Add("Service", _resourceManager.GetString("SM0020032"), 100, HorizontalAlignment.Center, -1);
 
-            lineStatusListViewOrder = new bool[lineStatusListView.Columns.Count];
-            lineStatusListView.ListViewItemSorter = new StatusListViewItemComparer(0, true);
-            FormHelper.SetDoubleBuffered(lineStatusListView, true);
+            lineStatusListViewOrder = new bool[quecallStatusListView.Columns.Count];
+            quecallStatusListView.ListViewItemSorter = new StatusListViewItemComparer(0, true);
+            FormHelper.SetDoubleBuffered(quecallStatusListView, true);
             InitListViewWidth();
         }
 
         private void InitListViewWidth()
         {
-            foreach(ColumnHeader col in lineStatusListView.Columns)
+            foreach(ColumnHeader col in quecallStatusListView.Columns)
             {
                 DicListViewColumnWidth.Add(col.Name, col.Width);
             }
@@ -62,7 +62,7 @@ namespace StatusMonitor.TabPage
         private void AutoCtlSize()
         {
             Size deskTopSize = System.Windows.Forms.SystemInformation.PrimaryMonitorSize;
-            Control inObj = lineStatusListView;
+            Control inObj = quecallStatusListView;
             //Single fontSize = inObj.Font.Size * deskTopSize.Height / 768;
             inObj.Size = new Size((int)(inObj.Size.Width * deskTopSize.Width / 1024), (int)(inObj.Size.Height * deskTopSize.Height / 768));
             inObj.Location = new Point((int)(inObj.Location.X * deskTopSize.Width / 1024), (int)(inObj.Location.Y * deskTopSize.Height / 768));
@@ -81,16 +81,16 @@ namespace StatusMonitor.TabPage
                 int intCurrTopRow = 0;
                 int loop = 0;
                 string strSelectItem = "";
-                if (lineStatusListView.Items.Count > 0)
+                if (quecallStatusListView.Items.Count > 0)
                 {
-                    if (lineStatusListView.View == View.Details)
-                        intCurrTopRow = lineStatusListView.TopItem.Index;
+                    if (quecallStatusListView.View == View.Details)
+                        intCurrTopRow = quecallStatusListView.TopItem.Index;
 
                 }
 
-                if (lineStatusListView.SelectedItems.Count > 0)
+                if (quecallStatusListView.SelectedItems.Count > 0)
                 {
-                    strSelectItem = lineStatusListView.SelectedItems[0].SubItems["ISessionprofileID"].Text; //index is 6
+                    strSelectItem = quecallStatusListView.SelectedItems[0].SubItems["ISessionprofileID"].Text; //index is 6
                 }
                 //add,2013/12/10,E
                 for (j = 0; j < lineStatusList.Count; j++)
@@ -99,9 +99,9 @@ namespace StatusMonitor.TabPage
                     string strKey = obj1.iSessionProfileID;
 
                     LineStatusEnum strStatus = CTe1Helper.GetLineStatusEnum(obj1.Status);
-                    for (i = 0; i < lineStatusListView.Items.Count; i++)
+                    for (i = 0; i < quecallStatusListView.Items.Count; i++)
                     {
-                        ListViewItem item = lineStatusListView.Items[i];
+                        ListViewItem item = quecallStatusListView.Items[i];
                         if (strKey == item.SubItems["ISessionprofileID"].Text)//index is 6
                         {
                             obj1.StatusContinueTime = item.SubItems["StatusContinueTime"].Text; //index is 5
@@ -112,8 +112,8 @@ namespace StatusMonitor.TabPage
                 }
 
                 // Update lineStatusListView
-                lineStatusListView.BeginUpdate();
-                lineStatusListView.Items.Clear();
+                quecallStatusListView.BeginUpdate();
+                quecallStatusListView.Items.Clear();
                 foreach (LineStatus obj in lineStatusList)
                 {
                     // Select Group
@@ -184,18 +184,18 @@ namespace StatusMonitor.TabPage
                     //add,xzg,2013/12/10,E
 
 
-                    lineStatusListView.Items.Add(item);
+                    quecallStatusListView.Items.Add(item);
 
                     //add,xzg,2013/12/10,S
-                    if (lineStatusListView.View == View.Details)
+                    if (quecallStatusListView.View == View.Details)
                     {
-                        lineStatusListView.EnsureVisible(loop);
-                        if (intCurrTopRow > lineStatusListView.TopItem.Index)
+                        quecallStatusListView.EnsureVisible(loop);
+                        if (intCurrTopRow > quecallStatusListView.TopItem.Index)
                             loop++;
                     }
                     //add,xzg,2013/12/10,E
                 }
-                lineStatusListView.EndUpdate();
+                quecallStatusListView.EndUpdate();
             }
             catch (Exception ex)
             {
@@ -298,13 +298,13 @@ namespace StatusMonitor.TabPage
         {
             try
             {
-                lineStatusListView.BeginUpdate();
-                int listCount = lineStatusListView.Items.Count;
+                quecallStatusListView.BeginUpdate();
+                int listCount = quecallStatusListView.Items.Count;
                 int i = 0;
                 string strTime = "00:00:00";
                 for (i = 0; i < listCount; i++)
                 {
-                    ListViewItem item = lineStatusListView.Items[i];
+                    ListViewItem item = quecallStatusListView.Items[i];
                     //modified by zhu 2014/09/01
 
                     try
@@ -314,30 +314,30 @@ namespace StatusMonitor.TabPage
                             DateTime statusTime = DateTime.Parse(item.SubItems["StatusTime"].Text);//index is 4
                             if (DateTime.Compare(DateTime.Now, statusTime) <= 0)
                             {
-                                lineStatusListView.Items[i].SubItems["StatusContinueTime"].Text = "00:00:00"; //index is 5
+                                quecallStatusListView.Items[i].SubItems["StatusContinueTime"].Text = "00:00:00"; //index is 5
                             }
                             else
                             {
                                 strTime = Convert.ToDateTime(DateTime.Now.Subtract(statusTime).ToString()).ToString("HH:mm:ss");
-                                lineStatusListView.Items[i].SubItems["StatusContinueTime"].Text = strTime;//index is 5
+                                quecallStatusListView.Items[i].SubItems["StatusContinueTime"].Text = strTime;//index is 5
                             }
                         }
                         else
                         {
-                            lineStatusListView.Items[i].SubItems["StatusContinueTime"].Text = "00:00:00"; // index is 5
+                            quecallStatusListView.Items[i].SubItems["StatusContinueTime"].Text = "00:00:00"; // index is 5
                         }
                     }
                     catch (Exception ee1)
                     {
-                        lineStatusListView.Items[i].SubItems["StatusContinueTime"].Text = "00:00:00"; // index is 5
+                        quecallStatusListView.Items[i].SubItems["StatusContinueTime"].Text = "00:00:00"; // index is 5
                     }
 
                     //added by zhu 2014/09/11
-                    SetRowBackColor(strTime, lineStatusListView.Items[i]);
+                    SetRowBackColor(strTime, quecallStatusListView.Items[i]);
                     //end added
 
                 }
-                lineStatusListView.EndUpdate();
+                quecallStatusListView.EndUpdate();
             }
             catch (Exception ex)
             {
@@ -567,7 +567,7 @@ namespace StatusMonitor.TabPage
                             quecallRightMenu.Items.Add(subMenu);
                         }
                     }
-                    quecallRightMenu.Show(this.lineStatusListView, e.X, e.Y);
+                    quecallRightMenu.Show(this.quecallStatusListView, e.X, e.Y);
                 }
             }
             catch (Exception ex)
@@ -658,8 +658,8 @@ namespace StatusMonitor.TabPage
         public void AjustListFontSize()
         {
             float size = 9f;
-            lineStatusListView.Font = new Font(this.lineStatusListView.Font.FontFamily, size * this._MainForm.SettingFields_ListFontSize);
-            foreach (ColumnHeader col in this.lineStatusListView.Columns)
+            quecallStatusListView.Font = new Font(this.quecallStatusListView.Font.FontFamily, size * this._MainForm.SettingFields_ListFontSize);
+            foreach (ColumnHeader col in this.quecallStatusListView.Columns)
             {
                 col.Width = DicListViewColumnWidth[col.Name] * this._MainForm.SettingFields_ListFontSize;
             }

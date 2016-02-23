@@ -508,7 +508,7 @@ namespace StatusMonitor
 
                 //Asc.controllInitializeSize(this);
 
-                
+
             }
             catch (Exception ex)
             {
@@ -1161,6 +1161,7 @@ namespace StatusMonitor
                 //end added;
 
                 AjustListFontSize();
+                ShowSettingFileWidth();
             }
             catch (Exception ex)
             {
@@ -1282,6 +1283,11 @@ namespace StatusMonitor
             //add,xzg,2009/02/06,S----------------
             else
             {
+                SaveListViewColumnWidth(this.agentStatusListView);
+                SaveListViewColumnWidth(this.lineStatusListView);
+                SaveListViewColumnWidth((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView);
+                SaveGridViewColumnWidth(this.dvMonitor);
+
                 int msgCount = 0;
                 int loop = 0;
                 if (msgFromList.Count > 0)
@@ -6915,7 +6921,7 @@ namespace StatusMonitor
             }
             catch (Exception ex)
             {
-                writeLog("AjustListFontSize system error:" + ex.Message.ToString()+ex.StackTrace);
+                writeLog("AjustListFontSize system error:" + ex.Message.ToString() + ex.StackTrace);
             }
 
         }
@@ -6923,11 +6929,95 @@ namespace StatusMonitor
         private void AjustAgentListSize()
         {
             float size = 9.0f;
-            agentStatusListView.Font = new Font(this.agentStatusListView.Font.FontFamily, size * SettingFields_ListFontSize,this.agentStatusListView.Font.Style);
+            agentStatusListView.Font = new Font(this.agentStatusListView.Font.FontFamily, size * SettingFields_ListFontSize, this.agentStatusListView.Font.Style);
+            int colIndex = 0;
             foreach (ColumnHeader col in this.agentStatusListView.Columns)
             {
+                // if current is not visible
+                if (ShowCol.Substring(colIndex, 1) == "0")
+                {
+                    DicOriginAgentListViewColumnWidth[col.Name] = 0;
+                }
+                else
+                {
+                    if (DicOriginAgentListViewColumnWidth[col.Name] == 0)
+                        DicOriginAgentListViewColumnWidth[col.Name] = 100;
+                }
                 col.Width = DicOriginAgentListViewColumnWidth[col.Name] * SettingFields_ListFontSize;
+                colIndex++;
             }
+        }
+
+        private void ShowSettingFileWidth()
+        {
+            if (!string.IsNullOrEmpty(SettingFields_AgentListView_Width))
+            {
+                string[] widths = SettingFields_AgentListView_Width.Split(',');
+                for (int i = 0; i < widths.Length; i++)
+                {
+                    this.agentStatusListView.Columns[i].Width = int.Parse(widths[i]);
+                }
+            }
+            if (!string.IsNullOrEmpty(this.SettingFields_CallListView_Width))
+            {
+                string[] widths = SettingFields_CallListView_Width.Split(',');
+                for (int i = 0; i < widths.Length; i++)
+                {
+                    this.lineStatusListView.Columns[i].Width = int.Parse(widths[i]);
+                }
+            }
+            if (!string.IsNullOrEmpty(this.SettingFields_QueueListView_Width))
+            {
+                string[] widths = SettingFields_QueueListView_Width.Split(',');
+                for (int i = 0; i < widths.Length; i++)
+                {
+                    (this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.Columns[i].Width = int.Parse(widths[i]);
+                }
+            }
+            if (!string.IsNullOrEmpty(this.SettingFields_MonitorGridView_Width))
+            {
+                string[] widths = SettingFields_MonitorGridView_Width.Split(',');
+                for (int i = 0; i < widths.Length; i++)
+                {
+                    this.dvMonitor.Columns[i].Width = int.Parse(widths[i]);
+                }
+            }
+        }
+        /// <summary>
+        /// save listview column width into ini file, so next run can keep width
+        /// </summary>
+        /// <param name="lv"></param>
+        private void SaveListViewColumnWidth(ListView lv)
+        {
+            string widthValue = "";
+            foreach (ColumnHeader col in lv.Columns)
+            {
+                widthValue += "," + col.Width.ToString();
+            }
+            IniProfile.SelectSection("SVSet");
+            if (lv.Name == "agentStatusListView")
+                IniProfile.SetString(ConstEntity.AGENT_LIST_VIEW_WIDTH, widthValue.Substring(1));
+            else if (lv.Name == "lineStatusListView")
+                IniProfile.SetString(ConstEntity.CALL_LIST_VIEW_WIDTH, widthValue.Substring(1));
+            else if (lv.Name == "quecallStatusListView")
+                IniProfile.SetString(ConstEntity.QUEUE_LIST_VIEW_WIDTH, widthValue.Substring(1));
+            IniProfile.Save(MyTool.GetModuleIniPath());
+        }
+
+        /// <summary>
+        /// save DataGridView column width into ini file, so next run can keep width
+        /// </summary>
+        /// <param name="lv"></param>
+        private void SaveGridViewColumnWidth(DataGridView dg)
+        {
+            string widthValue = "";
+            foreach (DataGridViewColumn col in dg.Columns)
+            {
+                widthValue += "," + col.Width.ToString();
+            }
+            IniProfile.SelectSection("SVSet");
+            IniProfile.SetString(ConstEntity.MONITOR_GRID_VIEW_WIDTH, widthValue.Substring(1));
+            IniProfile.Save(MyTool.GetModuleIniPath());
         }
         #endregion
 

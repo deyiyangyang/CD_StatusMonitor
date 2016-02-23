@@ -112,6 +112,8 @@ namespace StatusMonitor
         public int iSkillGroupID; //SkillID
         public DateTime dtAcdcall; //dtAcdcall
         public string Conntype;
+        public string vAgentID;
+        public string vAgentName;
     }
 
     //add,xzg,2012/10/27,S
@@ -329,6 +331,7 @@ namespace StatusMonitor
                             lineStatus.Extension = recvParams.GetStringDefault("vExtension", "");
                             lineStatus.Conntype = recvParams.GetStringDefault("iCallType", "");
                             lineStatus.iSessionProfileID = recvParams.GetStringDefault("iSessionProfileID", "0");
+                            lineStatus.vAgentID = recvParams.GetStringDefault("vAgentID", "");
 
                             //add,xzg,2013/11/19,S
                             lineStatus.iSkillGroupID = recvParams.GetLongDefault("iSkillGroupID", 0);
@@ -1752,11 +1755,11 @@ namespace StatusMonitor
                 //added by zhu add pie
 
                 CurrentAgentPie = CreateAgentPie(waitCount, workCount, telCount, holdCount, offeringCount, seatLeaveCount, makeCallCount, transCallCount);
-                if(agentPie.Visible )
+                if (agentPie.Visible)
                 {
                     agentPie.Image = CurrentAgentPie;
                 }
-                
+
                 //end adde 
             }
             catch (Exception ex)
@@ -1852,7 +1855,26 @@ namespace StatusMonitor
             ListViewItem.ListViewSubItem subService = new ListViewItem.ListViewSubItem(item, "");
             subService.Name = "Service";
             if (callInfo.Status >= 3)
-                subService.Text = callInfo.Extension;
+            {
+                if (string.IsNullOrEmpty(callInfo.vAgentID))
+                {
+                    subService.Text = callInfo.Extension;
+                }
+                else
+                {
+                    var agentStatus = agentStatusList.Find(p => p.Agent == callInfo.vAgentID);
+                    if (agentStatus != null)
+                    {
+                        subService.Text = agentStatus.AgentName;
+                    }
+                    else
+                    {
+                        subService.Text = callInfo.Extension;
+                    }
+                }
+
+            }
+
             else
                 subService.Text = callInfo.Service;
             item.SubItems.Add(subService);

@@ -16,6 +16,11 @@ namespace StatusMonitor.SettingFile
         public const string AGENTGRAPH = "AgentGraphShow";
         public const string WEBSERVER = "sWebServer";
         public const string LISTFONTSIZE = "ListFontSize";
+        public const string AGENT_LIST_VIEW_WIDTH = "AgentListViewWidth";
+        public const string CALL_LIST_VIEW_WIDTH = "CallListViewWidth";
+        public const string QUEUE_LIST_VIEW_WIDTH = "QueueListViewWidth";
+        public const string MONITOR_GRID_VIEW_WIDTH = "MonitorGridViewWidth";
+
 
         public const string STATUSTIMEIDLE1 = "StatusOverIdelTime1";
         public const string STATUSTIMEIDLE2 = "StatusOverIdelTime2";
