@@ -3982,6 +3982,8 @@ namespace StatusMonitor
                     GetSkillQuecallSetting(dtSkillGroup);
                 }
                 //end added
+
+                btnInitMonitor_Click(null, null);
             }
             catch (Exception ex)
             {
@@ -5649,8 +5651,6 @@ namespace StatusMonitor
             try
             {
 
-
-
                 if (string.IsNullOrEmpty(webGetCall.DocumentText)) return;
                 string strData = webGetCall.DocumentText;
 
@@ -5674,19 +5674,19 @@ namespace StatusMonitor
             try
             {
 
-                string iSessionID = getCallInfoMinID();
-                if (string.IsNullOrEmpty(iSessionID))
-                    return;
+                //string iSessionID = getCallInfoMinID();
+                //if (string.IsNullOrEmpty(iSessionID))
+                //    return;
 
-                if (iSessionID == "0")
-                    return;
+                //if (iSessionID == "0")
+                //    return;
 
-                //added by zhu 2014
-                iSessionID = (int.Parse(iSessionID) + 4000).ToString();
-                writeLog("btnInitMonitor_Click start sessionprofileID:" + iSessionID);
-                //end added
-                this.btnInitMonitor.Enabled = false;
-
+                ////added by zhu 2014
+                //iSessionID = (int.Parse(iSessionID) + 4000).ToString();
+                writeLog("btnInitMonitor_Click start " );
+                ////end added
+                //this.btnInitMonitor.Enabled = false;
+                int iSessionID = 0;
                 Microsoft.Win32.RegistryKey Reg;
                 Reg = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("Software\\NGCPADAPTER");
                 if (Reg == null)
@@ -5707,7 +5707,7 @@ namespace StatusMonitor
                 webGetCall.WebBrowserShortcutsEnabled = false;
 
                 string postdata = "";
-                string mainUrl = webServer + "getCallDataForMonitor.asp";
+                string mainUrl = webServer + "getCallDataForMonitorex.asp";
                 //added by zhu 2014/04/07
                 mainUrl = mainUrl + "?u =" + tid;
                 mainUrl = mainUrl + "&p=" + tpwd;
@@ -5896,7 +5896,7 @@ namespace StatusMonitor
 
             this.Invoke(new dd(() =>
             {
-                this.btnInitMonitor.Enabled = true;
+                //this.btnInitMonitor.Enabled = true;
                 retTimer.Enabled = true;
             }));
 

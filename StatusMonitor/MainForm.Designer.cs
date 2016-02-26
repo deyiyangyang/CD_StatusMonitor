@@ -75,7 +75,6 @@
             this.lineIconListView = new System.Windows.Forms.ListView();
             this.lineStatusListView = new System.Windows.Forms.ListView();
             this.tabMonitor = new System.Windows.Forms.TabPage();
-            this.btnInitMonitor = new System.Windows.Forms.Button();
             this.dvMonitor = new System.Windows.Forms.DataGridView();
             this.tabWaitCall = new System.Windows.Forms.TabPage();
             this.totalListView = new System.Windows.Forms.ListView();
@@ -482,7 +481,6 @@
             // 
             // agentStatusListView
             // 
-            //this.agentStatusListView.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.agentStatusListView.GridLines = true;
             this.agentStatusListView.LargeImageList = this.largeImageList;
             this.agentStatusListView.Location = new System.Drawing.Point(3, 59);
@@ -615,7 +613,6 @@
             // 
             // tabMonitor
             // 
-            this.tabMonitor.Controls.Add(this.btnInitMonitor);
             this.tabMonitor.Controls.Add(this.dvMonitor);
             this.tabMonitor.Location = new System.Drawing.Point(4, 23);
             this.tabMonitor.Name = "tabMonitor";
@@ -625,25 +622,15 @@
             this.tabMonitor.Text = "モニタ";
             this.tabMonitor.UseVisualStyleBackColor = true;
             // 
-            // btnInitMonitor
-            // 
-            this.btnInitMonitor.Location = new System.Drawing.Point(590, 6);
-            this.btnInitMonitor.Name = "btnInitMonitor";
-            this.btnInitMonitor.Size = new System.Drawing.Size(46, 27);
-            this.btnInitMonitor.TabIndex = 1;
-            this.btnInitMonitor.Text = "同期";
-            this.btnInitMonitor.UseVisualStyleBackColor = true;
-            this.btnInitMonitor.Click += new System.EventHandler(this.btnInitMonitor_Click);
-            // 
             // dvMonitor
             // 
             this.dvMonitor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvMonitor.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dvMonitor.Location = new System.Drawing.Point(3, 38);
+            this.dvMonitor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dvMonitor.Location = new System.Drawing.Point(3, 3);
             this.dvMonitor.MultiSelect = false;
             this.dvMonitor.Name = "dvMonitor";
             this.dvMonitor.RowTemplate.Height = 21;
-            this.dvMonitor.Size = new System.Drawing.Size(636, 553);
+            this.dvMonitor.Size = new System.Drawing.Size(636, 588);
             this.dvMonitor.TabIndex = 0;
             this.dvMonitor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvMonitor_CellDoubleClick);
             this.dvMonitor.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dvMonitor_DataError);
@@ -829,6 +816,7 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "再表示";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ListUpdateTimer
@@ -1041,7 +1029,6 @@
         private System.Windows.Forms.DataGridView dvMonitor;
         private System.Windows.Forms.WebBrowser wbGroupPersonal;
         private System.Windows.Forms.ToolStripMenuItem sumMenuQuickAnswer;
-        private System.Windows.Forms.Button btnInitMonitor;
         private System.Windows.Forms.Timer retTimer;
         private System.Windows.Forms.WebBrowser webGetCall;
         private System.Windows.Forms.ToolStripMenuItem menuMonitorTitle;
