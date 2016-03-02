@@ -117,7 +117,7 @@ namespace StatusMonitor
         public string SettingFields_CallListView_Width = "";
         public string SettingFields_QueueListView_Width = "";
         public string SettingFields_MonitorGridView_Width = "";
-        public int SettingFields_ListFontSize = 1;
+        public float SettingFields_ListFontSize = 1;
         public Dictionary<string, string> Dic_SettingFields_SkillQuecall = new Dictionary<string, string>();
 
 
@@ -130,7 +130,7 @@ namespace StatusMonitor
             SettingFields_MessagePop = IniProfile.GetStringDefault(ConstEntity.MESSAGEPOP, "");
             SettingFields_AgentGraphShow = IniProfile.GetStringDefault(ConstEntity.AGENTGRAPH, "");
             SettingFields_WebServer = IniProfile.GetStringDefault(ConstEntity.WEBSERVER, "");
-            SettingFields_ListFontSize = IniProfile.GetLongDefault(ConstEntity.LISTFONTSIZE, 1);
+            SettingFields_ListFontSize = float.Parse( IniProfile.GetStringDefault(ConstEntity.LISTFONTSIZE, "1"));
             SettingFields_AgentListView_Width = IniProfile.GetStringDefault(ConstEntity.AGENT_LIST_VIEW_WIDTH,"");
             SettingFields_CallListView_Width = IniProfile.GetStringDefault(ConstEntity.CALL_LIST_VIEW_WIDTH, "");
             SettingFields_QueueListView_Width = IniProfile.GetStringDefault(ConstEntity.QUEUE_LIST_VIEW_WIDTH, "");

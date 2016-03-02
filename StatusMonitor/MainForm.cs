@@ -6902,19 +6902,19 @@ namespace StatusMonitor
                 lineStatusListView.Font = new Font(this.lineStatusListView.Font.FontFamily, size * SettingFields_ListFontSize);
                 foreach (ColumnHeader col in this.lineStatusListView.Columns)
                 {
-                    col.Width = DicOriginLineListViewColumnWidth[col.Name] * SettingFields_ListFontSize;
+                    col.Width =Convert.ToInt32( float.Parse( DicOriginLineListViewColumnWidth[col.Name].ToString()) * SettingFields_ListFontSize);
                 }
 
                 this.totalListView.Font = new Font(this.totalListView.Font.FontFamily, size * SettingFields_ListFontSize);
                 foreach (ColumnHeader col in this.totalListView.Columns)
                 {
-                    col.Width = DicOriginTotalListViewColumnWidth[col.Name] * SettingFields_ListFontSize;
+                    col.Width = Convert.ToInt32(float.Parse(DicOriginTotalListViewColumnWidth[col.Name].ToString()) * SettingFields_ListFontSize);
                 }
 
                 this.dvMonitor.Font = new Font(this.dvMonitor.Font.FontFamily, size * SettingFields_ListFontSize);
                 foreach (DataGridViewColumn col in this.dvMonitor.Columns)
                 {
-                    col.Width = DicOriginMonitorGridColumnWidth[col.Name] * SettingFields_ListFontSize;
+                    col.Width = Convert.ToInt32(float.Parse(DicOriginMonitorGridColumnWidth[col.Name].ToString()) * SettingFields_ListFontSize);
                 }
 
                 (this.ListTabPagesForms[0] as QueueCallForm).AjustListFontSize();
@@ -6943,7 +6943,7 @@ namespace StatusMonitor
                     if (DicOriginAgentListViewColumnWidth[col.Name] == 0)
                         DicOriginAgentListViewColumnWidth[col.Name] = 100;
                 }
-                col.Width = DicOriginAgentListViewColumnWidth[col.Name] * SettingFields_ListFontSize;
+                col.Width = Convert.ToInt32(float.Parse(DicOriginAgentListViewColumnWidth[col.Name].ToString()) * SettingFields_ListFontSize);
                 colIndex++;
             }
         }

@@ -661,7 +661,7 @@ namespace StatusMonitor.TabPage
             quecallStatusListView.Font = new Font(this.quecallStatusListView.Font.FontFamily, size * this._MainForm.SettingFields_ListFontSize);
             foreach (ColumnHeader col in this.quecallStatusListView.Columns)
             {
-                col.Width = DicListViewColumnWidth[col.Name] * this._MainForm.SettingFields_ListFontSize;
+                col.Width = Convert.ToInt32(float.Parse(DicListViewColumnWidth[col.Name].ToString()) * this._MainForm.SettingFields_ListFontSize);
             }
         }
 
