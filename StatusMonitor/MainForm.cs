@@ -293,8 +293,7 @@ namespace StatusMonitor
             //end added
             //added by Zhu 2014/09/01
             UpdateContinueTimer = new System.Timers.Timer();
-            UpdateContinueTimer.Elapsed += new System.Timers.ElapsedEventHandler(ContinueTimer); ;
-
+            UpdateContinueTimer.Elapsed += new System.Timers.ElapsedEventHandler(ContinueTimer); 
             //end added
             writeLog("current version is 6.3.4");
         }
@@ -1269,8 +1268,26 @@ namespace StatusMonitor
             }
             catch (Exception ex)
             {
-                writeLog("setAgentStatusView:" + ex.Message);
+                writeLog("setAgentStatusView system error:" + ex.Message);
 
+            }
+        }
+
+        private void SetGroupSumColumnVisible()
+        {
+            try
+            {
+                for (int i = 0; i < SettingFields_GroupSumColumnShow.Length; i++)
+                {
+                    if (SettingFields_GroupSumColumnShow.Substring(i, 1) == "0")
+                    {
+                        this.totalListView.Columns[i].Width = 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                writeLog("SetGroupSumColumnVisible system error:" + ex.Message);
             }
         }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -1286,6 +1303,7 @@ namespace StatusMonitor
                 SaveListViewColumnWidth(this.agentStatusListView);
                 SaveListViewColumnWidth(this.lineStatusListView);
                 SaveListViewColumnWidth((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView);
+                SaveListViewColumnWidth(this.totalListView);
                 SaveGridViewColumnWidth(this.dvMonitor);
 
                 int msgCount = 0;
@@ -2773,6 +2791,10 @@ namespace StatusMonitor
         {
             try
             {
+                if(ShowCol==strShowCol)
+                {
+                    return;
+                }
                 ShowCol = strShowCol;
                 setAgentStatusView();
 
@@ -2783,6 +2805,25 @@ namespace StatusMonitor
                 //added by zhu 2015/12/21 ajust the column width
                 AjustAgentListSize();
                 // end added
+
+            }
+            catch (Exception ex)
+            {
+                writeLog("setShowCol:" + ex.Message);
+            }
+        }
+
+        public void SaveGroupSumColumnShowInfo(string strShowCol)
+        {
+            try
+            {
+                SettingFields_GroupSumColumnShow = strShowCol;
+                SetGroupSumColumnVisible();
+                IniProfile.SelectSection("SVSet");
+                IniProfile.SetString(ConstEntity.GROUP_SUM_COLUMN_SHOW, SettingFields_GroupSumColumnShow);
+                IniProfile.Save(MyTool.GetModuleIniPath());
+
+                AjustTotalListSize();
 
             }
             catch (Exception ex)
@@ -5683,7 +5724,7 @@ namespace StatusMonitor
 
                 ////added by zhu 2014
                 //iSessionID = (int.Parse(iSessionID) + 4000).ToString();
-                writeLog("btnInitMonitor_Click start " );
+                writeLog("btnInitMonitor_Click start ");
                 ////end added
                 //this.btnInitMonitor.Enabled = false;
                 int iSessionID = 0;
@@ -6588,7 +6629,7 @@ namespace StatusMonitor
             totalListView.View = View.Details;
             totalListView.MultiSelect = false;
             totalListView.FullRowSelect = true;
-            totalListView.Columns.Add("GroupName", res.GetString("SM0020033"), 100, HorizontalAlignment.Left, -1);
+            totalListView.Columns.Add("GroupName", "グループ", 100, HorizontalAlignment.Left, -1);
             totalListView.Columns.Add("WaitCount", res.GetString("SM0020034"), 60, HorizontalAlignment.Center, -1);
             totalListView.Columns.Add("ConnectCount", res.GetString("SM0020035"), 60, HorizontalAlignment.Center, -1);
             totalListView.Columns.Add("OtherCount", res.GetString("SM0020036"), 60, HorizontalAlignment.Center, -1);
@@ -6790,6 +6831,7 @@ namespace StatusMonitor
             {
                 ColSelect frmColSelect = new ColSelect();
                 frmColSelect.ShowCol = ShowCol;
+                frmColSelect.ShowGroupSumColumn = SettingFields_GroupSumColumnShow;
                 frmColSelect.Option1 = OptionName1;
                 frmColSelect.Option2 = OptionName2;
                 frmColSelect.Option3 = OptionName3;
@@ -6902,14 +6944,15 @@ namespace StatusMonitor
                 lineStatusListView.Font = new Font(this.lineStatusListView.Font.FontFamily, size * SettingFields_ListFontSize);
                 foreach (ColumnHeader col in this.lineStatusListView.Columns)
                 {
-                    col.Width =Convert.ToInt32( float.Parse( DicOriginLineListViewColumnWidth[col.Name].ToString()) * SettingFields_ListFontSize);
+                    col.Width = Convert.ToInt32(float.Parse(DicOriginLineListViewColumnWidth[col.Name].ToString()) * SettingFields_ListFontSize);
                 }
 
-                this.totalListView.Font = new Font(this.totalListView.Font.FontFamily, size * SettingFields_ListFontSize);
-                foreach (ColumnHeader col in this.totalListView.Columns)
-                {
-                    col.Width = Convert.ToInt32(float.Parse(DicOriginTotalListViewColumnWidth[col.Name].ToString()) * SettingFields_ListFontSize);
-                }
+                //this.totalListView.Font = new Font(this.totalListView.Font.FontFamily, size * SettingFields_ListFontSize);
+                //foreach (ColumnHeader col in this.totalListView.Columns)
+                //{
+                //    col.Width = Convert.ToInt32(float.Parse(DicOriginTotalListViewColumnWidth[col.Name].ToString()) * SettingFields_ListFontSize);
+                //}
+                AjustTotalListSize();
 
                 this.dvMonitor.Font = new Font(this.dvMonitor.Font.FontFamily, size * SettingFields_ListFontSize);
                 foreach (DataGridViewColumn col in this.dvMonitor.Columns)
@@ -6948,6 +6991,28 @@ namespace StatusMonitor
             }
         }
 
+        private void AjustTotalListSize()
+        {
+            float size = 9.0f;
+            totalListView.Font = new Font(this.totalListView.Font.FontFamily, size * SettingFields_ListFontSize, this.totalListView.Font.Style);
+            int colIndex = 0;
+            foreach (ColumnHeader col in this.totalListView.Columns)
+            {
+                // if current is not visible
+                if (SettingFields_GroupSumColumnShow.Substring(colIndex, 1) == "0")
+                {
+                    DicOriginTotalListViewColumnWidth[col.Name] = 0;
+                }
+                else
+                {
+                    if (DicOriginTotalListViewColumnWidth[col.Name] == 0)
+                        DicOriginTotalListViewColumnWidth[col.Name] = 100;
+                }
+                col.Width = Convert.ToInt32(float.Parse(DicOriginTotalListViewColumnWidth[col.Name].ToString()) * SettingFields_ListFontSize);
+                colIndex++;
+            }
+        }
+
         private void ShowSettingFileWidth()
         {
             if (!string.IsNullOrEmpty(SettingFields_AgentListView_Width))
@@ -6966,6 +7031,15 @@ namespace StatusMonitor
                     this.lineStatusListView.Columns[i].Width = int.Parse(widths[i]);
                 }
             }
+            if (!string.IsNullOrEmpty(SettingFields_TotalListView_Width))
+            {
+                string[] widths = SettingFields_TotalListView_Width.Split(',');
+                for (int i = 0; i < widths.Length; i++)
+                {
+                    this.totalListView.Columns[i].Width = int.Parse(widths[i]);
+                }
+            }
+
             if (!string.IsNullOrEmpty(this.SettingFields_QueueListView_Width))
             {
                 string[] widths = SettingFields_QueueListView_Width.Split(',');
@@ -7001,6 +7075,8 @@ namespace StatusMonitor
                 IniProfile.SetString(ConstEntity.CALL_LIST_VIEW_WIDTH, widthValue.Substring(1));
             else if (lv.Name == "quecallStatusListView")
                 IniProfile.SetString(ConstEntity.QUEUE_LIST_VIEW_WIDTH, widthValue.Substring(1));
+            else if (lv.Name == "totalListView")
+                IniProfile.SetString(ConstEntity.TOTAL_LIST_VIEW_WIDTH, widthValue.Substring(1));
             IniProfile.Save(MyTool.GetModuleIniPath());
         }
 
@@ -7389,6 +7465,10 @@ namespace StatusMonitor
             //Asc.controlAutoSize(this);
         }
 
+        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+            this.statusTabCtrl.Invalidate();
+        }
     }
 
     class DoubleBufferListView : ListView

@@ -38,12 +38,12 @@
             this.plSkillShow.AutoScroll = true;
             this.plSkillShow.Location = new System.Drawing.Point(2, 2);
             this.plSkillShow.Name = "plSkillShow";
-            this.plSkillShow.Size = new System.Drawing.Size(367, 209);
+            this.plSkillShow.Size = new System.Drawing.Size(367, 346);
             this.plSkillShow.TabIndex = 0;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(309, 231);
+            this.btnClose.Location = new System.Drawing.Point(312, 371);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(49, 28);
             this.btnClose.TabIndex = 3;
@@ -53,7 +53,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(248, 231);
+            this.btnOK.Location = new System.Drawing.Point(251, 371);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(49, 28);
             this.btnOK.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 261);
+            this.ClientSize = new System.Drawing.Size(370, 411);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.plSkillShow);
@@ -74,7 +74,7 @@
             this.MinimizeBox = false;
             this.Name = "SkillShowSet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "スキル表示設定";
+            this.Text = "スキルグループ表示設定";
             this.Load += new System.EventHandler(this.SkillShowSet_Load);
             this.ResumeLayout(false);
 

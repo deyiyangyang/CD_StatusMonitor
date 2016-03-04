@@ -11,7 +11,8 @@ namespace StatusMonitor
     public partial class ColSelect : Form
     {
         public StatusMonitor.MainForm mainF;
-        public string ShowCol="0000000000000000";
+        public string ShowCol = "0000000000000000";
+        public string ShowGroupSumColumn = "111111";
         public string Option1 = "";
         public string Option2 = "";
         public string Option3 = "";
@@ -28,8 +29,8 @@ namespace StatusMonitor
         private void InitColumnList()
         {
             ColumnList = new List<string>();
-            ColumnList.Add("AgentName"); 
-            ColumnList.Add("Option1"); 
+            ColumnList.Add("AgentName");
+            ColumnList.Add("Option1");
             ColumnList.Add("Option2");
             ColumnList.Add("Option3");
             ColumnList.Add("Option4");
@@ -129,12 +130,65 @@ namespace StatusMonitor
                     chkComment.Checked = true;
                 else
                     chkComment.Checked = false;
+
+                InitShowGroupSumColumn();
             }
             catch (Exception ex)
             {
 
             }
-            
+
+        }
+
+        private void InitShowGroupSumColumn()
+        {
+            if (string.IsNullOrEmpty(ShowGroupSumColumn))
+            {
+                this.chkGroupSumGroup.Checked = true;
+                this.chkGroupSumIdle.Checked = true;
+                this.chkGroupSumTalk.Checked = true;
+                this.chkGroupSumNotIdle.Checked = true;
+                this.chkGroupSumQueue.Checked = true;
+                this.chkGroupSumContinue.Checked = true;
+            }
+            else
+            {
+                //スキルグループ
+                if (ShowGroupSumColumn.Substring(0, 1) == "1")
+                    this.chkGroupSumGroup.Checked = true;
+                else
+                    this.chkGroupSumGroup.Checked = false;
+
+                //受付可
+                if (ShowGroupSumColumn.Substring(1, 1) == "1")
+                    this.chkGroupSumIdle.Checked = true;
+                else
+                    this.chkGroupSumIdle.Checked = false;
+
+                //電話中
+                if (ShowGroupSumColumn.Substring(2, 1) == "1")
+                    this.chkGroupSumTalk.Checked = true;
+                else
+                    this.chkGroupSumTalk.Checked = false;
+
+                //受付不可
+                if (ShowGroupSumColumn.Substring(3, 1) == "1")
+                    this.chkGroupSumNotIdle.Checked = true;
+                else
+                    this.chkGroupSumNotIdle.Checked = false;
+
+                //待ち呼
+                if (ShowGroupSumColumn.Substring(4, 1) == "1")
+                    this.chkGroupSumQueue.Checked = true;
+                else
+                    this.chkGroupSumQueue.Checked = false;
+
+                //継続時間
+                if (ShowGroupSumColumn.Substring(5, 1) == "1")
+                    this.chkGroupSumContinue.Checked = true;
+                else
+                    this.chkGroupSumContinue.Checked = false;
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -152,9 +206,9 @@ namespace StatusMonitor
                 //else
                 //    strShowCol = strShowCol + "0";
 
-                foreach(string agentItem in ColumnList)
+                foreach (string agentItem in ColumnList)
                 {
-                    if(agentItem=="Option1")
+                    if (agentItem == "Option1")
                     {
                         if (chkOption1.Checked)
                             strShowCol = strShowCol + "1";
@@ -252,7 +306,6 @@ namespace StatusMonitor
                             strShowCol = strShowCol + "1";
                         else
                             strShowCol = strShowCol + "0";
-
                     }
                     else
                     {
@@ -260,89 +313,59 @@ namespace StatusMonitor
                     }
                 }
 
-
-
-                //if (chkOption1.Checked == true)
-                //    strShowCol =strShowCol +  "1";
-                //else
-                //    strShowCol = strShowCol +"0";
-
-                //if (chkOption2.Checked == true)
-                //    strShowCol = strShowCol + "1";
-                //else
-                //    strShowCol = strShowCol + "0";
-
-                //if (chkOption3.Checked == true)
-                //    strShowCol = strShowCol + "1";
-                //else
-                //    strShowCol = strShowCol + "0";
-
-                //if (chkOption4.Checked == true)
-                //    strShowCol = strShowCol + "1";
-                //else
-                //    strShowCol = strShowCol + "0";
-
-                //if (chkOption5.Checked == true)
-                //    strShowCol = strShowCol + "1";
-                //else
-                //    strShowCol = strShowCol + "0";
-
-                ////added by zhu 2014/05/07
-                //if (chkExtension.Checked == true)
-                //    strShowCol = strShowCol + "1";
-                //else
-                //    strShowCol = strShowCol + "0";
-                ////end added
-                ////skill
-                //if (chkSkillGroup.Checked == true)
-                //    strShowCol = strShowCol + "1";
-                //else
-                //    strShowCol = strShowCol + "0";
-
-                ////strShowCol = strShowCol + "11";
-                //strShowCol = strShowCol + "1";
-
-                //if (chkStatusTime.Checked == true)
-                //    strShowCol = strShowCol + "1";
-                //else
-                //    strShowCol = strShowCol + "0";
-
-                //if (chkContinueTime.Checked == true)
-                //    strShowCol = strShowCol + "1";
-                //else
-                //    strShowCol = strShowCol + "0";
-
-                //if (chkInOrOutCall.Checked == true)
-                //    strShowCol = strShowCol + "1";
-                //else
-                //    strShowCol = strShowCol + "0";
-
-                //if (chkInOrOutCallNum.Checked == true)
-                //    strShowCol = strShowCol + "1";
-                //else
-                //    strShowCol = strShowCol + "0";
-
-                //if (chkHelp.Checked == true)
-                //    strShowCol = strShowCol + "1";
-                //else
-                //    strShowCol = strShowCol + "0";
-                //if (chkLoginTime.Checked == true)
-                //    strShowCol = strShowCol + "1";
-                //else
-                //    strShowCol = strShowCol + "0";
-                //if (chkComment.Checked == true)
-                //    strShowCol = strShowCol + "1";
-                //else
-                //    strShowCol = strShowCol + "0";
                 mainF.setShowCol(strShowCol);
+                SaveGroupSumColumnShowInfo();
                 this.Dispose();
             }
             catch (Exception ex)
             {
                 //System.Diagnostics.Debug.WriteLine(ex.Message );
-                MessageBox.Show(ex.Message );
+                MessageBox.Show(ex.Message);
             }
-            
+
+        }
+
+        private void SaveGroupSumColumnShowInfo()
+        {
+            string strGroupSumnShowCol = "";
+
+            //スキルグループ
+            if (this.chkGroupSumGroup.Checked)
+                strGroupSumnShowCol += "1";
+            else
+                strGroupSumnShowCol += "0";
+
+            //受付可
+            if (this.chkGroupSumIdle.Checked)
+                strGroupSumnShowCol += "1";
+            else
+                strGroupSumnShowCol += "0";
+
+            //電話中
+            if (this.chkGroupSumTalk.Checked)
+                strGroupSumnShowCol += "1";
+            else
+                strGroupSumnShowCol += "0";
+
+            //受付不可
+            if (this.chkGroupSumNotIdle.Checked)
+                strGroupSumnShowCol += "1";
+            else
+                strGroupSumnShowCol += "0";
+
+            //待ち呼
+            if (this.chkGroupSumQueue.Checked)
+                strGroupSumnShowCol += "1";
+            else
+                strGroupSumnShowCol += "0";
+
+            //継続時間
+            if (this.chkGroupSumContinue.Checked)
+                strGroupSumnShowCol += "1";
+            else
+                strGroupSumnShowCol += "0";
+
+            mainF.SaveGroupSumColumnShowInfo(strGroupSumnShowCol);
         }
     }
 }

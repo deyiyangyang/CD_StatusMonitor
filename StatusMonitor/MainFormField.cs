@@ -116,7 +116,9 @@ namespace StatusMonitor
         public string SettingFields_AgentListView_Width = "";
         public string SettingFields_CallListView_Width = "";
         public string SettingFields_QueueListView_Width = "";
+        public string SettingFields_TotalListView_Width = "";
         public string SettingFields_MonitorGridView_Width = "";
+        public string SettingFields_GroupSumColumnShow = "";
         public float SettingFields_ListFontSize = 1;
         public Dictionary<string, string> Dic_SettingFields_SkillQuecall = new Dictionary<string, string>();
 
@@ -135,6 +137,8 @@ namespace StatusMonitor
             SettingFields_CallListView_Width = IniProfile.GetStringDefault(ConstEntity.CALL_LIST_VIEW_WIDTH, "");
             SettingFields_QueueListView_Width = IniProfile.GetStringDefault(ConstEntity.QUEUE_LIST_VIEW_WIDTH, "");
             SettingFields_MonitorGridView_Width = IniProfile.GetStringDefault(ConstEntity.MONITOR_GRID_VIEW_WIDTH, "");
+            SettingFields_TotalListView_Width = IniProfile.GetStringDefault(ConstEntity.TOTAL_LIST_VIEW_WIDTH,"");
+            SettingFields_GroupSumColumnShow = IniProfile.GetStringDefault(ConstEntity.GROUP_SUM_COLUMN_SHOW, "111111");
             //IniProfile.SelectSection("Alert");
             //SettingFields_AlertTotal = IniProfile.GetLongDefault("nTotal", 100);
             //SettingFields_AlertGroup = IniProfile.GetLongDefault("nGroup", 100);

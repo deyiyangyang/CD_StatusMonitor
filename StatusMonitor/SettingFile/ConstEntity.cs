@@ -19,8 +19,9 @@ namespace StatusMonitor.SettingFile
         public const string AGENT_LIST_VIEW_WIDTH = "AgentListViewWidth";
         public const string CALL_LIST_VIEW_WIDTH = "CallListViewWidth";
         public const string QUEUE_LIST_VIEW_WIDTH = "QueueListViewWidth";
+        public const string TOTAL_LIST_VIEW_WIDTH = "TotalListViewWidth";
         public const string MONITOR_GRID_VIEW_WIDTH = "MonitorGridViewWidth";
-
+        public const string GROUP_SUM_COLUMN_SHOW = "GroupSumColumnShow";
 
         public const string STATUSTIMEIDLE1 = "StatusOverIdelTime1";
         public const string STATUSTIMEIDLE2 = "StatusOverIdelTime2";
