@@ -233,7 +233,7 @@
             this.MinimizeBox = false;
             this.Name = "QueCallSet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "待ち呼警告設定";
+            this.Text = "待ち呼警告設定（全体)";
             this.Load += new System.EventHandler(this.QueCallSet_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

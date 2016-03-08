@@ -42,59 +42,59 @@ namespace StatusMonitor
                 chk.Location = new System.Drawing.Point(12, 12 * index + (index - 1) * offsetHeight);
                 chk.Size = new System.Drawing.Size(180, 25);
                 chk.Checked = GetCheckedStatus(chk.Name);
-                chk.Click += chk_Click;
+                //chk.Click += chk_Click;
 
-                Button btn = new Button();
-                btn.Name = "btnSkillQuecall_" + item["groupId"].ToString();
-                btn.Text = "待ち呼警告設定";
-                btn.Location = new System.Drawing.Point(200, 12 * index + (index - 1) * offsetHeight);
-                btn.Size = new System.Drawing.Size(100, 25);
-                btn.Click += btnQueCallSetting_Click;
+                //Button btn = new Button();
+                //btn.Name = "btnSkillQuecall_" + item["groupId"].ToString();
+                //btn.Text = "待ち呼警告設定";
+                //btn.Location = new System.Drawing.Point(200, 12 * index + (index - 1) * offsetHeight);
+                //btn.Size = new System.Drawing.Size(100, 25);
+                //btn.Click += btnQueCallSetting_Click;
                 this.plSkillShow.Controls.Add(chk);
-                this.plSkillShow.Controls.Add(btn);
+                //this.plSkillShow.Controls.Add(btn);
             }
         }
 
-        private void btnQueCallSetting_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (sender is Button)
-                {
-                    Button btn = (Button)sender;
-                    string skillGroupID = btn.Name.Substring(btn.Name.LastIndexOf('_') + 1);
-                    SkillQueCallSetForm quecallSet = new SkillQueCallSetForm(skillGroupID, _iniProfile, MainForm);
-                    quecallSet.ShowDialog();
-                }
-            }
-            catch (Exception ex)
-            {
-                MainForm.writeLog("SkillShowSet:btnQueCallSetting_Click:system error:" + ex.Message + ex.StackTrace);
-            }
-        }
+        //private void btnQueCallSetting_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (sender is Button)
+        //        {
+        //            Button btn = (Button)sender;
+        //            string skillGroupID = btn.Name.Substring(btn.Name.LastIndexOf('_') + 1);
+        //            SkillQueCallSetForm quecallSet = new SkillQueCallSetForm(skillGroupID, _iniProfile, MainForm);
+        //            quecallSet.ShowDialog();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MainForm.writeLog("SkillShowSet:btnQueCallSetting_Click:system error:" + ex.Message + ex.StackTrace);
+        //    }
+        //}
 
-        private void chk_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (sender is CheckBox)
-                {
-                    CheckBox chk = (CheckBox)sender;
-                    if (chk.Checked)
-                    {
-                        (this.plSkillShow.Controls.Find("btnSkillQuecall_" + chk.Name, false)[0] as Button).Enabled = true;
-                    }
-                    else
-                    {
-                        (this.plSkillShow.Controls.Find("btnSkillQuecall_" + chk.Name, false)[0] as Button).Enabled = false;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MainForm.writeLog("SkillShowSet:chk_Click:system error:" + ex.Message + ex.StackTrace);
-            }
-        }
+        //private void chk_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (sender is CheckBox)
+        //        {
+        //            CheckBox chk = (CheckBox)sender;
+        //            if (chk.Checked)
+        //            {
+        //                (this.plSkillShow.Controls.Find("btnSkillQuecall_" + chk.Name, false)[0] as Button).Enabled = true;
+        //            }
+        //            else
+        //            {
+        //                (this.plSkillShow.Controls.Find("btnSkillQuecall_" + chk.Name, false)[0] as Button).Enabled = false;
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MainForm.writeLog("SkillShowSet:chk_Click:system error:" + ex.Message + ex.StackTrace);
+        //    }
+        //}
 
         private bool GetCheckedStatus(string groupID)
         {

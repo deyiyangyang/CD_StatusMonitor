@@ -23,6 +23,13 @@ namespace StatusMonitor.SettingFile
         public const string MONITOR_GRID_VIEW_WIDTH = "MonitorGridViewWidth";
         public const string GROUP_SUM_COLUMN_SHOW = "GroupSumColumnShow";
 
+        public const string AGENT_LIST_VIEW_SORt = "AgentListViewSort";
+        public const string CALL_LIST_VIEW_SORT = "CallListViewSort";
+        public const string QUEUE_LIST_VIEW_SORT = "QueueListViewSort";
+        public const string TOTAL_LIST_VIEW_SORT = "TotalListViewSort";
+        public const string MONITOR_GRID_VIEW_SORT = "MonitorGridViewSort";
+
+
         public const string STATUSTIMEIDLE1 = "StatusOverIdelTime1";
         public const string STATUSTIMEIDLE2 = "StatusOverIdelTime2";
         public const string STATUSTIMEIDLE3 = "StatusOverIdelTime3";
@@ -80,5 +87,8 @@ namespace StatusMonitor.SettingFile
         public const string SkillQueCallVoiceTemplate1 = "Skill_{0}_Voice1";
         public const string SkillQueCallVoiceTemplate2 = "Skill_{0}_Voice2";
         public const string SkillQueCallVoiceTemplate3 = "Skill_{0}_Voice3";
+
+        public const string Sort_Ascending = "Ascending";
+        public const string Sort_Descending = "Descending";
     }
 }

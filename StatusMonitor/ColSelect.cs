@@ -1,4 +1,7 @@
-﻿using System;
+﻿using StatusMonitor.Helper;
+using StatusMonitor.Model;
+using StatusMonitor.SettingFile;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,10 +23,14 @@ namespace StatusMonitor
         public string Option5 = "";
         private List<string> ColumnList;
 
-        public ColSelect()
+        //monitor
+        public MonitorItemManager MonitorItemManager;
+
+        public ColSelect(MonitorItemManager monitorItemManager)
         {
             InitializeComponent();
             InitColumnList();
+            MonitorItemManager = monitorItemManager;
         }
 
         private void InitColumnList()
@@ -315,6 +322,7 @@ namespace StatusMonitor
 
                 mainF.setShowCol(strShowCol);
                 SaveGroupSumColumnShowInfo();
+                SaveMonitorColumnShowInfo();
                 this.Dispose();
             }
             catch (Exception ex)
@@ -366,6 +374,51 @@ namespace StatusMonitor
                 strGroupSumnShowCol += "0";
 
             mainF.SaveGroupSumColumnShowInfo(strGroupSumnShowCol);
+        }
+
+        private void SaveMonitorColumnShowInfo()
+        {
+            try
+            {
+                string result = "";
+                for (int i = 1; i <= ConstEntity.MANAGEMONITORITEMCOUNT; i++)
+                {
+                    if ((this.Controls.Find("chbMonitorCol" + i.ToString(), true)[0] as CheckBox).Checked)
+                    {
+                        MonitorItemManager.MonitorItems[i - 1].Visible = true;
+                    }
+                    else
+                    {
+                        MonitorItemManager.MonitorItems[i - 1].Visible = false;
+                    }
+
+                }
+                MonitorItemManager.SaveData();
+                //this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            }
+            catch (Exception ex)
+            {
+                LogManager.WriteLog("SaveMonitorColumnShowInfo system error:" + ex.Message);
+            }
+        }
+
+        private void ColSelect_Shown(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MonitorItemManager != null && MonitorItemManager.MonitorItems.Count > 0)
+                {
+                    for (int i = 1; i <= MonitorItemManager.MonitorItems.Count; i++)
+                    {
+                        (this.Controls.Find("chbMonitorCol" + i.ToString(), true)[0] as CheckBox).Checked = MonitorItemManager.MonitorItems[i - 1].Visible;
+                        (this.Controls.Find("chbMonitorCol" + i.ToString(), true)[0] as CheckBox).Text = MonitorItemManager.MonitorItems[i - 1].DisplayName;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LogManager.WriteLog("MonitorItemSet_Shown system error:" + ex.Message);
+            }
         }
     }
 }

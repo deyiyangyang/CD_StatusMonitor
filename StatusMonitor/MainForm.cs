@@ -293,7 +293,7 @@ namespace StatusMonitor
             //end added
             //added by Zhu 2014/09/01
             UpdateContinueTimer = new System.Timers.Timer();
-            UpdateContinueTimer.Elapsed += new System.Timers.ElapsedEventHandler(ContinueTimer); 
+            UpdateContinueTimer.Elapsed += new System.Timers.ElapsedEventHandler(ContinueTimer);
             //end added
             writeLog("current version is 6.3.4");
         }
@@ -483,9 +483,13 @@ namespace StatusMonitor
                 //add,xzg,2011/09/16,E
 
                 //added by Zhu 2014/03/25
-                this.MenuIdle.Enabled = false;
-                this.MenuSkillShowSet.Enabled = false;
-                this.subMenuKyokuGroupSetting.Enabled = false;
+                //this.MenuIdle.Enabled = false;
+                //this.MenuSkillShowSet.Enabled = false;
+                //this.subMenuKyokuGroupSetting.Enabled = false;
+                this.受付可警告設定ToolStripMenuItem.Enabled = false;
+                this.スキルグループ表示設定ToolStripMenuItem.Enabled = false;
+                this.待ち呼警告設定個別ToolStripMenuItem.Enabled = false;
+                this.局番グループ表示設定ToolStripMenuItem.Enabled = false;
                 //end added
 
                 //added by Zhu 2014/04/17
@@ -1161,6 +1165,7 @@ namespace StatusMonitor
 
                 AjustListFontSize();
                 ShowSettingFileWidth();
+                ShowSortColumn();
             }
             catch (Exception ex)
             {
@@ -1305,7 +1310,7 @@ namespace StatusMonitor
                 SaveListViewColumnWidth((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView);
                 SaveListViewColumnWidth(this.totalListView);
                 SaveGridViewColumnWidth(this.dvMonitor);
-
+                SaveSortColumn();
                 int msgCount = 0;
                 int loop = 0;
                 if (msgFromList.Count > 0)
@@ -1338,6 +1343,106 @@ namespace StatusMonitor
             }
 
             //add,xzg,2011/08/10,E
+
+        }
+
+        private void SaveSortColumn()
+        {
+            try
+            {
+                //agent list view
+                if (agentStatusListView.ListViewItemSorter != null)
+                {
+                    if (agentStatusListView.ListViewItemSorter is StatusListViewItemComparer)
+                    {
+                        string agentListViewSorter = (agentStatusListView.ListViewItemSorter as StatusListViewItemComparer).Column.ToString() + ":";
+                        if ((agentStatusListView.ListViewItemSorter as StatusListViewItemComparer).Ascending)
+                        {
+                            agentListViewSorter += ConstEntity.Sort_Ascending;
+                        }
+                        else
+                        {
+                            agentListViewSorter += ConstEntity.Sort_Descending;
+                        }
+                        IniProfile.SelectSection("SVSet");
+                        IniProfile.SetString(ConstEntity.AGENT_LIST_VIEW_SORt, agentListViewSorter);
+                        IniProfile.Save(MyTool.GetModuleIniPath());
+                    }
+                }
+
+                // line list view
+                if (lineStatusListView.ListViewItemSorter != null)
+                {
+                    if (lineStatusListView.ListViewItemSorter is StatusListViewItemComparer)
+                    {
+                        string listViewSorter = (lineStatusListView.ListViewItemSorter as StatusListViewItemComparer).Column.ToString() + ":";
+                        if ((lineStatusListView.ListViewItemSorter as StatusListViewItemComparer).Ascending)
+                        {
+                            listViewSorter += ConstEntity.Sort_Ascending;
+                        }
+                        else
+                        {
+                            listViewSorter += ConstEntity.Sort_Descending;
+                        }
+                        IniProfile.SelectSection("SVSet");
+                        IniProfile.SetString(ConstEntity.CALL_LIST_VIEW_SORT, listViewSorter);
+                        IniProfile.Save(MyTool.GetModuleIniPath());
+                    }
+                }
+
+                // quecall list view
+                if ((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter != null)
+                {
+                    if ((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter is StatusListViewItemComparer)
+                    {
+                        string listViewSorter = ((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter as StatusListViewItemComparer).Column.ToString() + ":";
+                        if (((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter as StatusListViewItemComparer).Ascending)
+                        {
+                            listViewSorter += ConstEntity.Sort_Ascending;
+                        }
+                        else
+                        {
+                            listViewSorter += ConstEntity.Sort_Descending;
+                        }
+
+                        IniProfile.SelectSection("SVSet");
+                        IniProfile.SetString(ConstEntity.QUEUE_LIST_VIEW_SORT, listViewSorter);
+                        IniProfile.Save(MyTool.GetModuleIniPath());
+                    }
+                }
+
+                //total list
+                if (totalListView.ListViewItemSorter != null)
+                {
+                    if (totalListView.ListViewItemSorter is TotalListViewItemComparer)
+                    {
+                        string listViewSorter = (totalListView.ListViewItemSorter as TotalListViewItemComparer).Column.ToString() + ":";
+                        if ((totalListView.ListViewItemSorter as TotalListViewItemComparer).Ascending)
+                        {
+                            listViewSorter += ConstEntity.Sort_Ascending;
+                        }
+                        else
+                        {
+                            listViewSorter += ConstEntity.Sort_Descending;
+                        }
+                        IniProfile.SelectSection("SVSet");
+                        IniProfile.SetString(ConstEntity.TOTAL_LIST_VIEW_SORT, listViewSorter);
+                        IniProfile.Save(MyTool.GetModuleIniPath());
+                    }
+                }
+
+                if (this.dvMonitor.SortedColumn != null)
+                {
+                    string sortValue = this.dvMonitor.SortedColumn.Index.ToString() + ":" + this.dvMonitor.SortOrder.ToString();
+                    IniProfile.SelectSection("SVSet");
+                    IniProfile.SetString(ConstEntity.MONITOR_GRID_VIEW_SORT, sortValue);
+                    IniProfile.Save(MyTool.GetModuleIniPath());
+                }
+            }
+            catch (Exception ex)
+            {
+                writeLog("MainForm_FormClosing:SaveSortColumn:" + ex.Message);
+            }
 
         }
 
@@ -1650,39 +1755,39 @@ namespace StatusMonitor
             }
         }
 
-        class StatusListViewItemComparer : System.Collections.IComparer
-        {
-            private int Column = 0;
-            private bool Ascending = true;
+        //class StatusListViewItemComparer : System.Collections.IComparer
+        //{
+        //    public int Column = 0;
+        //    public bool Ascending = true;
 
-            public StatusListViewItemComparer(int column, bool ascending)
-            {
-                Column = column;
-                Ascending = ascending;
-            }
-            public int Compare(object x, object y)
-            {
-                // Get Value
-                string tx = ((ListViewItem)x).SubItems[Column].Text;
-                string ty = ((ListViewItem)y).SubItems[Column].Text;
-                // Compare
-                int ret = String.Compare(tx, ty);
-                if (!Ascending) ret *= -1;
-                if (ret == 0)
-                {
-                    tx = ((ListViewItem)x).SubItems[0].Text;
-                    ty = ((ListViewItem)y).SubItems[0].Text;
-                    ret = String.Compare(tx, ty);
-                }
-                if (ret == 0)
-                {
-                    tx = ((ListViewItem)x).SubItems[1].Text;
-                    ty = ((ListViewItem)y).SubItems[1].Text;
-                    ret = String.Compare(tx, ty);
-                }
-                return ret;
-            }
-        }
+        //    public StatusListViewItemComparer(int column, bool ascending)
+        //    {
+        //        Column = column;
+        //        Ascending = ascending;
+        //    }
+        //    public int Compare(object x, object y)
+        //    {
+        //        // Get Value
+        //        string tx = ((ListViewItem)x).SubItems[Column].Text;
+        //        string ty = ((ListViewItem)y).SubItems[Column].Text;
+        //        // Compare
+        //        int ret = String.Compare(tx, ty);
+        //        if (!Ascending) ret *= -1;
+        //        if (ret == 0)
+        //        {
+        //            tx = ((ListViewItem)x).SubItems[0].Text;
+        //            ty = ((ListViewItem)y).SubItems[0].Text;
+        //            ret = String.Compare(tx, ty);
+        //        }
+        //        if (ret == 0)
+        //        {
+        //            tx = ((ListViewItem)x).SubItems[1].Text;
+        //            ty = ((ListViewItem)y).SubItems[1].Text;
+        //            ret = String.Compare(tx, ty);
+        //        }
+        //        return ret;
+        //    }
+        //}
 
 
         private void agentStatusListView_ColumnClick(object sender, ColumnClickEventArgs e)
@@ -1701,46 +1806,46 @@ namespace StatusMonitor
             ((ListView)sender).ListViewItemSorter = new StatusListViewItemComparer(e.Column, order);
         }
 
-        class TotalListViewItemComparer : System.Collections.IComparer
-        {
-            private int Column = 0;
-            private bool Ascending = true;
-            //private static bool[] ColumnItemInt = { false, true, true, true, true };
-            private static bool[] ColumnItemInt = { false, true, true, true, true, false, true, true, true, true, true };
+        //class TotalListViewItemComparer : System.Collections.IComparer
+        //{
+        //    private int Column = 0;
+        //    private bool Ascending = true;
+        //    //private static bool[] ColumnItemInt = { false, true, true, true, true };
+        //    private static bool[] ColumnItemInt = { false, true, true, true, true, false, true, true, true, true, true };
 
-            public TotalListViewItemComparer(int column, bool ascending)
-            {
-                Column = column;
-                Ascending = ascending;
-            }
-            public int Compare(object x, object y)
-            {
-                // Check Top
-                int row = ((ListViewItem)x).Index;
-                if (row == 0) return 0;
-                // Get Value
-                string tx = ((ListViewItem)x).SubItems[Column].Text;
-                string ty = ((ListViewItem)y).SubItems[Column].Text;
-                // Compare
-                int ret = 0;
-                if (ColumnItemInt[Column]) ret = Int32.Parse(tx).CompareTo(Int32.Parse(ty));
-                else ret = String.Compare(tx, ty);
+        //    public TotalListViewItemComparer(int column, bool ascending)
+        //    {
+        //        Column = column;
+        //        Ascending = ascending;
+        //    }
+        //    public int Compare(object x, object y)
+        //    {
+        //        // Check Top
+        //        int row = ((ListViewItem)x).Index;
+        //        if (row == 0) return 0;
+        //        // Get Value
+        //        string tx = ((ListViewItem)x).SubItems[Column].Text;
+        //        string ty = ((ListViewItem)y).SubItems[Column].Text;
+        //        // Compare
+        //        int ret = 0;
+        //        if (ColumnItemInt[Column]) ret = Int32.Parse(tx).CompareTo(Int32.Parse(ty));
+        //        else ret = String.Compare(tx, ty);
 
-                //update,xzg,2014/05/13,S
-                //return (Ascending ? ret: -ret);
-                if (!Ascending) ret *= -1;
-                //update,xzg,2014/05/13,E
+        //        //update,xzg,2014/05/13,S
+        //        //return (Ascending ? ret: -ret);
+        //        if (!Ascending) ret *= -1;
+        //        //update,xzg,2014/05/13,E
 
-                //add,2014/05/13
-                if (ret == 0)
-                {
-                    tx = ((ListViewItem)x).SubItems[0].Text;
-                    ty = ((ListViewItem)y).SubItems[0].Text;
-                    ret = String.Compare(tx, ty);
-                }
-                return ret;
-            }
-        }
+        //        //add,2014/05/13
+        //        if (ret == 0)
+        //        {
+        //            tx = ((ListViewItem)x).SubItems[0].Text;
+        //            ty = ((ListViewItem)y).SubItems[0].Text;
+        //            ret = String.Compare(tx, ty);
+        //        }
+        //        return ret;
+        //    }
+        //}
 
 
 
@@ -2791,7 +2896,7 @@ namespace StatusMonitor
         {
             try
             {
-                if(ShowCol==strShowCol)
+                if (ShowCol == strShowCol)
                 {
                     return;
                 }
@@ -4017,8 +4122,13 @@ namespace StatusMonitor
                 //added by Zhu 2014/03/25
                 if (dtGroupPersonal.Rows.Count > 1)
                 {
-                    this.MenuIdle.Enabled = true;
-                    this.MenuSkillShowSet.Enabled = true;
+                    //this.MenuIdle.Enabled = true;
+                    //this.MenuSkillShowSet.Enabled = true;
+                    this.受付可警告設定ToolStripMenuItem.Enabled = true;
+                    this.スキルグループ表示設定ToolStripMenuItem.Enabled = true;
+                    this.待ち呼警告設定個別ToolStripMenuItem.Enabled = true;
+
+
                     dtSkillGroup = dtGroupPersonal.DefaultView.ToTable(true, new string[] { "groupId", "groupName" });
                     GetSkillQuecallSetting(dtSkillGroup);
                 }
@@ -6473,7 +6583,7 @@ namespace StatusMonitor
             frmLineCutSet frm = new frmLineCutSet(IniProfile);
             if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                SettingFields_LineCutShow = frm._keyvalue;
+                SettingFields_LineCutShow = frm.LineCut;
             }
         }
 
@@ -6492,6 +6602,7 @@ namespace StatusMonitor
                 SettingFields_MessagePop = frm.MessagePop;
                 SettingFields_AgentGraphShow = frm.AgentGraphShow;
                 SettingFields_ListFontSize = frm.ListFontSize;
+                SettingFields_LineCutShow = frm.LineCut;
                 if (SettingFields_MonitorTabShow == "0")
                 {
                     if (statusTabCtrl.TabPages.Contains(tabMonitor))
@@ -6707,7 +6818,8 @@ namespace StatusMonitor
                     return;
                 }
                 KyokuGroup = webGetGroup.DocumentText;
-                this.subMenuKyokuGroupSetting.Enabled = true;
+                //this.subMenuKyokuGroupSetting.Enabled = true;
+                this.局番グループ表示設定ToolStripMenuItem.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -6729,7 +6841,7 @@ namespace StatusMonitor
             }
             catch (Exception ex)
             {
-                writeLog("MenuSkillShowSet_Click Error:" + ex.StackTrace);
+                writeLog("subMenuKyokuGroupSetting_Click Error:" + ex.StackTrace);
             }
         }
 
@@ -6829,7 +6941,7 @@ namespace StatusMonitor
         {
             try
             {
-                ColSelect frmColSelect = new ColSelect();
+                ColSelect frmColSelect = new ColSelect(_MonitorItemManager);
                 frmColSelect.ShowCol = ShowCol;
                 frmColSelect.ShowGroupSumColumn = SettingFields_GroupSumColumnShow;
                 frmColSelect.Option1 = OptionName1;
@@ -7057,6 +7169,82 @@ namespace StatusMonitor
                 }
             }
         }
+        private void ShowSortColumn()
+        {
+            try
+            {
+
+                if (!string.IsNullOrEmpty(SettingFields_AgentListViewSort))
+                {
+                    int columnIndex = 0;
+                    bool ascending = false;
+                    string[] arrSortValue = SettingFields_AgentListViewSort.Split(':');
+                    columnIndex = int.Parse(arrSortValue[0]);
+                    if (arrSortValue[1] == ConstEntity.Sort_Ascending)
+                    {
+                        ascending = true;
+                    }
+                    agentStatusListView.ListViewItemSorter = new StatusListViewItemComparer(columnIndex, ascending);
+                }
+                if (!string.IsNullOrEmpty(SettingFields_CallListViewSort))
+                {
+                    int columnIndex = 0;
+                    bool ascending = false;
+                    string[] arrSortValue = SettingFields_CallListViewSort.Split(':');
+                    columnIndex = int.Parse(arrSortValue[0]);
+                    if (arrSortValue[1] == ConstEntity.Sort_Ascending)
+                    {
+                        ascending = true;
+                    }
+                    lineStatusListView.ListViewItemSorter = new StatusListViewItemComparer(columnIndex, ascending);
+                }
+                if (!string.IsNullOrEmpty(SettingFields_QueueListViewSort))
+                {
+                    int columnIndex = 0;
+                    bool ascending = false;
+                    string[] arrSortValue = SettingFields_QueueListViewSort.Split(':');
+                    columnIndex = int.Parse(arrSortValue[0]);
+                    if (arrSortValue[1] == ConstEntity.Sort_Ascending)
+                    {
+                        ascending = true;
+                    }
+                    (this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter = new StatusListViewItemComparer(columnIndex, ascending);
+                }
+                if (!string.IsNullOrEmpty(SettingFields_TotalListViewSort))
+                {
+                    int columnIndex = 0;
+                    bool ascending = false;
+                    string[] arrSortValue = SettingFields_TotalListViewSort.Split(':');
+                    columnIndex = int.Parse(arrSortValue[0]);
+                    if (arrSortValue[1] == ConstEntity.Sort_Ascending)
+                    {
+                        ascending = true;
+                    }
+                    totalListView.ListViewItemSorter = new TotalListViewItemComparer(columnIndex, ascending);
+                }
+                if (!string.IsNullOrEmpty(SettingFields_MonitorGridViewSort))
+                {
+                    int columnIndex = 0;
+                    bool ascending = false;
+                    string[] arrSortValue = SettingFields_MonitorGridViewSort.Split(':');
+                    columnIndex = int.Parse(arrSortValue[0]);
+                    if (arrSortValue[1] == ConstEntity.Sort_Ascending)
+                    {
+                        dvMonitor.Sort(this.dvMonitor.Columns[columnIndex], ListSortDirection.Ascending);
+                    }
+                    else if (arrSortValue[1] == ConstEntity.Sort_Descending)
+                    {
+                        dvMonitor.Sort(this.dvMonitor.Columns[columnIndex], ListSortDirection.Descending);
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                writeLog("ShowSortColumn system error:" + ex.Message.ToString() + ex.StackTrace);
+            }
+           
+        }
+
         /// <summary>
         /// save listview column width into ini file, so next run can keep width
         /// </summary>
@@ -7468,6 +7656,141 @@ namespace StatusMonitor
         private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
         {
             this.statusTabCtrl.Invalidate();
+        }
+
+        private void 超過時間警告表示設定ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StatusOverTimeSet statusOverTimeSetForm = new StatusOverTimeSet();
+            statusOverTimeSetForm.mainF = this;
+            statusOverTimeSetForm.ShowDialog();
+        }
+
+        private void オプション名設定ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OptionName frmOptionName = new OptionName();
+                frmOptionName.Option1 = OptionName1;
+                frmOptionName.Option2 = OptionName2;
+                frmOptionName.Option3 = OptionName3;
+                frmOptionName.Option4 = OptionName4;
+                frmOptionName.Option5 = OptionName5;
+                frmOptionName.mainF = this;
+                frmOptionName.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                writeLog("オプション名設定ToolStripMenuItem_Click system error:" + ex.Message);
+            }
+        }
+
+        private void モニタタイトル名設定ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmMonitorTitle frmMontor = new frmMonitorTitle(_MonitorItemManager);
+                frmMontor.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                writeLog("モニタタイトル名設定ToolStripMenuItem_Click systeme error:" + ex.Message);
+            }
+        }
+
+
+        private void 受付可警告設定ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SkillIdleSet qc = new SkillIdleSet(dsMontor.Tables["dtGroupPersonal"].DefaultView.ToTable(true, new string[] { "groupId", "groupName" }));
+                qc.mainF = this;
+                qc.PeriodLongString = IdlePeriodLongString;
+                qc.PeriodVoiceLongString = IdlePeriodVoiceLongString;
+                qc.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                writeLog("MenuIdle_Click Error:" + ex.StackTrace);
+            }
+        }
+
+        private void 待ち呼警告設定は全体ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                QueCallSet qc = new QueCallSet();
+                qc.mainF = this;
+                qc.Period1 = QuePeriod1;
+                qc.Period2 = QuePeriod2;
+                qc.Period3 = QuePeriod3;
+                qc.PeriodVoice1 = QuePeriodVoice1;
+                qc.PeriodVoice2 = QuePeriodVoice2;
+                qc.PeriodVoice3 = QuePeriodVoice3;
+
+                qc.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                writeLog("menuQueCall_Click Error:" + ex.StackTrace);
+            }
+        }
+
+        private void 待ち呼警告設定個別ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SkillQueCallSetting sss = new SkillQueCallSetting(dsMontor.Tables["dtGroupPersonal"].DefaultView.ToTable(true, new string[] { "groupId", "groupName" }), IniProfile);
+                sss.MainForm = this;
+                if (sss.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    //SkillShowSetString = sss._keyvalue;
+                    //dsMontor.Tables["dtMonitor"].Rows.Clear();
+                    //setGroup();
+                    //listMonitorShow();
+                    //MessageBox.Show("状態モニタを再起動ください", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                writeLog("待ち呼警告設定個別ToolStripMenuItem_Click Error:" + ex.StackTrace);
+            }
+        }
+
+        private void 局番グループ表示設定ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                KyoKuGroupForm sss = new KyoKuGroupForm(KyokuGroup, IniProfile);
+                if (sss.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    SettingFields_KyoKuGroupShow = sss._keyvalue;
+                }
+            }
+            catch (Exception ex)
+            {
+                writeLog("subMenuKyokuGroupSetting_Click Error:" + ex.StackTrace);
+            }
+        }
+
+        private void スキルグループ表示設定ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SkillShowSet sss = new SkillShowSet(dsMontor.Tables["dtGroupPersonal"].DefaultView.ToTable(true, new string[] { "groupId", "groupName" }), IniProfile);
+                sss.MainForm = this;
+                if (sss.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    SkillShowSetString = sss._keyvalue;
+                    dsMontor.Tables["dtMonitor"].Rows.Clear();
+                    setGroup();
+                    listMonitorShow();
+                    MessageBox.Show("状態モニタを再起動ください", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                writeLog("MenuSkillShowSet_Click Error:" + ex.StackTrace);
+            }
         }
     }
 

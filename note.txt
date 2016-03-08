@@ -96,3 +96,39 @@ UM_POPQUE vAgentID='XXXXX',iSessionProfileID=XXXX vAgentIDは分配先のエージェント
 
 2015/11/11
 1，fix icons of agnet status
+
+2015/11/16
+1,グラフ表示のON/OFFメニューを「その他」についか
+
+2015/11/17
+1,xie-san made install file
+
+2015/11/18
+1，set pie location.Y same as agentIconListView location.Y
+
+2015/12/07
+1，fix listview click order bug,now use the count of listview column as array length
+
+2015/12/09
+1，change minute to second in overtime form
+
+2016/01/22
+1,set font size dropdownlist and sent to fujimori-san
+
+2016/02/23
+1，各タブと統計情報欄において、横幅を調整した場合、設定を保持してほしい
+2, 回線状態タブにおいて、通話中の場合、誰と通話中かわかるようにエージェント名列を追加してほしい
+3. make install file バージョンは6.3.4.1 
+
+2016/03/01
+1，文字サイズに150%と250%を追加
+
+2016/03/04
+　①右ペイン（今後「グループサマリ」と名付けます）の幅を各タブと同様に記憶する
+　②グループサマリの列表示ON/OFFメニュー追加
+　　（今の「列の選択」の拡張）
+　③グループサマリの列名「スキルグループ」を「グループ」に変更
+　　（スキルグループだけでなく、局番グループもあるので）
+　④各タブとグループサマリの表示割合調整機能
+　⑤スキル表示設定、局番グループ表示設定のダイアログ縦幅を1.5倍に
+　⑥「スキル表示設定」の名称を「スキルグループ表示設定」に変更

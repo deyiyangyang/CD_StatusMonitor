@@ -71,5 +71,10 @@ namespace StatusMonitor
         {
             this.Dispose();
         }
+
+        private void MonitorItemSet_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

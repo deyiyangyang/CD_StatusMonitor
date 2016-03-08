@@ -119,6 +119,12 @@ namespace StatusMonitor
         public string SettingFields_TotalListView_Width = "";
         public string SettingFields_MonitorGridView_Width = "";
         public string SettingFields_GroupSumColumnShow = "";
+
+        public string SettingFields_AgentListViewSort = "";
+        public string SettingFields_CallListViewSort = "";
+        public string SettingFields_QueueListViewSort = "";
+        public string SettingFields_TotalListViewSort = "";
+        public string SettingFields_MonitorGridViewSort = "";
         public float SettingFields_ListFontSize = 1;
         public Dictionary<string, string> Dic_SettingFields_SkillQuecall = new Dictionary<string, string>();
 
@@ -128,17 +134,25 @@ namespace StatusMonitor
         private void GetIniSettingValueInLoadEvent()
         {
             //IniProfile = new TksProfileAcxLib.TksProfileClass();
-           // IniProfile.Load(MyTool.GetModuleIniPath());
+            // IniProfile.Load(MyTool.GetModuleIniPath());
             SettingFields_MessagePop = IniProfile.GetStringDefault(ConstEntity.MESSAGEPOP, "");
             SettingFields_AgentGraphShow = IniProfile.GetStringDefault(ConstEntity.AGENTGRAPH, "");
             SettingFields_WebServer = IniProfile.GetStringDefault(ConstEntity.WEBSERVER, "");
-            SettingFields_ListFontSize = float.Parse( IniProfile.GetStringDefault(ConstEntity.LISTFONTSIZE, "1"));
-            SettingFields_AgentListView_Width = IniProfile.GetStringDefault(ConstEntity.AGENT_LIST_VIEW_WIDTH,"");
+            SettingFields_ListFontSize = float.Parse(IniProfile.GetStringDefault(ConstEntity.LISTFONTSIZE, "1"));
+            SettingFields_AgentListView_Width = IniProfile.GetStringDefault(ConstEntity.AGENT_LIST_VIEW_WIDTH, "");
             SettingFields_CallListView_Width = IniProfile.GetStringDefault(ConstEntity.CALL_LIST_VIEW_WIDTH, "");
             SettingFields_QueueListView_Width = IniProfile.GetStringDefault(ConstEntity.QUEUE_LIST_VIEW_WIDTH, "");
             SettingFields_MonitorGridView_Width = IniProfile.GetStringDefault(ConstEntity.MONITOR_GRID_VIEW_WIDTH, "");
-            SettingFields_TotalListView_Width = IniProfile.GetStringDefault(ConstEntity.TOTAL_LIST_VIEW_WIDTH,"");
+            SettingFields_TotalListView_Width = IniProfile.GetStringDefault(ConstEntity.TOTAL_LIST_VIEW_WIDTH, "");
             SettingFields_GroupSumColumnShow = IniProfile.GetStringDefault(ConstEntity.GROUP_SUM_COLUMN_SHOW, "111111");
+
+            SettingFields_AgentListViewSort = IniProfile.GetStringDefault(ConstEntity.AGENT_LIST_VIEW_SORt, "");
+            SettingFields_CallListViewSort = IniProfile.GetStringDefault(ConstEntity.CALL_LIST_VIEW_SORT, "");
+            SettingFields_QueueListViewSort = IniProfile.GetStringDefault(ConstEntity.QUEUE_LIST_VIEW_SORT, "");
+            SettingFields_TotalListViewSort = IniProfile.GetStringDefault(ConstEntity.TOTAL_LIST_VIEW_SORT, "");
+            SettingFields_MonitorGridViewSort = IniProfile.GetStringDefault(ConstEntity.MONITOR_GRID_VIEW_SORT, "");
+
+
             //IniProfile.SelectSection("Alert");
             //SettingFields_AlertTotal = IniProfile.GetLongDefault("nTotal", 100);
             //SettingFields_AlertGroup = IniProfile.GetLongDefault("nGroup", 100);
@@ -313,7 +327,7 @@ namespace StatusMonitor
                 string voice2 = IniProfile.GetStringDefault(string.Format(ConstEntity.SkillQueCallVoiceTemplate2, skillGroupID), string.Empty);
                 string period3 = IniProfile.GetStringDefault(string.Format(ConstEntity.SkillQueCallPeriodTemplate3, skillGroupID), string.Empty);
                 string voice3 = IniProfile.GetStringDefault(string.Format(ConstEntity.SkillQueCallVoiceTemplate3, skillGroupID), string.Empty);
-                if(string.IsNullOrEmpty(period1))
+                if (string.IsNullOrEmpty(period1))
                 {
                     continue;
                 }

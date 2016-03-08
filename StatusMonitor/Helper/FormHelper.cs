@@ -26,8 +26,8 @@ namespace StatusMonitor.Helper
     }
     public class StatusListViewItemComparer : System.Collections.IComparer
     {
-        private int Column = 0;
-        private bool Ascending = true;
+        public int Column = 0;
+        public bool Ascending = true;
 
         public StatusListViewItemComparer(int column, bool ascending)
         {
@@ -60,10 +60,10 @@ namespace StatusMonitor.Helper
 
     public class TotalListViewItemComparer : System.Collections.IComparer
     {
-        private int Column = 0;
-        private bool Ascending = true;
+        public int Column = 0;
+        public bool Ascending = true;
         //private static bool[] ColumnItemInt = { false, true, true, true, true };
-        private static bool[] ColumnItemInt = { false, true, true, true, true, true, true, true, true, true, true };
+        private static bool[] ColumnItemInt = { false, true, true, true, true, false, true, true, true, true, true };
 
         public TotalListViewItemComparer(int column, bool ascending)
         {
@@ -82,7 +82,20 @@ namespace StatusMonitor.Helper
             int ret = 0;
             if (ColumnItemInt[Column]) ret = Int32.Parse(tx).CompareTo(Int32.Parse(ty));
             else ret = String.Compare(tx, ty);
-            return (Ascending ? ret : -ret);
+
+            //update,xzg,2014/05/13,S
+            //return (Ascending ? ret: -ret);
+            if (!Ascending) ret *= -1;
+            //update,xzg,2014/05/13,E
+
+            //add,2014/05/13
+            if (ret == 0)
+            {
+                tx = ((ListViewItem)x).SubItems[0].Text;
+                ty = ((ListViewItem)y).SubItems[0].Text;
+                ret = String.Compare(tx, ty);
+            }
+            return ret;
         }
     }
 }

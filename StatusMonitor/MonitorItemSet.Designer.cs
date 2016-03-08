@@ -264,6 +264,7 @@
             this.Name = "MonitorItemSet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "モニトタイトル表示|非表示";
+            this.Load += new System.EventHandler(this.MonitorItemSet_Load);
             this.Shown += new System.EventHandler(this.MonitorItemSet_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();

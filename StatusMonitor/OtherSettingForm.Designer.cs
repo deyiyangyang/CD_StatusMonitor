@@ -38,12 +38,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbListFontSize = new System.Windows.Forms.ComboBox();
+            this.chkLineCutShow = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // chkMonitorShow
             // 
             this.chkMonitorShow.AutoSize = true;
-            this.chkMonitorShow.Location = new System.Drawing.Point(171, 37);
+            this.chkMonitorShow.Location = new System.Drawing.Point(170, 52);
             this.chkMonitorShow.Name = "chkMonitorShow";
             this.chkMonitorShow.Size = new System.Drawing.Size(48, 16);
             this.chkMonitorShow.TabIndex = 9;
@@ -53,7 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 38);
+            this.label1.Location = new System.Drawing.Point(35, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 12);
             this.label1.TabIndex = 8;
@@ -61,7 +63,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(208, 188);
+            this.btnClose.Location = new System.Drawing.Point(208, 219);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(64, 29);
             this.btnClose.TabIndex = 7;
@@ -71,7 +73,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(138, 188);
+            this.btnOK.Location = new System.Drawing.Point(138, 219);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(64, 29);
             this.btnOK.TabIndex = 6;
@@ -82,7 +84,7 @@
             // chkMessageShow
             // 
             this.chkMessageShow.AutoSize = true;
-            this.chkMessageShow.Location = new System.Drawing.Point(171, 65);
+            this.chkMessageShow.Location = new System.Drawing.Point(170, 80);
             this.chkMessageShow.Name = "chkMessageShow";
             this.chkMessageShow.Size = new System.Drawing.Size(48, 16);
             this.chkMessageShow.TabIndex = 11;
@@ -92,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 66);
+            this.label2.Location = new System.Drawing.Point(35, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 12);
             this.label2.TabIndex = 10;
@@ -101,7 +103,7 @@
             // chkAgentGraph
             // 
             this.chkAgentGraph.AutoSize = true;
-            this.chkAgentGraph.Location = new System.Drawing.Point(171, 95);
+            this.chkAgentGraph.Location = new System.Drawing.Point(170, 110);
             this.chkAgentGraph.Name = "chkAgentGraph";
             this.chkAgentGraph.Size = new System.Drawing.Size(48, 16);
             this.chkAgentGraph.TabIndex = 13;
@@ -111,7 +113,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 96);
+            this.label3.Location = new System.Drawing.Point(35, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 12);
             this.label3.TabIndex = 12;
@@ -120,7 +122,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 125);
+            this.label4.Location = new System.Drawing.Point(35, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 12);
             this.label4.TabIndex = 14;
@@ -130,16 +132,37 @@
             // 
             this.cmbListFontSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbListFontSize.FormattingEnabled = true;
-            this.cmbListFontSize.Location = new System.Drawing.Point(171, 122);
+            this.cmbListFontSize.Location = new System.Drawing.Point(170, 137);
             this.cmbListFontSize.Name = "cmbListFontSize";
             this.cmbListFontSize.Size = new System.Drawing.Size(73, 20);
             this.cmbListFontSize.TabIndex = 15;
+            // 
+            // chkShow
+            // 
+            this.chkLineCutShow.AutoSize = true;
+            this.chkLineCutShow.Location = new System.Drawing.Point(170, 23);
+            this.chkLineCutShow.Name = "chkShow";
+            this.chkLineCutShow.Size = new System.Drawing.Size(48, 16);
+            this.chkLineCutShow.TabIndex = 17;
+            this.chkLineCutShow.Text = "表示";
+            this.chkLineCutShow.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(35, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 12);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "回線切断表示";
             // 
             // OtherSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 229);
+            this.ClientSize = new System.Drawing.Size(284, 260);
+            this.Controls.Add(this.chkLineCutShow);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbListFontSize);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.chkAgentGraph);
@@ -173,5 +196,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbListFontSize;
+        private System.Windows.Forms.CheckBox chkLineCutShow;
+        private System.Windows.Forms.Label label5;
     }
 }

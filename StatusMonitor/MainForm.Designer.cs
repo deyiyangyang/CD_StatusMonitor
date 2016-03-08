@@ -36,20 +36,22 @@
             this.menuSet = new System.Windows.Forms.ToolStripMenuItem();
             this.subMenuSet = new System.Windows.Forms.ToolStripMenuItem();
             this.subMenuReFresh = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuOverTimeSet = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuGetLog = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuWaitTime = new System.Windows.Forms.ToolStripMenuItem();
-            this.sumMenuCol = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuOption = new System.Windows.Forms.ToolStripMenuItem();
             this.sumMenuQuickAnswer = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuMonitorTitle = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuQueCall = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuIdle = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMenuKyokuGroupSetting = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuSkillShowSet = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuMonitorItemShow = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuLineCutItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sumMenuCol = new System.Windows.Forms.ToolStripMenuItem();
+            this.列名設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.オプション名設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.モニタタイトル名設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.警告設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.超過時間警告表示設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.待ち呼警告設定は全体ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.待ち呼警告設定個別ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.受付可警告設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.グループ表示設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.局番グループ表示設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.スキルグループ表示設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuGetLog = new System.Windows.Forms.ToolStripMenuItem();
             this.subMenuOtherSetting = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuWaitTime = new System.Windows.Forms.ToolStripMenuItem();
             this.statusTabCtrl = new System.Windows.Forms.TabControl();
             this.agentStatusPage = new System.Windows.Forms.TabPage();
             this.agentPie = new System.Windows.Forms.PictureBox();
@@ -166,20 +168,14 @@
             this.menuSet.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.subMenuSet,
             this.subMenuReFresh,
-            this.subMenuOverTimeSet,
-            this.menuGetLog,
-            this.subMenuWaitTime,
-            this.sumMenuCol,
-            this.subMenuOption,
             this.sumMenuQuickAnswer,
-            this.menuMonitorTitle,
-            this.menuQueCall,
-            this.MenuIdle,
-            this.subMenuKyokuGroupSetting,
-            this.MenuSkillShowSet,
-            this.MenuMonitorItemShow,
-            this.MenuLineCutItem,
-            this.subMenuOtherSetting});
+            this.sumMenuCol,
+            this.列名設定ToolStripMenuItem,
+            this.警告設定ToolStripMenuItem,
+            this.グループ表示設定ToolStripMenuItem,
+            this.menuGetLog,
+            this.subMenuOtherSetting,
+            this.subMenuWaitTime});
             this.menuSet.Name = "menuSet";
             this.menuSet.Size = new System.Drawing.Size(41, 20);
             this.menuSet.Text = "設定";
@@ -198,12 +194,104 @@
             this.subMenuReFresh.Text = "refresh";
             this.subMenuReFresh.Click += new System.EventHandler(this.subMenuReFresh_Click);
             // 
-            // subMenuOverTimeSet
+            // sumMenuQuickAnswer
             // 
-            this.subMenuOverTimeSet.Name = "subMenuOverTimeSet";
-            this.subMenuOverTimeSet.Size = new System.Drawing.Size(192, 22);
-            this.subMenuOverTimeSet.Text = "超過時間警告表示設定";
-            this.subMenuOverTimeSet.Click += new System.EventHandler(this.subMenuOverTimeSet_Click);
+            this.sumMenuQuickAnswer.Name = "sumMenuQuickAnswer";
+            this.sumMenuQuickAnswer.Size = new System.Drawing.Size(192, 22);
+            this.sumMenuQuickAnswer.Text = "即答秒数設定";
+            this.sumMenuQuickAnswer.Click += new System.EventHandler(this.sumMenuQuickAnswer_Click);
+            // 
+            // sumMenuCol
+            // 
+            this.sumMenuCol.Name = "sumMenuCol";
+            this.sumMenuCol.Size = new System.Drawing.Size(192, 22);
+            this.sumMenuCol.Text = "列表示設定";
+            this.sumMenuCol.Click += new System.EventHandler(this.sumMenuCol_Click);
+            // 
+            // 列名設定ToolStripMenuItem
+            // 
+            this.列名設定ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.オプション名設定ToolStripMenuItem,
+            this.モニタタイトル名設定ToolStripMenuItem});
+            this.列名設定ToolStripMenuItem.Name = "列名設定ToolStripMenuItem";
+            this.列名設定ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.列名設定ToolStripMenuItem.Text = "列名設定";
+            // 
+            // オプション名設定ToolStripMenuItem
+            // 
+            this.オプション名設定ToolStripMenuItem.Name = "オプション名設定ToolStripMenuItem";
+            this.オプション名設定ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.オプション名設定ToolStripMenuItem.Text = "オプション名設定";
+            this.オプション名設定ToolStripMenuItem.Click += new System.EventHandler(this.オプション名設定ToolStripMenuItem_Click);
+            // 
+            // モニタタイトル名設定ToolStripMenuItem
+            // 
+            this.モニタタイトル名設定ToolStripMenuItem.Name = "モニタタイトル名設定ToolStripMenuItem";
+            this.モニタタイトル名設定ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.モニタタイトル名設定ToolStripMenuItem.Text = "モニタタイトル名設定";
+            this.モニタタイトル名設定ToolStripMenuItem.Click += new System.EventHandler(this.モニタタイトル名設定ToolStripMenuItem_Click);
+            // 
+            // 警告設定ToolStripMenuItem
+            // 
+            this.警告設定ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.超過時間警告表示設定ToolStripMenuItem,
+            this.待ち呼警告設定は全体ToolStripMenuItem,
+            this.待ち呼警告設定個別ToolStripMenuItem,
+            this.受付可警告設定ToolStripMenuItem});
+            this.警告設定ToolStripMenuItem.Name = "警告設定ToolStripMenuItem";
+            this.警告設定ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.警告設定ToolStripMenuItem.Text = "警告設定";
+            // 
+            // 超過時間警告表示設定ToolStripMenuItem
+            // 
+            this.超過時間警告表示設定ToolStripMenuItem.Name = "超過時間警告表示設定ToolStripMenuItem";
+            this.超過時間警告表示設定ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.超過時間警告表示設定ToolStripMenuItem.Text = "超過時間警告表示設定";
+            this.超過時間警告表示設定ToolStripMenuItem.Click += new System.EventHandler(this.超過時間警告表示設定ToolStripMenuItem_Click);
+            // 
+            // 待ち呼警告設定は全体ToolStripMenuItem
+            // 
+            this.待ち呼警告設定は全体ToolStripMenuItem.Name = "待ち呼警告設定は全体ToolStripMenuItem";
+            this.待ち呼警告設定は全体ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.待ち呼警告設定は全体ToolStripMenuItem.Text = "待ち呼警告設定（全体）";
+            this.待ち呼警告設定は全体ToolStripMenuItem.Click += new System.EventHandler(this.待ち呼警告設定は全体ToolStripMenuItem_Click);
+            // 
+            // 待ち呼警告設定個別ToolStripMenuItem
+            // 
+            this.待ち呼警告設定個別ToolStripMenuItem.Name = "待ち呼警告設定個別ToolStripMenuItem";
+            this.待ち呼警告設定個別ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.待ち呼警告設定個別ToolStripMenuItem.Text = "待ち呼警告設定（個別）";
+            this.待ち呼警告設定個別ToolStripMenuItem.Click += new System.EventHandler(this.待ち呼警告設定個別ToolStripMenuItem_Click);
+            // 
+            // 受付可警告設定ToolStripMenuItem
+            // 
+            this.受付可警告設定ToolStripMenuItem.Name = "受付可警告設定ToolStripMenuItem";
+            this.受付可警告設定ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.受付可警告設定ToolStripMenuItem.Text = "受付可警告設定";
+            this.受付可警告設定ToolStripMenuItem.Click += new System.EventHandler(this.受付可警告設定ToolStripMenuItem_Click);
+            // 
+            // グループ表示設定ToolStripMenuItem
+            // 
+            this.グループ表示設定ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.局番グループ表示設定ToolStripMenuItem,
+            this.スキルグループ表示設定ToolStripMenuItem});
+            this.グループ表示設定ToolStripMenuItem.Name = "グループ表示設定ToolStripMenuItem";
+            this.グループ表示設定ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.グループ表示設定ToolStripMenuItem.Text = "グループ表示設定";
+            // 
+            // 局番グループ表示設定ToolStripMenuItem
+            // 
+            this.局番グループ表示設定ToolStripMenuItem.Name = "局番グループ表示設定ToolStripMenuItem";
+            this.局番グループ表示設定ToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.局番グループ表示設定ToolStripMenuItem.Text = "局番グループ表示設定";
+            this.局番グループ表示設定ToolStripMenuItem.Click += new System.EventHandler(this.局番グループ表示設定ToolStripMenuItem_Click);
+            // 
+            // スキルグループ表示設定ToolStripMenuItem
+            // 
+            this.スキルグループ表示設定ToolStripMenuItem.Name = "スキルグループ表示設定ToolStripMenuItem";
+            this.スキルグループ表示設定ToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.スキルグループ表示設定ToolStripMenuItem.Text = "スキルグループ表示設定";
+            this.スキルグループ表示設定ToolStripMenuItem.Click += new System.EventHandler(this.スキルグループ表示設定ToolStripMenuItem_Click);
             // 
             // menuGetLog
             // 
@@ -212,6 +300,13 @@
             this.menuGetLog.Text = "ログ取得";
             this.menuGetLog.Click += new System.EventHandler(this.menuGetLog_Click);
             // 
+            // subMenuOtherSetting
+            // 
+            this.subMenuOtherSetting.Name = "subMenuOtherSetting";
+            this.subMenuOtherSetting.Size = new System.Drawing.Size(192, 22);
+            this.subMenuOtherSetting.Text = "その他";
+            this.subMenuOtherSetting.Click += new System.EventHandler(this.subMenuOtherSetting_Click);
+            // 
             // subMenuWaitTime
             // 
             this.subMenuWaitTime.Name = "subMenuWaitTime";
@@ -219,83 +314,6 @@
             this.subMenuWaitTime.Text = "自動待機時間設定";
             this.subMenuWaitTime.Visible = false;
             this.subMenuWaitTime.Click += new System.EventHandler(this.subMenuWaitTime_Click);
-            // 
-            // sumMenuCol
-            // 
-            this.sumMenuCol.Name = "sumMenuCol";
-            this.sumMenuCol.Size = new System.Drawing.Size(192, 22);
-            this.sumMenuCol.Text = "列の選択";
-            this.sumMenuCol.Click += new System.EventHandler(this.sumMenuCol_Click);
-            // 
-            // subMenuOption
-            // 
-            this.subMenuOption.Name = "subMenuOption";
-            this.subMenuOption.Size = new System.Drawing.Size(192, 22);
-            this.subMenuOption.Text = "オプション名設定";
-            this.subMenuOption.Click += new System.EventHandler(this.subMenuOption_Click);
-            // 
-            // sumMenuQuickAnswer
-            // 
-            this.sumMenuQuickAnswer.Name = "sumMenuQuickAnswer";
-            this.sumMenuQuickAnswer.Size = new System.Drawing.Size(192, 22);
-            this.sumMenuQuickAnswer.Text = "即答秒数設定";
-            this.sumMenuQuickAnswer.Click += new System.EventHandler(this.sumMenuQuickAnswer_Click);
-            // 
-            // menuMonitorTitle
-            // 
-            this.menuMonitorTitle.Name = "menuMonitorTitle";
-            this.menuMonitorTitle.Size = new System.Drawing.Size(192, 22);
-            this.menuMonitorTitle.Text = "モニタタイトル定義";
-            this.menuMonitorTitle.Click += new System.EventHandler(this.menuMonitorTitle_Click);
-            // 
-            // menuQueCall
-            // 
-            this.menuQueCall.Name = "menuQueCall";
-            this.menuQueCall.Size = new System.Drawing.Size(192, 22);
-            this.menuQueCall.Text = "待ち呼警告設定";
-            this.menuQueCall.Click += new System.EventHandler(this.menuQueCall_Click);
-            // 
-            // MenuIdle
-            // 
-            this.MenuIdle.Name = "MenuIdle";
-            this.MenuIdle.Size = new System.Drawing.Size(192, 22);
-            this.MenuIdle.Text = "受付可警告設定";
-            this.MenuIdle.Click += new System.EventHandler(this.MenuIdle_Click);
-            // 
-            // subMenuKyokuGroupSetting
-            // 
-            this.subMenuKyokuGroupSetting.Name = "subMenuKyokuGroupSetting";
-            this.subMenuKyokuGroupSetting.Size = new System.Drawing.Size(192, 22);
-            this.subMenuKyokuGroupSetting.Text = "局番グループ表示設定";
-            this.subMenuKyokuGroupSetting.Click += new System.EventHandler(this.subMenuKyokuGroupSetting_Click);
-            // 
-            // MenuSkillShowSet
-            // 
-            this.MenuSkillShowSet.Name = "MenuSkillShowSet";
-            this.MenuSkillShowSet.Size = new System.Drawing.Size(192, 22);
-            this.MenuSkillShowSet.Text = "スキルグループ表示設定";
-            this.MenuSkillShowSet.Click += new System.EventHandler(this.MenuSkillShowSet_Click);
-            // 
-            // MenuMonitorItemShow
-            // 
-            this.MenuMonitorItemShow.Name = "MenuMonitorItemShow";
-            this.MenuMonitorItemShow.Size = new System.Drawing.Size(192, 22);
-            this.MenuMonitorItemShow.Text = "モニタタイトル表示設定";
-            this.MenuMonitorItemShow.Click += new System.EventHandler(this.MenuMonitorItemShow_Click);
-            // 
-            // MenuLineCutItem
-            // 
-            this.MenuLineCutItem.Name = "MenuLineCutItem";
-            this.MenuLineCutItem.Size = new System.Drawing.Size(192, 22);
-            this.MenuLineCutItem.Text = "回線切断表示設定";
-            this.MenuLineCutItem.Click += new System.EventHandler(this.MenuLineCutItem_Click);
-            // 
-            // subMenuOtherSetting
-            // 
-            this.subMenuOtherSetting.Name = "subMenuOtherSetting";
-            this.subMenuOtherSetting.Size = new System.Drawing.Size(192, 22);
-            this.subMenuOtherSetting.Text = "その他";
-            this.subMenuOtherSetting.Click += new System.EventHandler(this.subMenuOtherSetting_Click);
             // 
             // statusTabCtrl
             // 
@@ -581,7 +599,7 @@
             this.lineStatusPage.Location = new System.Drawing.Point(4, 23);
             this.lineStatusPage.Name = "lineStatusPage";
             this.lineStatusPage.Padding = new System.Windows.Forms.Padding(3);
-            this.lineStatusPage.Size = new System.Drawing.Size(637, 594);
+            this.lineStatusPage.Size = new System.Drawing.Size(637, 588);
             this.lineStatusPage.TabIndex = 1;
             this.lineStatusPage.Text = "回線 状態";
             this.lineStatusPage.UseVisualStyleBackColor = true;
@@ -592,7 +610,7 @@
             this.lineIconListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lineIconListView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lineIconListView.Enabled = false;
-            this.lineIconListView.Location = new System.Drawing.Point(3, 531);
+            this.lineIconListView.Location = new System.Drawing.Point(3, 525);
             this.lineIconListView.Name = "lineIconListView";
             this.lineIconListView.Scrollable = false;
             this.lineIconListView.Size = new System.Drawing.Size(631, 60);
@@ -626,7 +644,7 @@
             this.tabMonitor.Location = new System.Drawing.Point(4, 23);
             this.tabMonitor.Name = "tabMonitor";
             this.tabMonitor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMonitor.Size = new System.Drawing.Size(637, 594);
+            this.tabMonitor.Size = new System.Drawing.Size(637, 588);
             this.tabMonitor.TabIndex = 3;
             this.tabMonitor.Text = "モニタ";
             this.tabMonitor.UseVisualStyleBackColor = true;
@@ -649,7 +667,7 @@
             this.tabWaitCall.Location = new System.Drawing.Point(4, 23);
             this.tabWaitCall.Name = "tabWaitCall";
             this.tabWaitCall.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWaitCall.Size = new System.Drawing.Size(637, 594);
+            this.tabWaitCall.Size = new System.Drawing.Size(637, 588);
             this.tabWaitCall.TabIndex = 4;
             this.tabWaitCall.Text = "待ち呼";
             this.tabWaitCall.UseVisualStyleBackColor = true;
@@ -1041,7 +1059,6 @@
         private System.Windows.Forms.Timer ListUpdateTimer;
         private System.Windows.Forms.ToolStripMenuItem menuGetLog;
         private System.Windows.Forms.FolderBrowserDialog folderDia;
-        private System.Windows.Forms.ToolStripMenuItem subMenuOverTimeSet;
         public System.Windows.Forms.ContextMenuStrip LineRightMenu;
         private System.Windows.Forms.ToolStripMenuItem menuDropLine;
         private System.Windows.Forms.ToolStripMenuItem subMenuWaitTime;
@@ -1057,7 +1074,6 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ToolStripMenuItem subMenuOption;
         private System.Windows.Forms.Label lblHelpON;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -1070,22 +1086,26 @@
         private System.Windows.Forms.ToolStripMenuItem sumMenuQuickAnswer;
         private System.Windows.Forms.Timer retTimer;
         private System.Windows.Forms.WebBrowser webGetCall;
-        private System.Windows.Forms.ToolStripMenuItem menuMonitorTitle;
         private System.Windows.Forms.Timer AgentTimer;
         private System.Windows.Forms.Timer CallTimer;
-        private System.Windows.Forms.ToolStripMenuItem menuQueCall;
-        private System.Windows.Forms.ToolStripMenuItem MenuIdle;
-        private System.Windows.Forms.ToolStripMenuItem MenuSkillShowSet;
-        private System.Windows.Forms.ToolStripMenuItem MenuMonitorItemShow;
         private System.Windows.Forms.TabPage tabWaitCall;
         private System.Windows.Forms.Timer MonitorTimer;
         private System.Windows.Forms.BindingSource dvBindingSource;
-        private System.Windows.Forms.ToolStripMenuItem MenuLineCutItem;
         private System.Windows.Forms.PictureBox agentPie;
         private System.Windows.Forms.ToolStripMenuItem subMenuOtherSetting;
         private System.Windows.Forms.WebBrowser webGetGroup;
-        private System.Windows.Forms.ToolStripMenuItem subMenuKyokuGroupSetting;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel listViewPanel;
+        private System.Windows.Forms.ToolStripMenuItem 列名設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem オプション名設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem モニタタイトル名設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 警告設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 超過時間警告表示設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 受付可警告設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem グループ表示設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 局番グループ表示設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem スキルグループ表示設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 待ち呼警告設定は全体ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 待ち呼警告設定個別ToolStripMenuItem;
     }
 }

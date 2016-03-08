@@ -154,6 +154,12 @@
     <Compile Include="SkillQueCallSetForm.Designer.cs">
       <DependentUpon>SkillQueCallSetForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SkillQuecallSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkillQuecallSetting.Designer.cs">
+      <DependentUpon>SkillQuecallSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="SkillShowSet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SkillQueCallSetForm.resx">
       <DependentUpon>SkillQueCallSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkillQuecallSetting.resx">
+      <DependentUpon>SkillQuecallSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SkillShowSet.resx">
       <DependentUpon>SkillShowSet.cs</DependentUpon>

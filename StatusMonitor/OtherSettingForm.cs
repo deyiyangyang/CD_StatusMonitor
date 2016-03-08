@@ -19,12 +19,14 @@ namespace StatusMonitor
         public string MessagePop;
         public string AgentGraphShow;
         public float ListFontSize;
+        public string LineCut;
         public bool FontSizeChanged = false;
         public OtherSettingForm(TksProfileClass iniProfile)
         {
             InitializeComponent();
             _iniProfile = iniProfile;
             _iniProfile.SelectSection("SVSet");
+            LineCut = _iniProfile.GetStringDefault(ConstEntity.LINECUT, string.Empty);
             MonitorTab = _iniProfile.GetStringDefault(ConstEntity.MONITORTAB, string.Empty);
             MessagePop = _iniProfile.GetStringDefault(ConstEntity.MESSAGEPOP, string.Empty);
             AgentGraphShow = _iniProfile.GetStringDefault(ConstEntity.AGENTGRAPH, string.Empty);
@@ -33,15 +35,17 @@ namespace StatusMonitor
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            LineCut = this.chkLineCutShow.Checked ? "1" : "0";
             MonitorTab = this.chkMonitorShow.Checked ? "1" : "0";
             MessagePop = this.chkMessageShow.Checked ? "1" : "0";
             AgentGraphShow = this.chkAgentGraph.Checked ? "1" : "0";
+
             _iniProfile.SelectSection("SVSet");
+            _iniProfile.SetString(ConstEntity.LINECUT, LineCut);
             _iniProfile.SetString(ConstEntity.MONITORTAB, MonitorTab);
             _iniProfile.SetString(ConstEntity.MESSAGEPOP, MessagePop);
             _iniProfile.SetString(ConstEntity.AGENTGRAPH, AgentGraphShow);
-            //int currentIndex = this.cmbListFontSize.SelectedIndex;
-            //currentIndex++;
+
             float currentFontSize = float.Parse( (this.cmbListFontSize.SelectedItem as ComboBoxItem).Value.ToString());
 
             if (ListFontSize != currentFontSize)
@@ -84,6 +88,14 @@ namespace StatusMonitor
             else
             {
                 this.chkAgentGraph.Checked = false;
+            }
+            if (LineCut == "0")
+            {
+                this.chkLineCutShow.Checked = false;
+            }
+            else
+            {
+                this.chkLineCutShow.Checked = true;
             }
             InitCmbListFontSize();
             if (ListFontSize.ToString() == "1")
