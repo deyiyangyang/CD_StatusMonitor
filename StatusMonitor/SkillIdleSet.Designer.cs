@@ -37,7 +37,7 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(422, 221);
+            this.btnClose.Location = new System.Drawing.Point(463, 221);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(49, 28);
             this.btnClose.TabIndex = 3;
@@ -48,7 +48,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(367, 221);
+            this.btnOK.Location = new System.Drawing.Point(408, 221);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(49, 28);
             this.btnOK.TabIndex = 2;
@@ -62,7 +62,7 @@
             this.plSkill.Dock = System.Windows.Forms.DockStyle.Top;
             this.plSkill.Location = new System.Drawing.Point(0, 0);
             this.plSkill.Name = "plSkill";
-            this.plSkill.Size = new System.Drawing.Size(483, 204);
+            this.plSkill.Size = new System.Drawing.Size(524, 204);
             this.plSkill.TabIndex = 4;
             // 
             // SkillIdleSet
@@ -70,7 +70,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(483, 261);
+            this.ClientSize = new System.Drawing.Size(524, 261);
             this.Controls.Add(this.plSkill);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnOK);

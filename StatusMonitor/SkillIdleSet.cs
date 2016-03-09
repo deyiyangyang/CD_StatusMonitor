@@ -43,7 +43,7 @@ namespace StatusMonitor
         {
             int index = 0;
             int offsetHeight = 15;
-            int offsetLeft = 120;
+            int offsetLeft = 150;
             foreach (DataRow item in _dtGroupPersonal.Rows)
             {
                 if (item["groupId"].ToString() == "-1") continue;
