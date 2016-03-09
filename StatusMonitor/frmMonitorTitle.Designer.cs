@@ -358,7 +358,7 @@
             this.MinimizeBox = false;
             this.Name = "frmMonitorTitle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "モニタタイトル定義";
+            this.Text = "モニタタイトル名設定";
             this.Load += new System.EventHandler(this.frmMonitorTitle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

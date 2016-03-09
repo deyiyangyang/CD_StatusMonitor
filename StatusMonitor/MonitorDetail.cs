@@ -84,7 +84,8 @@ namespace StatusMonitor
                 dvData.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = mainF.MonitorCol5; //"OP呼出数";　　//通話数->着信数->OP呼出数
+                //column.HeaderText = mainF.MonitorCol5; //"OP呼出数";　　//通話数->着信数->OP呼出数
+                column.HeaderText = mainF._MonitorItemManager.MonitorItems[5].DisplayName;
                 column.Name = "acdCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -94,7 +95,8 @@ namespace StatusMonitor
                 dvData.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = mainF.MonitorCol6;// "OP応答数";//応答数
+                //column.HeaderText = mainF.MonitorCol6;// "OP応答数";//応答数
+                column.HeaderText = mainF._MonitorItemManager.MonitorItems[6].DisplayName;
                 column.Name = "answerCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -104,7 +106,8 @@ namespace StatusMonitor
                 dvData.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = mainF.MonitorCol7;// "応答率";
+                //column.HeaderText = mainF.MonitorCol7;// "応答率";
+                column.HeaderText = mainF._MonitorItemManager.MonitorItems[7].DisplayName;
                 column.Name = "answerPer";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -115,7 +118,8 @@ namespace StatusMonitor
 
                 //add,S
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = mainF.MonitorCol8;// "即答数";
+                //column.HeaderText = mainF.MonitorCol8;// "即答数";
+                column.HeaderText = mainF._MonitorItemManager.MonitorItems[8].DisplayName;
                 column.Name = "answerNowCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -125,7 +129,8 @@ namespace StatusMonitor
                 dvData.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = mainF.MonitorCol9;// "即答率";
+                //column.HeaderText = mainF.MonitorCol9;// "即答率";
+                column.HeaderText = mainF._MonitorItemManager.MonitorItems[9].DisplayName;
                 column.Name = "answerNowPer";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -135,7 +140,8 @@ namespace StatusMonitor
                 dvData.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = mainF.MonitorCol12;// "放棄数";
+                //column.HeaderText = mainF.MonitorCol12;// "放棄数";
+                column.HeaderText = mainF._MonitorItemManager.MonitorItems[12].DisplayName;
                 column.Name = "failCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -145,7 +151,8 @@ namespace StatusMonitor
                 dvData.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = mainF.MonitorCol13;// "放棄率";
+                //column.HeaderText = mainF.MonitorCol13;// "放棄率";
+                column.HeaderText = mainF._MonitorItemManager.MonitorItems[13].DisplayName;
                 column.Name = "failPer";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;

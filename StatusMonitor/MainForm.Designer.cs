@@ -651,6 +651,7 @@
             // 
             // dvMonitor
             // 
+            this.dvMonitor.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dvMonitor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvMonitor.Dock = System.Windows.Forms.DockStyle.Top;
             this.dvMonitor.Location = new System.Drawing.Point(3, 3);
@@ -767,7 +768,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(690, 44);
+            this.label2.Location = new System.Drawing.Point(701, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 15;
@@ -869,7 +870,7 @@
             // lblHelpON
             // 
             this.lblHelpON.AutoSize = true;
-            this.lblHelpON.Location = new System.Drawing.Point(603, 74);
+            this.lblHelpON.Location = new System.Drawing.Point(603, 65);
             this.lblHelpON.Name = "lblHelpON";
             this.lblHelpON.Size = new System.Drawing.Size(0, 13);
             this.lblHelpON.TabIndex = 19;
@@ -877,7 +878,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(553, 73);
+            this.label9.Location = new System.Drawing.Point(553, 65);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 13);
             this.label9.TabIndex = 20;
@@ -933,7 +934,7 @@
             // listViewPanel
             // 
             this.listViewPanel.Controls.Add(this.splitContainer1);
-            this.listViewPanel.Location = new System.Drawing.Point(4, 90);
+            this.listViewPanel.Location = new System.Drawing.Point(4, 76);
             this.listViewPanel.Name = "listViewPanel";
             this.listViewPanel.Size = new System.Drawing.Size(1005, 615);
             this.listViewPanel.TabIndex = 23;

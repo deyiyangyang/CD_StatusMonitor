@@ -331,7 +331,7 @@
             this.groupBox2.Size = new System.Drawing.Size(377, 216);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "エジェート状態";
+            this.groupBox2.Text = "エージェント状態";
             // 
             // groupBox3
             // 
@@ -540,7 +540,7 @@
             this.MinimizeBox = false;
             this.Name = "ColSelect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "列の選択";
+            this.Text = "列表示設定";
             this.Load += new System.EventHandler(this.ColSelect_Load);
             this.Shown += new System.EventHandler(this.ColSelect_Shown);
             this.groupBox1.ResumeLayout(false);

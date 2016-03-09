@@ -113,7 +113,7 @@ namespace StatusMonitor
         //end added
 
         //added by zhu 2014/05/12
-        MonitorItemManager _MonitorItemManager;
+        public MonitorItemManager _MonitorItemManager;
         //end added
 
 
@@ -4161,15 +4161,15 @@ namespace StatusMonitor
                         csDataRow1[0] = dtTemp.Rows[i][1];
                         csDataRow1[1] = "0";
                         csDataRow1[2] = "0";
-                        csDataRow1[3] = "0";
+                        csDataRow1[3] = "0";//change 10->11
                         csDataRow1[4] = "0";
                         csDataRow1[5] = "0";
-                        csDataRow1[6] = "0.0%";
-                        csDataRow1[7] = "0";
-                        csDataRow1[8] = "0.0%";
-                        csDataRow1[9] = "0";
-                        csDataRow1[10] = "-";//added by zhu 2014/05/13
-                        csDataRow1[11] = "0";//change 10->11
+                        csDataRow1[6] = "0";
+                        csDataRow1[7] = "0.0%";
+                        csDataRow1[8] = "0";
+                        csDataRow1[9] = "0.0%";
+                        csDataRow1[10] = "0";
+                        csDataRow1[11] = "-";//added by zhu 2014/05/13                      
                         csDataRow1[12] = "0";//11->12
                         csDataRow1[13] = "0.0%";//12->13
                         csDataRow1[14] = dtTemp.Rows[i][0];//13->14
@@ -4185,15 +4185,15 @@ namespace StatusMonitor
                         csDataRow1[0] = dtTemp.Rows[i][1];
                         csDataRow1[1] = "0";
                         csDataRow1[2] = "0";
-                        csDataRow1[3] = "0";
+                        csDataRow1[3] = "0";//change 10->11
                         csDataRow1[4] = "0";
                         csDataRow1[5] = "0";
-                        csDataRow1[6] = "0.0%";
-                        csDataRow1[7] = "0";
-                        csDataRow1[8] = "0.0%";
-                        csDataRow1[9] = "0";
-                        csDataRow1[10] = "00:00:00";//added by zhu 2014/05/13
-                        csDataRow1[11] = "0";//change 10->11
+                        csDataRow1[6] = "0";
+                        csDataRow1[7] = "0.0%";
+                        csDataRow1[8] = "0";
+                        csDataRow1[9] = "0.0%";
+                        csDataRow1[10] = "0";
+                        csDataRow1[11] = "00:00:00";//added by zhu 2014/05/13              
                         csDataRow1[12] = "0";//11->12
                         csDataRow1[13] = "0.0%";//12->13
                         csDataRow1[14] = dtTemp.Rows[i][0];//13->14
@@ -4393,7 +4393,21 @@ namespace StatusMonitor
 
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[3].DisplayName;// "離席数";
+                column.HeaderText = _MonitorItemManager.MonitorItems[3].DisplayName;// "受付可数";
+                column.Name = "waitCnt";
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                //column.DefaultCellStyle.BackColor = Color.LightGray;
+                column.Width = 50;
+                column.DataPropertyName = "waitCnt";
+                //added by Zhu 2014/04/01
+                column.Visible = _MonitorItemManager.MonitorItems[3].Visible;
+                //end added
+                dvMonitor.Columns.Add(column);
+
+
+                column = new DataGridViewTextBoxColumn();
+                column.HeaderText = _MonitorItemManager.MonitorItems[4].DisplayName;// "離席数";
                 column.Name = "seatLeaveCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4401,13 +4415,13 @@ namespace StatusMonitor
                 column.Width = 100;
                 column.DataPropertyName = "seatLeaveCnt";
                 //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[3].Visible;
+                column.Visible = _MonitorItemManager.MonitorItems[4].Visible;
                 //end added
                 dvMonitor.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
                 //column.HeaderText = "ACD着信数";
-                column.HeaderText = _MonitorItemManager.MonitorItems[4].DisplayName; //"OP呼出数";　　//通話数->着信数->OP呼出数
+                column.HeaderText = _MonitorItemManager.MonitorItems[5].DisplayName; //"OP呼出数";　　//通話数->着信数->OP呼出数
                 column.Name = "acdCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4415,13 +4429,13 @@ namespace StatusMonitor
                 column.Width = 50;
                 column.DataPropertyName = "acdCnt";
                 //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[4].Visible;
+                column.Visible = _MonitorItemManager.MonitorItems[5].Visible;
                 //end added
                 dvMonitor.Columns.Add(column);
 
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[5].DisplayName;// "OP応答数";//応答数
+                column.HeaderText = _MonitorItemManager.MonitorItems[6].DisplayName;// "OP応答数";//応答数
                 column.Name = "answerCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4429,12 +4443,12 @@ namespace StatusMonitor
                 column.Width = 60;
                 column.DataPropertyName = "answerCnt";
                 //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[5].Visible;
+                column.Visible = _MonitorItemManager.MonitorItems[6].Visible;
                 //end added
                 dvMonitor.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[6].DisplayName;// "応答率";
+                column.HeaderText = _MonitorItemManager.MonitorItems[7].DisplayName;// "応答率";
                 column.Name = "answerPer";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4442,13 +4456,13 @@ namespace StatusMonitor
                 column.Width = 60;
                 column.DataPropertyName = "answerPer";
                 //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[6].Visible;
+                column.Visible = _MonitorItemManager.MonitorItems[7].Visible;
                 //end added
                 dvMonitor.Columns.Add(column);
 
                 //add,S
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[7].DisplayName;// "即答数";
+                column.HeaderText = _MonitorItemManager.MonitorItems[8].DisplayName;// "即答数";
                 column.Name = "answerNowCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4456,12 +4470,12 @@ namespace StatusMonitor
                 column.Width = 60;
                 column.DataPropertyName = "answerNowCnt";
                 //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[7].Visible;
+                column.Visible = _MonitorItemManager.MonitorItems[8].Visible;
                 //end added
                 dvMonitor.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[8].DisplayName;// "即答率";
+                column.HeaderText = _MonitorItemManager.MonitorItems[9].DisplayName;// "即答率";
                 column.Name = "answerNowPer";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4474,13 +4488,13 @@ namespace StatusMonitor
 
                 column.DataPropertyName = "answerNowPer";
                 //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[8].Visible;
+                column.Visible = _MonitorItemManager.MonitorItems[9].Visible;
                 //end added
                 dvMonitor.Columns.Add(column);
                 //add,E
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[9].DisplayName;// "待呼数";
+                column.HeaderText = _MonitorItemManager.MonitorItems[10].DisplayName;// "待呼数";
                 column.Name = "queCallCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -4488,35 +4502,22 @@ namespace StatusMonitor
                 column.Width = 60;
                 column.DataPropertyName = "queCallCnt";
                 //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[9].Visible;
+                column.Visible = _MonitorItemManager.MonitorItems[10].Visible;
                 //end added
                 dvMonitor.Columns.Add(column);
 
                 //added by zhu 2014/05/12
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[10].DisplayName;//経過時間
+                column.HeaderText = _MonitorItemManager.MonitorItems[11].DisplayName;//経過時間
                 column.Name = "queCallContinueTime";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 //column.DefaultCellStyle.BackColor = Color.LightGray;
                 column.Width = 80;
-                column.Visible = _MonitorItemManager.MonitorItems[10].Visible;
+                column.Visible = _MonitorItemManager.MonitorItems[11].Visible;
                 column.DataPropertyName = "queCallContinueTime";
                 dvMonitor.Columns.Add(column);
                 //end added
-
-                column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[11].DisplayName;// "受付可数";
-                column.Name = "waitCnt";
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
-                column.Width = 50;
-                column.DataPropertyName = "waitCnt";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[11].Visible;
-                //end added
-                dvMonitor.Columns.Add(column);
 
 
                 column = new DataGridViewTextBoxColumn();
@@ -4604,6 +4605,7 @@ namespace StatusMonitor
                 //dtMontor.Columns.Add("allLogon").Expression = "sum(child(relation).status)";
                 dtMontor.Columns.Add("allLogon", typeof(int));
                 dtMontor.Columns.Add("opCnt", typeof(int));
+                dtMontor.Columns.Add("waitCnt", typeof(int));
                 dtMontor.Columns.Add("seatLeaveCnt", typeof(int));
                 dtMontor.Columns.Add("acdCnt", typeof(int));
                 dtMontor.Columns.Add("answerCnt", typeof(int));
@@ -4614,7 +4616,7 @@ namespace StatusMonitor
                 //added by zhu 2014/05/12
                 dtMontor.Columns.Add("queCallContinueTime", typeof(string));
                 //end added
-                dtMontor.Columns.Add("waitCnt", typeof(int));
+                
                 dtMontor.Columns.Add("failCnt", typeof(int));
                 dtMontor.Columns.Add("failPer");
                 //dtMontor.Columns.Add("seatLeaveCnt", typeof(int));

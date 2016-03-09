@@ -137,11 +137,11 @@
             this.cmbListFontSize.Size = new System.Drawing.Size(73, 20);
             this.cmbListFontSize.TabIndex = 15;
             // 
-            // chkShow
+            // chkLineCutShow
             // 
             this.chkLineCutShow.AutoSize = true;
             this.chkLineCutShow.Location = new System.Drawing.Point(170, 23);
-            this.chkLineCutShow.Name = "chkShow";
+            this.chkLineCutShow.Name = "chkLineCutShow";
             this.chkLineCutShow.Size = new System.Drawing.Size(48, 16);
             this.chkLineCutShow.TabIndex = 17;
             this.chkLineCutShow.Text = "表示";
@@ -177,7 +177,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OtherSettingForm";
-            this.Text = "他の設定";
+            this.Text = "その他";
             this.Load += new System.EventHandler(this.OtherSettingForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
