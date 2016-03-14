@@ -115,6 +115,9 @@
             this.webGetGroup = new System.Windows.Forms.WebBrowser();
             this.listViewPanel = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupSumTabCtrl = new System.Windows.Forms.TabControl();
+            this.groupSumTab = new System.Windows.Forms.TabPage();
+            this.panelTop = new System.Windows.Forms.Panel();
             this.mainMenu.SuspendLayout();
             this.statusTabCtrl.SuspendLayout();
             this.agentStatusPage.SuspendLayout();
@@ -131,6 +134,9 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.groupSumTabCtrl.SuspendLayout();
+            this.groupSumTab.SuspendLayout();
+            this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -143,7 +149,7 @@
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.mainMenu.Size = new System.Drawing.Size(1017, 24);
+            this.mainMenu.Size = new System.Drawing.Size(1008, 24);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.Text = "mainMenu";
             // 
@@ -325,7 +331,7 @@
             this.statusTabCtrl.Location = new System.Drawing.Point(0, 0);
             this.statusTabCtrl.Name = "statusTabCtrl";
             this.statusTabCtrl.SelectedIndex = 0;
-            this.statusTabCtrl.Size = new System.Drawing.Size(645, 615);
+            this.statusTabCtrl.Size = new System.Drawing.Size(646, 650);
             this.statusTabCtrl.TabIndex = 4;
             this.statusTabCtrl.SelectedIndexChanged += new System.EventHandler(this.statusTabCtrl_SelectedIndexChanged);
             this.statusTabCtrl.TabIndexChanged += new System.EventHandler(this.statusTabCtrl_TabIndexChanged);
@@ -353,7 +359,7 @@
             this.agentStatusPage.Location = new System.Drawing.Point(4, 23);
             this.agentStatusPage.Name = "agentStatusPage";
             this.agentStatusPage.Padding = new System.Windows.Forms.Padding(3);
-            this.agentStatusPage.Size = new System.Drawing.Size(637, 588);
+            this.agentStatusPage.Size = new System.Drawing.Size(638, 623);
             this.agentStatusPage.TabIndex = 0;
             this.agentStatusPage.Text = "エージェント 状態";
             this.agentStatusPage.UseVisualStyleBackColor = true;
@@ -361,7 +367,7 @@
             // agentPie
             // 
             this.agentPie.BackColor = System.Drawing.SystemColors.Control;
-            this.agentPie.Location = new System.Drawing.Point(136, 493);
+            this.agentPie.Location = new System.Drawing.Point(136, 523);
             this.agentPie.Name = "agentPie";
             this.agentPie.Size = new System.Drawing.Size(503, 98);
             this.agentPie.TabIndex = 14;
@@ -514,7 +520,7 @@
             this.agentStatusListView.MultiSelect = false;
             this.agentStatusListView.Name = "agentStatusListView";
             this.agentStatusListView.ShowItemToolTips = true;
-            this.agentStatusListView.Size = new System.Drawing.Size(636, 428);
+            this.agentStatusListView.Size = new System.Drawing.Size(637, 458);
             this.agentStatusListView.SmallImageList = this.smallImageList;
             this.agentStatusListView.TabIndex = 0;
             this.agentStatusListView.UseCompatibleStateImageBehavior = false;
@@ -582,7 +588,7 @@
             this.agentIconListView.BackColor = System.Drawing.SystemColors.Control;
             this.agentIconListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.agentIconListView.Enabled = false;
-            this.agentIconListView.Location = new System.Drawing.Point(3, 493);
+            this.agentIconListView.Location = new System.Drawing.Point(3, 523);
             this.agentIconListView.Name = "agentIconListView";
             this.agentIconListView.Scrollable = false;
             this.agentIconListView.Size = new System.Drawing.Size(140, 98);
@@ -599,7 +605,7 @@
             this.lineStatusPage.Location = new System.Drawing.Point(4, 23);
             this.lineStatusPage.Name = "lineStatusPage";
             this.lineStatusPage.Padding = new System.Windows.Forms.Padding(3);
-            this.lineStatusPage.Size = new System.Drawing.Size(637, 588);
+            this.lineStatusPage.Size = new System.Drawing.Size(638, 623);
             this.lineStatusPage.TabIndex = 1;
             this.lineStatusPage.Text = "回線 状態";
             this.lineStatusPage.UseVisualStyleBackColor = true;
@@ -610,10 +616,10 @@
             this.lineIconListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lineIconListView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lineIconListView.Enabled = false;
-            this.lineIconListView.Location = new System.Drawing.Point(3, 525);
+            this.lineIconListView.Location = new System.Drawing.Point(3, 560);
             this.lineIconListView.Name = "lineIconListView";
             this.lineIconListView.Scrollable = false;
-            this.lineIconListView.Size = new System.Drawing.Size(631, 60);
+            this.lineIconListView.Size = new System.Drawing.Size(632, 60);
             this.lineIconListView.SmallImageList = this.smallImageList;
             this.lineIconListView.TabIndex = 12;
             this.lineIconListView.TabStop = false;
@@ -629,7 +635,7 @@
             this.lineStatusListView.Location = new System.Drawing.Point(3, 3);
             this.lineStatusListView.MultiSelect = false;
             this.lineStatusListView.Name = "lineStatusListView";
-            this.lineStatusListView.Size = new System.Drawing.Size(631, 498);
+            this.lineStatusListView.Size = new System.Drawing.Size(632, 525);
             this.lineStatusListView.SmallImageList = this.smallImageList;
             this.lineStatusListView.TabIndex = 0;
             this.lineStatusListView.UseCompatibleStateImageBehavior = false;
@@ -644,7 +650,7 @@
             this.tabMonitor.Location = new System.Drawing.Point(4, 23);
             this.tabMonitor.Name = "tabMonitor";
             this.tabMonitor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMonitor.Size = new System.Drawing.Size(637, 588);
+            this.tabMonitor.Size = new System.Drawing.Size(638, 623);
             this.tabMonitor.TabIndex = 3;
             this.tabMonitor.Text = "モニタ";
             this.tabMonitor.UseVisualStyleBackColor = true;
@@ -658,7 +664,7 @@
             this.dvMonitor.MultiSelect = false;
             this.dvMonitor.Name = "dvMonitor";
             this.dvMonitor.RowTemplate.Height = 21;
-            this.dvMonitor.Size = new System.Drawing.Size(631, 588);
+            this.dvMonitor.Size = new System.Drawing.Size(632, 588);
             this.dvMonitor.TabIndex = 0;
             this.dvMonitor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvMonitor_CellDoubleClick);
             this.dvMonitor.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dvMonitor_DataError);
@@ -668,21 +674,21 @@
             this.tabWaitCall.Location = new System.Drawing.Point(4, 23);
             this.tabWaitCall.Name = "tabWaitCall";
             this.tabWaitCall.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWaitCall.Size = new System.Drawing.Size(637, 588);
+            this.tabWaitCall.Size = new System.Drawing.Size(638, 623);
             this.tabWaitCall.TabIndex = 4;
             this.tabWaitCall.Text = "待ち呼";
             this.tabWaitCall.UseVisualStyleBackColor = true;
             // 
             // totalListView
             // 
-            this.totalListView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.totalListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.totalListView.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.totalListView.FullRowSelect = true;
             this.totalListView.GridLines = true;
-            this.totalListView.Location = new System.Drawing.Point(0, 17);
+            this.totalListView.Location = new System.Drawing.Point(3, 3);
             this.totalListView.MultiSelect = false;
             this.totalListView.Name = "totalListView";
-            this.totalListView.Size = new System.Drawing.Size(356, 598);
+            this.totalListView.Size = new System.Drawing.Size(344, 617);
             this.totalListView.TabIndex = 5;
             this.totalListView.UseCompatibleStateImageBehavior = false;
             this.totalListView.View = System.Windows.Forms.View.Details;
@@ -739,9 +745,9 @@
             // 
             this.groupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.groupComboBox.FormattingEnabled = true;
-            this.groupComboBox.Location = new System.Drawing.Point(102, 40);
+            this.groupComboBox.Location = new System.Drawing.Point(101, 13);
             this.groupComboBox.Name = "groupComboBox";
-            this.groupComboBox.Size = new System.Drawing.Size(168, 21);
+            this.groupComboBox.Size = new System.Drawing.Size(221, 21);
             this.groupComboBox.Sorted = true;
             this.groupComboBox.TabIndex = 1;
             this.groupComboBox.SelectedValueChanged += new System.EventHandler(this.groupComboBox_SelectedValueChanged);
@@ -749,7 +755,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 44);
+            this.label1.Location = new System.Drawing.Point(4, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 12;
@@ -757,7 +763,7 @@
             // 
             // selectViewButton
             // 
-            this.selectViewButton.Location = new System.Drawing.Point(276, 40);
+            this.selectViewButton.Location = new System.Drawing.Point(350, 10);
             this.selectViewButton.Name = "selectViewButton";
             this.selectViewButton.Size = new System.Drawing.Size(80, 24);
             this.selectViewButton.TabIndex = 2;
@@ -767,8 +773,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(701, 52);
+            this.label2.Location = new System.Drawing.Point(670, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 15;
@@ -776,11 +783,12 @@
             // 
             // lineUseageProgressLabel
             // 
+            this.lineUseageProgressLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lineUseageProgressLabel.BackColor = System.Drawing.SystemColors.Control;
             this.lineUseageProgressLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lineUseageProgressLabel.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lineUseageProgressLabel.ForeColor = System.Drawing.Color.White;
-            this.lineUseageProgressLabel.Location = new System.Drawing.Point(777, 52);
+            this.lineUseageProgressLabel.Location = new System.Drawing.Point(757, 9);
             this.lineUseageProgressLabel.Name = "lineUseageProgressLabel";
             this.lineUseageProgressLabel.Size = new System.Drawing.Size(240, 20);
             this.lineUseageProgressLabel.TabIndex = 16;
@@ -794,7 +802,7 @@
             this.menuLineGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.menuLineGroupBox.Location = new System.Drawing.Point(0, 24);
             this.menuLineGroupBox.Name = "menuLineGroupBox";
-            this.menuLineGroupBox.Size = new System.Drawing.Size(1017, 2);
+            this.menuLineGroupBox.Size = new System.Drawing.Size(1008, 2);
             this.menuLineGroupBox.TabIndex = 0;
             this.menuLineGroupBox.TabStop = false;
             // 
@@ -805,7 +813,8 @@
             // 
             // useageLabel
             // 
-            this.useageLabel.Location = new System.Drawing.Point(694, 64);
+            this.useageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.useageLabel.Location = new System.Drawing.Point(678, 22);
             this.useageLabel.Name = "useageLabel";
             this.useageLabel.Size = new System.Drawing.Size(64, 16);
             this.useageLabel.TabIndex = 17;
@@ -839,7 +848,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(373, 40);
+            this.button1.Location = new System.Drawing.Point(436, 10);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 24);
             this.button1.TabIndex = 18;
@@ -870,15 +879,16 @@
             // lblHelpON
             // 
             this.lblHelpON.AutoSize = true;
-            this.lblHelpON.Location = new System.Drawing.Point(603, 65);
+            this.lblHelpON.Location = new System.Drawing.Point(609, 13);
             this.lblHelpON.Name = "lblHelpON";
-            this.lblHelpON.Size = new System.Drawing.Size(0, 13);
+            this.lblHelpON.Size = new System.Drawing.Size(14, 13);
             this.lblHelpON.TabIndex = 19;
+            this.lblHelpON.Text = "0";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(553, 65);
+            this.label9.Location = new System.Drawing.Point(551, 14);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 13);
             this.label9.TabIndex = 20;
@@ -886,7 +896,7 @@
             // 
             // wbGroupPersonal
             // 
-            this.wbGroupPersonal.Location = new System.Drawing.Point(489, 35);
+            this.wbGroupPersonal.Location = new System.Drawing.Point(445, 80);
             this.wbGroupPersonal.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbGroupPersonal.Name = "wbGroupPersonal";
             this.wbGroupPersonal.Size = new System.Drawing.Size(32, 20);
@@ -900,7 +910,7 @@
             // 
             // webGetCall
             // 
-            this.webGetCall.Location = new System.Drawing.Point(556, 37);
+            this.webGetCall.Location = new System.Drawing.Point(490, 77);
             this.webGetCall.MinimumSize = new System.Drawing.Size(20, 20);
             this.webGetCall.Name = "webGetCall";
             this.webGetCall.Size = new System.Drawing.Size(32, 20);
@@ -923,7 +933,7 @@
             // 
             // webGetGroup
             // 
-            this.webGetGroup.Location = new System.Drawing.Point(475, 60);
+            this.webGetGroup.Location = new System.Drawing.Point(407, 77);
             this.webGetGroup.MinimumSize = new System.Drawing.Size(20, 20);
             this.webGetGroup.Name = "webGetGroup";
             this.webGetGroup.Size = new System.Drawing.Size(32, 20);
@@ -934,9 +944,10 @@
             // listViewPanel
             // 
             this.listViewPanel.Controls.Add(this.splitContainer1);
-            this.listViewPanel.Location = new System.Drawing.Point(4, 76);
+            this.listViewPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listViewPanel.Location = new System.Drawing.Point(0, 79);
             this.listViewPanel.Name = "listViewPanel";
-            this.listViewPanel.Size = new System.Drawing.Size(1005, 615);
+            this.listViewPanel.Size = new System.Drawing.Size(1008, 650);
             this.listViewPanel.TabIndex = 23;
             // 
             // splitContainer1
@@ -951,11 +962,52 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.totalListView);
-            this.splitContainer1.Size = new System.Drawing.Size(1005, 615);
-            this.splitContainer1.SplitterDistance = 645;
+            this.splitContainer1.Panel2.Controls.Add(this.groupSumTabCtrl);
+            this.splitContainer1.Size = new System.Drawing.Size(1008, 650);
+            this.splitContainer1.SplitterDistance = 646;
             this.splitContainer1.TabIndex = 0;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
+            // 
+            // groupSumTabCtrl
+            // 
+            this.groupSumTabCtrl.Controls.Add(this.groupSumTab);
+            this.groupSumTabCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupSumTabCtrl.Location = new System.Drawing.Point(0, 0);
+            this.groupSumTabCtrl.Name = "groupSumTabCtrl";
+            this.groupSumTabCtrl.SelectedIndex = 0;
+            this.groupSumTabCtrl.Size = new System.Drawing.Size(358, 650);
+            this.groupSumTabCtrl.TabIndex = 0;
+            // 
+            // groupSumTab
+            // 
+            this.groupSumTab.Controls.Add(this.totalListView);
+            this.groupSumTab.Location = new System.Drawing.Point(4, 23);
+            this.groupSumTab.Name = "groupSumTab";
+            this.groupSumTab.Padding = new System.Windows.Forms.Padding(3);
+            this.groupSumTab.Size = new System.Drawing.Size(350, 623);
+            this.groupSumTab.TabIndex = 0;
+            this.groupSumTab.Text = "グループサマリ";
+            this.groupSumTab.UseVisualStyleBackColor = true;
+            // 
+            // panelTop
+            // 
+            this.panelTop.Controls.Add(this.label1);
+            this.panelTop.Controls.Add(this.groupComboBox);
+            this.panelTop.Controls.Add(this.selectViewButton);
+            this.panelTop.Controls.Add(this.button1);
+            this.panelTop.Controls.Add(this.wbGroupPersonal);
+            this.panelTop.Controls.Add(this.lblHelpON);
+            this.panelTop.Controls.Add(this.webGetCall);
+            this.panelTop.Controls.Add(this.webGetGroup);
+            this.panelTop.Controls.Add(this.label9);
+            this.panelTop.Controls.Add(this.label2);
+            this.panelTop.Controls.Add(this.lineUseageProgressLabel);
+            this.panelTop.Controls.Add(this.useageLabel);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Location = new System.Drawing.Point(0, 26);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(1008, 44);
+            this.panelTop.TabIndex = 15;
             // 
             // MainForm
             // 
@@ -964,20 +1016,9 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.panelTop);
             this.Controls.Add(this.listViewPanel);
-            this.Controls.Add(this.webGetGroup);
-            this.Controls.Add(this.wbGroupPersonal);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.lblHelpON);
-            this.Controls.Add(this.webGetCall);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.useageLabel);
             this.Controls.Add(this.menuLineGroupBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.selectViewButton);
-            this.Controls.Add(this.lineUseageProgressLabel);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupComboBox);
             this.Controls.Add(this.mainMenu);
             this.Controls.Add(this.axCpfMsg);
             this.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -1009,6 +1050,10 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
+            this.groupSumTabCtrl.ResumeLayout(false);
+            this.groupSumTab.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1108,5 +1153,8 @@
         private System.Windows.Forms.ToolStripMenuItem スキルグループ表示設定ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 待ち呼警告設定は全体ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 待ち呼警告設定個別ToolStripMenuItem;
+        private System.Windows.Forms.TabControl groupSumTabCtrl;
+        private System.Windows.Forms.TabPage groupSumTab;
+        private System.Windows.Forms.Panel panelTop;
     }
 }

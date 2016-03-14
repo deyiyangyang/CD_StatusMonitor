@@ -919,7 +919,7 @@ namespace StatusMonitor
                 //add,xzg,2009/05/20,E---------
 
                 this.subMenuReFresh.Text = res.GetString("SM0020062");
-                autoCtlSize(this);
+                autoCtlSize(this.listViewPanel);
 
             }
             catch (Exception ex)
@@ -934,10 +934,15 @@ namespace StatusMonitor
             try
             {
                 if (inObj == null) return;
+
                 Size deskTopSize = System.Windows.Forms.SystemInformation.PrimaryMonitorSize;
                 //Single fontSize = inObj.Font.Size * deskTopSize.Height / 768;
-                inObj.Size = new Size((int)(inObj.Size.Width * deskTopSize.Width / 1024), (int)(inObj.Size.Height * deskTopSize.Height / 768));
-                inObj.Location = new Point((int)(inObj.Location.X * deskTopSize.Width / 1024), (int)(inObj.Location.Y * deskTopSize.Height / 768));
+                if (inObj is ComboBox || inObj is Label)
+                {
+                    inObj.Size = new Size((int)(inObj.Size.Width * deskTopSize.Width / 1024), (int)(inObj.Size.Height * deskTopSize.Height / 768));
+                    inObj.Location = new Point((int)(inObj.Location.X * deskTopSize.Width / 1024), (int)(inObj.Location.Y * deskTopSize.Height / 768));
+
+                }
                 int i;
                 for (i = 0; i < inObj.Controls.Count; i++)
                 {
@@ -7658,6 +7663,7 @@ namespace StatusMonitor
         private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
         {
             this.statusTabCtrl.Invalidate();
+            this.groupSumTabCtrl.Invalidate();
         }
 
         private void 超過時間警告表示設定ToolStripMenuItem_Click(object sender, EventArgs e)
