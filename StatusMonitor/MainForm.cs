@@ -933,22 +933,22 @@ namespace StatusMonitor
         {
             try
             {
-                if (inObj == null) return;
+                //if (inObj == null) return;
 
-                Size deskTopSize = System.Windows.Forms.SystemInformation.PrimaryMonitorSize;
-                //Single fontSize = inObj.Font.Size * deskTopSize.Height / 768;
-                if (inObj is ComboBox || inObj is Label)
-                {
-                    inObj.Size = new Size((int)(inObj.Size.Width * deskTopSize.Width / 1024), (int)(inObj.Size.Height * deskTopSize.Height / 768));
-                    inObj.Location = new Point((int)(inObj.Location.X * deskTopSize.Width / 1024), (int)(inObj.Location.Y * deskTopSize.Height / 768));
+                //Size deskTopSize = System.Windows.Forms.SystemInformation.PrimaryMonitorSize;
+                ////Single fontSize = inObj.Font.Size * deskTopSize.Height / 768;
+                //if (inObj is ComboBox || inObj is Label)
+                //{
+                //    inObj.Size = new Size((int)(inObj.Size.Width * deskTopSize.Width / 1024), (int)(inObj.Size.Height * deskTopSize.Height / 768));
+                //    inObj.Location = new Point((int)(inObj.Location.X * deskTopSize.Width / 1024), (int)(inObj.Location.Y * deskTopSize.Height / 768));
 
-                }
-                int i;
-                for (i = 0; i < inObj.Controls.Count; i++)
-                {
-                    //inObj.Controls[i].Font = new Font(inObj.Controls[i].Font.FontFamily, fontSize);
-                    autoCtlSize(inObj.Controls[i]);
-                }
+                //}
+                //int i;
+                //for (i = 0; i < inObj.Controls.Count; i++)
+                //{
+                //    //inObj.Controls[i].Font = new Font(inObj.Controls[i].Font.FontFamily, fontSize);
+                //    autoCtlSize(inObj.Controls[i]);
+                //}
             }
             catch (Exception ex)
             {
@@ -6625,6 +6625,7 @@ namespace StatusMonitor
                 if (SettingFields_AgentGraphShow == "1")
                 {
                     this.agentPie.Visible = true;
+                    this.agentIconListView.Dock = DockStyle.Left;
                     this.agentIconListView.Width = this.AgentIconListWeight;
                     this.agentIconListView.Height = this.AgentIconListHeight;
                     this.agentPie.Width = this.AgentPieWeight;

@@ -33,7 +33,7 @@
             this.quecallRightMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
-            // lineStatusListView
+            // quecallStatusListView
             // 
             this.quecallStatusListView.Dock = System.Windows.Forms.DockStyle.Top;
             this.quecallStatusListView.FullRowSelect = true;
@@ -41,7 +41,7 @@
             this.quecallStatusListView.Location = new System.Drawing.Point(0, 0);
             this.quecallStatusListView.MultiSelect = false;
             this.quecallStatusListView.Name = "quecallStatusListView";
-            this.quecallStatusListView.Size = new System.Drawing.Size(634, 498);
+            this.quecallStatusListView.Size = new System.Drawing.Size(675, 566);
             this.quecallStatusListView.TabIndex = 0;
             this.quecallStatusListView.UseCompatibleStateImageBehavior = false;
             this.quecallStatusListView.View = System.Windows.Forms.View.Details;
@@ -58,7 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 582);
+            this.ClientSize = new System.Drawing.Size(675, 582);
             this.Controls.Add(this.quecallStatusListView);
             this.Name = "QueueCallForm";
             this.Text = "QueueCallForm";
