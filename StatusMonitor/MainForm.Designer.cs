@@ -782,7 +782,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(670, 9);
+            this.label2.Location = new System.Drawing.Point(672, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 15;
@@ -795,7 +795,7 @@
             this.lineUseageProgressLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lineUseageProgressLabel.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lineUseageProgressLabel.ForeColor = System.Drawing.Color.White;
-            this.lineUseageProgressLabel.Location = new System.Drawing.Point(757, 9);
+            this.lineUseageProgressLabel.Location = new System.Drawing.Point(756, 13);
             this.lineUseageProgressLabel.Name = "lineUseageProgressLabel";
             this.lineUseageProgressLabel.Size = new System.Drawing.Size(240, 20);
             this.lineUseageProgressLabel.TabIndex = 16;
@@ -821,7 +821,7 @@
             // useageLabel
             // 
             this.useageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.useageLabel.Location = new System.Drawing.Point(678, 22);
+            this.useageLabel.Location = new System.Drawing.Point(678, 25);
             this.useageLabel.Name = "useageLabel";
             this.useageLabel.Size = new System.Drawing.Size(64, 16);
             this.useageLabel.TabIndex = 17;
