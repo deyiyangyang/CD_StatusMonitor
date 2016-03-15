@@ -1171,6 +1171,7 @@ namespace StatusMonitor
                 AjustListFontSize();
                 ShowSettingFileWidth();
                 ShowSortColumn();
+                
             }
             catch (Exception ex)
             {
@@ -1315,6 +1316,7 @@ namespace StatusMonitor
                 SaveListViewColumnWidth((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView);
                 SaveListViewColumnWidth(this.totalListView);
                 SaveGridViewColumnWidth(this.dvMonitor);
+                SaveSplitContainerWidth();
                 SaveSortColumn();
                 int msgCount = 0;
                 int loop = 0;
@@ -7176,6 +7178,10 @@ namespace StatusMonitor
                     this.dvMonitor.Columns[i].Width = int.Parse(widths[i]);
                 }
             }
+            if(!string.IsNullOrEmpty(this.SettingFields_SplitContainer_Width))
+            {
+                this.splitContainer1.SplitterDistance = int.Parse(SettingFields_SplitContainer_Width);
+            }
         }
         private void ShowSortColumn()
         {
@@ -7289,6 +7295,13 @@ namespace StatusMonitor
             }
             IniProfile.SelectSection("SVSet");
             IniProfile.SetString(ConstEntity.MONITOR_GRID_VIEW_WIDTH, widthValue.Substring(1));
+            IniProfile.Save(MyTool.GetModuleIniPath());
+        }
+
+        private void SaveSplitContainerWidth()
+        {
+            IniProfile.SelectSection("SVSet");
+            IniProfile.SetString(ConstEntity.SPLITCONTAINER_PANEL_WIDTH, this.splitContainer1.SplitterDistance.ToString());
             IniProfile.Save(MyTool.GetModuleIniPath());
         }
         #endregion

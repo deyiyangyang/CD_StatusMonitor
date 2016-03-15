@@ -54,7 +54,10 @@
             this.subMenuWaitTime = new System.Windows.Forms.ToolStripMenuItem();
             this.statusTabCtrl = new System.Windows.Forms.TabControl();
             this.agentStatusPage = new System.Windows.Forms.TabPage();
+            this.agentIconPanel = new System.Windows.Forms.Panel();
             this.agentPie = new System.Windows.Forms.PictureBox();
+            this.agentIconListView = new System.Windows.Forms.ListView();
+            this.smallImageList = new System.Windows.Forms.ImageList(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -71,8 +74,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.agentStatusListView = new System.Windows.Forms.ListView();
             this.largeImageList = new System.Windows.Forms.ImageList(this.components);
-            this.smallImageList = new System.Windows.Forms.ImageList(this.components);
-            this.agentIconListView = new System.Windows.Forms.ListView();
             this.lineStatusPage = new System.Windows.Forms.TabPage();
             this.lineStatusListView = new System.Windows.Forms.ListView();
             this.lineIconListView = new System.Windows.Forms.ListView();
@@ -118,10 +119,10 @@
             this.groupSumTabCtrl = new System.Windows.Forms.TabControl();
             this.groupSumTab = new System.Windows.Forms.TabPage();
             this.panelTop = new System.Windows.Forms.Panel();
-            this.agentIconPanel = new System.Windows.Forms.Panel();
             this.mainMenu.SuspendLayout();
             this.statusTabCtrl.SuspendLayout();
             this.agentStatusPage.SuspendLayout();
+            this.agentIconPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.agentPie)).BeginInit();
             this.lineStatusPage.SuspendLayout();
             this.tabMonitor.SuspendLayout();
@@ -138,7 +139,6 @@
             this.groupSumTabCtrl.SuspendLayout();
             this.groupSumTab.SuspendLayout();
             this.panelTop.SuspendLayout();
-            this.agentIconPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -365,17 +365,68 @@
             this.agentStatusPage.Text = "エージェント 状態";
             this.agentStatusPage.UseVisualStyleBackColor = true;
             // 
+            // agentIconPanel
+            // 
+            this.agentIconPanel.Controls.Add(this.agentPie);
+            this.agentIconPanel.Controls.Add(this.agentIconListView);
+            this.agentIconPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.agentIconPanel.Location = new System.Drawing.Point(3, 534);
+            this.agentIconPanel.Name = "agentIconPanel";
+            this.agentIconPanel.Size = new System.Drawing.Size(691, 95);
+            this.agentIconPanel.TabIndex = 15;
+            // 
             // agentPie
             // 
-            this.agentPie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.agentPie.BackColor = System.Drawing.SystemColors.Control;
+            this.agentPie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.agentPie.Location = new System.Drawing.Point(222, 0);
             this.agentPie.Name = "agentPie";
-            this.agentPie.Size = new System.Drawing.Size(463, 95);
+            this.agentPie.Size = new System.Drawing.Size(469, 95);
             this.agentPie.TabIndex = 14;
             this.agentPie.TabStop = false;
             this.agentPie.VisibleChanged += new System.EventHandler(this.agentPie_VisibleChanged);
+            // 
+            // agentIconListView
+            // 
+            this.agentIconListView.BackColor = System.Drawing.SystemColors.Control;
+            this.agentIconListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.agentIconListView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.agentIconListView.Enabled = false;
+            this.agentIconListView.Location = new System.Drawing.Point(0, 0);
+            this.agentIconListView.Name = "agentIconListView";
+            this.agentIconListView.Scrollable = false;
+            this.agentIconListView.Size = new System.Drawing.Size(222, 95);
+            this.agentIconListView.SmallImageList = this.smallImageList;
+            this.agentIconListView.TabIndex = 11;
+            this.agentIconListView.TabStop = false;
+            this.agentIconListView.UseCompatibleStateImageBehavior = false;
+            this.agentIconListView.View = System.Windows.Forms.View.List;
+            // 
+            // smallImageList
+            // 
+            this.smallImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("smallImageList.ImageStream")));
+            this.smallImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.smallImageList.Images.SetKeyName(0, "IconCallIdle");
+            this.smallImageList.Images.SetKeyName(1, "IconCallCalling");
+            this.smallImageList.Images.SetKeyName(2, "IconCallPreparing");
+            this.smallImageList.Images.SetKeyName(3, "IconCallIvr");
+            this.smallImageList.Images.SetKeyName(4, "IconCallOperator");
+            this.smallImageList.Images.SetKeyName(5, "IconOpeIdle");
+            this.smallImageList.Images.SetKeyName(6, "IconOpeWait");
+            this.smallImageList.Images.SetKeyName(7, "IconOpePreparing");
+            this.smallImageList.Images.SetKeyName(8, "IconOpeOffering");
+            this.smallImageList.Images.SetKeyName(9, "IconOpeConnect");
+            this.smallImageList.Images.SetKeyName(10, "IconOpeWorktime");
+            this.smallImageList.Images.SetKeyName(11, "IconOpeTelephone");
+            this.smallImageList.Images.SetKeyName(12, "IconTelIdle");
+            this.smallImageList.Images.SetKeyName(13, "IconTelCalling");
+            this.smallImageList.Images.SetKeyName(14, "IconTelConnect");
+            this.smallImageList.Images.SetKeyName(15, "IconTelHold");
+            this.smallImageList.Images.SetKeyName(16, "IconTelTransfer");
+            this.smallImageList.Images.SetKeyName(17, "IconTelConf");
+            this.smallImageList.Images.SetKeyName(18, "IconTelMonitor");
+            this.smallImageList.Images.SetKeyName(19, "IconTelRecord");
+            this.smallImageList.Images.SetKeyName(20, "IconOpeSeatoff");
             // 
             // label7
             // 
@@ -524,7 +575,7 @@
             this.agentStatusListView.MultiSelect = false;
             this.agentStatusListView.Name = "agentStatusListView";
             this.agentStatusListView.ShowItemToolTips = true;
-            this.agentStatusListView.Size = new System.Drawing.Size(696, 472);
+            this.agentStatusListView.Size = new System.Drawing.Size(696, 473);
             this.agentStatusListView.SmallImageList = this.smallImageList;
             this.agentStatusListView.TabIndex = 0;
             this.agentStatusListView.UseCompatibleStateImageBehavior = false;
@@ -560,48 +611,6 @@
             this.largeImageList.Images.SetKeyName(18, "IconTelMonitor");
             this.largeImageList.Images.SetKeyName(19, "IconTelRecord");
             this.largeImageList.Images.SetKeyName(20, "IconOpeSeatoff");
-            // 
-            // smallImageList
-            // 
-            this.smallImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("smallImageList.ImageStream")));
-            this.smallImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.smallImageList.Images.SetKeyName(0, "IconCallIdle");
-            this.smallImageList.Images.SetKeyName(1, "IconCallCalling");
-            this.smallImageList.Images.SetKeyName(2, "IconCallPreparing");
-            this.smallImageList.Images.SetKeyName(3, "IconCallIvr");
-            this.smallImageList.Images.SetKeyName(4, "IconCallOperator");
-            this.smallImageList.Images.SetKeyName(5, "IconOpeIdle");
-            this.smallImageList.Images.SetKeyName(6, "IconOpeWait");
-            this.smallImageList.Images.SetKeyName(7, "IconOpePreparing");
-            this.smallImageList.Images.SetKeyName(8, "IconOpeOffering");
-            this.smallImageList.Images.SetKeyName(9, "IconOpeConnect");
-            this.smallImageList.Images.SetKeyName(10, "IconOpeWorktime");
-            this.smallImageList.Images.SetKeyName(11, "IconOpeTelephone");
-            this.smallImageList.Images.SetKeyName(12, "IconTelIdle");
-            this.smallImageList.Images.SetKeyName(13, "IconTelCalling");
-            this.smallImageList.Images.SetKeyName(14, "IconTelConnect");
-            this.smallImageList.Images.SetKeyName(15, "IconTelHold");
-            this.smallImageList.Images.SetKeyName(16, "IconTelTransfer");
-            this.smallImageList.Images.SetKeyName(17, "IconTelConf");
-            this.smallImageList.Images.SetKeyName(18, "IconTelMonitor");
-            this.smallImageList.Images.SetKeyName(19, "IconTelRecord");
-            this.smallImageList.Images.SetKeyName(20, "IconOpeSeatoff");
-            // 
-            // agentIconListView
-            // 
-            this.agentIconListView.BackColor = System.Drawing.SystemColors.Control;
-            this.agentIconListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.agentIconListView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.agentIconListView.Enabled = false;
-            this.agentIconListView.Location = new System.Drawing.Point(0, 0);
-            this.agentIconListView.Name = "agentIconListView";
-            this.agentIconListView.Scrollable = false;
-            this.agentIconListView.Size = new System.Drawing.Size(222, 95);
-            this.agentIconListView.SmallImageList = this.smallImageList;
-            this.agentIconListView.TabIndex = 11;
-            this.agentIconListView.TabStop = false;
-            this.agentIconListView.UseCompatibleStateImageBehavior = false;
-            this.agentIconListView.View = System.Windows.Forms.View.List;
             // 
             // lineStatusPage
             // 
@@ -671,7 +680,7 @@
             this.dvMonitor.MultiSelect = false;
             this.dvMonitor.Name = "dvMonitor";
             this.dvMonitor.RowTemplate.Height = 21;
-            this.dvMonitor.Size = new System.Drawing.Size(691, 588);
+            this.dvMonitor.Size = new System.Drawing.Size(691, 589);
             this.dvMonitor.TabIndex = 0;
             this.dvMonitor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvMonitor_CellDoubleClick);
             this.dvMonitor.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dvMonitor_DataError);
@@ -1016,16 +1025,6 @@
             this.panelTop.Size = new System.Drawing.Size(1008, 44);
             this.panelTop.TabIndex = 15;
             // 
-            // agentIconPanel
-            // 
-            this.agentIconPanel.Controls.Add(this.agentIconListView);
-            this.agentIconPanel.Controls.Add(this.agentPie);
-            this.agentIconPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.agentIconPanel.Location = new System.Drawing.Point(3, 534);
-            this.agentIconPanel.Name = "agentIconPanel";
-            this.agentIconPanel.Size = new System.Drawing.Size(691, 95);
-            this.agentIconPanel.TabIndex = 15;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1054,6 +1053,7 @@
             this.statusTabCtrl.ResumeLayout(false);
             this.agentStatusPage.ResumeLayout(false);
             this.agentStatusPage.PerformLayout();
+            this.agentIconPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.agentPie)).EndInit();
             this.lineStatusPage.ResumeLayout(false);
             this.tabMonitor.ResumeLayout(false);
@@ -1071,7 +1071,6 @@
             this.groupSumTab.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            this.agentIconPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

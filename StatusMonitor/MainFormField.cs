@@ -118,6 +118,8 @@ namespace StatusMonitor
         public string SettingFields_QueueListView_Width = "";
         public string SettingFields_TotalListView_Width = "";
         public string SettingFields_MonitorGridView_Width = "";
+        public string SettingFields_SplitContainer_Width = "";
+
         public string SettingFields_GroupSumColumnShow = "";
 
         public string SettingFields_AgentListViewSort = "";
@@ -125,6 +127,7 @@ namespace StatusMonitor
         public string SettingFields_QueueListViewSort = "";
         public string SettingFields_TotalListViewSort = "";
         public string SettingFields_MonitorGridViewSort = "";
+        
         public float SettingFields_ListFontSize = 1;
         public Dictionary<string, string> Dic_SettingFields_SkillQuecall = new Dictionary<string, string>();
 
@@ -151,7 +154,7 @@ namespace StatusMonitor
             SettingFields_QueueListViewSort = IniProfile.GetStringDefault(ConstEntity.QUEUE_LIST_VIEW_SORT, "");
             SettingFields_TotalListViewSort = IniProfile.GetStringDefault(ConstEntity.TOTAL_LIST_VIEW_SORT, "");
             SettingFields_MonitorGridViewSort = IniProfile.GetStringDefault(ConstEntity.MONITOR_GRID_VIEW_SORT, "");
-
+            SettingFields_SplitContainer_Width = IniProfile.GetStringDefault(ConstEntity.SPLITCONTAINER_PANEL_WIDTH, "");
 
             //IniProfile.SelectSection("Alert");
             //SettingFields_AlertTotal = IniProfile.GetLongDefault("nTotal", 100);

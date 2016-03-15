@@ -108,6 +108,18 @@ namespace StatusMonitor
                 this.cmbListFontSize.SelectedIndex = 3;
             else if (ListFontSize.ToString() == "3")
                 this.cmbListFontSize.SelectedIndex = 4;
+            else if (ListFontSize.ToString() == "3.5")
+                this.cmbListFontSize.SelectedIndex = 5;
+            else if (ListFontSize.ToString() == "4")
+                this.cmbListFontSize.SelectedIndex = 6;
+            else if (ListFontSize.ToString() == "4.5")
+                this.cmbListFontSize.SelectedIndex = 7;
+            else if (ListFontSize.ToString() == "5")
+                this.cmbListFontSize.SelectedIndex = 8;
+            else if (ListFontSize.ToString() == "5.5")
+                this.cmbListFontSize.SelectedIndex = 9;
+            else if (ListFontSize.ToString() == "6")
+                this.cmbListFontSize.SelectedIndex = 10;
         }
 
         private void InitCmbListFontSize()
@@ -117,6 +129,12 @@ namespace StatusMonitor
             this.cmbListFontSize.Items.Add(new ComboBoxItem { Value = "2", Text = "200%" });
             this.cmbListFontSize.Items.Add(new ComboBoxItem { Value = "2.5", Text = "250%" });
             this.cmbListFontSize.Items.Add(new ComboBoxItem { Value = "3", Text = "300%" });
+            this.cmbListFontSize.Items.Add(new ComboBoxItem { Value = "3.5", Text = "350%" });
+            this.cmbListFontSize.Items.Add(new ComboBoxItem { Value = "4", Text = "400%" });
+            this.cmbListFontSize.Items.Add(new ComboBoxItem { Value = "4.5", Text = "450%" });
+            this.cmbListFontSize.Items.Add(new ComboBoxItem { Value = "5", Text = "500%" });
+            this.cmbListFontSize.Items.Add(new ComboBoxItem { Value = "5.5", Text = "550%" });
+            this.cmbListFontSize.Items.Add(new ComboBoxItem { Value = "6", Text = "600%" });
         }
     }
 }
