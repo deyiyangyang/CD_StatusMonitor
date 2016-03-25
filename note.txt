@@ -156,3 +156,6 @@ UM_POPQUE vAgentID='XXXXX',iSessionProfileID=XXXX vAgentIDは分配先のエージェント
 2016/03/15
 1,終了時、タブ画面とグループサマリ画面の表示割合を記憶させて、起動時に終了時の割合を再現させてください
 2,リストフォントサイズの%を600%まで拡大可能にしてください。
+
+2016/03/25
+1，change the version to 6.3.6

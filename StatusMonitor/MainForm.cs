@@ -295,7 +295,7 @@ namespace StatusMonitor
             UpdateContinueTimer = new System.Timers.Timer();
             UpdateContinueTimer.Elapsed += new System.Timers.ElapsedEventHandler(ContinueTimer);
             //end added
-            writeLog("current version is 6.3.4");
+            writeLog("current version is 6.3.6");
         }
 
 
