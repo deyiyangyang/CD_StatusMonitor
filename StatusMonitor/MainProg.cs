@@ -1591,7 +1591,7 @@ namespace StatusMonitor
                     //離席理由表示
                     ListViewItem.ListViewSubItem subState = new ListViewItem.ListViewSubItem(item, "");
                     string strState = "";
-                    if (!string.IsNullOrEmpty(obj.vReason) && obj.Status == 6)
+                    if (!string.IsNullOrEmpty(obj.vReason) && (obj.Status == 6 || obj.Status==5))
                         strState = obj.vReason;
                     else
                         strState = res.GetString(status.StatusName);
