@@ -29,6 +29,9 @@ namespace StatusMonitor.SettingFile
         public const string QUEUE_LIST_VIEW_SORT = "QueueListViewSort";
         public const string TOTAL_LIST_VIEW_SORT = "TotalListViewSort";
         public const string MONITOR_GRID_VIEW_SORT = "MonitorGridViewSort";
+        public const string PARENT_GROUP_IDLE_PERIOD = "ParentGroupIdlePeriod";
+        public const string PARENT_GROUP_IDLE_PERIOD_VOICE = "ParentGroupIdlePeriodVoice";
+        public const string PARENT_GROUP_QUECALL_VOICE = "ParentGroupIdle";
 
 
         public const string STATUSTIMEIDLE1 = "StatusOverIdelTime1";
@@ -88,6 +91,14 @@ namespace StatusMonitor.SettingFile
         public const string SkillQueCallVoiceTemplate1 = "Skill_{0}_Voice1";
         public const string SkillQueCallVoiceTemplate2 = "Skill_{0}_Voice2";
         public const string SkillQueCallVoiceTemplate3 = "Skill_{0}_Voice3";
+
+        public const string ParentGroupQueCallPeriodTemplate1 = "ParentGroup_{0}_Period1";
+        public const string ParentGroupQueCallPeriodTemplate2 = "ParentGroup_{0}_Period2";
+        public const string ParentGroupQueCallPeriodTemplate3 = "ParentGroup_{0}_Period3";
+        public const string ParentGroupQueCallVoiceTemplate1 = "ParentGroup_{0}_Voice1";
+        public const string ParentGroupQueCallVoiceTemplate2 = "ParentGroup_{0}_Voice2";
+        public const string ParentGroupQueCallVoiceTemplate3 = "ParentGroup_{0}_Voice3";
+
 
         public const string Sort_Ascending = "Ascending";
         public const string Sort_Descending = "Descending";

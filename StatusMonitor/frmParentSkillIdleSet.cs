@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MyTools;
+using StatusMonitor.SettingFile;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,20 +8,27 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using TksProfileAcxLib;
 
 namespace StatusMonitor
 {
-    public partial class SkillIdleSet : Form
+    public partial class frmParentSkillIdleSet : Form
     {
+        private TksProfileClass _iniProfile;
         public StatusMonitor.MainForm mainF;
         public string PeriodLongString = "";
         public string PeriodVoiceLongString = "";
-        private DataTable _dtGroupPersonal;
+        public string ParentSkillPeriod = "";
+        public string ParentSkillPeriodVoice = "";
+        //private DataTable _dtGroupPersonal;
         private Dictionary<int, WMPLib.WindowsMediaPlayer> tempPlayers;
-        public SkillIdleSet(DataTable dtGroupPersonal)
+        public frmParentSkillIdleSet(TksProfileClass iniProfile)
         {
             InitializeComponent();
-            _dtGroupPersonal = dtGroupPersonal;
+            _iniProfile = iniProfile;
+            _iniProfile.SelectSection("SVSet");
+            ParentSkillPeriod = _iniProfile.GetStringDefault(ConstEntity.PARENT_GROUP_IDLE_PERIOD, string.Empty);
+            ParentSkillPeriodVoice = _iniProfile.GetStringDefault(ConstEntity.PARENT_GROUP_IDLE_PERIOD_VOICE, string.Empty);
             tempPlayers = new Dictionary<int, WMPLib.WindowsMediaPlayer>();
         }
 
@@ -39,18 +48,27 @@ namespace StatusMonitor
             SND_RESOURCE = 0x00040004
         }
 
-        private void SkillIdleSet_Load(object sender, EventArgs e)
+        private void frmParentSkillIdleSet_Load(object sender, EventArgs e)
         {
             int index = 0;
             int offsetHeight = 15;
             int offsetLeft = 150;
-            foreach (DataRow item in _dtGroupPersonal.Rows)
+            //foreach (var item in mainF.DicParentGroup)
+            //{
+
+            //}
+
+            //foreach (DataRow item in _dtGroupPersonal.Rows)
+            foreach (var item in mainF.DicParentGroup)
             {
-                if (item["groupId"].ToString() == "-1") continue;
+                var parentGroupName = item.Key.Split(',')[1];
+                var parentGroupID = item.Key.Split(',')[0];
+                var groupIds = item.Value;
+                if (item.Value == "-1") continue;
                 index++;
                 Label labelSkillName = new Label();
-                labelSkillName.Name = "lblIdle" + item["groupId"].ToString();
-                labelSkillName.Text = item["groupName"].ToString();
+                labelSkillName.Name = "lblIdle" + parentGroupID;
+                labelSkillName.Text = parentGroupName;
                 labelSkillName.Location = new System.Drawing.Point(12, 12 * index + (index - 1) * offsetHeight);
                 labelSkillName.Size = new System.Drawing.Size(offsetLeft, 12);
 
@@ -58,7 +76,7 @@ namespace StatusMonitor
                 txtPeriod1.ImeMode = System.Windows.Forms.ImeMode.Disable;
                 txtPeriod1.Location = new System.Drawing.Point(72 + offsetLeft, 12 * index + (index - 1) * offsetHeight);
                 txtPeriod1.MaxLength = 3;
-                txtPeriod1.Name = "txtIdlePeriod" + item["groupId"].ToString();
+                txtPeriod1.Name = "txtIdlePeriod" + parentGroupID;
                 txtPeriod1.Size = new System.Drawing.Size(33, 19);
                 txtPeriod1.TabIndex = 2;
 
@@ -73,13 +91,13 @@ namespace StatusMonitor
                 TextBox txtVoice1 = new TextBox();
                 txtVoice1.Enabled = false;
                 txtVoice1.Location = new System.Drawing.Point(144 + offsetLeft, 12 * index + (index - 1) * offsetHeight);
-                txtVoice1.Name = "txtIdleVoice" + item["groupId"].ToString();
+                txtVoice1.Name = "txtIdleVoice" + parentGroupID;
                 txtVoice1.Size = new System.Drawing.Size(117, 19);
                 txtVoice1.TabIndex = 4;
 
                 Button btnOpenFile1 = new Button();
                 btnOpenFile1.Location = new System.Drawing.Point(264 + offsetLeft, 12 * index + (index - 1) * offsetHeight);
-                btnOpenFile1.Name = "btnIdleOpenFile" + item["groupId"].ToString();
+                btnOpenFile1.Name = "btnIdleOpenFile" + parentGroupID;
                 btnOpenFile1.Size = new System.Drawing.Size(37, 20);
                 btnOpenFile1.TabIndex = 5;
                 btnOpenFile1.Text = "参照";
@@ -88,16 +106,21 @@ namespace StatusMonitor
 
                 Button btnPlay1 = new Button();
                 btnPlay1.Location = new System.Drawing.Point(304 + offsetLeft, 12 * index + (index - 1) * offsetHeight);
-                btnPlay1.Name = "btnIdlePlay" + item["groupId"].ToString();
+                btnPlay1.Name = "btnIdlePlay" + parentGroupID;
                 btnPlay1.Size = new System.Drawing.Size(37, 20);
                 btnPlay1.TabIndex = 6;
                 btnPlay1.Text = "再生";
                 btnPlay1.UseVisualStyleBackColor = true;
                 btnPlay1.Click += new System.EventHandler(this.btnPlay_Click);
 
-                var player = new WMPLib.WindowsMediaPlayer();
-                player.settings.setMode("loop", true);
-                tempPlayers.Add(int.Parse(item["groupId"].ToString()), player);
+                foreach (string skillID in item.Value.Split(','))
+                {
+                    var player = new WMPLib.WindowsMediaPlayer();
+                    player.settings.setMode("loop", true);
+                    if (!tempPlayers.ContainsKey(int.Parse(skillID)))
+                        tempPlayers.Add(int.Parse(skillID), player);
+                }
+
 
                 this.plSkill.Controls.Add(btnPlay1);
                 this.plSkill.Controls.Add(btnOpenFile1);
@@ -124,18 +147,30 @@ namespace StatusMonitor
                 string strPeriod1 = "";
                 string strVoice1 = "";
 
+                string strParentSkillPeriod = "";
+                string strParentSkillVoice = "";
+
+                //get each skillgroup setting info
                 foreach (Control c in this.plSkill.Controls)
                 {
                     if (c.Name.Contains("txtIdleVoice"))
                     {
-                        string groupId = c.Name.Substring("txtIdleVoice".Length);
-                        if (!string.IsNullOrEmpty(this.plSkill.Controls.Find("txtIdlePeriod" + groupId, true)[0].Text))
+                        string parentGroupId = c.Name.Substring("txtIdleVoice".Length);
+                        if (!string.IsNullOrEmpty(this.plSkill.Controls.Find("txtIdlePeriod" + parentGroupId, true)[0].Text))
                         {
                             if (!string.IsNullOrEmpty(c.Text))
                             {
-                                strVoice1 += "|" + c.Name.Substring("txtIdleVoice".Length) + ":" + c.Text;
-                            }
-
+                                string parentGroupID = c.Name.Substring("txtIdleVoice".Length);
+                                string skillIDs = GetSkillIdsByParentGroup(parentGroupID);
+                                if(!string.IsNullOrEmpty(skillIDs))
+                                {
+                                    foreach(var skillID in skillIDs.Split(','))
+                                    {
+                                        strVoice1 += "|" + skillID + ":" + c.Text;
+                                    }
+                                }
+                                strParentSkillVoice += "|" + c.Name.Substring("txtIdleVoice".Length) + ":" + c.Text;
+                            }                              
                         }
                     }
                     else if (c.Name.Contains("txtIdlePeriod"))
@@ -149,19 +184,31 @@ namespace StatusMonitor
                             }
                             else
                             {
-                                strPeriod1 += "|" + c.Name.Substring("txtIdlePeriod".Length) + ":" + c.Text;
+                                string parentGroupID = c.Name.Substring("txtIdlePeriod".Length);
+                                string skillIDs = GetSkillIdsByParentGroup(parentGroupID);
+                                if (!string.IsNullOrEmpty(skillIDs))
+                                {
+                                    foreach (var skillID in skillIDs.Split(','))
+                                    {
+                                        strPeriod1 += "|" + skillID + ":" + c.Text;
+                                    }
+                                }
+                                strParentSkillPeriod += "|" + c.Name.Substring("txtIdlePeriod".Length) + ":" + c.Text;
                             }
                         }
-
                     }
                 }
 
 
                 if (strVoice1.Length > 1) strVoice1 = strVoice1.Substring(1);
                 if (strPeriod1.Length > 1) strPeriod1 = strPeriod1.Substring(1);
+                if (strParentSkillPeriod.Length > 1) strParentSkillPeriod = strParentSkillPeriod.Substring(1);
+                if (strParentSkillVoice.Length > 1) strParentSkillVoice = strParentSkillVoice.Substring(1);
 
-
-
+                _iniProfile.SelectSection("SVSet");
+                _iniProfile.SetString(ConstEntity.PARENT_GROUP_IDLE_PERIOD, strParentSkillPeriod);
+                _iniProfile.SetString(ConstEntity.PARENT_GROUP_IDLE_PERIOD_VOICE, strParentSkillVoice);
+                _iniProfile.Save(MyTool.GetModuleIniPath());
                 //SetQueCall
                 mainF.SetIdle(strPeriod1, strVoice1);
 
@@ -271,35 +318,33 @@ namespace StatusMonitor
             }
         }
 
-        private void SkillIdleSet_Shown(object sender, EventArgs e)
+        private void frmParentSkillIdleSet_Shown(object sender, EventArgs e)
         {
             try
             {
                 ofdVoice.Filter = "(*.wav)|*.wav";
 
-                if (!string.IsNullOrEmpty(PeriodLongString))
+                if (!string.IsNullOrEmpty(ParentSkillPeriod))
                 {
-                    string[] periods = PeriodLongString.Split('|');
+                    string[] periods = ParentSkillPeriod.Split('|');
                     for (int i = 0; i < periods.Length; i++)
                     {
                         if (string.IsNullOrEmpty(periods[i])) continue;
                         string[] temp = periods[i].Split(':');
                         string groupID = temp[0];
-                        if (this.plSkill.Controls.Find("txtIdlePeriod" + groupID, true).Length > 0)
-                            this.plSkill.Controls.Find("txtIdlePeriod" + groupID, true)[0].Text = temp[1];
+                        this.plSkill.Controls.Find("txtIdlePeriod" + groupID, true)[0].Text = temp[1];
                     }
                 }
 
-                if (!string.IsNullOrEmpty(PeriodVoiceLongString))
+                if (!string.IsNullOrEmpty(ParentSkillPeriodVoice))
                 {
-                    string[] periodVoices = PeriodVoiceLongString.Split('|');
+                    string[] periodVoices = ParentSkillPeriodVoice.Split('|');
                     for (int i = 0; i < periodVoices.Length; i++)
                     {
                         if (string.IsNullOrEmpty(periodVoices[i])) continue;
                         string[] temp = periodVoices[i].Split(':');
                         string groupID = temp[0];
-                        if (this.plSkill.Controls.Find("txtIdleVoice" + groupID, true).Length > 0)
-                            this.plSkill.Controls.Find("txtIdleVoice" + groupID, true)[0].Text = temp[1];
+                        this.plSkill.Controls.Find("txtIdleVoice" + groupID, true)[0].Text = temp[1];
                     }
                 }
             }
@@ -307,6 +352,24 @@ namespace StatusMonitor
             {
                 mainF.writeLog("SkillIdleSet_Shown:" + ex.Message);
             }
+        }
+
+        private string GetSkillIdsByParentGroup(string parentGroupID)
+        {
+            string result = string.Empty;
+            foreach(string key in mainF.DicParentGroup.Keys)
+            {
+                var arr = key.Split(',');
+                if (arr.Length==2)
+                {
+                    if(arr[0]==parentGroupID)
+                    {
+                        result = mainF.DicParentGroup[key];
+                        break;
+                    }
+                }
+            }
+            return result;
         }
 
     }

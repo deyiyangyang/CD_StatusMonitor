@@ -221,6 +221,8 @@ namespace StatusMonitor
         private Dictionary<string, int> DicOriginLineListViewColumnWidth = new Dictionary<string, int>();
         private Dictionary<string, int> DicOriginTotalListViewColumnWidth = new Dictionary<string, int>();
         private Dictionary<string, int> DicOriginMonitorGridColumnWidth = new Dictionary<string, int>();
+
+        public Dictionary<string, string> DicParentGroup = new Dictionary<string, string>();
         public int QueueCountAll = 0;
         public bool ReShowsFlag = true;
         public string KyokuGroup = "";
@@ -426,6 +428,7 @@ namespace StatusMonitor
 
                 //added by zhu 2015/10/20
                 GetGroupInfo();
+                GetParentGroup();
                 //end added
                 //added by zhu 2015/10/09
                 if (statusTabCtrl.TabPages.Contains(tabMonitor))
@@ -470,6 +473,9 @@ namespace StatusMonitor
                 GroupInfo groupInfo = new GroupInfo(-1, res.GetString("SM0020040"));
                 groupComboBox.Items.Add(groupInfo);
                 groupComboBox.SelectedIndex = 0;
+
+                this.lineDDLParentGroup.Items.Add(groupInfo);
+                lineDDLParentGroup.SelectedIndex = 0;
 
                 //init Option
                 initOPtion();
@@ -4077,6 +4083,101 @@ namespace StatusMonitor
             }
 
         }
+
+        /// <summary>
+        /// 親グループを取る
+        /// </summary>
+        public void GetParentGroup()
+        {
+            try
+            {
+
+                Microsoft.Win32.RegistryKey Reg;
+                Reg = Microsoft.Win32.Registry.LocalMachine.OpenSubKey("Software\\NGCPADAPTER");
+                if (Reg == null)
+                {
+                    Reg = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\\NGCPADAPTER");
+                    if (Reg == null) return;
+                }
+
+                // changed by zhu 2015/11/30 use url from ini file
+                //string webServer = Reg.GetValue("WebServer", "").ToString();
+                string webServer = GetServerUrl();
+                //end changed
+                string tid = Reg.GetValue("TenantID", "").ToString();
+                string tpwd = Reg.GetValue("TenantPass", "").ToString();
+                Reg.Close();
+                wbGetParentGroup.AllowWebBrowserDrop = false;
+                wbGetParentGroup.IsWebBrowserContextMenuEnabled = false;
+                wbGetParentGroup.WebBrowserShortcutsEnabled = false;
+
+                string postdata = "";
+                string mainUrl = webServer + "GetgroupMainmap.asp";
+                //added by Zhu 2014/04/07
+                mainUrl = mainUrl + "?u=" + tid;
+                mainUrl = mainUrl + "&p=" + tpwd;
+                //end added
+                postdata = "u =" + tid;
+                postdata = postdata + "&p=" + tpwd;
+                //postdata = postdata + "&l=" + MonitorGroupList;
+
+                System.Text.Encoding a = System.Text.Encoding.UTF8;
+                Byte[] byte1 = a.GetBytes(postdata);
+
+                writeLog("mainUrl:" + mainUrl + ",postdata:" + postdata);
+                wbGetParentGroup.Navigate(mainUrl, "", byte1, "Content-Type: application/x-www-form-urlencoded");
+
+            }
+            catch (Exception ex)
+            {
+                writeLog("getGroupPersonal SysteError:" + ex.Message + ex.StackTrace);
+            }
+
+        }
+
+        private void wbGetParentGroup_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            try
+            {
+                writeLog("wbGetParentGroup_DocumentCompleted ");
+                if (DicParentGroup != null && DicParentGroup.Count > 0) DicParentGroup.Clear();
+                if (string.IsNullOrEmpty(wbGetParentGroup.DocumentText)|| wbGetParentGroup.DocumentText.ToLower()=="null") return;
+                string[] rows = wbGetParentGroup.DocumentText.Split(';');
+                foreach(var item in rows)
+                {
+                    if(!string.IsNullOrEmpty(item))
+                    {
+                        string[] temp = item.Split('=');
+                        if(temp.Length==2)
+                            DicParentGroup.Add(temp[0], temp[1]);
+                    }
+                }
+                FillParentGroupCombox(this.lineDDLParentGroup);
+                FillParentGroupCombox((this.ListTabPagesForms[0] as QueueCallForm).quecallDDLParentGroup);
+
+
+            }
+            catch (Exception ex)
+            {
+                writeLog("wbGroupPersonal_DocumentCompleted SysteError:" + ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void FillParentGroupCombox(ComboBox c)
+        {
+            GroupInfo groupInfo1 = new GroupInfo(-1, res.GetString("SM0020040"));
+            c.Items.Clear();
+            c.Items.Add(groupInfo1);
+            
+            foreach (var item in DicParentGroup)
+            {
+                string[] values = item.Key.Split(',');
+                GroupInfo gp = new GroupInfo(int.Parse(values[0]), values[1]);
+                c.Items.Add(gp);
+            }
+            c.SelectedIndex = 0;
+        }
+
         void wbGroupPersonal_DocumentCompleted(object sender, System.Windows.Forms.WebBrowserDocumentCompletedEventArgs e)
         {
             //throw new System.NotImplementedException();
@@ -5828,6 +5929,8 @@ namespace StatusMonitor
             }
 
         }
+
+        //同期データを取る
         private void btnInitMonitor_Click(object sender, EventArgs e)
         {
             int err = 0;
@@ -7812,6 +7915,42 @@ namespace StatusMonitor
             catch (Exception ex)
             {
                 writeLog("MenuSkillShowSet_Click Error:" + ex.StackTrace);
+            }
+        }
+
+        private void lineDDLParentGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplayLine();
+        }
+
+        private void 受付可警告設定親グループToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmParentSkillIdleSet pss = new frmParentSkillIdleSet(IniProfile);
+                pss.mainF = this;
+                //pss.PeriodLongString = IdlePeriodLongString;
+                //pss.PeriodVoiceLongString = IdlePeriodVoiceLongString;
+                pss.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                writeLog("受付可警告設定親グループToolStripMenuItem_Click Error:"+ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void 待ち呼警告設定親グループToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmParentQuecallSetting pss = new frmParentQuecallSetting(IniProfile);
+                pss.MainForm = this;
+
+                pss.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                writeLog("受付可警告設定親グループToolStripMenuItem_Click Error:" + ex.Message + ex.StackTrace);
             }
         }
     }

@@ -44,8 +44,10 @@
             this.警告設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.超過時間警告表示設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.待ち呼警告設定は全体ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.待ち呼警告設定親グループToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.待ち呼警告設定個別ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.受付可警告設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.受付可警告設定親グループToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.グループ表示設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.局番グループ表示設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.スキルグループ表示設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,6 +77,8 @@
             this.agentStatusListView = new System.Windows.Forms.ListView();
             this.largeImageList = new System.Windows.Forms.ImageList(this.components);
             this.lineStatusPage = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lineDDLParentGroup = new System.Windows.Forms.ComboBox();
             this.lineStatusListView = new System.Windows.Forms.ListView();
             this.lineIconListView = new System.Windows.Forms.ListView();
             this.tabMonitor = new System.Windows.Forms.TabPage();
@@ -119,6 +123,7 @@
             this.groupSumTabCtrl = new System.Windows.Forms.TabControl();
             this.groupSumTab = new System.Windows.Forms.TabPage();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.wbGetParentGroup = new System.Windows.Forms.WebBrowser();
             this.mainMenu.SuspendLayout();
             this.statusTabCtrl.SuspendLayout();
             this.agentStatusPage.SuspendLayout();
@@ -244,8 +249,10 @@
             this.警告設定ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.超過時間警告表示設定ToolStripMenuItem,
             this.待ち呼警告設定は全体ToolStripMenuItem,
+            this.待ち呼警告設定親グループToolStripMenuItem,
             this.待ち呼警告設定個別ToolStripMenuItem,
-            this.受付可警告設定ToolStripMenuItem});
+            this.受付可警告設定ToolStripMenuItem,
+            this.受付可警告設定親グループToolStripMenuItem});
             this.警告設定ToolStripMenuItem.Name = "警告設定ToolStripMenuItem";
             this.警告設定ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.警告設定ToolStripMenuItem.Text = "警告設定";
@@ -253,30 +260,44 @@
             // 超過時間警告表示設定ToolStripMenuItem
             // 
             this.超過時間警告表示設定ToolStripMenuItem.Name = "超過時間警告表示設定ToolStripMenuItem";
-            this.超過時間警告表示設定ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.超過時間警告表示設定ToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.超過時間警告表示設定ToolStripMenuItem.Text = "超過時間警告表示設定";
             this.超過時間警告表示設定ToolStripMenuItem.Click += new System.EventHandler(this.超過時間警告表示設定ToolStripMenuItem_Click);
             // 
             // 待ち呼警告設定は全体ToolStripMenuItem
             // 
             this.待ち呼警告設定は全体ToolStripMenuItem.Name = "待ち呼警告設定は全体ToolStripMenuItem";
-            this.待ち呼警告設定は全体ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.待ち呼警告設定は全体ToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.待ち呼警告設定は全体ToolStripMenuItem.Text = "待ち呼警告設定（全体）";
             this.待ち呼警告設定は全体ToolStripMenuItem.Click += new System.EventHandler(this.待ち呼警告設定は全体ToolStripMenuItem_Click);
+            // 
+            // 待ち呼警告設定親グループToolStripMenuItem
+            // 
+            this.待ち呼警告設定親グループToolStripMenuItem.Name = "待ち呼警告設定親グループToolStripMenuItem";
+            this.待ち呼警告設定親グループToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.待ち呼警告設定親グループToolStripMenuItem.Text = "待ち呼警告設定（親グループ）";
+            this.待ち呼警告設定親グループToolStripMenuItem.Click += new System.EventHandler(this.待ち呼警告設定親グループToolStripMenuItem_Click);
             // 
             // 待ち呼警告設定個別ToolStripMenuItem
             // 
             this.待ち呼警告設定個別ToolStripMenuItem.Name = "待ち呼警告設定個別ToolStripMenuItem";
-            this.待ち呼警告設定個別ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.待ち呼警告設定個別ToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.待ち呼警告設定個別ToolStripMenuItem.Text = "待ち呼警告設定（個別）";
             this.待ち呼警告設定個別ToolStripMenuItem.Click += new System.EventHandler(this.待ち呼警告設定個別ToolStripMenuItem_Click);
             // 
             // 受付可警告設定ToolStripMenuItem
             // 
             this.受付可警告設定ToolStripMenuItem.Name = "受付可警告設定ToolStripMenuItem";
-            this.受付可警告設定ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.受付可警告設定ToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.受付可警告設定ToolStripMenuItem.Text = "受付可警告設定";
             this.受付可警告設定ToolStripMenuItem.Click += new System.EventHandler(this.受付可警告設定ToolStripMenuItem_Click);
+            // 
+            // 受付可警告設定親グループToolStripMenuItem
+            // 
+            this.受付可警告設定親グループToolStripMenuItem.Name = "受付可警告設定親グループToolStripMenuItem";
+            this.受付可警告設定親グループToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.受付可警告設定親グループToolStripMenuItem.Text = "受付可警告設定(親グループ)";
+            this.受付可警告設定親グループToolStripMenuItem.Click += new System.EventHandler(this.受付可警告設定親グループToolStripMenuItem_Click);
             // 
             // グループ表示設定ToolStripMenuItem
             // 
@@ -575,7 +596,7 @@
             this.agentStatusListView.MultiSelect = false;
             this.agentStatusListView.Name = "agentStatusListView";
             this.agentStatusListView.ShowItemToolTips = true;
-            this.agentStatusListView.Size = new System.Drawing.Size(696, 473);
+            this.agentStatusListView.Size = new System.Drawing.Size(696, 479);
             this.agentStatusListView.SmallImageList = this.smallImageList;
             this.agentStatusListView.TabIndex = 0;
             this.agentStatusListView.UseCompatibleStateImageBehavior = false;
@@ -614,6 +635,8 @@
             // 
             // lineStatusPage
             // 
+            this.lineStatusPage.Controls.Add(this.label11);
+            this.lineStatusPage.Controls.Add(this.lineDDLParentGroup);
             this.lineStatusPage.Controls.Add(this.lineStatusListView);
             this.lineStatusPage.Controls.Add(this.lineIconListView);
             this.lineStatusPage.Location = new System.Drawing.Point(4, 23);
@@ -624,16 +647,39 @@
             this.lineStatusPage.Text = "回線 状態";
             this.lineStatusPage.UseVisualStyleBackColor = true;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(5, 20);
+            this.label11.Margin = new System.Windows.Forms.Padding(0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 13);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "親グループ";
+            // 
+            // lineDDLParentGroup
+            // 
+            this.lineDDLParentGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.lineDDLParentGroup.DropDownWidth = 200;
+            this.lineDDLParentGroup.FormattingEnabled = true;
+            this.lineDDLParentGroup.Location = new System.Drawing.Point(75, 12);
+            this.lineDDLParentGroup.Name = "lineDDLParentGroup";
+            this.lineDDLParentGroup.Size = new System.Drawing.Size(200, 21);
+            this.lineDDLParentGroup.TabIndex = 16;
+            this.lineDDLParentGroup.SelectedIndexChanged += new System.EventHandler(this.lineDDLParentGroup_SelectedIndexChanged);
+            // 
             // lineStatusListView
             // 
-            this.lineStatusListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lineStatusListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lineStatusListView.FullRowSelect = true;
             this.lineStatusListView.GridLines = true;
             this.lineStatusListView.LargeImageList = this.largeImageList;
-            this.lineStatusListView.Location = new System.Drawing.Point(3, 3);
+            this.lineStatusListView.Location = new System.Drawing.Point(3, 39);
             this.lineStatusListView.MultiSelect = false;
             this.lineStatusListView.Name = "lineStatusListView";
-            this.lineStatusListView.Size = new System.Drawing.Size(691, 566);
+            this.lineStatusListView.Size = new System.Drawing.Size(691, 535);
             this.lineStatusListView.SmallImageList = this.smallImageList;
             this.lineStatusListView.TabIndex = 0;
             this.lineStatusListView.UseCompatibleStateImageBehavior = false;
@@ -680,7 +726,7 @@
             this.dvMonitor.MultiSelect = false;
             this.dvMonitor.Name = "dvMonitor";
             this.dvMonitor.RowTemplate.Height = 21;
-            this.dvMonitor.Size = new System.Drawing.Size(691, 589);
+            this.dvMonitor.Size = new System.Drawing.Size(691, 595);
             this.dvMonitor.TabIndex = 0;
             this.dvMonitor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvMonitor_CellDoubleClick);
             this.dvMonitor.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dvMonitor_DataError);
@@ -1007,6 +1053,7 @@
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.wbGetParentGroup);
             this.panelTop.Controls.Add(this.label1);
             this.panelTop.Controls.Add(this.groupComboBox);
             this.panelTop.Controls.Add(this.selectViewButton);
@@ -1024,6 +1071,15 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1008, 44);
             this.panelTop.TabIndex = 15;
+            // 
+            // wbGetParentGroup
+            // 
+            this.wbGetParentGroup.Location = new System.Drawing.Point(629, 11);
+            this.wbGetParentGroup.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wbGetParentGroup.Name = "wbGetParentGroup";
+            this.wbGetParentGroup.Size = new System.Drawing.Size(20, 20);
+            this.wbGetParentGroup.TabIndex = 23;
+            this.wbGetParentGroup.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.wbGetParentGroup_DocumentCompleted);
             // 
             // MainForm
             // 
@@ -1056,6 +1112,7 @@
             this.agentIconPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.agentPie)).EndInit();
             this.lineStatusPage.ResumeLayout(false);
+            this.lineStatusPage.PerformLayout();
             this.tabMonitor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvMonitor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axCpfMsg)).EndInit();
@@ -1174,5 +1231,10 @@
         private System.Windows.Forms.TabPage groupSumTab;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel agentIconPanel;
+        private System.Windows.Forms.WebBrowser wbGetParentGroup;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox lineDDLParentGroup;
+        private System.Windows.Forms.ToolStripMenuItem 受付可警告設定親グループToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 待ち呼警告設定親グループToolStripMenuItem;
     }
 }

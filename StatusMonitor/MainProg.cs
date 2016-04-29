@@ -96,7 +96,7 @@ namespace StatusMonitor
 
     public class LineStatus
     {
-        public int Group;
+        public int Group;//局番グループ
         public string GroupName;
         public string Device;
         public int Session;
@@ -109,7 +109,7 @@ namespace StatusMonitor
         public string Extension;
         public string StatusContinueTime;
         public string iSessionProfileID;
-        public int iSkillGroupID; //SkillID
+        public int iSkillGroupID; //SkillID　分配したスキル
         public DateTime dtAcdcall; //dtAcdcall
         public string Conntype;
         public string vAgentID;
@@ -1350,61 +1350,22 @@ namespace StatusMonitor
                 {
                     // Select Group
                     if ((displayGroup != -1) && (displayGroup != obj.Group)) continue;
-                    // Get StatusEnum
-                    // LineStatusEnum status = GetLineStatusEnum(obj.Status);
-                    // Add Item
-                    //ListViewItem item = new ListViewItem();
-                    //item.Text = obj.GroupName;
-                    //item.ImageKey = status.Image;
-                    //item.BackColor = Color.White;
-                    //item.SubItems.Add(obj.Caller);
-                    //item.SubItems.Add(obj.Callee);
-                    //item.SubItems.Add(obj.ConnectedTime.ToString("HH:mm:ss"));
-                    //item.SubItems.Add(res.GetString(status.StatusName));
-                    //item.SubItems.Add(obj.StatusTime.ToString("HH:mm:ss"));
-                    ////add,xzg,2012/02/09,S
-                    //if (string.IsNullOrEmpty(obj.StatusContinueTime))
-                    //{
-                    //    item.SubItems.Add("00:00:00");
-                    //}
-                    //else
-                    //{
-                    //    //modified by zhu 2014/09/02
-                    //    // make sure the time is not bigger than current time
 
-                    //    try
-                    //    {
-                    //        if (DateTime.Compare(DateTime.Now, obj.StatusTime) <= 0)
-                    //        {
-                    //            item.SubItems.Add("00:00:00");
-                    //        }
-                    //        else
-                    //        {
-                    //            if (obj.Service.ToUpper() == "QUECALL" && DateTime.Compare(Convert.ToDateTime(DateTime.Now.Subtract(obj.StatusTime).ToString()), DateTime.Parse(obj.StatusContinueTime)) < 0)
-                    //            {
-                    //                string strTime = Convert.ToDateTime(DateTime.Now.Subtract(obj.StatusTime).ToString()).ToString("HH:mm:ss");
-                    //                item.SubItems.Add(strTime);
-                    //            }
-                    //            else
-                    //            {
-                    //                item.SubItems.Add(obj.StatusContinueTime);
-                    //            }
-                    //        }
-                    //    }
-                    //    catch (Exception ee1)
-                    //    {
-                    //        item.SubItems.Add("00:00:00");
-                    //    }
-                    //}
+                    if (lineDDLParentGroup.SelectedIndex > 0)
+                    {
+                        bool findSkill = false;
+                        string key = (lineDDLParentGroup.SelectedItem as GroupInfo).Group.ToString() + "," + (lineDDLParentGroup.SelectedItem as GroupInfo).GroupName.ToString();
+                        foreach (var skillid in DicParentGroup[key].Split(','))
+                        {
+                            if (obj.iSkillGroupID.ToString() == skillid || obj.Group.ToString()==skillid)
+                            {
+                                findSkill = true;
+                                break;
+                            }
+                        }
+                        if (!findSkill) continue;
 
-
-                    ////add,xzg,2012/02/09,E
-                    //if (obj.Status >= 3) item.SubItems.Add(obj.Extension);
-                    //else item.SubItems.Add(obj.Service);
-
-
-                    //item.SubItems.Add(obj.iSessionProfileID);
-
+                    }
 
                     ListViewItem item = LoadDataForLineStatusListView(obj);
                     //add,xzg,2013/12/10,S

@@ -576,6 +576,13 @@ C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMo
 C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.csprojResolveAssemblyReference.cache
 C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.KyoKuGroupForm.resources
 C:\Comdesign\SourceControl\Development\社内最新\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.OtherSettingForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.exe.config
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.exe
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.pdb
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.WMPLib.dll
 C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.Cpfmsgacxa.dll
 C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.CpfMsgUpAcxaLib.dll
 C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\Interop.TksProfileAcxLib.dll
@@ -600,17 +607,11 @@ C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\AgentSta
 C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.Resource.resources
 C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.SkillIdleSet.resources
 C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.SkillQueCallSetForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.SkillQueCallSetting.resources
 C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.SkillShowSet.resources
 C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.StatusOverTimeSet.resources
 C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.TabPage.QueueCallForm.resources
 C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.WaiteTime.resources
 C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.csproj.GenerateResource.Cache
-C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.exe.config
-C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.exe
-C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\StatusMonitor.pdb
-C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.Cpfmsgacxa.dll
-C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.CpfMsgUpAcxaLib.dll
-C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.TksProfileAcxLib.dll
-C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Release\Interop.WMPLib.dll
 C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.exe
 C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Release\StatusMonitor.pdb

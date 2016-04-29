@@ -148,11 +148,29 @@
       <DependentUpon>OtherSettingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SettingFile\ConstEntity.cs" />
+    <Compile Include="frmParentSkillIdleSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParentSkillIdleSet.Designer.cs">
+      <DependentUpon>frmParentSkillIdleSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmParentGroupQueCallSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParentGroupQueCallSetForm.Designer.cs">
+      <DependentUpon>frmParentGroupQueCallSetForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SkillQueCallSetForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SkillQueCallSetForm.Designer.cs">
       <DependentUpon>SkillQueCallSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmParentQuecallSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParentQuecallSetting.Designer.cs">
+      <DependentUpon>frmParentQuecallSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="SkillQuecallSetting.cs">
       <SubType>Form</SubType>
@@ -277,11 +295,20 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmParentSkillIdleSet.resx">
+      <DependentUpon>frmParentSkillIdleSet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SkillIdleSet.resx">
       <DependentUpon>SkillIdleSet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmParentGroupQueCallSetForm.resx">
+      <DependentUpon>frmParentGroupQueCallSetForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SkillQueCallSetForm.resx">
       <DependentUpon>SkillQueCallSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParentQuecallSetting.resx">
+      <DependentUpon>frmParentQuecallSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SkillQuecallSetting.resx">
       <DependentUpon>SkillQuecallSetting.cs</DependentUpon>

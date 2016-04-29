@@ -24,6 +24,7 @@ namespace StatusMonitor.TabPage
             this.FormBorderStyle = FormBorderStyle.None;
             this._MainForm = (frm as MainForm);
             this._resourceManager = new LanguageResourceManager("JP");
+            InitParentGroup();
             InitListView();
             AutoCtlSize();
         }
@@ -51,9 +52,25 @@ namespace StatusMonitor.TabPage
             InitListViewWidth();
         }
 
+        private void InitParentGroup()
+        {
+            this.quecallDDLParentGroup.Items.Clear();
+
+            GroupInfo groupInfo1 = new GroupInfo(-1, _resourceManager.GetString("SM0020040"));
+            this.quecallDDLParentGroup.Items.Add(groupInfo1);
+            this.quecallDDLParentGroup.SelectedIndex = 0;
+            //foreach (var item in _MainForm.DicParentGroup)
+            //{
+            //    string[] values = item.Key.Split(',');
+            //    GroupInfo gp = new GroupInfo(int.Parse(values[0]), values[1]);
+            //    this.quecallDDLParentGroup.Items.Add(gp);
+            //}
+
+        }
+
         private void InitListViewWidth()
         {
-            foreach(ColumnHeader col in quecallStatusListView.Columns)
+            foreach (ColumnHeader col in quecallStatusListView.Columns)
             {
                 DicListViewColumnWidth.Add(col.Name, col.Width);
             }
@@ -120,60 +137,6 @@ namespace StatusMonitor.TabPage
                     if ((_MainForm.displayGroup != -1) && (_MainForm.displayGroup != obj.Group)) continue;
                     // Get StatusEnum
                     LineStatusEnum status = CTe1Helper.GetLineStatusEnum(obj.Status);
-                    // Add Item
-                    //ListViewItem item = new ListViewItem();
-                    //string skillGroupName = GetGroupNameBySkillGroupId(obj.iSkillGroupID.ToString());
-                    //if (string.IsNullOrEmpty(skillGroupName))
-                    //    continue;
-                    //else
-                    //    item.Text = skillGroupName;
-                    //item.ImageKey = status.Image;
-                    //item.BackColor = Color.White;
-                    //item.SubItems.Add(obj.Caller);
-                    //item.SubItems.Add(obj.Callee);
-                    //item.SubItems.Add(obj.ConnectedTime.ToString("HH:mm:ss"));
-                    //item.SubItems.Add(_resourceManager.GetString(status.StatusName));
-                    //item.SubItems.Add(obj.StatusTime.ToString("HH:mm:ss"));
-
-                    //string strTime = "00:00:00";
-                    //if (string.IsNullOrEmpty(obj.StatusContinueTime))
-                    //{
-                    //    item.SubItems.Add("00:00:00");
-                    //}
-                    //else
-                    //{
-                    //    try
-                    //    {
-                    //        if (DateTime.Compare(DateTime.Now, obj.StatusTime) <= 0)
-                    //        {
-                    //            item.SubItems.Add("00:00:00");
-                    //        }
-                    //        else
-                    //        {
-                    //            if (DateTime.Compare(Convert.ToDateTime(DateTime.Now.Subtract(obj.StatusTime).ToString()), DateTime.Parse(obj.StatusContinueTime)) < 0)
-                    //            {
-                    //                strTime = Convert.ToDateTime(DateTime.Now.Subtract(obj.StatusTime).ToString()).ToString("HH:mm:ss");
-                    //                item.SubItems.Add(strTime);
-                    //            }
-                    //            else
-                    //            {
-                    //                item.SubItems.Add(obj.StatusContinueTime);
-                    //                strTime = obj.StatusContinueTime;
-                    //            }
-                    //        }
-                    //    }
-                    //    catch (Exception ee1)
-                    //    {
-                    //        item.SubItems.Add("00:00:00");
-                    //    }
-                    //}
-
-                    ////added by zhu 2014/09/11
-                    //SetRowBackColor(strTime, item);
-                    ////end added
-
-                    //item.SubItems.Add(obj.iSessionProfileID);
-
 
                     ListViewItem item = LoadDataForListView(obj);
                     if (item == null) continue;
@@ -205,6 +168,21 @@ namespace StatusMonitor.TabPage
 
         private ListViewItem LoadDataForListView(LineStatus queCallInfo)
         {
+            if (quecallDDLParentGroup.SelectedIndex > 0)
+            {
+                bool findSkill = false;
+                string key = (quecallDDLParentGroup.SelectedItem as GroupInfo).Group.ToString() + "," + (quecallDDLParentGroup.SelectedItem as GroupInfo).GroupName.ToString();
+                foreach (var skillid in _MainForm.DicParentGroup[key].Split(','))
+                {
+                    if (queCallInfo.iSkillGroupID.ToString() == skillid || queCallInfo.Group.ToString()==skillid)
+                    {
+                        findSkill = true;
+                        break;
+                    }
+                }
+                if (!findSkill) return null;
+
+            }
             // Add Item
             string skillGroupName = GetGroupNameBySkillGroupId(queCallInfo.iSkillGroupID.ToString());
             if (string.IsNullOrEmpty(skillGroupName))
@@ -667,7 +645,12 @@ namespace StatusMonitor.TabPage
 
         private void QueueCallForm_Load(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void quecallDDLParentGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplayLine();
         }
     }
 }

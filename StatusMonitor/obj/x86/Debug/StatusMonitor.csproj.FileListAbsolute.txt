@@ -130,3 +130,45 @@ C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMo
 C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.csproj.GenerateResource.Cache
 C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.OtherSettingForm.resources
 C:\Comdesign\SourceControl\Development\0368603900j JRA\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.csprojResolveAssemblyReference.cache
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Debug\StatusMonitor.exe.config
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\Interop.Cpfmsgacxa.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\Interop.TksProfileAcxLib.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\Interop.WMPLib.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.csproj.ResolveComReference.cache
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.exe
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.pdb
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Debug\StatusMonitor.exe
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Debug\StatusMonitor.pdb
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Debug\Interop.Cpfmsgacxa.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Debug\Interop.CpfMsgUpAcxaLib.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Debug\Interop.TksProfileAcxLib.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\bin\Debug\Interop.WMPLib.dll
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.AgentState.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.ColSelect.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.frmLineCutSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.frmMonitorTitle.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.frmSetPhone.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.KyoKuGroupForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.MainForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.MessageForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.MonitorDetail.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.MonitorItemSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.OptionName.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.OtherSettingForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.Properties.Resources.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.QueCallSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.QuickAnswerSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\AgentStatusMonitor.RefreshForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.Resource.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.SkillIdleSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.SkillQueCallSetForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.SkillShowSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.StatusOverTimeSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.TabPage.QueueCallForm.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.WaiteTime.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.csproj.GenerateResource.Cache
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.SkillQueCallSetting.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.csprojResolveAssemblyReference.cache
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.frmParentSkillIdleSet.resources
+C:\Comdesign\Development\CD_StatusMonitor\StatusMonitor\obj\x86\Debug\StatusMonitor.frmParentQuecallSetting.resources

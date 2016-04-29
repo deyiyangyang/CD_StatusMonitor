@@ -127,7 +127,10 @@ namespace StatusMonitor
         public string SettingFields_QueueListViewSort = "";
         public string SettingFields_TotalListViewSort = "";
         public string SettingFields_MonitorGridViewSort = "";
-        
+
+        public string SettingFields_ParentGroupIdlePeriod = "";
+        public string SettingFields_ParentGroupIdlePeriodVoice = "";
+
         public float SettingFields_ListFontSize = 1;
         public Dictionary<string, string> Dic_SettingFields_SkillQuecall = new Dictionary<string, string>();
 
@@ -155,6 +158,8 @@ namespace StatusMonitor
             SettingFields_TotalListViewSort = IniProfile.GetStringDefault(ConstEntity.TOTAL_LIST_VIEW_SORT, "");
             SettingFields_MonitorGridViewSort = IniProfile.GetStringDefault(ConstEntity.MONITOR_GRID_VIEW_SORT, "");
             SettingFields_SplitContainer_Width = IniProfile.GetStringDefault(ConstEntity.SPLITCONTAINER_PANEL_WIDTH, "");
+            SettingFields_ParentGroupIdlePeriod = IniProfile.GetStringDefault(ConstEntity.PARENT_GROUP_IDLE_PERIOD, "");
+            SettingFields_ParentGroupIdlePeriodVoice = IniProfile.GetStringDefault(ConstEntity.PARENT_GROUP_IDLE_PERIOD_VOICE, "");
 
             //IniProfile.SelectSection("Alert");
             //SettingFields_AlertTotal = IniProfile.GetLongDefault("nTotal", 100);
