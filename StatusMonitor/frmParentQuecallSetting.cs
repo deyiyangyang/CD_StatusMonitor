@@ -38,11 +38,11 @@ namespace StatusMonitor
                 var groupIds = item.Value;
                 if (item.Value == "-1") continue;
                 index++;
-                Label chk = new Label();
-                chk.Name = parentGroupID;
-                chk.Text = parentGroupID;
-                chk.Location = new System.Drawing.Point(12, 12 * index + (index - 1) * offsetHeight);
-                chk.Size = new System.Drawing.Size(180, 25);
+                Label label = new Label();
+                label.Name = parentGroupID;
+                label.Text = parentGroupName;
+                label.Location = new System.Drawing.Point(12, 12 * index + (index - 1) * offsetHeight);
+                label.Size = new System.Drawing.Size(180, 25);
                 //chk.Checked = GetCheckedStatus(chk.Name);
                 //chk.Click += chk_Click;
 
@@ -52,7 +52,7 @@ namespace StatusMonitor
                 btn.Location = new System.Drawing.Point(200, 12 * index + (index - 1) * offsetHeight);
                 btn.Size = new System.Drawing.Size(100, 25);
                 btn.Click += btnQueCallSetting_Click;
-                this.plSkillShow.Controls.Add(chk);
+                this.plSkillShow.Controls.Add(label);
                 this.plSkillShow.Controls.Add(btn);
             }
         }
@@ -64,8 +64,8 @@ namespace StatusMonitor
                 if (sender is Button)
                 {
                     Button btn = (Button)sender;
-                    string skillGroupID = btn.Name.Substring(btn.Name.LastIndexOf('_') + 1);
-                    SkillQueCallSetForm quecallSet = new SkillQueCallSetForm(skillGroupID, _iniProfile, MainForm);
+                    string parentGroupID = btn.Name.Substring(btn.Name.LastIndexOf('_') + 1);
+                    frmParentGroupQueCallSetForm quecallSet = new frmParentGroupQueCallSetForm(parentGroupID, _iniProfile, MainForm);
                     quecallSet.ShowDialog();
                 }
             }

@@ -101,12 +101,12 @@ namespace StatusMonitor
             try
             {
                 _iniProfile.SelectSection("SVSet");
-                SettingFields_ParentGroupQueCallPeriod1 = _iniProfile.GetStringDefault(string.Format(ConstEntity.SkillQueCallPeriodTemplate1, _parentGroupId), string.Empty);
-                SettingFields_ParentGroupQueCallPeriod2 = _iniProfile.GetStringDefault(string.Format(ConstEntity.SkillQueCallPeriodTemplate2, _parentGroupId), string.Empty);
-                SettingFields_ParentGroupQueCallPeriod3 = _iniProfile.GetStringDefault(string.Format(ConstEntity.SkillQueCallPeriodTemplate3, _parentGroupId), string.Empty);
-                SettingFields_ParentGroupQueCallVoice1 = _iniProfile.GetStringDefault(string.Format(ConstEntity.SkillQueCallVoiceTemplate1, _parentGroupId), string.Empty);
-                SettingFields_ParentGroupQueCallVoice2 = _iniProfile.GetStringDefault(string.Format(ConstEntity.SkillQueCallVoiceTemplate2, _parentGroupId), string.Empty);
-                SettingFields_ParentGroupQueCallVoice3 = _iniProfile.GetStringDefault(string.Format(ConstEntity.SkillQueCallVoiceTemplate3, _parentGroupId), string.Empty);
+                SettingFields_ParentGroupQueCallPeriod1 = _iniProfile.GetStringDefault(string.Format(ConstEntity.ParentGroupQueCallPeriodTemplate1, _parentGroupId), string.Empty);
+                SettingFields_ParentGroupQueCallPeriod2 = _iniProfile.GetStringDefault(string.Format(ConstEntity.ParentGroupQueCallPeriodTemplate2, _parentGroupId), string.Empty);
+                SettingFields_ParentGroupQueCallPeriod3 = _iniProfile.GetStringDefault(string.Format(ConstEntity.ParentGroupQueCallPeriodTemplate3, _parentGroupId), string.Empty);
+                SettingFields_ParentGroupQueCallVoice1 = _iniProfile.GetStringDefault(string.Format(ConstEntity.ParentGroupQueCallVoiceTemplate1, _parentGroupId), string.Empty);
+                SettingFields_ParentGroupQueCallVoice2 = _iniProfile.GetStringDefault(string.Format(ConstEntity.ParentGroupQueCallVoiceTemplate2, _parentGroupId), string.Empty);
+                SettingFields_ParentGroupQueCallVoice3 = _iniProfile.GetStringDefault(string.Format(ConstEntity.ParentGroupQueCallVoiceTemplate3, _parentGroupId), string.Empty);
                 this.txtPeriod1.Text = SettingFields_ParentGroupQueCallPeriod1;
                 this.txtPeriod2.Text = SettingFields_ParentGroupQueCallPeriod2;
                 this.txtPeriod3.Text = SettingFields_ParentGroupQueCallPeriod3;
@@ -210,22 +210,38 @@ namespace StatusMonitor
                 }
                 if (!CheckInput()) return;
                 _iniProfile.SelectSection("SVSet");
-                _iniProfile.SetString(string.Format(ConstEntity.SkillQueCallPeriodTemplate1, _parentGroupId), strPeriod1);
-                _iniProfile.SetString(string.Format(ConstEntity.SkillQueCallPeriodTemplate2, _parentGroupId), strPeriod2);
-                _iniProfile.SetString(string.Format(ConstEntity.SkillQueCallPeriodTemplate3, _parentGroupId), strPeriod3);
-                _iniProfile.SetString(string.Format(ConstEntity.SkillQueCallVoiceTemplate1, _parentGroupId), strVoice1);
-                _iniProfile.SetString(string.Format(ConstEntity.SkillQueCallVoiceTemplate2, _parentGroupId), strVoice2);
-                _iniProfile.SetString(string.Format(ConstEntity.SkillQueCallVoiceTemplate3, _parentGroupId), strVoice3);
+                _iniProfile.SetString(string.Format(ConstEntity.ParentGroupQueCallPeriodTemplate1, _parentGroupId), strPeriod1);
+                _iniProfile.SetString(string.Format(ConstEntity.ParentGroupQueCallPeriodTemplate2, _parentGroupId), strPeriod2);
+                _iniProfile.SetString(string.Format(ConstEntity.ParentGroupQueCallPeriodTemplate3, _parentGroupId), strPeriod3);
+                _iniProfile.SetString(string.Format(ConstEntity.ParentGroupQueCallVoiceTemplate1, _parentGroupId), strVoice1);
+                _iniProfile.SetString(string.Format(ConstEntity.ParentGroupQueCallVoiceTemplate2, _parentGroupId), strVoice2);
+                _iniProfile.SetString(string.Format(ConstEntity.ParentGroupQueCallVoiceTemplate3, _parentGroupId), strVoice3);
+
+                string skillIDs = UtilityHelper.GetSkillIdsByParentGroup(_parentGroupId, MainForm.DicParentGroup);
+                if (!string.IsNullOrEmpty(skillIDs))
+                {
+                    foreach (var skillID in skillIDs.Split(','))
+                    {
+                        _iniProfile.SetString(string.Format(ConstEntity.SkillQueCallPeriodTemplate1, skillID), strPeriod1);
+                        _iniProfile.SetString(string.Format(ConstEntity.SkillQueCallPeriodTemplate2, skillID), strPeriod2);
+                        _iniProfile.SetString(string.Format(ConstEntity.SkillQueCallPeriodTemplate3, skillID), strPeriod3);
+                        _iniProfile.SetString(string.Format(ConstEntity.SkillQueCallVoiceTemplate1, skillID), strVoice1);
+                        _iniProfile.SetString(string.Format(ConstEntity.SkillQueCallVoiceTemplate2, skillID), strVoice2);
+                        _iniProfile.SetString(string.Format(ConstEntity.SkillQueCallVoiceTemplate3, skillID), strVoice3);
+                        //SetQueCall
+                        string value = strPeriod1 + "," + strVoice1 + "|" + strPeriod2 + "," + strVoice2 + "|" + strPeriod3 + "," + strVoice3;
+                        if (MainForm.Dic_SettingFields_SkillQuecall.ContainsKey(skillID))
+                            MainForm.Dic_SettingFields_SkillQuecall[skillID] = value;
+                        else
+                            MainForm.Dic_SettingFields_SkillQuecall.Add(skillID, value);
+                        SkillQueCallSoundPlayerManager.ConfigSoundPlayers(skillID);
+                    }
+                }
+
 
                 _iniProfile.Save(MyTool.GetModuleIniPath());
 
-                //SetQueCall
-                string value = strPeriod1 + "," + strVoice1 + "|" + strPeriod2 + "," + strVoice2 + "|" + strPeriod3 + "," + strVoice3;
-                if (MainForm.Dic_SettingFields_SkillQuecall.ContainsKey(_parentGroupId))
-                    MainForm.Dic_SettingFields_SkillQuecall[_parentGroupId] = value;
-                else
-                    MainForm.Dic_SettingFields_SkillQuecall.Add(_parentGroupId, value);
-                SkillQueCallSoundPlayerManager.ConfigSoundPlayers(_parentGroupId);
+
                 this.Dispose();
             }
             catch (Exception ex)

@@ -1,4 +1,5 @@
 ﻿using MyTools;
+using StatusMonitor.Helper;
 using StatusMonitor.SettingFile;
 using System;
 using System.Collections.Generic;
@@ -161,12 +162,13 @@ namespace StatusMonitor
                             if (!string.IsNullOrEmpty(c.Text))
                             {
                                 string parentGroupID = c.Name.Substring("txtIdleVoice".Length);
-                                string skillIDs = GetSkillIdsByParentGroup(parentGroupID);
+                                string skillIDs = UtilityHelper.GetSkillIdsByParentGroup(parentGroupID, mainF.DicParentGroup);
                                 if(!string.IsNullOrEmpty(skillIDs))
                                 {
                                     foreach(var skillID in skillIDs.Split(','))
                                     {
-                                        strVoice1 += "|" + skillID + ":" + c.Text;
+                                        if (!UtilityHelper.CheckSkillIdExists(strVoice1, skillID))
+                                            strVoice1 += "|" + skillID + ":" + c.Text;
                                     }
                                 }
                                 strParentSkillVoice += "|" + c.Name.Substring("txtIdleVoice".Length) + ":" + c.Text;
@@ -185,12 +187,13 @@ namespace StatusMonitor
                             else
                             {
                                 string parentGroupID = c.Name.Substring("txtIdlePeriod".Length);
-                                string skillIDs = GetSkillIdsByParentGroup(parentGroupID);
+                                string skillIDs = UtilityHelper.GetSkillIdsByParentGroup(parentGroupID, mainF.DicParentGroup);
                                 if (!string.IsNullOrEmpty(skillIDs))
                                 {
                                     foreach (var skillID in skillIDs.Split(','))
                                     {
-                                        strPeriod1 += "|" + skillID + ":" + c.Text;
+                                        if(!UtilityHelper.CheckSkillIdExists(strPeriod1,skillID))
+                                            strPeriod1 += "|" + skillID + ":" + c.Text;
                                     }
                                 }
                                 strParentSkillPeriod += "|" + c.Name.Substring("txtIdlePeriod".Length) + ":" + c.Text;
@@ -354,23 +357,23 @@ namespace StatusMonitor
             }
         }
 
-        private string GetSkillIdsByParentGroup(string parentGroupID)
-        {
-            string result = string.Empty;
-            foreach(string key in mainF.DicParentGroup.Keys)
-            {
-                var arr = key.Split(',');
-                if (arr.Length==2)
-                {
-                    if(arr[0]==parentGroupID)
-                    {
-                        result = mainF.DicParentGroup[key];
-                        break;
-                    }
-                }
-            }
-            return result;
-        }
+        //private string GetSkillIdsByParentGroup(string parentGroupID)
+        //{
+        //    string result = string.Empty;
+        //    foreach(string key in mainF.DicParentGroup.Keys)
+        //    {
+        //        var arr = key.Split(',');
+        //        if (arr.Length==2)
+        //        {
+        //            if(arr[0]==parentGroupID)
+        //            {
+        //                result = mainF.DicParentGroup[key];
+        //                break;
+        //            }
+        //        }
+        //    }
+        //    return result;
+        //}
 
     }
 }

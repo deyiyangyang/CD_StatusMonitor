@@ -596,7 +596,7 @@
             this.agentStatusListView.MultiSelect = false;
             this.agentStatusListView.Name = "agentStatusListView";
             this.agentStatusListView.ShowItemToolTips = true;
-            this.agentStatusListView.Size = new System.Drawing.Size(696, 479);
+            this.agentStatusListView.Size = new System.Drawing.Size(696, 481);
             this.agentStatusListView.SmallImageList = this.smallImageList;
             this.agentStatusListView.TabIndex = 0;
             this.agentStatusListView.UseCompatibleStateImageBehavior = false;
@@ -679,7 +679,7 @@
             this.lineStatusListView.Location = new System.Drawing.Point(3, 39);
             this.lineStatusListView.MultiSelect = false;
             this.lineStatusListView.Name = "lineStatusListView";
-            this.lineStatusListView.Size = new System.Drawing.Size(691, 535);
+            this.lineStatusListView.Size = new System.Drawing.Size(691, 537);
             this.lineStatusListView.SmallImageList = this.smallImageList;
             this.lineStatusListView.TabIndex = 0;
             this.lineStatusListView.UseCompatibleStateImageBehavior = false;
@@ -726,7 +726,7 @@
             this.dvMonitor.MultiSelect = false;
             this.dvMonitor.Name = "dvMonitor";
             this.dvMonitor.RowTemplate.Height = 21;
-            this.dvMonitor.Size = new System.Drawing.Size(691, 595);
+            this.dvMonitor.Size = new System.Drawing.Size(691, 597);
             this.dvMonitor.TabIndex = 0;
             this.dvMonitor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvMonitor_CellDoubleClick);
             this.dvMonitor.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dvMonitor_DataError);
@@ -1053,7 +1053,6 @@
             // 
             // panelTop
             // 
-            this.panelTop.Controls.Add(this.wbGetParentGroup);
             this.panelTop.Controls.Add(this.label1);
             this.panelTop.Controls.Add(this.groupComboBox);
             this.panelTop.Controls.Add(this.selectViewButton);
@@ -1062,6 +1061,7 @@
             this.panelTop.Controls.Add(this.lblHelpON);
             this.panelTop.Controls.Add(this.webGetCall);
             this.panelTop.Controls.Add(this.webGetGroup);
+            this.panelTop.Controls.Add(this.wbGetParentGroup);
             this.panelTop.Controls.Add(this.label9);
             this.panelTop.Controls.Add(this.label2);
             this.panelTop.Controls.Add(this.lineUseageProgressLabel);
@@ -1074,11 +1074,12 @@
             // 
             // wbGetParentGroup
             // 
-            this.wbGetParentGroup.Location = new System.Drawing.Point(629, 11);
+            this.wbGetParentGroup.Location = new System.Drawing.Point(646, 16);
             this.wbGetParentGroup.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbGetParentGroup.Name = "wbGetParentGroup";
             this.wbGetParentGroup.Size = new System.Drawing.Size(20, 20);
             this.wbGetParentGroup.TabIndex = 23;
+            this.wbGetParentGroup.Visible = false;
             this.wbGetParentGroup.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.wbGetParentGroup_DocumentCompleted);
             // 
             // MainForm

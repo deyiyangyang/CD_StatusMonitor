@@ -293,5 +293,50 @@ namespace StatusMonitor.Helper
             }
             return strTime;
         }
+
+        /// <summary>
+        /// find skillid from existingValue
+        /// </summary>
+        /// <param name="existingValue">like "123:xxx|34:xx"</param>
+        /// <param name="skillID"></param>
+        /// <returns></returns>
+        public static bool CheckSkillIdExists(string existingValue,string skillID)
+        {
+            if (string.IsNullOrEmpty(existingValue)) return false;
+            string[] arr = existingValue.Split('|');
+            foreach(var item in arr)
+            {
+                string[] vs = item.Split(':');
+                foreach(var v in vs)
+                {
+                    if (v == skillID)
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// get skillids from ParentGroup
+        /// </summary>
+        /// <param name="parentGroupID"></param>
+        /// <returns></returns>
+        public static string GetSkillIdsByParentGroup(string parentGroupID, Dictionary<string, string> DicParentGroup)
+        {
+            string result = string.Empty;
+            foreach (string key in DicParentGroup.Keys)
+            {
+                var arr = key.Split(',');
+                if (arr.Length == 2)
+                {
+                    if (arr[0] == parentGroupID)
+                    {
+                        result = DicParentGroup[key];
+                        break;
+                    }
+                }
+            }
+            return result;
+        }
     }
 }

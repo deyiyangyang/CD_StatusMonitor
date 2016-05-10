@@ -206,7 +206,7 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // SkillQueCallSetForm
+            // frmParentGroupQueCallSetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -230,9 +230,9 @@
             this.Controls.Add(this.btnOK);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SkillQueCallSetForm";
+            this.Name = "frmParentGroupQueCallSetForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "待ち呼警告設定（個別）";
+            this.Text = "待ち呼警告設定（親グループ）";
             this.Load += new System.EventHandler(this.SkillQueCallSetForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

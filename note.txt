@@ -159,6 +159,3 @@ UM_POPQUE vAgentID='XXXXX',iSessionProfileID=XXXX vAgentIDは分配先のエージェント
 
 2016/03/25
 1，change the version to 6.3.6
-
-2016/04/21
-1,add 親グループ　to 回線と待ち呼
