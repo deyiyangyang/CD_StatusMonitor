@@ -338,5 +338,34 @@ namespace StatusMonitor.Helper
             }
             return result;
         }
+
+        public static List<int> GetSkillIdListByParentGroup(string parentGroupID, Dictionary<string, string> DicParentGroup)
+        {
+            List<int> result = new List<int>();
+            foreach (string key in DicParentGroup.Keys)
+            {
+                if (!string.IsNullOrEmpty(key))
+                {
+                    var arr = key.Split(',');
+                    if (arr.Length == 2)
+                    {
+                        if (arr[0] == parentGroupID)
+                        {
+                            if(!string.IsNullOrEmpty(DicParentGroup[key]))
+                            {
+                                foreach (var skillGroupIds in DicParentGroup[key].Split(','))
+                                {
+                                    result.Add(int.Parse(skillGroupIds));
+                                }
+                            }
+                                                     
+                            break;
+                        }
+                    }
+                }
+
+            }
+            return result;
+        }
     }
 }

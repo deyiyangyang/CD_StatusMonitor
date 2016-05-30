@@ -596,7 +596,7 @@
             this.agentStatusListView.MultiSelect = false;
             this.agentStatusListView.Name = "agentStatusListView";
             this.agentStatusListView.ShowItemToolTips = true;
-            this.agentStatusListView.Size = new System.Drawing.Size(696, 481);
+            this.agentStatusListView.Size = new System.Drawing.Size(696, 482);
             this.agentStatusListView.SmallImageList = this.smallImageList;
             this.agentStatusListView.TabIndex = 0;
             this.agentStatusListView.UseCompatibleStateImageBehavior = false;
@@ -679,7 +679,7 @@
             this.lineStatusListView.Location = new System.Drawing.Point(3, 39);
             this.lineStatusListView.MultiSelect = false;
             this.lineStatusListView.Name = "lineStatusListView";
-            this.lineStatusListView.Size = new System.Drawing.Size(691, 537);
+            this.lineStatusListView.Size = new System.Drawing.Size(691, 531);
             this.lineStatusListView.SmallImageList = this.smallImageList;
             this.lineStatusListView.TabIndex = 0;
             this.lineStatusListView.UseCompatibleStateImageBehavior = false;
@@ -726,7 +726,7 @@
             this.dvMonitor.MultiSelect = false;
             this.dvMonitor.Name = "dvMonitor";
             this.dvMonitor.RowTemplate.Height = 21;
-            this.dvMonitor.Size = new System.Drawing.Size(691, 597);
+            this.dvMonitor.Size = new System.Drawing.Size(691, 598);
             this.dvMonitor.TabIndex = 0;
             this.dvMonitor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvMonitor_CellDoubleClick);
             this.dvMonitor.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dvMonitor_DataError);

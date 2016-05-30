@@ -102,5 +102,9 @@ namespace StatusMonitor.SettingFile
 
         public const string Sort_Ascending = "Ascending";
         public const string Sort_Descending = "Descending";
+
+        public const string ParentGroup = "ParentGroup";
+        public const string QuickAnswerSeconds2 = "QuickAnswerSeconds2";
+        public const string QuickAnswerSeconds3 = "QuickAnswerSeconds3";
     }
 }

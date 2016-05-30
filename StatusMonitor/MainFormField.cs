@@ -132,6 +132,9 @@ namespace StatusMonitor
         public string SettingFields_ParentGroupIdlePeriodVoice = "";
 
         public float SettingFields_ListFontSize = 1;
+
+        public string SettingFields_QuickAnswerSeconds2 = "0";
+        public string SettingFields_QuickAnswerSeconds3 = "0";
         public Dictionary<string, string> Dic_SettingFields_SkillQuecall = new Dictionary<string, string>();
 
 
@@ -344,6 +347,18 @@ namespace StatusMonitor
                 SkillQueCallSoundPlayerManager.ConfigSoundPlayers(skillGroupID);
             }
 
+        }
+
+        /// <summary>
+        /// when form load, need to load parent group player
+        /// </summary>
+        private void GetParentGroupQuecallPlayer()
+        {
+            foreach (var item in DicParentGroup)
+            {
+                string[] values = item.Key.Split(',');
+                SkillQueCallSoundPlayerManager.ConfigSoundPlayers(ConstEntity.ParentGroup+ values[0]);
+            }
         }
         #endregion
 

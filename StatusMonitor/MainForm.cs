@@ -222,6 +222,10 @@ namespace StatusMonitor
         private Dictionary<string, int> DicOriginTotalListViewColumnWidth = new Dictionary<string, int>();
         private Dictionary<string, int> DicOriginMonitorGridColumnWidth = new Dictionary<string, int>();
 
+        /// <summary>
+        /// key:54,test parent group id and parent group name
+        /// value:11,107,108,110,111,185,4310,4927  iskllid or group id
+        /// </summary>
         public Dictionary<string, string> DicParentGroup = new Dictionary<string, string>();
         public int QueueCountAll = 0;
         public bool ReShowsFlag = true;
@@ -1177,7 +1181,7 @@ namespace StatusMonitor
                 AjustListFontSize();
                 ShowSettingFileWidth();
                 ShowSortColumn();
-                
+
             }
             catch (Exception ex)
             {
@@ -3140,7 +3144,7 @@ namespace StatusMonitor
         /// play special sound for skillgroup
         /// </summary>
         /// <returns>return quecall cound</returns>
-        private int PlaySkillQuecallSound()
+        private int PlaySkillQuecallSound(List<int> hasPlayedSkillGroups)
         {
             try
             {
@@ -3160,7 +3164,7 @@ namespace StatusMonitor
                     int iQuePeriod1 = 0;
                     int iQuePeriod2 = 0;
                     int iQuePeriod3 = 0;
-                    writeLog("PlaySkillQuecallSound:" + skillVoice.Value);
+                    //writeLog("PlaySkillQuecallSound:" + skillVoice.Value);
                     foreach (ListViewItem item in totalListView.Items)
                     {
                         //SubItems[5] is groupID ; SubItems[4] is queue call count
@@ -3206,6 +3210,7 @@ namespace StatusMonitor
                                 {
                                     string fullPath = path + @"\" + strQueVoice3; ;
                                     SkillQueCallSoundPlayerManager.OnlyRunSkillGroupPeriodPlayer(skillGroupID, 3, fullPath);
+                                    hasPlayedSkillGroups.Add(int.Parse(skillGroupID));
                                     playQueueCount += iQueCount;
                                     break;
                                 }
@@ -3213,6 +3218,7 @@ namespace StatusMonitor
                                 {
                                     string fullPath = path + @"\" + strQueVoice2; ;
                                     SkillQueCallSoundPlayerManager.OnlyRunSkillGroupPeriodPlayer(skillGroupID, 2, fullPath);
+                                    hasPlayedSkillGroups.Add(int.Parse(skillGroupID));
                                     playQueueCount += iQueCount;
                                     break;
                                 }
@@ -3220,6 +3226,7 @@ namespace StatusMonitor
                                 {
                                     string fullPath = path + @"\" + strQueVoice1; ;
                                     SkillQueCallSoundPlayerManager.OnlyRunSkillGroupPeriodPlayer(skillGroupID, 1, fullPath);
+                                    hasPlayedSkillGroups.Add(int.Parse(skillGroupID));
                                     playQueueCount += iQueCount;
                                 }
                             }
@@ -3239,7 +3246,10 @@ namespace StatusMonitor
         {
             try
             {
-                int iHasPlayedQueCount = PlaySkillQuecallSound();
+                
+                List<int> hasPlayedSkillGroups = new List<int>();
+                int iHasPlayedQueCount = PlaySkillQuecallSound(hasPlayedSkillGroups);
+                PlayParentGroupQuecallSound(hasPlayedSkillGroups);
                 writeLog("PlaySound total QueCall count:" + QueueCountAll.ToString() + "; has played in special :" + iHasPlayedQueCount.ToString());
                 int iQueCount = QueueCountAll;
                 if (iHasPlayedQueCount > 0 && iHasPlayedQueCount >= iQueCount) return;
@@ -3305,6 +3315,76 @@ namespace StatusMonitor
             {
                 //alert(e.description);
                 writeLog("PlaySound " + ex.StackTrace);
+            }
+        }
+
+        private void PlayParentGroupQuecallSound(List<int> hasPlayedSkillGroups)
+        {
+            foreach (var item in DicParentGroup)
+            {
+                string parentGroupId = item.Key.Split(',')[0];
+                List<int> skillGroupIDs = UtilityHelper.GetSkillIdListByParentGroup(parentGroupId, DicParentGroup);
+                foreach(var skill in hasPlayedSkillGroups)
+                {
+                    skillGroupIDs.Remove(skill);
+                }
+                var currentGroupParentQuecallList = lineStatusList.FindAll(p => p.Service == "QUECALL" && skillGroupIDs.Contains(p.iSkillGroupID));
+
+                int period1 = IniProfile.GetLongDefault(string.Format(ConstEntity.ParentGroupQueCallPeriodTemplate1, parentGroupId), 0);
+                int period2 = IniProfile.GetLongDefault(string.Format(ConstEntity.ParentGroupQueCallPeriodTemplate2, parentGroupId), 0);
+                int period3 = IniProfile.GetLongDefault(string.Format(ConstEntity.ParentGroupQueCallPeriodTemplate3, parentGroupId), 0);
+
+                string voice1 = IniProfile.GetStringDefault(string.Format(ConstEntity.ParentGroupQueCallVoiceTemplate1, parentGroupId), "");
+                string voice2 = IniProfile.GetStringDefault(string.Format(ConstEntity.ParentGroupQueCallVoiceTemplate2, parentGroupId), "");
+                string voice3 = IniProfile.GetStringDefault(string.Format(ConstEntity.ParentGroupQueCallVoiceTemplate3, parentGroupId), "");
+
+                int currentParentGroupQueuecallCount = 0;
+                if (currentGroupParentQuecallList != null)
+                    currentParentGroupQueuecallCount = currentGroupParentQuecallList.Count;
+                try
+                {
+
+                    if (currentParentGroupQueuecallCount <= 0)
+                    {
+                        SkillQueCallSoundPlayerManager.StopSkillGroupPlayer(ConstEntity.ParentGroup + parentGroupId);
+                        break;
+                    }
+                    else
+                    {
+                        if (period1 <= 0)
+                        {
+                            SkillQueCallSoundPlayerManager.StopSkillGroupPlayer(ConstEntity.ParentGroup + parentGroupId);
+                            break;
+                        }
+
+                        string path = "";
+                        path = System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                        path = path + "\\Comdesign\\Voice";
+
+                        if (currentParentGroupQueuecallCount >= period3 && period3 > 0 && !string.IsNullOrEmpty(voice3))
+                        {
+                            string fullPath = path + @"\" + voice3; ;
+                            SkillQueCallSoundPlayerManager.OnlyRunSkillGroupPeriodPlayer(ConstEntity.ParentGroup + parentGroupId, 3, fullPath);
+                            break;
+                        }
+                        if (currentParentGroupQueuecallCount >= period2 && period2 > 0 && !string.IsNullOrEmpty(voice2))
+                        {
+                            string fullPath = path + @"\" + voice2; ;
+                            SkillQueCallSoundPlayerManager.OnlyRunSkillGroupPeriodPlayer(ConstEntity.ParentGroup + parentGroupId, 2, fullPath);
+
+                            break;
+                        }
+                        if (currentParentGroupQueuecallCount >= period1 && period1 > 0 && !string.IsNullOrEmpty(voice1))
+                        {
+                            string fullPath = path + @"\" + voice1; ;
+                            SkillQueCallSoundPlayerManager.OnlyRunSkillGroupPeriodPlayer(ConstEntity.ParentGroup + parentGroupId, 1, fullPath);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    writeLog("PlayParentGroupQuecallSound current parentGroupid is"+ parentGroupId + " system error:" + ex.Message + ex.StackTrace);
+                }
             }
         }
 
@@ -4141,20 +4221,20 @@ namespace StatusMonitor
             {
                 writeLog("wbGetParentGroup_DocumentCompleted ");
                 if (DicParentGroup != null && DicParentGroup.Count > 0) DicParentGroup.Clear();
-                if (string.IsNullOrEmpty(wbGetParentGroup.DocumentText)|| wbGetParentGroup.DocumentText.ToLower()=="null") return;
+                if (string.IsNullOrEmpty(wbGetParentGroup.DocumentText) || wbGetParentGroup.DocumentText.ToLower() == "null") return;
                 string[] rows = wbGetParentGroup.DocumentText.Split(';');
-                foreach(var item in rows)
+                foreach (var item in rows)
                 {
-                    if(!string.IsNullOrEmpty(item))
+                    if (!string.IsNullOrEmpty(item))
                     {
                         string[] temp = item.Split('=');
-                        if(temp.Length==2)
+                        if (temp.Length == 2)
                             DicParentGroup.Add(temp[0], temp[1]);
                     }
                 }
                 FillParentGroupCombox(this.lineDDLParentGroup);
                 FillParentGroupCombox((this.ListTabPagesForms[0] as QueueCallForm).quecallDDLParentGroup);
-
+                GetParentGroupQuecallPlayer();
 
             }
             catch (Exception ex)
@@ -4168,7 +4248,7 @@ namespace StatusMonitor
             GroupInfo groupInfo1 = new GroupInfo(-1, res.GetString("SM0020040"));
             c.Items.Clear();
             c.Items.Add(groupInfo1);
-            
+
             foreach (var item in DicParentGroup)
             {
                 string[] values = item.Key.Split(',');
@@ -4724,7 +4804,7 @@ namespace StatusMonitor
                 //added by zhu 2014/05/12
                 dtMontor.Columns.Add("queCallContinueTime", typeof(string));
                 //end added
-                
+
                 dtMontor.Columns.Add("failCnt", typeof(int));
                 dtMontor.Columns.Add("failPer");
                 //dtMontor.Columns.Add("seatLeaveCnt", typeof(int));
@@ -7281,7 +7361,7 @@ namespace StatusMonitor
                     this.dvMonitor.Columns[i].Width = int.Parse(widths[i]);
                 }
             }
-            if(!string.IsNullOrEmpty(this.SettingFields_SplitContainer_Width))
+            if (!string.IsNullOrEmpty(this.SettingFields_SplitContainer_Width))
             {
                 this.splitContainer1.SplitterDistance = int.Parse(SettingFields_SplitContainer_Width);
             }
@@ -7355,11 +7435,11 @@ namespace StatusMonitor
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 writeLog("ShowSortColumn system error:" + ex.Message.ToString() + ex.StackTrace);
             }
-           
+
         }
 
         /// <summary>
@@ -7935,7 +8015,7 @@ namespace StatusMonitor
             }
             catch (Exception ex)
             {
-                writeLog("受付可警告設定親グループToolStripMenuItem_Click Error:"+ex.Message + ex.StackTrace);
+                writeLog("受付可警告設定親グループToolStripMenuItem_Click Error:" + ex.Message + ex.StackTrace);
             }
         }
 

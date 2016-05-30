@@ -237,6 +237,7 @@ namespace StatusMonitor
                         SkillQueCallSoundPlayerManager.ConfigSoundPlayers(skillID);
                     }
                 }
+                SkillQueCallSoundPlayerManager.ConfigSoundPlayers(ConstEntity.ParentGroup+_parentGroupId);
 
 
                 _iniProfile.Save(MyTool.GetModuleIniPath());
