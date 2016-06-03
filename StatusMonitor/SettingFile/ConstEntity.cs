@@ -9,7 +9,7 @@ namespace StatusMonitor.SettingFile
         public const string SKILLSHOWKEY = "SkillShowSet";
         public const string KYOKUGROUPSHOWKEY = "KyoKuGroupShowSet";
         public const string ITEMSHOWKEY = "MonitorItemShow";
-        public const int MANAGEMONITORITEMCOUNT = 14;
+        public const int MANAGEMONITORITEMCOUNT = 18;
         public const string LINECUT = "LineCut";
         public const string MONITORTAB = "MonitorTabShow";
         public const string MESSAGEPOP = "MessagePopShow";
@@ -104,6 +104,8 @@ namespace StatusMonitor.SettingFile
         public const string Sort_Descending = "Descending";
 
         public const string ParentGroup = "ParentGroup";
+
+        public const string QuickAnswerSeconds1 = "QuickAnswerMinutes";
         public const string QuickAnswerSeconds2 = "QuickAnswerSeconds2";
         public const string QuickAnswerSeconds3 = "QuickAnswerSeconds3";
     }

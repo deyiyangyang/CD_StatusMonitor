@@ -19,7 +19,7 @@ namespace StatusMonitor.Model
     {
         private TksProfileClass _iniProfile;
         private int _columnsCount = ConstEntity.MANAGEMONITORITEMCOUNT;
-        private string _columnsDisplayName = "スキルグループ,ログオン人数,着座OP数,受付可数,離席数,OP呼出数,OP応答数,応答率,即答数,即答率,待呼数,待ち呼経過時間,放棄呼,放棄率";
+        private string _columnsDisplayName = "スキルグループ,ログオン人数,着座OP数,受付可数,離席数,OP呼出数,OP応答数,応答率,即答数,即答率,即答数②,即答率②,即答数③,即答率③,待呼数,待ち呼経過時間,放棄呼,放棄率";
         //public string MonitorCol1 = "スキルグループ";
         //public string MonitorCol2 = "ログオン人数";
         //public string MonitorCol3 = "着座OP数";
@@ -34,7 +34,7 @@ namespace StatusMonitor.Model
         //public string MonitorCol12 = "受付可数";
         //public string MonitorCol13 = "放棄呼";
         //public string MonitorCol14 = "放棄率";
-        private int InsertIndex = 10;
+        private int InsertIndex = 14;
         private string InsertColDisplayName = "経過時間";
         public List<MonitorItem> MonitorItems;
         public event EventHandler MonitorItemChanged;

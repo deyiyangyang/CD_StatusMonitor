@@ -30,6 +30,10 @@ namespace StatusMonitor
 
         //added by zhu 2014/05/12
         public string col14 = "";
+        public string col15 = "";
+        public string col16 = "";
+        public string col17 = "";
+        public string col18 = "";
         public MonitorItemManager MonitorItemManager;
         //end added
         public frmMonitorTitle(MonitorItemManager monitorItemManager)
@@ -99,6 +103,11 @@ namespace StatusMonitor
                 col13 = txtCol13.Text.Trim();
                 col14 = txtCol14.Text.Trim();
 
+                col15 = txtCol15.Text.Trim();
+                col16 = txtCol16.Text.Trim();
+                col17 = txtCol17.Text.Trim();
+                col18 = txtCol18.Text.Trim();
+
                 if (string.IsNullOrEmpty(col1)) return;
                 if (string.IsNullOrEmpty(col2)) return;
                 if (string.IsNullOrEmpty(col3)) return;
@@ -113,6 +122,10 @@ namespace StatusMonitor
                 if (string.IsNullOrEmpty(col12)) return;
                 if (string.IsNullOrEmpty(col13)) return;
                 if (string.IsNullOrEmpty(col14)) return;
+                if (string.IsNullOrEmpty(col15)) return;
+                if (string.IsNullOrEmpty(col16)) return;
+                if (string.IsNullOrEmpty(col17)) return;
+                if (string.IsNullOrEmpty(col18)) return;
                 //set
                 //deleted by zhu 2014/05/12
                 //mainF.setMonitorCol(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12, col13);
@@ -133,6 +146,10 @@ namespace StatusMonitor
                 MonitorItemManager.MonitorItems[11].DisplayName = col12;
                 MonitorItemManager.MonitorItems[12].DisplayName = col13;
                 MonitorItemManager.MonitorItems[13].DisplayName = col14;
+                MonitorItemManager.MonitorItems[14].DisplayName = col15;
+                MonitorItemManager.MonitorItems[15].DisplayName = col16;
+                MonitorItemManager.MonitorItems[16].DisplayName = col17;
+                MonitorItemManager.MonitorItems[17].DisplayName = col18;
                 MonitorItemManager.SaveData();
                 //end added
                 this.Dispose();

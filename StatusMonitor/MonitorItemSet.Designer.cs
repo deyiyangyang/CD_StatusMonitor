@@ -44,6 +44,10 @@
             this.chbMonitorCol10 = new System.Windows.Forms.CheckBox();
             this.chbMonitorCol13 = new System.Windows.Forms.CheckBox();
             this.chbMonitorCol14 = new System.Windows.Forms.CheckBox();
+            this.chbMonitorCol17 = new System.Windows.Forms.CheckBox();
+            this.chbMonitorCol16 = new System.Windows.Forms.CheckBox();
+            this.chbMonitorCol15 = new System.Windows.Forms.CheckBox();
+            this.chbMonitorCol18 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnClose
@@ -237,11 +241,63 @@
             this.chbMonitorCol14.Text = "checkBox14";
             this.chbMonitorCol14.UseVisualStyleBackColor = true;
             // 
+            // chbMonitorCol17
+            // 
+            this.chbMonitorCol17.AutoSize = true;
+            this.chbMonitorCol17.Checked = true;
+            this.chbMonitorCol17.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbMonitorCol17.Location = new System.Drawing.Point(132, 193);
+            this.chbMonitorCol17.Name = "chbMonitorCol17";
+            this.chbMonitorCol17.Size = new System.Drawing.Size(86, 16);
+            this.chbMonitorCol17.TabIndex = 19;
+            this.chbMonitorCol17.Text = "checkBox17";
+            this.chbMonitorCol17.UseVisualStyleBackColor = true;
+            // 
+            // chbMonitorCol16
+            // 
+            this.chbMonitorCol16.AutoSize = true;
+            this.chbMonitorCol16.Checked = true;
+            this.chbMonitorCol16.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbMonitorCol16.Location = new System.Drawing.Point(12, 193);
+            this.chbMonitorCol16.Name = "chbMonitorCol16";
+            this.chbMonitorCol16.Size = new System.Drawing.Size(86, 16);
+            this.chbMonitorCol16.TabIndex = 18;
+            this.chbMonitorCol16.Text = "checkBox16";
+            this.chbMonitorCol16.UseVisualStyleBackColor = true;
+            // 
+            // chbMonitorCol15
+            // 
+            this.chbMonitorCol15.AutoSize = true;
+            this.chbMonitorCol15.Checked = true;
+            this.chbMonitorCol15.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbMonitorCol15.Location = new System.Drawing.Point(247, 161);
+            this.chbMonitorCol15.Name = "chbMonitorCol15";
+            this.chbMonitorCol15.Size = new System.Drawing.Size(86, 16);
+            this.chbMonitorCol15.TabIndex = 20;
+            this.chbMonitorCol15.Text = "checkBox15";
+            this.chbMonitorCol15.UseVisualStyleBackColor = true;
+            // 
+            // chbMonitorCol18
+            // 
+            this.chbMonitorCol18.AutoSize = true;
+            this.chbMonitorCol18.Checked = true;
+            this.chbMonitorCol18.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbMonitorCol18.Location = new System.Drawing.Point(247, 193);
+            this.chbMonitorCol18.Name = "chbMonitorCol18";
+            this.chbMonitorCol18.Size = new System.Drawing.Size(86, 16);
+            this.chbMonitorCol18.TabIndex = 21;
+            this.chbMonitorCol18.Text = "checkBox18";
+            this.chbMonitorCol18.UseVisualStyleBackColor = true;
+            // 
             // MonitorItemSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 261);
+            this.Controls.Add(this.chbMonitorCol18);
+            this.Controls.Add(this.chbMonitorCol15);
+            this.Controls.Add(this.chbMonitorCol17);
+            this.Controls.Add(this.chbMonitorCol16);
             this.Controls.Add(this.chbMonitorCol14);
             this.Controls.Add(this.chbMonitorCol13);
             this.Controls.Add(this.chbMonitorCol12);
@@ -289,5 +345,9 @@
         private System.Windows.Forms.CheckBox chbMonitorCol10;
         private System.Windows.Forms.CheckBox chbMonitorCol13;
         private System.Windows.Forms.CheckBox chbMonitorCol14;
+        private System.Windows.Forms.CheckBox chbMonitorCol17;
+        private System.Windows.Forms.CheckBox chbMonitorCol16;
+        private System.Windows.Forms.CheckBox chbMonitorCol15;
+        private System.Windows.Forms.CheckBox chbMonitorCol18;
     }
 }

@@ -132,7 +132,7 @@ namespace StatusMonitor
         public string SettingFields_ParentGroupIdlePeriodVoice = "";
 
         public float SettingFields_ListFontSize = 1;
-
+        public string QuickAnswerMinutes = "0";
         public string SettingFields_QuickAnswerSeconds2 = "0";
         public string SettingFields_QuickAnswerSeconds3 = "0";
         public Dictionary<string, string> Dic_SettingFields_SkillQuecall = new Dictionary<string, string>();
@@ -163,6 +163,8 @@ namespace StatusMonitor
             SettingFields_SplitContainer_Width = IniProfile.GetStringDefault(ConstEntity.SPLITCONTAINER_PANEL_WIDTH, "");
             SettingFields_ParentGroupIdlePeriod = IniProfile.GetStringDefault(ConstEntity.PARENT_GROUP_IDLE_PERIOD, "");
             SettingFields_ParentGroupIdlePeriodVoice = IniProfile.GetStringDefault(ConstEntity.PARENT_GROUP_IDLE_PERIOD_VOICE, "");
+            SettingFields_QuickAnswerSeconds2 = IniProfile.GetStringDefault(ConstEntity.QuickAnswerSeconds2, "0");
+            SettingFields_QuickAnswerSeconds3 = IniProfile.GetStringDefault(ConstEntity.QuickAnswerSeconds3, "0");
 
             //IniProfile.SelectSection("Alert");
             //SettingFields_AlertTotal = IniProfile.GetLongDefault("nTotal", 100);
