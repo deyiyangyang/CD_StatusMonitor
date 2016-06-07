@@ -159,3 +159,11 @@ UM_POPQUE vAgentID='XXXXX',iSessionProfileID=XXXX vAgentIDは分配先のエージェント
 
 2016/03/25
 1，change the version to 6.3.6
+
+2016/05/31
+1，parent group setting for line tab and queue call tab 
+2, parent group setting for idle voic and queue call voice 
+
+2016/06/07
+1，when no parent group info , doesn't show lables and combox
+2, add 即答数②、即答数③ in monitor tab
