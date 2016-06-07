@@ -41,7 +41,7 @@ namespace StatusMonitor
             }
             catch (Exception ex)
             {
-
+                mainF.writeLog("MonitorDetail_Load system error:" + ex.Message + ex.StackTrace);
             }
 
         }
@@ -139,9 +139,53 @@ namespace StatusMonitor
                 column.DataPropertyName = "answerNowPer";
                 dvData.Columns.Add(column);
 
+                //added by zhu 2016/05/31 add 即答数②
+                //column = new DataGridViewTextBoxColumn();
+                //column.HeaderText = mainF._MonitorItemManager.MonitorItems[10].DisplayName;// "即答数②";
+                //column.Name = "answerNowCnt2";
+                //column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                //column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                //column.Width = 60;
+                //column.DataPropertyName = "answerNowCnt2";
+                //column.Visible = mainF._MonitorItemManager.MonitorItems[10].Visible;
+                //dvData.Columns.Add(column);
+
+                //column = new DataGridViewTextBoxColumn();
+                //column.HeaderText = mainF._MonitorItemManager.MonitorItems[11].DisplayName;// "即答率②";
+                //column.Name = "answerNowPer2";
+                //column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                //column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                //column.Width = 60;
+                //column.DataPropertyName = "answerNowPer2";
+                //column.Visible = mainF._MonitorItemManager.MonitorItems[11].Visible;
+                //dvData.Columns.Add(column);
+
+                ////add 即答数③ 2016/05/31
+                //column = new DataGridViewTextBoxColumn();
+                //column.HeaderText = mainF._MonitorItemManager.MonitorItems[12].DisplayName;// "即答数③";
+                //column.Name = "answerNowCnt3";
+                //column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                //column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                ////column.DefaultCellStyle.BackColor = Color.LightGray;
+                //column.Width = 60;
+                //column.DataPropertyName = "answerNowCnt3";
+                //column.Visible = mainF._MonitorItemManager.MonitorItems[12].Visible;
+                //dvData.Columns.Add(column);
+
+                //column = new DataGridViewTextBoxColumn();
+                //column.HeaderText = mainF._MonitorItemManager.MonitorItems[13].DisplayName;// "即答率③";
+                //column.Name = "answerNowPer3";
+                //column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                //column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                //column.Width = 60;
+                //column.DataPropertyName = "answerNowPer3";
+                //column.Visible = mainF._MonitorItemManager.MonitorItems[13].Visible;
+                //dvData.Columns.Add(column);
+                //end added
+
                 column = new DataGridViewTextBoxColumn();
                 //column.HeaderText = mainF.MonitorCol12;// "放棄数";
-                column.HeaderText = mainF._MonitorItemManager.MonitorItems[12].DisplayName;
+                column.HeaderText = mainF._MonitorItemManager.MonitorItems[14].DisplayName;
                 column.Name = "failCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -152,7 +196,7 @@ namespace StatusMonitor
 
                 column = new DataGridViewTextBoxColumn();
                 //column.HeaderText = mainF.MonitorCol13;// "放棄率";
-                column.HeaderText = mainF._MonitorItemManager.MonitorItems[13].DisplayName;
+                column.HeaderText = mainF._MonitorItemManager.MonitorItems[15].DisplayName;
                 column.Name = "failPer";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -171,6 +215,12 @@ namespace StatusMonitor
                 dtData.Columns.Add("answerPer");
                 dtData.Columns.Add("answerNowCnt");
                 dtData.Columns.Add("answerNowPer");
+                //addde by zhu 2016/06/02
+                //dtData.Columns.Add("answerNowCnt2", typeof(int));
+                //dtData.Columns.Add("answerNowPer2");
+                //dtData.Columns.Add("answerNowCnt3", typeof(int));
+                //dtData.Columns.Add("answerNowPer3");
+                //end added
                 dtData.Columns.Add("failCnt");
                 dtData.Columns.Add("failPer");
                 dsData.Tables.Add(dtData);
@@ -178,7 +228,7 @@ namespace StatusMonitor
             }
             catch (Exception ex)
             {
-
+                mainF.writeLog("MonitorDetail iniDV system error:" + ex.Message+ex.StackTrace);
             }
 
         }
@@ -425,6 +475,10 @@ namespace StatusMonitor
                     csDataRow1[5] = "0%";
                     csDataRow1[6] = "0";
                     csDataRow1[7] = "0%";
+                    //csDataRow1[8] = "0";
+                    //csDataRow1[9] = "0%";
+                    //csDataRow1[10] = "0";
+                    //csDataRow1[11] = "0%";
                     dsData.Tables["dtData"].Rows.Add(csDataRow1);
                 }
                 AddDataToTable(rs);
@@ -453,6 +507,12 @@ namespace StatusMonitor
             int answerNowCnt = 0;
             int answerNowPer = 0;
 
+            //added by zhu 2016/06/06
+            int answerNowCnt2 = 0;
+            int answerNowPer2 = 0;
+            int answerNowCnt3 = 0;
+            int answerNowPer3 = 0;
+            //end added
 
             for (int i = 0; i < rs.Count; i++)
             {
@@ -463,7 +523,12 @@ namespace StatusMonitor
                 failCnt = 0;
                 answerNowCnt = 0;
                 answerNowPer = 0;
-
+                //added by zhu 2016/06/06
+                answerNowCnt2 = 0;
+                answerNowPer2 = 0;
+                answerNowCnt3 = 0;
+                answerNowPer3 = 0;
+                //end added
 
                 if (string.IsNullOrEmpty(fs[1].ToString()))
                     acdCount = 0;
@@ -480,6 +545,19 @@ namespace StatusMonitor
                     answerNowCnt = 0;
                 else
                     answerNowCnt = int.Parse(fs[3].ToString());
+
+                //added by zhu 2016/06/06
+                //if (string.IsNullOrEmpty(fs[4].ToString()))
+                //    answerNowCnt2 = 0;
+                //else
+                //    answerNowCnt2 = int.Parse(fs[4].ToString());
+
+                //if (string.IsNullOrEmpty(fs[5].ToString()))
+                //    answerNowCnt3 = 0;
+                //else
+                //    answerNowCnt3 = int.Parse(fs[5].ToString());
+                //end added
+
 
                 failCnt = acdCount - answerCnt;
 

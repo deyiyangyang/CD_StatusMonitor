@@ -1,4 +1,5 @@
-﻿using StatusMonitor.SettingFile;
+﻿using MyTools;
+using StatusMonitor.SettingFile;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,7 +44,7 @@ namespace StatusMonitor
                     _iniProfile.SetString(ConstEntity.QuickAnswerSeconds3, this.txtAnswerSecond3.Text);
                     this.mainF.SettingFields_QuickAnswerSeconds3 = this.txtAnswerSecond3.Text;
                 }
-                                
+                _iniProfile.Save(MyTool.GetModuleIniPath());
                 this.Dispose();
             }
             catch (Exception ex)

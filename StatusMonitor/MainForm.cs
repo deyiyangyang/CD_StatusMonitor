@@ -233,6 +233,7 @@ namespace StatusMonitor
         private bool[] AgentStatusListViewOrder = new bool[15]; //8->14 14->15 modified by zhu 2014/05/08
         private bool[] TotalListViewOrder = new bool[5];
         private bool[] lineStatusListViewOrder = new bool[8]; //xzg,2012/02/09,7->8
+        private bool IsParentGroupEnable = false;
         //AutoSizeFormClass Asc;
         //added by Zhu 2014/04/21
         List<Form> ListTabPagesForms;
@@ -3254,7 +3255,10 @@ namespace StatusMonitor
                 
                 List<int> hasPlayedSkillGroups = new List<int>();
                 int iHasPlayedQueCount = PlaySkillQuecallSound(hasPlayedSkillGroups);
-                PlayParentGroupQuecallSound(hasPlayedSkillGroups);
+                if (IsParentGroupEnable)
+                {
+                    PlayParentGroupQuecallSound(hasPlayedSkillGroups);
+                }
                 writeLog("PlaySound total QueCall count:" + QueueCountAll.ToString() + "; has played in special :" + iHasPlayedQueCount.ToString());
                 int iQueCount = QueueCountAll;
                 if (iHasPlayedQueCount > 0 && iHasPlayedQueCount >= iQueCount) return;
@@ -4231,7 +4235,14 @@ namespace StatusMonitor
             {
                 writeLog("wbGetParentGroup_DocumentCompleted ");
                 if (DicParentGroup != null && DicParentGroup.Count > 0) DicParentGroup.Clear();
-                if (string.IsNullOrEmpty(wbGetParentGroup.DocumentText) || wbGetParentGroup.DocumentText.ToLower() == "null") return;
+                if (string.IsNullOrEmpty(wbGetParentGroup.DocumentText) || wbGetParentGroup.DocumentText.ToLower() == "null")
+                {
+                    IsParentGroupEnable = false;
+                    SetParentGroup(false);
+                    return;
+                }
+                IsParentGroupEnable = true;
+                SetParentGroup(true);
                 string[] rows = wbGetParentGroup.DocumentText.Split(';');
                 foreach (var item in rows)
                 {
@@ -5639,6 +5650,8 @@ namespace StatusMonitor
                         dsMontor.Tables["dtMonitor"].Rows[i]["acdCnt"] = acdCount;
                         dsMontor.Tables["dtMonitor"].Rows[i]["answerCnt"] = answerCnt;
                         dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt"] = answerNowCnt;
+                        dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt2"] = answerNowCnt2;
+                        dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt3"] = answerNowCnt3;
 
                         if (answerCnt > 0)
                         {
@@ -7699,6 +7712,47 @@ namespace StatusMonitor
             IniProfile.SelectSection("SVSet");
             IniProfile.SetString(ConstEntity.SPLITCONTAINER_PANEL_WIDTH, this.splitContainer1.SplitterDistance.ToString());
             IniProfile.Save(MyTool.GetModuleIniPath());
+        }
+
+        private void SetParentGroup(bool isEnable)
+        {
+            if (!isEnable)
+            {
+                //line tab
+                this.lineDDLParentGroup.Visible = false;
+                this.lblLineTapParentGroup.Visible = false;
+
+                if (this.lineDDLParentGroup.Items.Count > 0)
+                {
+                    this.lineDDLParentGroup.SelectedIndex = 0;
+                }
+
+                //quecall tab
+                (this.ListTabPagesForms[0] as QueueCallForm).lblQueTabParentGroup.Visible = false;
+                (this.ListTabPagesForms[0] as QueueCallForm).quecallDDLParentGroup.Visible = false;
+                if ((this.ListTabPagesForms[0] as QueueCallForm).quecallDDLParentGroup.Items.Count > 0)
+                {
+                    (this.ListTabPagesForms[0] as QueueCallForm).quecallDDLParentGroup.SelectedIndex = 0;
+                }
+
+                //menu
+                待ち呼警告設定親グループToolStripMenuItem.Visible = false;
+                受付可警告設定親グループToolStripMenuItem.Visible = false;
+            }
+            else
+            {
+                //line tab
+                this.lineDDLParentGroup.Visible = true;
+                this.lblLineTapParentGroup.Visible = true;
+
+                //quecall tab
+                (this.ListTabPagesForms[0] as QueueCallForm).lblQueTabParentGroup.Visible = true;
+                (this.ListTabPagesForms[0] as QueueCallForm).quecallDDLParentGroup.Visible = true;
+
+                //menu
+                待ち呼警告設定親グループToolStripMenuItem.Visible = true;
+                受付可警告設定親グループToolStripMenuItem.Visible = true;
+            }
         }
         #endregion
 

@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.quecallStatusListView = new System.Windows.Forms.ListView();
             this.quecallRightMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblQueTabParentGroup = new System.Windows.Forms.Label();
             this.quecallDDLParentGroup = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -58,15 +58,15 @@
             this.quecallRightMenu.Name = "quecallRightMenu";
             this.quecallRightMenu.Size = new System.Drawing.Size(61, 4);
             // 
-            // label3
+            // lblQueTabParentGroup
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1, 20);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 12);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "親グループ";
+            this.lblQueTabParentGroup.AutoSize = true;
+            this.lblQueTabParentGroup.Location = new System.Drawing.Point(1, 20);
+            this.lblQueTabParentGroup.Margin = new System.Windows.Forms.Padding(0);
+            this.lblQueTabParentGroup.Name = "lblQueTabParentGroup";
+            this.lblQueTabParentGroup.Size = new System.Drawing.Size(55, 12);
+            this.lblQueTabParentGroup.TabIndex = 15;
+            this.lblQueTabParentGroup.Text = "親グループ";
             // 
             // quecallDDLParentGroup
             // 
@@ -85,7 +85,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(675, 582);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblQueTabParentGroup);
             this.Controls.Add(this.quecallDDLParentGroup);
             this.Controls.Add(this.quecallStatusListView);
             this.Name = "QueueCallForm";
@@ -100,7 +100,7 @@
 
         public System.Windows.Forms.ListView quecallStatusListView;
         private System.Windows.Forms.ContextMenuStrip quecallRightMenu;
-        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label lblQueTabParentGroup;
         public System.Windows.Forms.ComboBox quecallDDLParentGroup;
     }
 }

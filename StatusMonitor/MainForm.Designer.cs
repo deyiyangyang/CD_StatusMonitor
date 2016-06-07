@@ -77,7 +77,7 @@
             this.agentStatusListView = new System.Windows.Forms.ListView();
             this.largeImageList = new System.Windows.Forms.ImageList(this.components);
             this.lineStatusPage = new System.Windows.Forms.TabPage();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblLineTapParentGroup = new System.Windows.Forms.Label();
             this.lineDDLParentGroup = new System.Windows.Forms.ComboBox();
             this.lineStatusListView = new System.Windows.Forms.ListView();
             this.lineIconListView = new System.Windows.Forms.ListView();
@@ -596,7 +596,7 @@
             this.agentStatusListView.MultiSelect = false;
             this.agentStatusListView.Name = "agentStatusListView";
             this.agentStatusListView.ShowItemToolTips = true;
-            this.agentStatusListView.Size = new System.Drawing.Size(696, 482);
+            this.agentStatusListView.Size = new System.Drawing.Size(696, 483);
             this.agentStatusListView.SmallImageList = this.smallImageList;
             this.agentStatusListView.TabIndex = 0;
             this.agentStatusListView.UseCompatibleStateImageBehavior = false;
@@ -635,7 +635,7 @@
             // 
             // lineStatusPage
             // 
-            this.lineStatusPage.Controls.Add(this.label11);
+            this.lineStatusPage.Controls.Add(this.lblLineTapParentGroup);
             this.lineStatusPage.Controls.Add(this.lineDDLParentGroup);
             this.lineStatusPage.Controls.Add(this.lineStatusListView);
             this.lineStatusPage.Controls.Add(this.lineIconListView);
@@ -647,15 +647,15 @@
             this.lineStatusPage.Text = "回線 状態";
             this.lineStatusPage.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // lblLineTapParentGroup
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(5, 20);
-            this.label11.Margin = new System.Windows.Forms.Padding(0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 13);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "親グループ";
+            this.lblLineTapParentGroup.AutoSize = true;
+            this.lblLineTapParentGroup.Location = new System.Drawing.Point(5, 20);
+            this.lblLineTapParentGroup.Margin = new System.Windows.Forms.Padding(0);
+            this.lblLineTapParentGroup.Name = "lblLineTapParentGroup";
+            this.lblLineTapParentGroup.Size = new System.Drawing.Size(62, 13);
+            this.lblLineTapParentGroup.TabIndex = 17;
+            this.lblLineTapParentGroup.Text = "親グループ";
             // 
             // lineDDLParentGroup
             // 
@@ -679,7 +679,7 @@
             this.lineStatusListView.Location = new System.Drawing.Point(3, 39);
             this.lineStatusListView.MultiSelect = false;
             this.lineStatusListView.Name = "lineStatusListView";
-            this.lineStatusListView.Size = new System.Drawing.Size(691, 531);
+            this.lineStatusListView.Size = new System.Drawing.Size(691, 532);
             this.lineStatusListView.SmallImageList = this.smallImageList;
             this.lineStatusListView.TabIndex = 0;
             this.lineStatusListView.UseCompatibleStateImageBehavior = false;
@@ -726,7 +726,7 @@
             this.dvMonitor.MultiSelect = false;
             this.dvMonitor.Name = "dvMonitor";
             this.dvMonitor.RowTemplate.Height = 21;
-            this.dvMonitor.Size = new System.Drawing.Size(691, 598);
+            this.dvMonitor.Size = new System.Drawing.Size(691, 599);
             this.dvMonitor.TabIndex = 0;
             this.dvMonitor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvMonitor_CellDoubleClick);
             this.dvMonitor.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dvMonitor_DataError);
@@ -1233,7 +1233,7 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel agentIconPanel;
         private System.Windows.Forms.WebBrowser wbGetParentGroup;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblLineTapParentGroup;
         private System.Windows.Forms.ComboBox lineDDLParentGroup;
         private System.Windows.Forms.ToolStripMenuItem 受付可警告設定親グループToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 待ち呼警告設定親グループToolStripMenuItem;
