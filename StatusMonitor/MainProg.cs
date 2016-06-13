@@ -13,6 +13,8 @@ using TksProfileAcxLib;
 using System.Threading;
 using StatusMonitor.Helper;
 using StatusMonitor.Model;
+using StatusMonitor.SoundPlayer;
+using StatusMonitor.SettingFile;
 
 namespace StatusMonitor
 {
@@ -707,6 +709,7 @@ namespace StatusMonitor
                                 strHelp = "ヘルプ中";
                                 if (!string.IsNullOrEmpty(agentStatus.AgentName))
                                     ShowBalloonTipHelp("ヘルプ", agentStatus.AgentName);
+
                             }
 
                             //add,xzg,2013/09/11,E
@@ -1357,7 +1360,7 @@ namespace StatusMonitor
                         string key = (lineDDLParentGroup.SelectedItem as GroupInfo).Group.ToString() + "," + (lineDDLParentGroup.SelectedItem as GroupInfo).GroupName.ToString();
                         foreach (var skillid in DicParentGroup[key].Split(','))
                         {
-                            if (obj.iSkillGroupID.ToString() == skillid || obj.Group.ToString()==skillid)
+                            if (obj.iSkillGroupID.ToString() == skillid || obj.Group.ToString() == skillid)
                             {
                                 findSkill = true;
                                 break;
@@ -1552,7 +1555,7 @@ namespace StatusMonitor
                     //離席理由表示
                     ListViewItem.ListViewSubItem subState = new ListViewItem.ListViewSubItem(item, "");
                     string strState = "";
-                    if (!string.IsNullOrEmpty(obj.vReason) && (obj.Status == 6 || obj.Status==5))
+                    if (!string.IsNullOrEmpty(obj.vReason) && (obj.Status == 6 || obj.Status == 5))
                         strState = obj.vReason;
                     else
                         strState = res.GetString(status.StatusName);
@@ -1664,7 +1667,20 @@ namespace StatusMonitor
                     //add,xzg,2013/08/27,E
                 }
                 this.lblHelpON.Text = iHelpON.ToString();
-
+                //added by zhu 2016/06/13
+                if (iHelpON > 0)
+                {
+                    string path = "";
+                    path = System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                    path = path + "\\Comdesign\\Voice";
+                    path = path + @"\" + SettingFields_HelpVoice;
+                    SinglePlayerManager.RunPlayer(ConstEntity.HelpOnPlayer, path);
+                }
+                else
+                {
+                    SinglePlayerManager.StopPlayer(ConstEntity.HelpOnPlayer);
+                }
+                //end added
                 agentStatusListView.EndUpdate();
 
                 //add,xzg,2013/08/27,S

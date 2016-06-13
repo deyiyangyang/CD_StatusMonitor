@@ -2,6 +2,7 @@
 using StatusMonitor.Helper;
 using StatusMonitor.Model;
 using StatusMonitor.SettingFile;
+using StatusMonitor.SoundPlayer;
 using StatusMonitor.TabPage;
 using System;
 using System.Collections.Generic;
@@ -137,6 +138,7 @@ namespace StatusMonitor
         public string SettingFields_QuickAnswerSeconds3 = "0";
         public Dictionary<string, string> Dic_SettingFields_SkillQuecall = new Dictionary<string, string>();
 
+        public string SettingFields_HelpVoice = "";
 
         #region GetIniSettingValue
 
@@ -165,6 +167,8 @@ namespace StatusMonitor
             SettingFields_ParentGroupIdlePeriodVoice = IniProfile.GetStringDefault(ConstEntity.PARENT_GROUP_IDLE_PERIOD_VOICE, "");
             SettingFields_QuickAnswerSeconds2 = IniProfile.GetStringDefault(ConstEntity.QuickAnswerSeconds2, "0");
             SettingFields_QuickAnswerSeconds3 = IniProfile.GetStringDefault(ConstEntity.QuickAnswerSeconds3, "0");
+            SettingFields_HelpVoice = IniProfile.GetStringDefault(ConstEntity.HelpVoice, "");
+            SinglePlayerManager.AddPlayer(ConstEntity.HelpOnPlayer);
 
             //IniProfile.SelectSection("Alert");
             //SettingFields_AlertTotal = IniProfile.GetLongDefault("nTotal", 100);

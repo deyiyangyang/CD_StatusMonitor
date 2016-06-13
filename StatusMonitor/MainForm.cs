@@ -176,7 +176,7 @@ namespace StatusMonitor
 
         private int intMonitrTimer = 0;
 
-        
+
 
         private int displayGroupPre = -1;
         private int getGrouPersonCnt = 0;
@@ -3133,6 +3133,7 @@ namespace StatusMonitor
                 mainNotifyIcon.Visible = true;
                 this.Focus();
 
+
             }
             catch (Exception ex)
             {
@@ -3252,7 +3253,7 @@ namespace StatusMonitor
         {
             try
             {
-                
+
                 List<int> hasPlayedSkillGroups = new List<int>();
                 int iHasPlayedQueCount = PlaySkillQuecallSound(hasPlayedSkillGroups);
                 if (IsParentGroupEnable)
@@ -3333,7 +3334,7 @@ namespace StatusMonitor
             {
                 string parentGroupId = item.Key.Split(',')[0];
                 List<int> skillGroupIDs = UtilityHelper.GetSkillIdListByParentGroup(parentGroupId, DicParentGroup);
-                foreach(var skill in hasPlayedSkillGroups)
+                foreach (var skill in hasPlayedSkillGroups)
                 {
                     skillGroupIDs.Remove(skill);
                 }
@@ -3397,7 +3398,7 @@ namespace StatusMonitor
                 }
                 catch (Exception ex)
                 {
-                    writeLog("PlayParentGroupQuecallSound current parentGroupid is"+ parentGroupId + " system error:" + ex.Message + ex.StackTrace);
+                    writeLog("PlayParentGroupQuecallSound current parentGroupid is" + parentGroupId + " system error:" + ex.Message + ex.StackTrace);
                 }
             }
         }
@@ -5267,7 +5268,7 @@ namespace StatusMonitor
             {
                 writeLog("setMonitorCall SysteError:" + ex.Message + ex.StackTrace);
             }
-           
+
         }
 
         private void setMonitorCall1()
@@ -7400,7 +7401,7 @@ namespace StatusMonitor
         {
             try
             {
-                QuickAnswerSet frm = new QuickAnswerSet(IniProfile,this);
+                QuickAnswerSet frm = new QuickAnswerSet(IniProfile, this);
                 //frm.mainF = this;
 
                 frm.ShowDialog();
@@ -8298,6 +8299,19 @@ namespace StatusMonitor
             catch (Exception ex)
             {
                 writeLog("受付可警告設定親グループToolStripMenuItem_Click Error:" + ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void ヘルプToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmOtherVoiceSetting pss = new frmOtherVoiceSetting(IniProfile,this);
+                pss.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                writeLog("ヘルプToolStripMenuItem_Click Error:" + ex.Message + ex.StackTrace);
             }
         }
     }

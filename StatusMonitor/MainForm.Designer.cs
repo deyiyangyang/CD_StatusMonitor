@@ -124,6 +124,7 @@
             this.groupSumTab = new System.Windows.Forms.TabPage();
             this.panelTop = new System.Windows.Forms.Panel();
             this.wbGetParentGroup = new System.Windows.Forms.WebBrowser();
+            this.ヘルプToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.statusTabCtrl.SuspendLayout();
             this.agentStatusPage.SuspendLayout();
@@ -252,7 +253,8 @@
             this.待ち呼警告設定親グループToolStripMenuItem,
             this.待ち呼警告設定個別ToolStripMenuItem,
             this.受付可警告設定ToolStripMenuItem,
-            this.受付可警告設定親グループToolStripMenuItem});
+            this.受付可警告設定親グループToolStripMenuItem,
+            this.ヘルプToolStripMenuItem});
             this.警告設定ToolStripMenuItem.Name = "警告設定ToolStripMenuItem";
             this.警告設定ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.警告設定ToolStripMenuItem.Text = "警告設定";
@@ -596,7 +598,7 @@
             this.agentStatusListView.MultiSelect = false;
             this.agentStatusListView.Name = "agentStatusListView";
             this.agentStatusListView.ShowItemToolTips = true;
-            this.agentStatusListView.Size = new System.Drawing.Size(696, 483);
+            this.agentStatusListView.Size = new System.Drawing.Size(696, 484);
             this.agentStatusListView.SmallImageList = this.smallImageList;
             this.agentStatusListView.TabIndex = 0;
             this.agentStatusListView.UseCompatibleStateImageBehavior = false;
@@ -679,7 +681,7 @@
             this.lineStatusListView.Location = new System.Drawing.Point(3, 39);
             this.lineStatusListView.MultiSelect = false;
             this.lineStatusListView.Name = "lineStatusListView";
-            this.lineStatusListView.Size = new System.Drawing.Size(691, 532);
+            this.lineStatusListView.Size = new System.Drawing.Size(691, 533);
             this.lineStatusListView.SmallImageList = this.smallImageList;
             this.lineStatusListView.TabIndex = 0;
             this.lineStatusListView.UseCompatibleStateImageBehavior = false;
@@ -726,7 +728,7 @@
             this.dvMonitor.MultiSelect = false;
             this.dvMonitor.Name = "dvMonitor";
             this.dvMonitor.RowTemplate.Height = 21;
-            this.dvMonitor.Size = new System.Drawing.Size(691, 599);
+            this.dvMonitor.Size = new System.Drawing.Size(691, 600);
             this.dvMonitor.TabIndex = 0;
             this.dvMonitor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvMonitor_CellDoubleClick);
             this.dvMonitor.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dvMonitor_DataError);
@@ -1082,6 +1084,13 @@
             this.wbGetParentGroup.Visible = false;
             this.wbGetParentGroup.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.wbGetParentGroup_DocumentCompleted);
             // 
+            // ヘルプToolStripMenuItem
+            // 
+            this.ヘルプToolStripMenuItem.Name = "ヘルプToolStripMenuItem";
+            this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.ヘルプToolStripMenuItem.Text = "ヘルプ警告設定";
+            this.ヘルプToolStripMenuItem.Click += new System.EventHandler(this.ヘルプToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1237,5 +1246,6 @@
         private System.Windows.Forms.ComboBox lineDDLParentGroup;
         private System.Windows.Forms.ToolStripMenuItem 受付可警告設定親グループToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 待ち呼警告設定親グループToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ヘルプToolStripMenuItem;
     }
 }

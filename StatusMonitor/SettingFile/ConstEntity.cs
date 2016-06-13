@@ -98,7 +98,7 @@ namespace StatusMonitor.SettingFile
         public const string ParentGroupQueCallVoiceTemplate1 = "ParentGroup_{0}_Voice1";
         public const string ParentGroupQueCallVoiceTemplate2 = "ParentGroup_{0}_Voice2";
         public const string ParentGroupQueCallVoiceTemplate3 = "ParentGroup_{0}_Voice3";
-
+        public const string HelpVoice = "HelpVoice";
 
         public const string Sort_Ascending = "Ascending";
         public const string Sort_Descending = "Descending";
@@ -108,5 +108,12 @@ namespace StatusMonitor.SettingFile
         public const string QuickAnswerSeconds1 = "QuickAnswerMinutes";
         public const string QuickAnswerSeconds2 = "QuickAnswerSeconds2";
         public const string QuickAnswerSeconds3 = "QuickAnswerSeconds3";
+
+
+        #region sound player
+        public const string HelpOnPlayer = "HelpOnPlayer";
+        #endregion
+
+
     }
 }

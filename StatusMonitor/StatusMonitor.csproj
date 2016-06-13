@@ -114,6 +114,12 @@
     <Compile Include="frmLineCutSet.Designer.cs">
       <DependentUpon>frmLineCutSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOtherVoiceSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOtherVoiceSetting.Designer.cs">
+      <DependentUpon>frmOtherVoiceSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\AutoSizeFormClass.cs" />
     <Compile Include="Helper\ComboBoxItem.cs" />
     <Compile Include="Helper\CTe1Helper.cs" />
@@ -248,6 +254,9 @@
     <EmbeddedResource Include="frmMonitorTitle.resx">
       <DependentUpon>frmMonitorTitle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOtherVoiceSetting.resx">
+      <DependentUpon>frmOtherVoiceSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSetPhone.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmSetPhone.cs</DependentUpon>
@@ -370,6 +379,7 @@
     <Compile Include="SkillIdleSet.Designer.cs">
       <DependentUpon>SkillIdleSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="SoundPlayer\SinglePlayerManager.cs" />
     <Compile Include="StatusOverTimeSet.cs">
       <SubType>Form</SubType>
     </Compile>
