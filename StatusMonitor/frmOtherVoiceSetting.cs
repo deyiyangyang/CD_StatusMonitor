@@ -36,6 +36,7 @@ namespace StatusMonitor
         private TksProfileClass _iniProfile;
         private MainForm MainForm;
         private string VoicePath = "";
+        public string helpOnVoice = "";
         public frmOtherVoiceSetting(TksProfileClass iniProfile, MainForm form)
         {
             InitializeComponent();
@@ -122,6 +123,7 @@ namespace StatusMonitor
             try
             {
                 SaveSetting();
+                this.DialogResult = System.Windows.Forms.DialogResult.OK;
             }
             catch (Exception ex)
             {
@@ -140,8 +142,8 @@ namespace StatusMonitor
 
                 _iniProfile.Save(MyTool.GetModuleIniPath());
 
-
-                this.Dispose();
+                this.helpOnVoice = this.txtHelpVoice.Text;
+                //this.Dispose();
             }
             catch (Exception ex)
             {

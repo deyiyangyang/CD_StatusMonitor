@@ -167,3 +167,6 @@ UM_POPQUE vAgentID='XXXXX',iSessionProfileID=XXXX vAgentIDは分配先のエージェント
 2016/06/07
 1，when no parent group info , doesn't show lables and combox
 2, add 即答数②、即答数③ in monitor tab
+
+2016/06/14
+1，ＨＥＬＰ　ＯＮの場合独自音声を流すように改修

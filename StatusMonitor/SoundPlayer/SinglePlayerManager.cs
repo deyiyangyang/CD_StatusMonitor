@@ -16,7 +16,9 @@ namespace StatusMonitor.SoundPlayer
         {
             if(Players != null && !Players.ContainsKey(name))
             {
-                Players.Add(name, new WMPLib.WindowsMediaPlayer());
+                var player = new WMPLib.WindowsMediaPlayer();
+                player.settings.setMode("loop", true);
+                Players.Add(name, player);
             }
         }
         public static void StopPlayer(string name)

@@ -1668,7 +1668,7 @@ namespace StatusMonitor
                 }
                 this.lblHelpON.Text = iHelpON.ToString();
                 //added by zhu 2016/06/13
-                if (iHelpON > 0)
+                if (iHelpON > 0 && !string.IsNullOrEmpty(SettingFields_HelpVoice))
                 {
                     string path = "";
                     path = System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);

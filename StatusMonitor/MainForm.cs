@@ -32,6 +32,7 @@ using StatusMonitor.Model;
 using System.Threading;
 using StatusMonitor.SettingFile;
 using StatusMonitor.Helper;
+using StatusMonitor.SoundPlayer;
 
 namespace StatusMonitor
 {
@@ -8306,8 +8307,13 @@ namespace StatusMonitor
         {
             try
             {
-                frmOtherVoiceSetting pss = new frmOtherVoiceSetting(IniProfile,this);
-                pss.ShowDialog();
+                frmOtherVoiceSetting pss = new frmOtherVoiceSetting(IniProfile, this);
+                if (pss.ShowDialog() == DialogResult.OK)
+                {
+                    this.SettingFields_HelpVoice = pss.helpOnVoice;
+                    if (!string.IsNullOrEmpty(SettingFields_HelpVoice))
+                        SinglePlayerManager.AddPlayer(ConstEntity.HelpOnPlayer);
+                }
             }
             catch (Exception ex)
             {

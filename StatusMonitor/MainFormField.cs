@@ -168,7 +168,8 @@ namespace StatusMonitor
             SettingFields_QuickAnswerSeconds2 = IniProfile.GetStringDefault(ConstEntity.QuickAnswerSeconds2, "0");
             SettingFields_QuickAnswerSeconds3 = IniProfile.GetStringDefault(ConstEntity.QuickAnswerSeconds3, "0");
             SettingFields_HelpVoice = IniProfile.GetStringDefault(ConstEntity.HelpVoice, "");
-            SinglePlayerManager.AddPlayer(ConstEntity.HelpOnPlayer);
+            if (!string.IsNullOrEmpty(SettingFields_HelpVoice))
+                SinglePlayerManager.AddPlayer(ConstEntity.HelpOnPlayer);
 
             //IniProfile.SelectSection("Alert");
             //SettingFields_AlertTotal = IniProfile.GetLongDefault("nTotal", 100);
@@ -363,7 +364,7 @@ namespace StatusMonitor
             foreach (var item in DicParentGroup)
             {
                 string[] values = item.Key.Split(',');
-                SkillQueCallSoundPlayerManager.ConfigSoundPlayers(ConstEntity.ParentGroup+ values[0]);
+                SkillQueCallSoundPlayerManager.ConfigSoundPlayers(ConstEntity.ParentGroup + values[0]);
             }
         }
         #endregion
