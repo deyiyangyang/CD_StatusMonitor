@@ -413,6 +413,7 @@ namespace StatusMonitor
                     //receive message
                     case "SM_MESSAGE":
                         {
+                            return;
                             //add,2014/03,S
                             if (ShowChatF == "1")
                             {
@@ -637,6 +638,7 @@ namespace StatusMonitor
                     //add,xzg,2010/02/23,E----------
                     case "AGENT":
                         {
+                            return;
                             // Make agentStatus
                             AgentStatus agentStatus = new AgentStatus();
                             agentStatus.Group = recvParams.GetLongDefault("iSkillID", 0);
@@ -1076,6 +1078,7 @@ namespace StatusMonitor
         // Display
         public void DisplayTotal()
         {
+            return;
             try
             {
                 // LineUseage
@@ -1299,6 +1302,7 @@ namespace StatusMonitor
 
         public void DisplayLine()
         {
+            return;
             try
             {
 
@@ -1407,6 +1411,7 @@ namespace StatusMonitor
 
         public void DisplayAgent()
         {
+            return;
             // Update agentStatusListView
             //add,xzg,2009/10/20,S------------
             try

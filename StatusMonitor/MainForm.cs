@@ -523,7 +523,9 @@ namespace StatusMonitor
 
                 //Asc.controllInitializeSize(this);
 
-
+                statusTabCtrl.TabPages.Remove(agentStatusPage);
+                statusTabCtrl.TabPages.Remove(lineStatusPage);
+                statusTabCtrl.TabPages.Remove(tabWaitCall);
             }
             catch (Exception ex)
             {
@@ -1184,6 +1186,7 @@ namespace StatusMonitor
                 ShowSettingFileWidth();
                 ShowSortColumn();
 
+      
             }
             catch (Exception ex)
             {
@@ -1370,85 +1373,85 @@ namespace StatusMonitor
             try
             {
                 //agent list view
-                if (agentStatusListView.ListViewItemSorter != null)
-                {
-                    if (agentStatusListView.ListViewItemSorter is StatusListViewItemComparer)
-                    {
-                        string agentListViewSorter = (agentStatusListView.ListViewItemSorter as StatusListViewItemComparer).Column.ToString() + ":";
-                        if ((agentStatusListView.ListViewItemSorter as StatusListViewItemComparer).Ascending)
-                        {
-                            agentListViewSorter += ConstEntity.Sort_Ascending;
-                        }
-                        else
-                        {
-                            agentListViewSorter += ConstEntity.Sort_Descending;
-                        }
-                        IniProfile.SelectSection("SVSet");
-                        IniProfile.SetString(ConstEntity.AGENT_LIST_VIEW_SORt, agentListViewSorter);
-                        IniProfile.Save(MyTool.GetModuleIniPath());
-                    }
-                }
+                //if (agentStatusListView.ListViewItemSorter != null)
+                //{
+                //    if (agentStatusListView.ListViewItemSorter is StatusListViewItemComparer)
+                //    {
+                //        string agentListViewSorter = (agentStatusListView.ListViewItemSorter as StatusListViewItemComparer).Column.ToString() + ":";
+                //        if ((agentStatusListView.ListViewItemSorter as StatusListViewItemComparer).Ascending)
+                //        {
+                //            agentListViewSorter += ConstEntity.Sort_Ascending;
+                //        }
+                //        else
+                //        {
+                //            agentListViewSorter += ConstEntity.Sort_Descending;
+                //        }
+                //        IniProfile.SelectSection("SVSet");
+                //        IniProfile.SetString(ConstEntity.AGENT_LIST_VIEW_SORt, agentListViewSorter);
+                //        IniProfile.Save(MyTool.GetModuleIniPath());
+                //    }
+                //}
 
-                // line list view
-                if (lineStatusListView.ListViewItemSorter != null)
-                {
-                    if (lineStatusListView.ListViewItemSorter is StatusListViewItemComparer)
-                    {
-                        string listViewSorter = (lineStatusListView.ListViewItemSorter as StatusListViewItemComparer).Column.ToString() + ":";
-                        if ((lineStatusListView.ListViewItemSorter as StatusListViewItemComparer).Ascending)
-                        {
-                            listViewSorter += ConstEntity.Sort_Ascending;
-                        }
-                        else
-                        {
-                            listViewSorter += ConstEntity.Sort_Descending;
-                        }
-                        IniProfile.SelectSection("SVSet");
-                        IniProfile.SetString(ConstEntity.CALL_LIST_VIEW_SORT, listViewSorter);
-                        IniProfile.Save(MyTool.GetModuleIniPath());
-                    }
-                }
+                //// line list view
+                //if (lineStatusListView.ListViewItemSorter != null)
+                //{
+                //    if (lineStatusListView.ListViewItemSorter is StatusListViewItemComparer)
+                //    {
+                //        string listViewSorter = (lineStatusListView.ListViewItemSorter as StatusListViewItemComparer).Column.ToString() + ":";
+                //        if ((lineStatusListView.ListViewItemSorter as StatusListViewItemComparer).Ascending)
+                //        {
+                //            listViewSorter += ConstEntity.Sort_Ascending;
+                //        }
+                //        else
+                //        {
+                //            listViewSorter += ConstEntity.Sort_Descending;
+                //        }
+                //        IniProfile.SelectSection("SVSet");
+                //        IniProfile.SetString(ConstEntity.CALL_LIST_VIEW_SORT, listViewSorter);
+                //        IniProfile.Save(MyTool.GetModuleIniPath());
+                //    }
+                //}
 
-                // quecall list view
-                if ((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter != null)
-                {
-                    if ((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter is StatusListViewItemComparer)
-                    {
-                        string listViewSorter = ((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter as StatusListViewItemComparer).Column.ToString() + ":";
-                        if (((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter as StatusListViewItemComparer).Ascending)
-                        {
-                            listViewSorter += ConstEntity.Sort_Ascending;
-                        }
-                        else
-                        {
-                            listViewSorter += ConstEntity.Sort_Descending;
-                        }
+                //// quecall list view
+                //if ((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter != null)
+                //{
+                //    if ((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter is StatusListViewItemComparer)
+                //    {
+                //        string listViewSorter = ((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter as StatusListViewItemComparer).Column.ToString() + ":";
+                //        if (((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter as StatusListViewItemComparer).Ascending)
+                //        {
+                //            listViewSorter += ConstEntity.Sort_Ascending;
+                //        }
+                //        else
+                //        {
+                //            listViewSorter += ConstEntity.Sort_Descending;
+                //        }
 
-                        IniProfile.SelectSection("SVSet");
-                        IniProfile.SetString(ConstEntity.QUEUE_LIST_VIEW_SORT, listViewSorter);
-                        IniProfile.Save(MyTool.GetModuleIniPath());
-                    }
-                }
+                //        IniProfile.SelectSection("SVSet");
+                //        IniProfile.SetString(ConstEntity.QUEUE_LIST_VIEW_SORT, listViewSorter);
+                //        IniProfile.Save(MyTool.GetModuleIniPath());
+                //    }
+                //}
 
-                //total list
-                if (totalListView.ListViewItemSorter != null)
-                {
-                    if (totalListView.ListViewItemSorter is TotalListViewItemComparer)
-                    {
-                        string listViewSorter = (totalListView.ListViewItemSorter as TotalListViewItemComparer).Column.ToString() + ":";
-                        if ((totalListView.ListViewItemSorter as TotalListViewItemComparer).Ascending)
-                        {
-                            listViewSorter += ConstEntity.Sort_Ascending;
-                        }
-                        else
-                        {
-                            listViewSorter += ConstEntity.Sort_Descending;
-                        }
-                        IniProfile.SelectSection("SVSet");
-                        IniProfile.SetString(ConstEntity.TOTAL_LIST_VIEW_SORT, listViewSorter);
-                        IniProfile.Save(MyTool.GetModuleIniPath());
-                    }
-                }
+                ////total list
+                //if (totalListView.ListViewItemSorter != null)
+                //{
+                //    if (totalListView.ListViewItemSorter is TotalListViewItemComparer)
+                //    {
+                //        string listViewSorter = (totalListView.ListViewItemSorter as TotalListViewItemComparer).Column.ToString() + ":";
+                //        if ((totalListView.ListViewItemSorter as TotalListViewItemComparer).Ascending)
+                //        {
+                //            listViewSorter += ConstEntity.Sort_Ascending;
+                //        }
+                //        else
+                //        {
+                //            listViewSorter += ConstEntity.Sort_Descending;
+                //        }
+                //        IniProfile.SelectSection("SVSet");
+                //        IniProfile.SetString(ConstEntity.TOTAL_LIST_VIEW_SORT, listViewSorter);
+                //        IniProfile.Save(MyTool.GetModuleIniPath());
+                //    }
+                //}
 
                 if (this.dvMonitor.SortedColumn != null)
                 {
@@ -2175,6 +2178,7 @@ namespace StatusMonitor
         {
             try
             {
+                return;
                 DoContinueAgentStatus();
                 DoContinueLineStatus();
                 //added by zhu 2014/04/21
@@ -4372,22 +4376,11 @@ namespace StatusMonitor
                         csDataRow1[0] = dtTemp.Rows[i][1];
                         csDataRow1[1] = "0";
                         csDataRow1[2] = "0";
-                        csDataRow1[3] = "0";//change 10->11
+                        csDataRow1[3] = "0.0%";
                         csDataRow1[4] = "0";
                         csDataRow1[5] = "0";
-                        csDataRow1[6] = "0";
-                        csDataRow1[7] = "0.0%";
-                        csDataRow1[8] = "0";
-                        csDataRow1[9] = "0.0%";
-                        csDataRow1[10] = "0";
-                        csDataRow1[11] = "0.0%";
-                        csDataRow1[12] = "0";
-                        csDataRow1[13] = "0.0%";
-                        csDataRow1[14] = "0";
-                        csDataRow1[15] = "-";//added by zhu 2014/05/13                      
-                        csDataRow1[16] = "0";//11->12
-                        csDataRow1[17] = "0.0%";//12->13
-                        csDataRow1[18] = dtTemp.Rows[i][0];//13->14
+                        csDataRow1[6] = "0.0%";
+                        csDataRow1[7] = dtTemp.Rows[i][0];//13->14
                     }
 
                     else
@@ -4400,22 +4393,11 @@ namespace StatusMonitor
                         csDataRow1[0] = dtTemp.Rows[i][1];
                         csDataRow1[1] = "0";
                         csDataRow1[2] = "0";
-                        csDataRow1[3] = "0";//change 10->11
+                        csDataRow1[3] = "0.0%";
                         csDataRow1[4] = "0";
                         csDataRow1[5] = "0";
-                        csDataRow1[6] = "0";
-                        csDataRow1[7] = "0.0%";
-                        csDataRow1[8] = "0";
-                        csDataRow1[9] = "0.0%";
-                        csDataRow1[10] = "0";
-                        csDataRow1[11] = "0.0%";
-                        csDataRow1[12] = "0";
-                        csDataRow1[13] = "0.0%";
-                        csDataRow1[14] = "0";
-                        csDataRow1[15] = "00:00:00";//added by zhu 2014/05/13              
-                        csDataRow1[16] = "0";//11->12
-                        csDataRow1[17] = "0.0%";//12->13
-                        csDataRow1[18] = dtTemp.Rows[i][0];//13->14
+                        csDataRow1[6] = "0.0%";
+                        csDataRow1[7] = dtTemp.Rows[i][0];//13->14
 
                         //added by zhu 2014/06/18
                         if (!_DefaultShowSkillGroupIDs.Contains(dtTemp.Rows[i][0].ToString()))
@@ -4428,106 +4410,12 @@ namespace StatusMonitor
                     dsMontor.Tables["dtMonitor"].Rows.Add(csDataRow1);
 
                 }
-
-                //System.Data.DataRelation dr = new DataRelation("relation", dsMontor.Tables["dtMonitor"].Columns["groupId"]
-                //                                  , dsMontor.Tables["dtGroupPersonal"].Columns["groupId"]);
-                //dsMontor.Relations.Add(dr);
             }
             catch (Exception ex)
             {
                 writeLog("setGroup SysteError:" + ex.Message + ex.StackTrace);
             }
         }
-
-        ////test
-        //private  void dvMonitor_ColumnHeaderMouseClick(object sender, System.Windows.Forms.DataGridViewCellMouseEventArgs e)
-        //{
-        //    //throw new System.NotImplementedException();
-        //    try
-        //    {
-        //        if (e.ColumnIndex != 0) return;
-        //        if (MontorSortFlag == false)
-        //        {
-        //            dvMonitor.Sort(new RowComparer(SortOrder.Descending));
-
-        //            MontorSortFlag = true;
-        //        }
-        //        else
-        //        {
-        //            dvMonitor.Sort(new RowComparer(SortOrder.Ascending));
-        //            MontorSortFlag = false ;
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        writeLog("dvMonitor_SortCompare:" + ex.Message + ex.StackTrace);
-        //    }
-        //}
-
-        //private class RowComparer : System.Collections.IComparer
-        //{
-        //    private static int sortOrderModifier = 1;
-
-        //    public RowComparer(SortOrder sortOrder)
-        //    {
-        //        if (sortOrder == SortOrder.Descending)
-        //        {
-        //            sortOrderModifier = -1;
-        //        }
-        //        else if (sortOrder == SortOrder.Ascending)
-        //        {
-        //            sortOrderModifier = 1;
-        //        }
-        //    }
-
-        //    public int Compare(object x, object y)
-        //    {
-        //        DataGridViewRow DataGridViewRow1 = (DataGridViewRow)x;
-        //        DataGridViewRow DataGridViewRow2 = (DataGridViewRow)y;
-
-        //        // Try to sort based on the Last Name column.
-        //        int CompareResult = System.String.Compare(
-        //            DataGridViewRow1.Cells[0].Value.ToString(),
-        //            DataGridViewRow2.Cells[0].Value.ToString());
-
-        //        // If the Last Names are equal, sort based on the First Name.
-        //        //if (CompareResult == 0)
-        //        //{
-        //        //    CompareResult = System.String.Compare(
-        //        //        DataGridViewRow1.Cells[0].Value.ToString(),
-        //        //        DataGridViewRow2.Cells[0].Value.ToString());
-        //        //}
-        //        return CompareResult * sortOrderModifier;
-        //    }
-        //}
-
-        ////test
-        //private void dvMonitor_SortCompare(object sender, System.Windows.Forms.DataGridViewSortCompareEventArgs e)
-        //{
-        //    //throw new System.NotImplementedException();
-        //    try
-        //    {
-        //        if (e.RowIndex1 == dvMonitor.RowCount - 1) return;
-        //        e.SortResult = System.String.Compare(
-        //           e.CellValue1.ToString(), e.CellValue2.ToString());
-
-        //        // If the cells are equal, sort based on the ID column.
-        //        if (e.SortResult == 0 && e.Column.Name != "groupName")
-        //        {
-        //               e.SortResult = System.String.Compare(
-        //                dvMonitor.Rows[e.RowIndex1].Cells["groupName"].Value.ToString(),
-        //                dvMonitor.Rows[e.RowIndex2].Cells["groupName"].Value.ToString());
-        //        }
-        //        e.Handled = true;
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        writeLog("dvMonitor_SortCompare:" + ex.Message + ex.StackTrace);
-        //    }
-        //}
-
 
         private void listMonitorInit()
         {
@@ -4554,295 +4442,84 @@ namespace StatusMonitor
                 dvMonitor.RowHeadersVisible = false;
 
 
-
-                ////deleted by zhu 2014/05/12
-                //MonitorItemShowString = iniProfile.GetStringDefault(ConstEntity.ITEMSHOWKEY, "");
-                //if (string.IsNullOrEmpty(MonitorItemShowString)) MonitorItemShowString = "1,1,1,1,1,1,1,1,1,1,1,1,1,1";
-                //string[] visibleArr = MonitorItemShowString.Split(',');
-                //end deleted
-
                 DataGridViewColumn column;
 
 
                 column = new DataGridViewTextBoxColumn();
-                //modified by zhu 2014/05/12
-                //column.HeaderText = MonitorCol1;// "スキルグループ";
                 column.HeaderText = _MonitorItemManager.MonitorItems[0].DisplayName;
-                //end modified
                 column.Name = "groupName";
                 column.SortMode = DataGridViewColumnSortMode.Automatic;
-                //column.SortMode = DataGridViewColumnSortMode.Programmatic;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 column.Width = 100;
                 column.DataPropertyName = "groupName";
-                //added by Zhu 2014/04/01
                 column.Visible = _MonitorItemManager.MonitorItems[0].Visible;
-                //end added
-                dvMonitor.Columns.Add(column);
-
-
-
-                //ログオン人数
-                column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[1].DisplayName; //"ログオン人数";
-                column.Name = "allLogon";
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
-                column.Width = 50;
-                column.DataPropertyName = "allLogon";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[1].Visible;
-                //end added
                 dvMonitor.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[2].DisplayName;// "着座OP数";
-                column.Name = "opCnt";
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
-                column.Width = 50;
-                column.DataPropertyName = "opCnt";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[2].Visible;
-                //end added
-                dvMonitor.Columns.Add(column);
-
-
-                column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[3].DisplayName;// "受付可数";
-                column.Name = "waitCnt";
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
-                column.Width = 50;
-                column.DataPropertyName = "waitCnt";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[3].Visible;
-                //end added
-                dvMonitor.Columns.Add(column);
-
-
-                column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[4].DisplayName;// "離席数";
-                column.Name = "seatLeaveCnt";
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
-                column.Width = 100;
-                column.DataPropertyName = "seatLeaveCnt";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[4].Visible;
-                //end added
-                dvMonitor.Columns.Add(column);
-
-                column = new DataGridViewTextBoxColumn();
-                //column.HeaderText = "ACD着信数";
-                column.HeaderText = _MonitorItemManager.MonitorItems[5].DisplayName; //"OP呼出数";　　//通話数->着信数->OP呼出数
+                column.HeaderText = _MonitorItemManager.MonitorItems[1].DisplayName; //"OP呼出数";　　//通話数->着信数->OP呼出数
                 column.Name = "acdCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
                 column.Width = 50;
                 column.DataPropertyName = "acdCnt";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[5].Visible;
-                //end added
+                column.Visible = _MonitorItemManager.MonitorItems[1].Visible;
                 dvMonitor.Columns.Add(column);
 
-
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[6].DisplayName;// "OP応答数";//応答数
+                column.HeaderText = _MonitorItemManager.MonitorItems[2].DisplayName;// "OP応答数";//応答数
                 column.Name = "answerCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
                 column.Width = 60;
                 column.DataPropertyName = "answerCnt";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[6].Visible;
-                //end added
+                column.Visible = _MonitorItemManager.MonitorItems[2].Visible;
                 dvMonitor.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[7].DisplayName;// "応答率";
+                column.HeaderText = _MonitorItemManager.MonitorItems[3].DisplayName;// "応答率";
                 column.Name = "answerPer";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
                 column.Width = 60;
                 column.DataPropertyName = "answerPer";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[7].Visible;
-                //end added
+                column.Visible = _MonitorItemManager.MonitorItems[3].Visible;
                 dvMonitor.Columns.Add(column);
-
-                //add,S
+              
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[8].DisplayName;// "即答数";
-                column.Name = "answerNowCnt";
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
-                column.Width = 60;
-                column.DataPropertyName = "answerNowCnt";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[8].Visible;
-                //end added
-                dvMonitor.Columns.Add(column);
-
-                column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[9].DisplayName;// "即答率";
-                column.Name = "answerNowPer";
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-                //特定ユーザだけ、設定
-                if (ShowBackColorForCol9 == "1")
-                    column.DefaultCellStyle.BackColor = Color.LightBlue;
-
-                column.Width = 60;
-
-                column.DataPropertyName = "answerNowPer";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[9].Visible;
-                //end added
-                dvMonitor.Columns.Add(column);
-                //add,E
-
-
-                //added by zhu 2016/05/31 add 即答数②
-                column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[10].DisplayName;// "即答数②";
-                column.Name = "answerNowCnt2";
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                column.Width = 60;
-                column.DataPropertyName = "answerNowCnt2";
-                column.Visible = _MonitorItemManager.MonitorItems[10].Visible;
-                dvMonitor.Columns.Add(column);
-
-                column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[11].DisplayName;// "即答率②";
-                column.Name = "answerNowPer2";
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-                //特定ユーザだけ、設定
-                if (ShowBackColorForCol9 == "1")
-                    column.DefaultCellStyle.BackColor = Color.LightBlue;
-
-                column.Width = 60;
-
-                column.DataPropertyName = "answerNowPer2";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[11].Visible;
-                //end added
-                dvMonitor.Columns.Add(column);
-
-                //add 即答数③ 2016/05/31
-                column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[12].DisplayName;// "即答数③";
-                column.Name = "answerNowCnt3";
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
-                column.Width = 60;
-                column.DataPropertyName = "answerNowCnt3";
-                column.Visible = _MonitorItemManager.MonitorItems[12].Visible;
-                dvMonitor.Columns.Add(column);
-
-                column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[13].DisplayName;// "即答率③";
-                column.Name = "answerNowPer3";
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-                //特定ユーザだけ、設定
-                if (ShowBackColorForCol9 == "1")
-                    column.DefaultCellStyle.BackColor = Color.LightBlue;
-
-                column.Width = 60;
-
-                column.DataPropertyName = "answerNowPer3";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[13].Visible;
-                //end added
-                dvMonitor.Columns.Add(column);
-
-                //end added
-
-                column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[14].DisplayName;// "待呼数";
+                column.HeaderText = _MonitorItemManager.MonitorItems[4].DisplayName;// "待呼数";
                 column.Name = "queCallCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
                 column.Width = 60;
                 column.DataPropertyName = "queCallCnt";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[14].Visible;
-                //end added
-                dvMonitor.Columns.Add(column);
-
-                //added by zhu 2014/05/12
-                column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[15].DisplayName;//経過時間
-                column.Name = "queCallContinueTime";
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
-                column.Width = 80;
-                column.Visible = _MonitorItemManager.MonitorItems[15].Visible;
-                column.DataPropertyName = "queCallContinueTime";
-                dvMonitor.Columns.Add(column);
-                //end added
-
+                column.Visible = _MonitorItemManager.MonitorItems[4].Visible;
+                dvMonitor.Columns.Add(column);              
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[16].DisplayName;// "放棄数";
+                column.HeaderText = _MonitorItemManager.MonitorItems[5].DisplayName;// "放棄数";
                 column.Name = "failCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
                 column.Width = 60;
                 column.DataPropertyName = "failCnt";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[16].Visible;
-                //end added
+                column.Visible = _MonitorItemManager.MonitorItems[5].Visible;
                 dvMonitor.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
-                column.HeaderText = _MonitorItemManager.MonitorItems[17].DisplayName;// "放棄率";
+                column.HeaderText = _MonitorItemManager.MonitorItems[6].DisplayName;// "放棄率";
                 column.Name = "failPer";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
                 column.Width = 60;
                 column.DataPropertyName = "failPer";
-                //added by Zhu 2014/04/01
-                column.Visible = _MonitorItemManager.MonitorItems[17].Visible;
-                //end added
+                column.Visible = _MonitorItemManager.MonitorItems[6].Visible;
                 dvMonitor.Columns.Add(column);
-
-
-                //column = new DataGridViewTextBoxColumn();
-                //column.HeaderText = "離席数";
-                //column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                //column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
-                //column.Width = 100;
-                //column.DataPropertyName = "seatLeaveCnt";
-                //dvMonitor.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
                 column.HeaderText = "";
                 column.Name = "groupId";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
                 column.Width = 0;
                 column.DataPropertyName = "groupId";
                 column.Visible = false;
@@ -4853,7 +4530,6 @@ namespace StatusMonitor
                 column.Name = "iSessionProfileID";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
                 column.Width = 0;
                 column.DataPropertyName = "iSessionProfileID";
                 column.Visible = false;
@@ -4864,7 +4540,6 @@ namespace StatusMonitor
                 column.Name = "groupKId";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                //column.DefaultCellStyle.BackColor = Color.LightGray;
                 column.Width = 0;
                 column.DataPropertyName = "groupKId";
                 column.Visible = false;
@@ -4876,107 +4551,20 @@ namespace StatusMonitor
                 dsMontor.Tables.Add(dtMontor);
 
 
-
-                //dtMontor.Columns.Add("id");
-                //dtMontor.Columns[0].AutoIncrement = true;
-                //dtMontor.Columns[0].AutoIncrementSeed = 1;
-                //dtMontor.Columns[0].AutoIncrementStep = 1; 
-
                 dtMontor.Columns.Add("groupName");
-                //dtMontor.Columns.Add("allLogon").Expression = "sum(child(relation).status)";
-                dtMontor.Columns.Add("allLogon", typeof(int));
-                dtMontor.Columns.Add("opCnt", typeof(int));
-                dtMontor.Columns.Add("waitCnt", typeof(int));
-                dtMontor.Columns.Add("seatLeaveCnt", typeof(int));
                 dtMontor.Columns.Add("acdCnt", typeof(int));
                 dtMontor.Columns.Add("answerCnt", typeof(int));
                 dtMontor.Columns.Add("answerPer");
-                dtMontor.Columns.Add("answerNowCnt", typeof(int));
-                dtMontor.Columns.Add("answerNowPer");
-                //addde by zhu 2016/06/02
-                dtMontor.Columns.Add("answerNowCnt2", typeof(int));
-                dtMontor.Columns.Add("answerNowPer2");
-                dtMontor.Columns.Add("answerNowCnt3", typeof(int));
-                dtMontor.Columns.Add("answerNowPer3");
-                //end added
                 dtMontor.Columns.Add("queCallCnt", typeof(int));
-                //added by zhu 2014/05/12
-                dtMontor.Columns.Add("queCallContinueTime", typeof(string));
-                //end added
-
                 dtMontor.Columns.Add("failCnt", typeof(int));
                 dtMontor.Columns.Add("failPer");
-                //dtMontor.Columns.Add("seatLeaveCnt", typeof(int));
                 dtMontor.Columns.Add("groupId", typeof(int));
-
-
                 dtMontor.Columns.Add("iSessionProfileID", typeof(int));
                 dtMontor.Columns.Add("groupKId", typeof(int)); //局番ID
 
-
-                //dtMontor.Columns["allLogon"].Expression = "sum(child(relation).status)";
-                //dvMonitor.DataSource = dtMontor;
-
-                //modified by zhu 2014/06/25
                 dvMonitor.DataSource = dsMontor.Tables["dtMonitor"];
-                //dvMonitor.DataSource = dvBindingSource;
-                //end  modified
-
-                //System.Data.DataRelation dr = new DataRelation("relation", dtMontor.Columns["groupId"], dtGroupPersonal.Columns["groupId"]);
-
-                //test,s
-
-                //csDataRow1["id"] = 1;
-                //csDataRow1[0] = "スキルグループ1";
-                //csDataRow1[1] = "3";
-                //csDataRow1[2] = "3";
-                //csDataRow1[3] = "2";
-                //csDataRow1[4] = "2";
-                //csDataRow1[5] = "100.0%";
-                //csDataRow1[6] = "0";
-                //csDataRow1[7] = "2";
-                //csDataRow1[8] = "2";
-                //csDataRow1[9] = "0";
-                //csDataRow1[10] = "0.0%";
-                //csDataRow1[11] = "1";
-
-                //dtMontor.Rows.Add(csDataRow1);
-
-
-                //csDataRow1 = dtMontor.NewRow();
-                //csDataRow1[0] = "スキルグループ2";
-                //csDataRow1[1] = "3";
-                //csDataRow1[2] = "3";
-                //csDataRow1[3] = "2";
-                //csDataRow1[4] = "2";
-                //csDataRow1[5] = "100.0%";
-                //csDataRow1[6] = "0";
-                //csDataRow1[7] = "2";
-                //csDataRow1[8] = "2";
-                //csDataRow1[9] = "0";
-                //csDataRow1[10] = "0.0%";
-                //csDataRow1[11] = "1";
-                //dtMontor.Rows.Add(csDataRow1);
-
-                //csDataRow1 = dtMontor.NewRow();
-                //csDataRow1[0] = "スキルグループ3";
-                //csDataRow1[1] = "3";
-                //csDataRow1[2] = "3";
-                //csDataRow1[3] = "2";
-                //csDataRow1[4] = "2";
-                //csDataRow1[5] = "100.0%";
-                //csDataRow1[6] = "0";
-                //csDataRow1[7] = "2";
-                //csDataRow1[8] = "2";
-                //csDataRow1[9] = "0";
-                //csDataRow1[10] = "0.0%";
-                //csDataRow1[11] = "1";
-                //dtMontor.Rows.Add(csDataRow1);
-                //test,E
-
-                //added by Zhu 2014/04/09
+                
                 setDoubleBuffered(this.dvMonitor, true);
-                //end added
 
                 DicOriginMonitorGridColumnWidth.Clear();
                 foreach (DataGridViewColumn col in dvMonitor.Columns)
@@ -4990,24 +4578,6 @@ namespace StatusMonitor
                 writeLog("listMonitorInit SysteError:" + ex.Message + ex.StackTrace);
             }
         }
-        //public void setQuickAnswerMinutes(string inTime)
-        //{
-        //    try
-        //    {
-        //        QuickAnswerMinutes = inTime;
-
-
-        //        IniProfile.SelectSection("SVSet");
-        //        IniProfile.SetString("QuickAnswerMinutes", inTime);
-
-        //        IniProfile.Save(MyTool.GetModuleIniPath());
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        writeLog("setQuickAnswerMinutes System Error:" + ex.Message);
-        //    }
-
-        //}
 
 
         private void resetMonitorCall()
@@ -5037,233 +4607,7 @@ namespace StatusMonitor
                 System.Threading.Thread callThread = new System.Threading.Thread(delegate () { setMonitorCall1(); });
                 callThread.IsBackground = true;
                 callThread.Start();
-
-
-                return;
-
-                //no use 
-                /*
-                string curGroupID = "";
-                string curgroupKId = "";
-                int acdCount = 0;
-
-                int answerCnt = 0;
-                int failCnt = 0;
-                int answerNowCnt = 0;
-                int answerNowPer = 0;
-
-                int acdCountPre = 0;
-                int answerCntPre = 0;
-                int failCntPre = 0;
-                int answerNowCntPre = 0;
-                int answerNowPerPre = 0;
-
-
-
-                ArrayList rs = new ArrayList();
-                ArrayList rsPre = new ArrayList();
-                //dtAcdcallがある時,acdCallLocalDBに登録
-
-                //addCallInfo(lineStatus);
-                //if (lineStatus.Status != 0) return; //通話完了後、計算
-                //if (displayGroup == -1)
-
-                //    rs = getCallInfo("".ToString(), "");
-                //else
-                //    rs = getCallInfo("".ToString(), displayGroup.ToString());
-                for (int i = 0; i < DtMonitorRowsCount; i++)
-                {
-                    curGroupID = dsMontor.Tables["dtMonitor"].Rows[i]["groupId"].ToString();
-                    //curgroupKId = dsMontor.Tables["dtMonitor"].Rows[i]["curgroupKId"].ToString();
-
-                    //queueStatusList.Find();
-                    //LineStatus callFind = lineStatusList.Find(delegate(LineStatus obj)
-                    //{ return obj.Group == int.Parse(curGroupID); });
-                    //if (lineStatus.Group.ToString() == curGroupID)
-
-                    System.Threading.Thread.Sleep(50);
-                    if (curGroupID != "-1")
-                    {
-                        rs = new ArrayList();
-                        rsPre = new ArrayList();
-                        if (displayGroup == -1)
-                        {
-                            rs = getCallInfo(curGroupID, "");
-                            rsPre = getCallInfoPre(curGroupID, "");
-                        }
-                        else
-                        {
-                            rs = getCallInfo(curGroupID, displayGroup.ToString());
-                            rsPre = getCallInfoPre(curGroupID, displayGroup.ToString());
-                        }
-
-
-                        //if (lineStatus.Service == "ACDCALL" && lineStatus.Status == 2) //acdcall
-                        //{
-                        //    acdCountPre = int.Parse(dsMontor.Tables["dtMonitor"].Rows[i]["acdCnt"].ToString());
-                        //    acdCount = acdCountPre + 1;
-                        //    dsMontor.Tables["dtMonitor"].Rows[i]["acdCnt"] = acdCount;
-                        //}
-                        //else if (lineStatus.Status == 4) //3->4
-                        //{
-                        //    answerCnt = int.Parse(dsMontor.Tables["dtMonitor"].Rows[i]["answerCnt"].ToString());
-                        //    answerCnt = answerCnt + 1;
-                        //    dsMontor.Tables["dtMonitor"].Rows[i]["answerCnt"] = acdCount;
-                        //    if (acdCount > 0)
-                        //    {
-                        //        dsMontor.Tables["dtMonitor"].Rows[i]["answerPer"] = (answerCnt * 1.0 * 100 / acdCount).ToString() + "%";
-                        //    }
-                        //    else
-                        //    {
-                        //        dsMontor.Tables["dtMonitor"].Rows[i]["answerPer"] = "100%";
-                        //    }
-                        //}
-
-                        if (rsPre.Count > 0)
-                        {
-                            ArrayList fsPre = (ArrayList)rsPre[0];
-                            if (string.IsNullOrEmpty(fsPre[1].ToString()))
-
-                                acdCountPre = 0;
-                            else
-                                acdCountPre = int.Parse(fsPre[1].ToString());
-                            if (string.IsNullOrEmpty(fsPre[2].ToString()))
-                                answerCntPre = 0;
-                            else
-                                answerCntPre = int.Parse(fsPre[2].ToString());
-                            if (string.IsNullOrEmpty(fsPre[3].ToString()))
-                                answerNowCntPre = 0;
-                            else
-                                answerNowCntPre = int.Parse(fsPre[3].ToString());
-
-                        }
-                        else
-                        {
-                            //acdCount = 0;
-                            //answerCnt = 0;
-                            //answerNowCnt = 0;
-                            //answerNowPer = 0;
-                            acdCountPre = 0;
-                            answerCntPre = 0;
-                            answerNowCntPre = 0;
-                            answerNowPerPre = 0;
-                        }
-
-                        if (rs.Count > 0)
-                        {
-                            ArrayList fs = (ArrayList)rs[0];
-                            if (string.IsNullOrEmpty(fs[1].ToString()))
-                                acdCount = 0;
-                            else
-                                acdCount = int.Parse(fs[1].ToString());
-                            if (string.IsNullOrEmpty(fs[2].ToString()))
-                                answerCnt = 0;
-                            else
-                                answerCnt = int.Parse(fs[2].ToString());
-                            if (string.IsNullOrEmpty(fs[3].ToString()))
-                                answerNowCnt = 0;
-                            else
-                                answerNowCnt = int.Parse(fs[3].ToString());
-
-                        }
-                        else
-                        {
-                            acdCount = 0;
-                            answerCnt = 0;
-                            answerNowCnt = 0;
-                            answerNowPer = 0;
-                        }
-
-                        acdCount = acdCountPre + acdCount;
-                        answerCnt = answerCntPre + answerCnt;
-                        answerNowCnt = answerNowCntPre + answerNowCnt;
-
-                        dsMontor.Tables["dtMonitor"].Rows[i]["acdCnt"] = acdCount;
-                        dsMontor.Tables["dtMonitor"].Rows[i]["answerCnt"] = answerCnt;
-                        dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt"] = answerNowCnt;
-
-                        if (answerCnt > 0)
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer"] = Math.Round((answerNowCnt * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
-                        }
-                        else
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer"] = "0.0%";
-                        }
-                        if (acdCount > 0)
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerPer"] = Math.Round((answerCnt * 1.0 * 100 / acdCount), 1).ToString("F1") + "%";
-
-                            failCnt = acdCount - answerCnt;
-                            dsMontor.Tables["dtMonitor"].Rows[i]["failCnt"] = failCnt;
-                            dsMontor.Tables["dtMonitor"].Rows[i]["failPer"] = Math.Round((failCnt * 1.0 * 100 / acdCount), 1).ToString("F1") + "%";
-                        }
-                        else
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerPer"] = "0.0%";
-                            dsMontor.Tables["dtMonitor"].Rows[i]["failCnt"] = 0;
-                            dsMontor.Tables["dtMonitor"].Rows[i]["failPer"] = "0.0%";
-                        }
-                        //break;
-                    }
-
-                }
-                //総合計
-                if (DtMonitorRowsCount > 0)
-                {
-                    //deleted by Zhu 2014/04/01
-                    //acdCount = 0;
-                    //answerCnt = 0;
-                    //answerNowCnt = 0;
-                    //failCnt = 0;
-
-                    //DataRow[] foundRows = dsMontor.Tables["dtMonitor"].Select("groupId<>'-1'");
-                    //dsMontor.Tables["dtMonitor"].Rows[dsMontor.Tables["dtMonitor"].Rows.Count - 1]["queCallCnt"] = 0;
-                    //for (int j = 0; j < foundRows.Length; j++)
-                    //{
-
-                    //    acdCount = acdCount + int.Parse(foundRows[j]["acdCnt"].ToString());
-                    //    answerCnt = answerCnt + int.Parse(foundRows[j]["answerCnt"].ToString());
-                    //    answerNowCnt = answerNowCnt + int.Parse(foundRows[j]["answerNowCnt"].ToString());
-                    //    //failCnt = failCnt + 0;
-                    //}
-                    //failCnt = acdCount - answerCnt;
-                    //if (failCnt < 1) failCnt = 0;
-                    //dsMontor.Tables["dtMonitor"].Rows[dsMontor.Tables["dtMonitor"].Rows.Count - 1]["acdCnt"] = acdCount;
-                    //dsMontor.Tables["dtMonitor"].Rows[dsMontor.Tables["dtMonitor"].Rows.Count - 1]["answerCnt"] = answerCnt;
-                    //dsMontor.Tables["dtMonitor"].Rows[dsMontor.Tables["dtMonitor"].Rows.Count - 1]["answerNowCnt"] = answerNowCnt;
-
-                    //if (answerCnt > 0)
-                    //{
-                    //    dsMontor.Tables["dtMonitor"].Rows[dsMontor.Tables["dtMonitor"].Rows.Count - 1]["answerNowPer"] = Math.Round((answerNowCnt * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
-                    //}
-                    //else
-                    //{
-                    //    dsMontor.Tables["dtMonitor"].Rows[dsMontor.Tables["dtMonitor"].Rows.Count - 1]["answerNowPer"] = "0.0%";
-                    //}
-                    //if (acdCount > 0)
-                    //{
-                    //    dsMontor.Tables["dtMonitor"].Rows[dsMontor.Tables["dtMonitor"].Rows.Count - 1]["answerPer"] = Math.Round((answerCnt * 1.0 * 100 / acdCount), 1).ToString("F1") + "%";
-
-                    //    failCnt = acdCount - answerCnt;
-                    //    dsMontor.Tables["dtMonitor"].Rows[dsMontor.Tables["dtMonitor"].Rows.Count - 1]["failCnt"] = failCnt;
-                    //    dsMontor.Tables["dtMonitor"].Rows[dsMontor.Tables["dtMonitor"].Rows.Count - 1]["failPer"] = Math.Round((failCnt * 1.0 * 100 / acdCount), 1).ToString("F1") + "%";
-                    //}
-                    //else
-                    //{
-                    //    dsMontor.Tables["dtMonitor"].Rows[dsMontor.Tables["dtMonitor"].Rows.Count - 1]["answerPer"] = "0.0%";
-                    //    dsMontor.Tables["dtMonitor"].Rows[dsMontor.Tables["dtMonitor"].Rows.Count - 1]["failCnt"] = 0;
-                    //    dsMontor.Tables["dtMonitor"].Rows[dsMontor.Tables["dtMonitor"].Rows.Count - 1]["failPer"] = "0.0%";
-                    //}
-
-                    //end Deleted
-                    //added by Zhu 2014/04/01
-                    SetDvTotalRow("CALLLEG", false);
-                    //end added
-                }
-
-                //writeLog("setMonitorCall");
-                 */
+                return;               
             }
             catch (Exception ex)
             {
@@ -5432,39 +4776,39 @@ namespace StatusMonitor
 
                         dsMontor.Tables["dtMonitor"].Rows[i]["acdCnt"] = acdCount;
                         dsMontor.Tables["dtMonitor"].Rows[i]["answerCnt"] = answerCnt;
-                        dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt"] = answerNowCnt;
-                        //added by zhu 2016/06/02
-                        dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt2"] = answerNowCnt2;
-                        dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt3"] = answerNowCnt3;
+                        //dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt"] = answerNowCnt;
+                        ////added by zhu 2016/06/02
+                        //dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt2"] = answerNowCnt2;
+                        //dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt3"] = answerNowCnt3;
                         //end added
 
-                        if (answerCnt > 0)
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer"] = Math.Round((answerNowCnt * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
-                        }
-                        else
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer"] = "0.0%";
-                        }
+                        //if (answerCnt > 0)
+                        //{
+                        //    dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer"] = Math.Round((answerNowCnt * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
+                        //}
+                        //else
+                        //{
+                        //    dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer"] = "0.0%";
+                        //}
 
-                        //added by zhu 2016/06/02
-                        if (answerCnt > 0)
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer2"] = Math.Round((answerNowCnt2 * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
-                        }
-                        else
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer2"] = "0.0%";
-                        }
+                        ////added by zhu 2016/06/02
+                        //if (answerCnt > 0)
+                        //{
+                        //    dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer2"] = Math.Round((answerNowCnt2 * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
+                        //}
+                        //else
+                        //{
+                        //    dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer2"] = "0.0%";
+                        //}
 
-                        if (answerCnt > 0)
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer3"] = Math.Round((answerNowCnt3 * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
-                        }
-                        else
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer3"] = "0.0%";
-                        }
+                        //if (answerCnt > 0)
+                        //{
+                        //    dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer3"] = Math.Round((answerNowCnt3 * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
+                        //}
+                        //else
+                        //{
+                        //    dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer3"] = "0.0%";
+                        //}
                         //end added
 
 
@@ -5489,18 +4833,9 @@ namespace StatusMonitor
                 //総合計
                 if (DtMonitorRowsCount > 0)
                 {
-                    //added by Zhu 2014/04/01
                     SetDvTotalRow("CALLLEG", true);
-                    //end added
                 }
-                //added by Zhu 2014/04/10 
-                //dsMontor.Tables["dtMonitor"].EndLoadData();
-                //end added
-                //writeLog("setMonitorCall");
-
-                //added by zhu 2014/06/27
-                //this.CommandThread.Resume();
-                //end added
+     
             }
             catch (Exception ex)
             {
@@ -5651,37 +4986,37 @@ namespace StatusMonitor
 
                         dsMontor.Tables["dtMonitor"].Rows[i]["acdCnt"] = acdCount;
                         dsMontor.Tables["dtMonitor"].Rows[i]["answerCnt"] = answerCnt;
-                        dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt"] = answerNowCnt;
-                        dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt2"] = answerNowCnt2;
-                        dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt3"] = answerNowCnt3;
+                        //dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt"] = answerNowCnt;
+                        //dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt2"] = answerNowCnt2;
+                        //dsMontor.Tables["dtMonitor"].Rows[i]["answerNowCnt3"] = answerNowCnt3;
 
-                        if (answerCnt > 0)
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer"] = Math.Round((answerNowCnt * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
-                        }
-                        else
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer"] = "0.0%";
-                        }
+                        //if (answerCnt > 0)
+                        //{
+                        //    dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer"] = Math.Round((answerNowCnt * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
+                        //}
+                        //else
+                        //{
+                        //    dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer"] = "0.0%";
+                        //}
 
-                        //added by zhu 2016/06/02
-                        if (answerCnt > 0)
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer2"] = Math.Round((answerNowCnt2 * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
-                        }
-                        else
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer2"] = "0.0%";
-                        }
+                        ////added by zhu 2016/06/02
+                        //if (answerCnt > 0)
+                        //{
+                        //    dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer2"] = Math.Round((answerNowCnt2 * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
+                        //}
+                        //else
+                        //{
+                        //    dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer2"] = "0.0%";
+                        //}
 
-                        if (answerCnt > 0)
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer3"] = Math.Round((answerNowCnt3 * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
-                        }
-                        else
-                        {
-                            dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer3"] = "0.0%";
-                        }
+                        //if (answerCnt > 0)
+                        //{
+                        //    dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer3"] = Math.Round((answerNowCnt3 * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
+                        //}
+                        //else
+                        //{
+                        //    dsMontor.Tables["dtMonitor"].Rows[i]["answerNowPer3"] = "0.0%";
+                        //}
                         //end added
                         if (acdCount > 0)
                         {
@@ -5709,10 +5044,6 @@ namespace StatusMonitor
                     //end added
                 }
 
-                //added by Zhu 2014/04/10 
-                // dsMontor.Tables["dtMonitor"].EndLoadData();
-                //end added
-                //writeLog("setMonitorCall");
             }
             catch (Exception ex)
             {
@@ -5720,42 +5051,6 @@ namespace StatusMonitor
             }
         }
 
-        //private ArrayList getCallInfo( string iSkillID)
-        //{
-        //    Database db = new Database();
-        //    ArrayList rs = new ArrayList();
-        //    try
-        //    {
-
-        //        if (!db.openDB(Application.StartupPath, "")) return rs;
-
-
-        //        string sql = "SELECT iSkillGroupID ,SUM(Switch(iStatus='0',1,iStatus<>'0', 0)) as acdCallCount ";
-        //        sql = sql + "  ,SUM(Switch(iStatus='3',1,iStatus<>'3', 0)) as completeCallCount";
-        //        sql = sql + " ,SUM(Switch(iStatus='3',Switch(dtDiff<=" + QuickAnswerMinutes + ",1,dtDiff>" + QuickAnswerMinutes + ", 0),iStatus<>'3',0)) as notOverCall";
-        //        sql = sql + " FROM (";
-        //        sql = sql + " SELECT DISTINCT iSkillGroupID,iStatus,iSessionProfileid, DateDiff('s',dtAcdCall,dtstatus) as dtDiff";
-        //        sql = sql + " FROM callInfo ";
-        //        sql = sql + " WHERE   iSkillGroupID=iSkillGroupID";
-        //        if (!string.IsNullOrEmpty(iSkillID))
-        //            sql = sql + " AND   iSkillID='" + iSkillID + "'";
-        //        sql = sql + " AND   iSessionProfileid  IN (SELECT iSessionProfileid FROM callInfo WHERE  iStatus='0')";
-        //        sql = sql + "  ) a GROUP BY iSkillGroupID";
-        //        if (false == db.readDB(sql, rs))
-        //        {
-        //            db.closeDB();
-        //            return rs;
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        writeLog("getCallInfo:" + ex.Message);
-        //    }
-
-        //    db.closeDB();
-        //    return rs;
-        //}
 
         private string getCallInfoMinID()
         {
@@ -6095,6 +5390,7 @@ namespace StatusMonitor
         }
         private void listMonitorShow()
         {
+            return;
             try
             {
                 if (SettingFields_MonitorTabShow == "0") return;
@@ -6143,23 +5439,23 @@ namespace StatusMonitor
                     //ログオン
                     DataRow[] foundRows = tblTemp.Select(" status>0");
 
-                    dsMontor.Tables["dtMonitor"].Rows[i]["allLogon"] = foundRows.Length;
+                    //dsMontor.Tables["dtMonitor"].Rows[i]["allLogon"] = foundRows.Length;
 
                     //離席
-                    DataRow[] foundRows1 = tblTemp.Select(" status=6");
-                    dsMontor.Tables["dtMonitor"].Rows[i]["seatLeaveCnt"] = foundRows1.Length;
+                    //DataRow[] foundRows1 = tblTemp.Select(" status=6");
+                    //dsMontor.Tables["dtMonitor"].Rows[i]["seatLeaveCnt"] = foundRows1.Length;
 
 
                     //着座OP数＝ログインOPE数―離席OPE数
                     //dsMontor.Tables["dtMonitor"].Columns["opCnt"].Expression = "allLogon";
-                    dsMontor.Tables["dtMonitor"].Rows[i]["opCnt"] = foundRows.Length - foundRows1.Length;
+                    //dsMontor.Tables["dtMonitor"].Rows[i]["opCnt"] = foundRows.Length - foundRows1.Length;
 
                     //受付可
-                    DataRow[] foundRows2 = tblTemp.Select(" status=1");
-                    dsMontor.Tables["dtMonitor"].Rows[i]["waitCnt"] = foundRows2.Length;
+                    //DataRow[] foundRows2 = tblTemp.Select(" status=1");
+                    //dsMontor.Tables["dtMonitor"].Rows[i]["waitCnt"] = foundRows2.Length;
 
                     //added by zhu 2014/03/25
-                    SetIdleSound(int.Parse(curGroupID), foundRows2.Length);
+                    //SetIdleSound(int.Parse(curGroupID), foundRows2.Length);
                     //end added
 
                     //}
@@ -6487,6 +5783,7 @@ namespace StatusMonitor
 
         void dvMonitor_CellDoubleClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
         {
+            return;
             //throw new System.NotImplementedException();
             try
             {
@@ -6804,17 +6101,6 @@ namespace StatusMonitor
             }
         }
 
-        //deleted by zhu 2014/05/12
-        //private void SetDvMonitorColumnShow()
-        //{
-        //    if (string.IsNullOrEmpty(MonitorItemShowString)) return;
-        //    string[] arr = MonitorItemShowString.Split(',');
-        //    for (int i = 1; i <= arr.Length; i++)
-        //    {
-        //        dvMonitor.Columns[i].Visible = arr[i] == "0" ? false : true;
-        //    }
-        //}
-        //end deleted
 
         //総合計
         private void SetDvTotalRow(string command, bool threadFlag)
@@ -6832,22 +6118,22 @@ namespace StatusMonitor
                 {
                     //lock (dsMontor.Tables["dtGroupPersonal"])
                     //{
-                    DataView viewTemp = new DataView();
-                    viewTemp.Table = dsMontor.Tables["dtGroupPersonal"];
-                    viewTemp.RowFilter = strWhere;
+                    //DataView viewTemp = new DataView();
+                    //viewTemp.Table = dsMontor.Tables["dtGroupPersonal"];
+                    //viewTemp.RowFilter = strWhere;
 
-                    DataTable tblTemp = viewTemp.ToTable(true, "agentID", "status");
+                    //DataTable tblTemp = viewTemp.ToTable(true, "agentID", "status");
 
 
-                    DataRow[] foundRows00 = tblTemp.Select("status>0");
-                    dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["allLogon"] = foundRows00.Length;
+                    //DataRow[] foundRows00 = tblTemp.Select("status>0");
+                    //dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["allLogon"] = foundRows00.Length;
 
-                    DataRow[] foundRows01 = tblTemp.Select("status=6");
-                    dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["seatLeaveCnt"] = foundRows01.Length;
+                    //DataRow[] foundRows01 = tblTemp.Select("status=6");
+                    //dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["seatLeaveCnt"] = foundRows01.Length;
 
-                    dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["opCnt"] = foundRows00.Length - foundRows01.Length;
-                    DataRow[] foundRows02 = tblTemp.Select("status=1");
-                    dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["waitCnt"] = foundRows02.Length;
+                    //dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["opCnt"] = foundRows00.Length - foundRows01.Length;
+                    //DataRow[] foundRows02 = tblTemp.Select("status=1");
+                    //dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["waitCnt"] = foundRows02.Length;
                     //}
                 }
                 else if (command == "CALLLEG")
@@ -6874,14 +6160,14 @@ namespace StatusMonitor
                         if (!string.IsNullOrEmpty(foundRows[j]["answerCnt"].ToString()))
                             answerCnt = answerCnt + int.Parse(foundRows[j]["answerCnt"].ToString());
 
-                        if (!string.IsNullOrEmpty(foundRows[j]["answerNowCnt"].ToString()))
-                            answerNowCnt = answerNowCnt + int.Parse(foundRows[j]["answerNowCnt"].ToString());
+                        //if (!string.IsNullOrEmpty(foundRows[j]["answerNowCnt"].ToString()))
+                        //    answerNowCnt = answerNowCnt + int.Parse(foundRows[j]["answerNowCnt"].ToString());
 
-                        if (!string.IsNullOrEmpty(foundRows[j]["answerNowCnt2"].ToString()))
-                            answerNowCnt2 = answerNowCnt2 + int.Parse(foundRows[j]["answerNowCnt2"].ToString());
+                        //if (!string.IsNullOrEmpty(foundRows[j]["answerNowCnt2"].ToString()))
+                        //    answerNowCnt2 = answerNowCnt2 + int.Parse(foundRows[j]["answerNowCnt2"].ToString());
 
-                        if (!string.IsNullOrEmpty(foundRows[j]["answerNowCnt3"].ToString()))
-                            answerNowCnt3 = answerNowCnt3 + int.Parse(foundRows[j]["answerNowCnt3"].ToString());
+                        //if (!string.IsNullOrEmpty(foundRows[j]["answerNowCnt3"].ToString()))
+                        //    answerNowCnt3 = answerNowCnt3 + int.Parse(foundRows[j]["answerNowCnt3"].ToString());
                         //failCnt = failCnt + 0;
                     }
 
@@ -6890,36 +6176,36 @@ namespace StatusMonitor
                     if (failCnt < 1) failCnt = 0;
                     dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["acdCnt"] = acdCount;
                     dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerCnt"] = answerCnt;
-                    dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowCnt"] = answerNowCnt;
-                    dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowCnt2"] = answerNowCnt2;
-                    dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowCnt3"] = answerNowCnt3;
+                    //dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowCnt"] = answerNowCnt;
+                    //dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowCnt2"] = answerNowCnt2;
+                    //dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowCnt3"] = answerNowCnt3;
 
-                    if (answerCnt > 0)
-                    {
-                        dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowPer"] = Math.Round((answerNowCnt * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
-                    }
-                    else
-                    {
-                        dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowPer"] = "0.0%";
-                    }
-                    //added by zhu 2016/06/02
-                    if (answerCnt > 0)
-                    {
-                        dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowPer2"] = Math.Round((answerNowCnt2 * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
-                    }
-                    else
-                    {
-                        dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowPer2"] = "0.0%";
-                    }
+                    //if (answerCnt > 0)
+                    //{
+                    //    dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowPer"] = Math.Round((answerNowCnt * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
+                    //}
+                    //else
+                    //{
+                    //    dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowPer"] = "0.0%";
+                    //}
+                    ////added by zhu 2016/06/02
+                    //if (answerCnt > 0)
+                    //{
+                    //    dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowPer2"] = Math.Round((answerNowCnt2 * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
+                    //}
+                    //else
+                    //{
+                    //    dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowPer2"] = "0.0%";
+                    //}
 
-                    if (answerCnt > 0)
-                    {
-                        dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowPer3"] = Math.Round((answerNowCnt3 * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
-                    }
-                    else
-                    {
-                        dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowPer3"] = "0.0%";
-                    }
+                    //if (answerCnt > 0)
+                    //{
+                    //    dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowPer3"] = Math.Round((answerNowCnt3 * 1.0 * 100 / answerCnt), 1).ToString("F1") + "%";
+                    //}
+                    //else
+                    //{
+                    //    dsMontor.Tables["dtMonitor"].Rows[DtMonitorRowsCount - 1]["answerNowPer3"] = "0.0%";
+                    //}
                     //added end
 
                     if (acdCount > 0)
@@ -7472,13 +6758,13 @@ namespace StatusMonitor
             {
                 //return;
                 float size = 9f;
-                AjustAgentListSize();
+                //AjustAgentListSize();
 
-                lineStatusListView.Font = new Font(this.lineStatusListView.Font.FontFamily, size * SettingFields_ListFontSize);
-                foreach (ColumnHeader col in this.lineStatusListView.Columns)
-                {
-                    col.Width = Convert.ToInt32(float.Parse(DicOriginLineListViewColumnWidth[col.Name].ToString()) * SettingFields_ListFontSize);
-                }
+                //lineStatusListView.Font = new Font(this.lineStatusListView.Font.FontFamily, size * SettingFields_ListFontSize);
+                //foreach (ColumnHeader col in this.lineStatusListView.Columns)
+                //{
+                //    col.Width = Convert.ToInt32(float.Parse(DicOriginLineListViewColumnWidth[col.Name].ToString()) * SettingFields_ListFontSize);
+                //}
 
                 //this.totalListView.Font = new Font(this.totalListView.Font.FontFamily, size * SettingFields_ListFontSize);
                 //foreach (ColumnHeader col in this.totalListView.Columns)
@@ -7493,7 +6779,7 @@ namespace StatusMonitor
                     col.Width = Convert.ToInt32(float.Parse(DicOriginMonitorGridColumnWidth[col.Name].ToString()) * SettingFields_ListFontSize);
                 }
 
-                (this.ListTabPagesForms[0] as QueueCallForm).AjustListFontSize();
+                //(this.ListTabPagesForms[0] as QueueCallForm).AjustListFontSize();
             }
             catch (Exception ex)
             {
@@ -7504,6 +6790,7 @@ namespace StatusMonitor
 
         private void AjustAgentListSize()
         {
+            return;
             float size = 9.0f;
             agentStatusListView.Font = new Font(this.agentStatusListView.Font.FontFamily, size * SettingFields_ListFontSize, this.agentStatusListView.Font.Style);
             int colIndex = 0;
@@ -7526,6 +6813,7 @@ namespace StatusMonitor
 
         private void AjustTotalListSize()
         {
+            return;
             float size = 9.0f;
             totalListView.Font = new Font(this.totalListView.Font.FontFamily, size * SettingFields_ListFontSize, this.totalListView.Font.Style);
             int colIndex = 0;
@@ -7548,39 +6836,39 @@ namespace StatusMonitor
 
         private void ShowSettingFileWidth()
         {
-            if (!string.IsNullOrEmpty(SettingFields_AgentListView_Width))
-            {
-                string[] widths = SettingFields_AgentListView_Width.Split(',');
-                for (int i = 0; i < widths.Length; i++)
-                {
-                    this.agentStatusListView.Columns[i].Width = int.Parse(widths[i]);
-                }
-            }
-            if (!string.IsNullOrEmpty(this.SettingFields_CallListView_Width))
-            {
-                string[] widths = SettingFields_CallListView_Width.Split(',');
-                for (int i = 0; i < widths.Length; i++)
-                {
-                    this.lineStatusListView.Columns[i].Width = int.Parse(widths[i]);
-                }
-            }
-            if (!string.IsNullOrEmpty(SettingFields_TotalListView_Width))
-            {
-                string[] widths = SettingFields_TotalListView_Width.Split(',');
-                for (int i = 0; i < widths.Length; i++)
-                {
-                    this.totalListView.Columns[i].Width = int.Parse(widths[i]);
-                }
-            }
+            //if (!string.IsNullOrEmpty(SettingFields_AgentListView_Width))
+            //{
+            //    string[] widths = SettingFields_AgentListView_Width.Split(',');
+            //    for (int i = 0; i < widths.Length; i++)
+            //    {
+            //        this.agentStatusListView.Columns[i].Width = int.Parse(widths[i]);
+            //    }
+            //}
+            //if (!string.IsNullOrEmpty(this.SettingFields_CallListView_Width))
+            //{
+            //    string[] widths = SettingFields_CallListView_Width.Split(',');
+            //    for (int i = 0; i < widths.Length; i++)
+            //    {
+            //        this.lineStatusListView.Columns[i].Width = int.Parse(widths[i]);
+            //    }
+            //}
+            //if (!string.IsNullOrEmpty(SettingFields_TotalListView_Width))
+            //{
+            //    string[] widths = SettingFields_TotalListView_Width.Split(',');
+            //    for (int i = 0; i < widths.Length; i++)
+            //    {
+            //        this.totalListView.Columns[i].Width = int.Parse(widths[i]);
+            //    }
+            //}
 
-            if (!string.IsNullOrEmpty(this.SettingFields_QueueListView_Width))
-            {
-                string[] widths = SettingFields_QueueListView_Width.Split(',');
-                for (int i = 0; i < widths.Length; i++)
-                {
-                    (this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.Columns[i].Width = int.Parse(widths[i]);
-                }
-            }
+            //if (!string.IsNullOrEmpty(this.SettingFields_QueueListView_Width))
+            //{
+            //    string[] widths = SettingFields_QueueListView_Width.Split(',');
+            //    for (int i = 0; i < widths.Length; i++)
+            //    {
+            //        (this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.Columns[i].Width = int.Parse(widths[i]);
+            //    }
+            //}
             if (!string.IsNullOrEmpty(this.SettingFields_MonitorGridView_Width))
             {
                 string[] widths = SettingFields_MonitorGridView_Width.Split(',');
@@ -7599,54 +6887,54 @@ namespace StatusMonitor
             try
             {
 
-                if (!string.IsNullOrEmpty(SettingFields_AgentListViewSort))
-                {
-                    int columnIndex = 0;
-                    bool ascending = false;
-                    string[] arrSortValue = SettingFields_AgentListViewSort.Split(':');
-                    columnIndex = int.Parse(arrSortValue[0]);
-                    if (arrSortValue[1] == ConstEntity.Sort_Ascending)
-                    {
-                        ascending = true;
-                    }
-                    agentStatusListView.ListViewItemSorter = new StatusListViewItemComparer(columnIndex, ascending);
-                }
-                if (!string.IsNullOrEmpty(SettingFields_CallListViewSort))
-                {
-                    int columnIndex = 0;
-                    bool ascending = false;
-                    string[] arrSortValue = SettingFields_CallListViewSort.Split(':');
-                    columnIndex = int.Parse(arrSortValue[0]);
-                    if (arrSortValue[1] == ConstEntity.Sort_Ascending)
-                    {
-                        ascending = true;
-                    }
-                    lineStatusListView.ListViewItemSorter = new StatusListViewItemComparer(columnIndex, ascending);
-                }
-                if (!string.IsNullOrEmpty(SettingFields_QueueListViewSort))
-                {
-                    int columnIndex = 0;
-                    bool ascending = false;
-                    string[] arrSortValue = SettingFields_QueueListViewSort.Split(':');
-                    columnIndex = int.Parse(arrSortValue[0]);
-                    if (arrSortValue[1] == ConstEntity.Sort_Ascending)
-                    {
-                        ascending = true;
-                    }
-                    (this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter = new StatusListViewItemComparer(columnIndex, ascending);
-                }
-                if (!string.IsNullOrEmpty(SettingFields_TotalListViewSort))
-                {
-                    int columnIndex = 0;
-                    bool ascending = false;
-                    string[] arrSortValue = SettingFields_TotalListViewSort.Split(':');
-                    columnIndex = int.Parse(arrSortValue[0]);
-                    if (arrSortValue[1] == ConstEntity.Sort_Ascending)
-                    {
-                        ascending = true;
-                    }
-                    totalListView.ListViewItemSorter = new TotalListViewItemComparer(columnIndex, ascending);
-                }
+                //if (!string.IsNullOrEmpty(SettingFields_AgentListViewSort))
+                //{
+                //    int columnIndex = 0;
+                //    bool ascending = false;
+                //    string[] arrSortValue = SettingFields_AgentListViewSort.Split(':');
+                //    columnIndex = int.Parse(arrSortValue[0]);
+                //    if (arrSortValue[1] == ConstEntity.Sort_Ascending)
+                //    {
+                //        ascending = true;
+                //    }
+                //    agentStatusListView.ListViewItemSorter = new StatusListViewItemComparer(columnIndex, ascending);
+                //}
+                //if (!string.IsNullOrEmpty(SettingFields_CallListViewSort))
+                //{
+                //    int columnIndex = 0;
+                //    bool ascending = false;
+                //    string[] arrSortValue = SettingFields_CallListViewSort.Split(':');
+                //    columnIndex = int.Parse(arrSortValue[0]);
+                //    if (arrSortValue[1] == ConstEntity.Sort_Ascending)
+                //    {
+                //        ascending = true;
+                //    }
+                //    lineStatusListView.ListViewItemSorter = new StatusListViewItemComparer(columnIndex, ascending);
+                //}
+                //if (!string.IsNullOrEmpty(SettingFields_QueueListViewSort))
+                //{
+                //    int columnIndex = 0;
+                //    bool ascending = false;
+                //    string[] arrSortValue = SettingFields_QueueListViewSort.Split(':');
+                //    columnIndex = int.Parse(arrSortValue[0]);
+                //    if (arrSortValue[1] == ConstEntity.Sort_Ascending)
+                //    {
+                //        ascending = true;
+                //    }
+                //    (this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView.ListViewItemSorter = new StatusListViewItemComparer(columnIndex, ascending);
+                //}
+                //if (!string.IsNullOrEmpty(SettingFields_TotalListViewSort))
+                //{
+                //    int columnIndex = 0;
+                //    bool ascending = false;
+                //    string[] arrSortValue = SettingFields_TotalListViewSort.Split(':');
+                //    columnIndex = int.Parse(arrSortValue[0]);
+                //    if (arrSortValue[1] == ConstEntity.Sort_Ascending)
+                //    {
+                //        ascending = true;
+                //    }
+                //    totalListView.ListViewItemSorter = new TotalListViewItemComparer(columnIndex, ascending);
+                //}
                 if (!string.IsNullOrEmpty(SettingFields_MonitorGridViewSort))
                 {
                     int columnIndex = 0;
@@ -7676,6 +6964,7 @@ namespace StatusMonitor
         /// <param name="lv"></param>
         private void SaveListViewColumnWidth(ListView lv)
         {
+            return;
             string widthValue = "";
             foreach (ColumnHeader col in lv.Columns)
             {

@@ -45,25 +45,27 @@
             // chkMonitorShow
             // 
             this.chkMonitorShow.AutoSize = true;
-            this.chkMonitorShow.Location = new System.Drawing.Point(170, 52);
+            this.chkMonitorShow.Location = new System.Drawing.Point(166, 179);
             this.chkMonitorShow.Name = "chkMonitorShow";
             this.chkMonitorShow.Size = new System.Drawing.Size(48, 16);
             this.chkMonitorShow.TabIndex = 9;
             this.chkMonitorShow.Text = "表示";
             this.chkMonitorShow.UseVisualStyleBackColor = true;
+            this.chkMonitorShow.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 53);
+            this.label1.Location = new System.Drawing.Point(31, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 12);
             this.label1.TabIndex = 8;
             this.label1.Text = "モニタタブ表示";
+            this.label1.Visible = false;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(208, 219);
+            this.btnClose.Location = new System.Drawing.Point(208, 87);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(64, 29);
             this.btnClose.TabIndex = 7;
@@ -73,7 +75,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(138, 219);
+            this.btnOK.Location = new System.Drawing.Point(120, 87);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(64, 29);
             this.btnOK.TabIndex = 6;
@@ -84,45 +86,49 @@
             // chkMessageShow
             // 
             this.chkMessageShow.AutoSize = true;
-            this.chkMessageShow.Location = new System.Drawing.Point(170, 80);
+            this.chkMessageShow.Location = new System.Drawing.Point(166, 207);
             this.chkMessageShow.Name = "chkMessageShow";
             this.chkMessageShow.Size = new System.Drawing.Size(48, 16);
             this.chkMessageShow.TabIndex = 11;
             this.chkMessageShow.Text = "表示";
             this.chkMessageShow.UseVisualStyleBackColor = true;
+            this.chkMessageShow.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 81);
+            this.label2.Location = new System.Drawing.Point(31, 208);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 12);
             this.label2.TabIndex = 10;
             this.label2.Text = "メッセージポップアップ";
+            this.label2.Visible = false;
             // 
             // chkAgentGraph
             // 
             this.chkAgentGraph.AutoSize = true;
-            this.chkAgentGraph.Location = new System.Drawing.Point(170, 110);
+            this.chkAgentGraph.Location = new System.Drawing.Point(166, 237);
             this.chkAgentGraph.Name = "chkAgentGraph";
             this.chkAgentGraph.Size = new System.Drawing.Size(48, 16);
             this.chkAgentGraph.TabIndex = 13;
             this.chkAgentGraph.Text = "表示";
             this.chkAgentGraph.UseVisualStyleBackColor = true;
+            this.chkAgentGraph.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 111);
+            this.label3.Location = new System.Drawing.Point(31, 238);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 12);
             this.label3.TabIndex = 12;
             this.label3.Text = "エージェントグラフ表示";
+            this.label3.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 140);
+            this.label4.Location = new System.Drawing.Point(31, 42);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 12);
             this.label4.TabIndex = 14;
@@ -132,7 +138,7 @@
             // 
             this.cmbListFontSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbListFontSize.FormattingEnabled = true;
-            this.cmbListFontSize.Location = new System.Drawing.Point(170, 137);
+            this.cmbListFontSize.Location = new System.Drawing.Point(166, 39);
             this.cmbListFontSize.Name = "cmbListFontSize";
             this.cmbListFontSize.Size = new System.Drawing.Size(73, 20);
             this.cmbListFontSize.TabIndex = 15;
@@ -140,27 +146,29 @@
             // chkLineCutShow
             // 
             this.chkLineCutShow.AutoSize = true;
-            this.chkLineCutShow.Location = new System.Drawing.Point(170, 23);
+            this.chkLineCutShow.Location = new System.Drawing.Point(166, 150);
             this.chkLineCutShow.Name = "chkLineCutShow";
             this.chkLineCutShow.Size = new System.Drawing.Size(48, 16);
             this.chkLineCutShow.TabIndex = 17;
             this.chkLineCutShow.Text = "表示";
             this.chkLineCutShow.UseVisualStyleBackColor = true;
+            this.chkLineCutShow.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 23);
+            this.label5.Location = new System.Drawing.Point(31, 150);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 12);
             this.label5.TabIndex = 16;
             this.label5.Text = "回線切断表示";
+            this.label5.Visible = false;
             // 
             // OtherSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 260);
+            this.ClientSize = new System.Drawing.Size(284, 174);
             this.Controls.Add(this.chkLineCutShow);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbListFontSize);

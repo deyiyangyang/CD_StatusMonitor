@@ -89,6 +89,7 @@ namespace StatusMonitor.TabPage
         {
             try
             {
+                return;
                 List<LineStatus> lineStatusList = new List<LineStatus>();
                 lineStatusList = _MainForm.lineStatusList.FindAll(p => p.Service == "QUECALL");
 

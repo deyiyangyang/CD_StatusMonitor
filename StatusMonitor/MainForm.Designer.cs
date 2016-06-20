@@ -48,6 +48,7 @@
             this.待ち呼警告設定個別ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.受付可警告設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.受付可警告設定親グループToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ヘルプToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.グループ表示設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.局番グループ表示設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.スキルグループ表示設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +85,6 @@
             this.tabMonitor = new System.Windows.Forms.TabPage();
             this.dvMonitor = new System.Windows.Forms.DataGridView();
             this.tabWaitCall = new System.Windows.Forms.TabPage();
-            this.totalListView = new System.Windows.Forms.ListView();
             this.axCpfMsg = new AxCpfmsgacxa.AxCpfMsg();
             this.mainNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.mainNotifyIconMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -122,9 +122,9 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupSumTabCtrl = new System.Windows.Forms.TabControl();
             this.groupSumTab = new System.Windows.Forms.TabPage();
+            this.totalListView = new System.Windows.Forms.ListView();
             this.panelTop = new System.Windows.Forms.Panel();
             this.wbGetParentGroup = new System.Windows.Forms.WebBrowser();
-            this.ヘルプToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.statusTabCtrl.SuspendLayout();
             this.agentStatusPage.SuspendLayout();
@@ -199,6 +199,7 @@
             this.subMenuSet.Name = "subMenuSet";
             this.subMenuSet.Size = new System.Drawing.Size(192, 22);
             this.subMenuSet.Text = "通話モニタ電話番号設定";
+            this.subMenuSet.Visible = false;
             this.subMenuSet.Click += new System.EventHandler(this.subMenuSet_Click);
             // 
             // subMenuReFresh
@@ -206,6 +207,7 @@
             this.subMenuReFresh.Name = "subMenuReFresh";
             this.subMenuReFresh.Size = new System.Drawing.Size(192, 22);
             this.subMenuReFresh.Text = "refresh";
+            this.subMenuReFresh.Visible = false;
             this.subMenuReFresh.Click += new System.EventHandler(this.subMenuReFresh_Click);
             // 
             // sumMenuQuickAnswer
@@ -213,6 +215,7 @@
             this.sumMenuQuickAnswer.Name = "sumMenuQuickAnswer";
             this.sumMenuQuickAnswer.Size = new System.Drawing.Size(192, 22);
             this.sumMenuQuickAnswer.Text = "即答秒数設定";
+            this.sumMenuQuickAnswer.Visible = false;
             this.sumMenuQuickAnswer.Click += new System.EventHandler(this.sumMenuQuickAnswer_Click);
             // 
             // sumMenuCol
@@ -236,6 +239,7 @@
             this.オプション名設定ToolStripMenuItem.Name = "オプション名設定ToolStripMenuItem";
             this.オプション名設定ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.オプション名設定ToolStripMenuItem.Text = "オプション名設定";
+            this.オプション名設定ToolStripMenuItem.Visible = false;
             this.オプション名設定ToolStripMenuItem.Click += new System.EventHandler(this.オプション名設定ToolStripMenuItem_Click);
             // 
             // モニタタイトル名設定ToolStripMenuItem
@@ -258,6 +262,7 @@
             this.警告設定ToolStripMenuItem.Name = "警告設定ToolStripMenuItem";
             this.警告設定ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.警告設定ToolStripMenuItem.Text = "警告設定";
+            this.警告設定ToolStripMenuItem.Visible = false;
             // 
             // 超過時間警告表示設定ToolStripMenuItem
             // 
@@ -301,6 +306,13 @@
             this.受付可警告設定親グループToolStripMenuItem.Text = "受付可警告設定(親グループ)";
             this.受付可警告設定親グループToolStripMenuItem.Click += new System.EventHandler(this.受付可警告設定親グループToolStripMenuItem_Click);
             // 
+            // ヘルプToolStripMenuItem
+            // 
+            this.ヘルプToolStripMenuItem.Name = "ヘルプToolStripMenuItem";
+            this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.ヘルプToolStripMenuItem.Text = "ヘルプ警告設定";
+            this.ヘルプToolStripMenuItem.Click += new System.EventHandler(this.ヘルプToolStripMenuItem_Click);
+            // 
             // グループ表示設定ToolStripMenuItem
             // 
             this.グループ表示設定ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -309,6 +321,7 @@
             this.グループ表示設定ToolStripMenuItem.Name = "グループ表示設定ToolStripMenuItem";
             this.グループ表示設定ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.グループ表示設定ToolStripMenuItem.Text = "グループ表示設定";
+            this.グループ表示設定ToolStripMenuItem.Visible = false;
             // 
             // 局番グループ表示設定ToolStripMenuItem
             // 
@@ -356,7 +369,7 @@
             this.statusTabCtrl.Location = new System.Drawing.Point(0, 0);
             this.statusTabCtrl.Name = "statusTabCtrl";
             this.statusTabCtrl.SelectedIndex = 0;
-            this.statusTabCtrl.Size = new System.Drawing.Size(705, 659);
+            this.statusTabCtrl.Size = new System.Drawing.Size(978, 659);
             this.statusTabCtrl.TabIndex = 4;
             this.statusTabCtrl.SelectedIndexChanged += new System.EventHandler(this.statusTabCtrl_SelectedIndexChanged);
             this.statusTabCtrl.TabIndexChanged += new System.EventHandler(this.statusTabCtrl_TabIndexChanged);
@@ -383,7 +396,7 @@
             this.agentStatusPage.Location = new System.Drawing.Point(4, 23);
             this.agentStatusPage.Name = "agentStatusPage";
             this.agentStatusPage.Padding = new System.Windows.Forms.Padding(3);
-            this.agentStatusPage.Size = new System.Drawing.Size(697, 632);
+            this.agentStatusPage.Size = new System.Drawing.Size(970, 632);
             this.agentStatusPage.TabIndex = 0;
             this.agentStatusPage.Text = "エージェント 状態";
             this.agentStatusPage.UseVisualStyleBackColor = true;
@@ -395,7 +408,7 @@
             this.agentIconPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.agentIconPanel.Location = new System.Drawing.Point(3, 534);
             this.agentIconPanel.Name = "agentIconPanel";
-            this.agentIconPanel.Size = new System.Drawing.Size(691, 95);
+            this.agentIconPanel.Size = new System.Drawing.Size(964, 95);
             this.agentIconPanel.TabIndex = 15;
             // 
             // agentPie
@@ -404,7 +417,7 @@
             this.agentPie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.agentPie.Location = new System.Drawing.Point(222, 0);
             this.agentPie.Name = "agentPie";
-            this.agentPie.Size = new System.Drawing.Size(469, 95);
+            this.agentPie.Size = new System.Drawing.Size(742, 95);
             this.agentPie.TabIndex = 14;
             this.agentPie.TabStop = false;
             this.agentPie.VisibleChanged += new System.EventHandler(this.agentPie_VisibleChanged);
@@ -598,7 +611,7 @@
             this.agentStatusListView.MultiSelect = false;
             this.agentStatusListView.Name = "agentStatusListView";
             this.agentStatusListView.ShowItemToolTips = true;
-            this.agentStatusListView.Size = new System.Drawing.Size(696, 484);
+            this.agentStatusListView.Size = new System.Drawing.Size(969, 487);
             this.agentStatusListView.SmallImageList = this.smallImageList;
             this.agentStatusListView.TabIndex = 0;
             this.agentStatusListView.UseCompatibleStateImageBehavior = false;
@@ -644,7 +657,7 @@
             this.lineStatusPage.Location = new System.Drawing.Point(4, 23);
             this.lineStatusPage.Name = "lineStatusPage";
             this.lineStatusPage.Padding = new System.Windows.Forms.Padding(3);
-            this.lineStatusPage.Size = new System.Drawing.Size(697, 632);
+            this.lineStatusPage.Size = new System.Drawing.Size(970, 632);
             this.lineStatusPage.TabIndex = 1;
             this.lineStatusPage.Text = "回線 状態";
             this.lineStatusPage.UseVisualStyleBackColor = true;
@@ -681,7 +694,7 @@
             this.lineStatusListView.Location = new System.Drawing.Point(3, 39);
             this.lineStatusListView.MultiSelect = false;
             this.lineStatusListView.Name = "lineStatusListView";
-            this.lineStatusListView.Size = new System.Drawing.Size(691, 533);
+            this.lineStatusListView.Size = new System.Drawing.Size(964, 536);
             this.lineStatusListView.SmallImageList = this.smallImageList;
             this.lineStatusListView.TabIndex = 0;
             this.lineStatusListView.UseCompatibleStateImageBehavior = false;
@@ -699,7 +712,7 @@
             this.lineIconListView.Location = new System.Drawing.Point(3, 569);
             this.lineIconListView.Name = "lineIconListView";
             this.lineIconListView.Scrollable = false;
-            this.lineIconListView.Size = new System.Drawing.Size(691, 60);
+            this.lineIconListView.Size = new System.Drawing.Size(964, 60);
             this.lineIconListView.SmallImageList = this.smallImageList;
             this.lineIconListView.TabIndex = 12;
             this.lineIconListView.TabStop = false;
@@ -712,7 +725,7 @@
             this.tabMonitor.Location = new System.Drawing.Point(4, 23);
             this.tabMonitor.Name = "tabMonitor";
             this.tabMonitor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMonitor.Size = new System.Drawing.Size(697, 632);
+            this.tabMonitor.Size = new System.Drawing.Size(970, 632);
             this.tabMonitor.TabIndex = 3;
             this.tabMonitor.Text = "モニタ";
             this.tabMonitor.UseVisualStyleBackColor = true;
@@ -728,7 +741,7 @@
             this.dvMonitor.MultiSelect = false;
             this.dvMonitor.Name = "dvMonitor";
             this.dvMonitor.RowTemplate.Height = 21;
-            this.dvMonitor.Size = new System.Drawing.Size(691, 600);
+            this.dvMonitor.Size = new System.Drawing.Size(964, 603);
             this.dvMonitor.TabIndex = 0;
             this.dvMonitor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvMonitor_CellDoubleClick);
             this.dvMonitor.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dvMonitor_DataError);
@@ -738,26 +751,10 @@
             this.tabWaitCall.Location = new System.Drawing.Point(4, 23);
             this.tabWaitCall.Name = "tabWaitCall";
             this.tabWaitCall.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWaitCall.Size = new System.Drawing.Size(697, 632);
+            this.tabWaitCall.Size = new System.Drawing.Size(970, 632);
             this.tabWaitCall.TabIndex = 4;
             this.tabWaitCall.Text = "待ち呼";
             this.tabWaitCall.UseVisualStyleBackColor = true;
-            // 
-            // totalListView
-            // 
-            this.totalListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.totalListView.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.totalListView.FullRowSelect = true;
-            this.totalListView.GridLines = true;
-            this.totalListView.Location = new System.Drawing.Point(3, 3);
-            this.totalListView.MultiSelect = false;
-            this.totalListView.Name = "totalListView";
-            this.totalListView.Size = new System.Drawing.Size(285, 626);
-            this.totalListView.TabIndex = 5;
-            this.totalListView.UseCompatibleStateImageBehavior = false;
-            this.totalListView.View = System.Windows.Forms.View.Details;
-            this.totalListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.totalListView_ColumnClick);
-            this.totalListView.SelectedIndexChanged += new System.EventHandler(this.NoSelectListView_SelectedIndexChanged);
             // 
             // axCpfMsg
             // 
@@ -1017,6 +1014,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -1028,19 +1026,19 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupSumTabCtrl);
             this.splitContainer1.Size = new System.Drawing.Size(1008, 659);
-            this.splitContainer1.SplitterDistance = 705;
+            this.splitContainer1.SplitterDistance = 978;
             this.splitContainer1.TabIndex = 0;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
             // groupSumTabCtrl
             // 
             this.groupSumTabCtrl.Controls.Add(this.groupSumTab);
-            this.groupSumTabCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupSumTabCtrl.Location = new System.Drawing.Point(0, 0);
             this.groupSumTabCtrl.Name = "groupSumTabCtrl";
             this.groupSumTabCtrl.SelectedIndex = 0;
-            this.groupSumTabCtrl.Size = new System.Drawing.Size(299, 659);
+            this.groupSumTabCtrl.Size = new System.Drawing.Size(1, 659);
             this.groupSumTabCtrl.TabIndex = 0;
+            this.groupSumTabCtrl.Visible = false;
             // 
             // groupSumTab
             // 
@@ -1048,10 +1046,26 @@
             this.groupSumTab.Location = new System.Drawing.Point(4, 23);
             this.groupSumTab.Name = "groupSumTab";
             this.groupSumTab.Padding = new System.Windows.Forms.Padding(3);
-            this.groupSumTab.Size = new System.Drawing.Size(291, 632);
+            this.groupSumTab.Size = new System.Drawing.Size(0, 632);
             this.groupSumTab.TabIndex = 0;
             this.groupSumTab.Text = "グループサマリ";
             this.groupSumTab.UseVisualStyleBackColor = true;
+            // 
+            // totalListView
+            // 
+            this.totalListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.totalListView.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.totalListView.FullRowSelect = true;
+            this.totalListView.GridLines = true;
+            this.totalListView.Location = new System.Drawing.Point(3, 3);
+            this.totalListView.MultiSelect = false;
+            this.totalListView.Name = "totalListView";
+            this.totalListView.Size = new System.Drawing.Size(0, 626);
+            this.totalListView.TabIndex = 5;
+            this.totalListView.UseCompatibleStateImageBehavior = false;
+            this.totalListView.View = System.Windows.Forms.View.Details;
+            this.totalListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.totalListView_ColumnClick);
+            this.totalListView.SelectedIndexChanged += new System.EventHandler(this.NoSelectListView_SelectedIndexChanged);
             // 
             // panelTop
             // 
@@ -1073,6 +1087,7 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1008, 44);
             this.panelTop.TabIndex = 15;
+            this.panelTop.Visible = false;
             // 
             // wbGetParentGroup
             // 
@@ -1083,13 +1098,6 @@
             this.wbGetParentGroup.TabIndex = 23;
             this.wbGetParentGroup.Visible = false;
             this.wbGetParentGroup.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.wbGetParentGroup_DocumentCompleted);
-            // 
-            // ヘルプToolStripMenuItem
-            // 
-            this.ヘルプToolStripMenuItem.Name = "ヘルプToolStripMenuItem";
-            this.ヘルプToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.ヘルプToolStripMenuItem.Text = "ヘルプ警告設定";
-            this.ヘルプToolStripMenuItem.Click += new System.EventHandler(this.ヘルプToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -1159,7 +1167,6 @@
         private System.Windows.Forms.TabControl statusTabCtrl;
         private System.Windows.Forms.TabPage agentStatusPage;
 		private System.Windows.Forms.TabPage lineStatusPage;
-		private System.Windows.Forms.ListView totalListView;
 		public System.Windows.Forms.ImageList smallImageList;
 		public System.Windows.Forms.ImageList largeImageList;
 		private System.Windows.Forms.ListView agentStatusListView;
@@ -1237,8 +1244,6 @@
         private System.Windows.Forms.ToolStripMenuItem スキルグループ表示設定ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 待ち呼警告設定は全体ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 待ち呼警告設定個別ToolStripMenuItem;
-        private System.Windows.Forms.TabControl groupSumTabCtrl;
-        private System.Windows.Forms.TabPage groupSumTab;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel agentIconPanel;
         private System.Windows.Forms.WebBrowser wbGetParentGroup;
@@ -1247,5 +1252,8 @@
         private System.Windows.Forms.ToolStripMenuItem 受付可警告設定親グループToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 待ち呼警告設定親グループToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ヘルプToolStripMenuItem;
+        private System.Windows.Forms.TabControl groupSumTabCtrl;
+        private System.Windows.Forms.TabPage groupSumTab;
+        private System.Windows.Forms.ListView totalListView;
     }
 }

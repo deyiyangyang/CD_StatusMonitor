@@ -9,7 +9,7 @@ namespace StatusMonitor.SettingFile
         public const string SKILLSHOWKEY = "SkillShowSet";
         public const string KYOKUGROUPSHOWKEY = "KyoKuGroupShowSet";
         public const string ITEMSHOWKEY = "MonitorItemShow";
-        public const int MANAGEMONITORITEMCOUNT = 18;
+        public const int MANAGEMONITORITEMCOUNT = 7;
         public const string LINECUT = "LineCut";
         public const string MONITORTAB = "MonitorTabShow";
         public const string MESSAGEPOP = "MessagePopShow";
