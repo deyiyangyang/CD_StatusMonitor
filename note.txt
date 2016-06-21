@@ -170,3 +170,6 @@ UM_POPQUE vAgentID='XXXXX',iSessionProfileID=XXXX vAgentIDは分配先のエージェント
 
 2016/06/14
 1，ＨＥＬＰ　ＯＮの場合独自音声を流すように改修
+
+2016/06/21
+1，add close option,1) cofirm then close form. 2) hide it。default is confirm then close

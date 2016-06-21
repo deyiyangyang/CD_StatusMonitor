@@ -40,6 +40,11 @@
             this.cmbListFontSize = new System.Windows.Forms.ComboBox();
             this.chkLineCutShow = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rabHidden = new System.Windows.Forms.RadioButton();
+            this.rabClose = new System.Windows.Forms.RadioButton();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chkMonitorShow
@@ -63,7 +68,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(208, 219);
+            this.btnClose.Location = new System.Drawing.Point(204, 265);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(64, 29);
             this.btnClose.TabIndex = 7;
@@ -73,7 +78,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(138, 219);
+            this.btnOK.Location = new System.Drawing.Point(134, 265);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(64, 29);
             this.btnOK.TabIndex = 6;
@@ -156,11 +161,56 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "回線切断表示";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(35, 200);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 12);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "閉じる時";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rabHidden);
+            this.groupBox1.Controls.Add(this.rabClose);
+            this.groupBox1.Location = new System.Drawing.Point(170, 174);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(145, 58);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            // 
+            // rabHidden
+            // 
+            this.rabHidden.AutoSize = true;
+            this.rabHidden.Location = new System.Drawing.Point(6, 33);
+            this.rabHidden.Name = "rabHidden";
+            this.rabHidden.Size = new System.Drawing.Size(59, 16);
+            this.rabHidden.TabIndex = 1;
+            this.rabHidden.TabStop = true;
+            this.rabHidden.Text = "最小化";
+            this.rabHidden.UseVisualStyleBackColor = true;
+            this.rabHidden.Click += new System.EventHandler(this.rabHidden_Click);
+            // 
+            // rabClose
+            // 
+            this.rabClose.AutoSize = true;
+            this.rabClose.Location = new System.Drawing.Point(6, 12);
+            this.rabClose.Name = "rabClose";
+            this.rabClose.Size = new System.Drawing.Size(53, 16);
+            this.rabClose.TabIndex = 0;
+            this.rabClose.TabStop = true;
+            this.rabClose.Text = "閉じる";
+            this.rabClose.UseVisualStyleBackColor = true;
+            this.rabClose.Click += new System.EventHandler(this.rabClose_Click);
+            // 
             // OtherSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 260);
+            this.ClientSize = new System.Drawing.Size(355, 306);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chkLineCutShow);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbListFontSize);
@@ -179,6 +229,8 @@
             this.Name = "OtherSettingForm";
             this.Text = "その他";
             this.Load += new System.EventHandler(this.OtherSettingForm_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +250,9 @@
         private System.Windows.Forms.ComboBox cmbListFontSize;
         private System.Windows.Forms.CheckBox chkLineCutShow;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rabHidden;
+        private System.Windows.Forms.RadioButton rabClose;
     }
 }

@@ -322,8 +322,23 @@ namespace StatusMonitor
             // 閉じる ボタンで終了しないで隠す(タスクトレイアイコンだけにする)
             if ((msg.Msg == WM_SYSCOMMAND) && (msg.WParam.ToInt32() == SC_CLOSE))
             {
-                this.Visible = false;
-                return;
+                if (SettingFields_CloseOrHidden == ConstEntity.HIDDEN)
+                {
+                    this.Visible = false;
+                    return;
+                }
+                if (SettingFields_CloseOrHidden == ConstEntity.CLOSE)
+                {
+                    if (MessageBox.Show("状態モニタを終了しますか？", "アラート", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        this.Close();
+                    }
+                    else
+                    {
+
+                        return;
+                    }
+                }
             }
 
             base.WndProc(ref msg);
@@ -7023,6 +7038,7 @@ namespace StatusMonitor
                 SettingFields_AgentGraphShow = frm.AgentGraphShow;
                 SettingFields_ListFontSize = frm.ListFontSize;
                 SettingFields_LineCutShow = frm.LineCut;
+                SettingFields_CloseOrHidden = frm.CloseOrHidden;
                 if (SettingFields_MonitorTabShow == "0")
                 {
                     if (statusTabCtrl.TabPages.Contains(tabMonitor))
