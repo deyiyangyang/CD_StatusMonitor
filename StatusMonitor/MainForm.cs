@@ -354,6 +354,7 @@ namespace StatusMonitor
         {
             try
             {
+                
 
                 //add,xzg,2009/10/07,S--------
                 // SetWindowPropRun
@@ -526,8 +527,8 @@ namespace StatusMonitor
                 statusTabCtrl.TabPages.Remove(agentStatusPage);
                 statusTabCtrl.TabPages.Remove(lineStatusPage);
                 statusTabCtrl.TabPages.Remove(tabWaitCall);
+                this.CenterToScreen();
 
-                
             }
             catch (Exception ex)
             {
@@ -1187,7 +1188,7 @@ namespace StatusMonitor
                 AjustListFontSize();
                 ShowSettingFileWidth();
                 ShowSortColumn();
-                ShowInCenter();
+        
             }
             catch (Exception ex)
             {
@@ -1200,11 +1201,6 @@ namespace StatusMonitor
             }
         }
 
-
-        private void ShowInCenter()
-        {
-            this.CenterToScreen();
-        }
         private void setAgentStatusView()
         {
             try
