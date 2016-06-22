@@ -192,3 +192,8 @@ UM_POPQUE vAgentID='XXXXX',iSessionProfileID=XXXX vAgentIDは分配先のエージェント
 　・待呼数
 　・放棄呼
 　・放棄率
+
+2016/06/22
+1，change datagridview fill all the form
+2,change version from 6.3.6 to 6.3.6.3
+3,sent to xie-san and make install file

@@ -303,7 +303,7 @@ namespace StatusMonitor
             UpdateContinueTimer = new System.Timers.Timer();
             UpdateContinueTimer.Elapsed += new System.Timers.ElapsedEventHandler(ContinueTimer);
             //end added
-            writeLog("current version is 6.3.6");
+            writeLog("current version is 6.3.6.3");
         }
 
 
@@ -4440,7 +4440,7 @@ namespace StatusMonitor
 
                 //dvReport.ColumnCount = 11;
                 dvMonitor.RowHeadersVisible = false;
-
+                dvMonitor.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 DataGridViewColumn column;
 
@@ -4450,7 +4450,8 @@ namespace StatusMonitor
                 column.Name = "groupName";
                 column.SortMode = DataGridViewColumnSortMode.Automatic;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                column.Width = 100;
+                //column.Width = 100;
+                //column.wi    
                 column.DataPropertyName = "groupName";
                 column.Visible = _MonitorItemManager.MonitorItems[0].Visible;
                 dvMonitor.Columns.Add(column);
@@ -4460,7 +4461,7 @@ namespace StatusMonitor
                 column.Name = "acdCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                column.Width = 50;
+                //column.Width = 50;
                 column.DataPropertyName = "acdCnt";
                 column.Visible = _MonitorItemManager.MonitorItems[1].Visible;
                 dvMonitor.Columns.Add(column);
@@ -4470,7 +4471,7 @@ namespace StatusMonitor
                 column.Name = "answerCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                column.Width = 60;
+                //column.Width = 60;
                 column.DataPropertyName = "answerCnt";
                 column.Visible = _MonitorItemManager.MonitorItems[2].Visible;
                 dvMonitor.Columns.Add(column);
@@ -4480,7 +4481,7 @@ namespace StatusMonitor
                 column.Name = "answerPer";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                column.Width = 60;
+                //column.Width = 60;
                 column.DataPropertyName = "answerPer";
                 column.Visible = _MonitorItemManager.MonitorItems[3].Visible;
                 dvMonitor.Columns.Add(column);
@@ -4490,7 +4491,7 @@ namespace StatusMonitor
                 column.Name = "queCallCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                column.Width = 60;
+                //column.Width = 60;
                 column.DataPropertyName = "queCallCnt";
                 column.Visible = _MonitorItemManager.MonitorItems[4].Visible;
                 dvMonitor.Columns.Add(column);              
@@ -4500,7 +4501,7 @@ namespace StatusMonitor
                 column.Name = "failCnt";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                column.Width = 60;
+                //column.Width = 60;
                 column.DataPropertyName = "failCnt";
                 column.Visible = _MonitorItemManager.MonitorItems[5].Visible;
                 dvMonitor.Columns.Add(column);
@@ -4510,7 +4511,7 @@ namespace StatusMonitor
                 column.Name = "failPer";
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                column.Width = 60;
+                //column.Width = 60;
                 column.DataPropertyName = "failPer";
                 column.Visible = _MonitorItemManager.MonitorItems[6].Visible;
                 dvMonitor.Columns.Add(column);
@@ -6877,10 +6878,10 @@ namespace StatusMonitor
                     this.dvMonitor.Columns[i].Width = int.Parse(widths[i]);
                 }
             }
-            if (!string.IsNullOrEmpty(this.SettingFields_SplitContainer_Width))
-            {
-                this.splitContainer1.SplitterDistance = int.Parse(SettingFields_SplitContainer_Width);
-            }
+            //if (!string.IsNullOrEmpty(this.SettingFields_SplitContainer_Width))
+            //{
+            //    this.splitContainer1.SplitterDistance = int.Parse(SettingFields_SplitContainer_Width);
+            //}
         }
         private void ShowSortColumn()
         {
@@ -7001,7 +7002,7 @@ namespace StatusMonitor
         private void SaveSplitContainerWidth()
         {
             IniProfile.SelectSection("SVSet");
-            IniProfile.SetString(ConstEntity.SPLITCONTAINER_PANEL_WIDTH, this.splitContainer1.SplitterDistance.ToString());
+            //IniProfile.SetString(ConstEntity.SPLITCONTAINER_PANEL_WIDTH, this.splitContainer1.SplitterDistance.ToString());
             IniProfile.Save(MyTool.GetModuleIniPath());
         }
 
