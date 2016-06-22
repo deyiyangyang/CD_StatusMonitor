@@ -52,7 +52,6 @@ namespace StatusMonitor.Model
                 _iniProfile.Load(MyTool.GetModuleIniPath());
                 //get the value from ini file
                 string oldDisplayName = GetOldColDisplayValue();
-                string oldItemShowValue = _iniProfile.GetStringDefault(ConstEntity.ITEMSHOWKEY, "");
                 string newDisplayName = "";
                 string[] arrDisplayName;
                 bool isNeedRestColName = CheckColDisplayName(oldDisplayName, ref newDisplayName);
@@ -60,10 +59,15 @@ namespace StatusMonitor.Model
                 {
                     _iniProfile.SelectSection("SVSet");
                     for (int i = 1; i < 50; i++)
+                    {
                         _iniProfile.Delete("MonitorCol" + i.ToString());
+                    }
+                    _iniProfile.Delete(ConstEntity.ITEMSHOWKEY);
+                    _iniProfile.Delete(ConstEntity.MONITOR_GRID_VIEW_SORT);
+                    _iniProfile.Delete(ConstEntity.MONITOR_GRID_VIEW_WIDTH);
                     _iniProfile.Save(MyTool.GetModuleIniPath());
                 }
-
+                string oldItemShowValue = _iniProfile.GetStringDefault(ConstEntity.ITEMSHOWKEY, "");
                 if (!string.IsNullOrEmpty(newDisplayName))
                     arrDisplayName = newDisplayName.Split(',');
                 else
@@ -113,6 +117,12 @@ namespace StatusMonitor.Model
                     newDisplayName = _columnsDisplayName;
                     return true;
                 }
+                if (oldDisplayName.Split(',').Length != ConstEntity.MANAGEMONITORITEMCOUNT)
+                {
+                    newDisplayName = _columnsDisplayName;
+                    return true;
+                }
+
                 if (oldDisplayName.Split(',').Length + 1 == _columnsCount)
                 {
                     string[] arrNew = new string[_columnsCount];
