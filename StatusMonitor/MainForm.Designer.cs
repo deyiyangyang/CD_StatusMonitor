@@ -153,7 +153,7 @@
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.mainMenu.Size = new System.Drawing.Size(1008, 24);
+            this.mainMenu.Size = new System.Drawing.Size(884, 24);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.Text = "mainMenu";
             // 
@@ -365,7 +365,7 @@
             this.statusTabCtrl.Location = new System.Drawing.Point(0, 0);
             this.statusTabCtrl.Name = "statusTabCtrl";
             this.statusTabCtrl.SelectedIndex = 0;
-            this.statusTabCtrl.Size = new System.Drawing.Size(1008, 659);
+            this.statusTabCtrl.Size = new System.Drawing.Size(884, 491);
             this.statusTabCtrl.TabIndex = 4;
             this.statusTabCtrl.SelectedIndexChanged += new System.EventHandler(this.statusTabCtrl_SelectedIndexChanged);
             this.statusTabCtrl.TabIndexChanged += new System.EventHandler(this.statusTabCtrl_TabIndexChanged);
@@ -392,7 +392,7 @@
             this.agentStatusPage.Location = new System.Drawing.Point(4, 23);
             this.agentStatusPage.Name = "agentStatusPage";
             this.agentStatusPage.Padding = new System.Windows.Forms.Padding(3);
-            this.agentStatusPage.Size = new System.Drawing.Size(1000, 632);
+            this.agentStatusPage.Size = new System.Drawing.Size(876, 464);
             this.agentStatusPage.TabIndex = 0;
             this.agentStatusPage.Text = "エージェント 状態";
             this.agentStatusPage.UseVisualStyleBackColor = true;
@@ -402,9 +402,9 @@
             this.agentIconPanel.Controls.Add(this.agentPie);
             this.agentIconPanel.Controls.Add(this.agentIconListView);
             this.agentIconPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.agentIconPanel.Location = new System.Drawing.Point(3, 534);
+            this.agentIconPanel.Location = new System.Drawing.Point(3, 366);
             this.agentIconPanel.Name = "agentIconPanel";
-            this.agentIconPanel.Size = new System.Drawing.Size(994, 95);
+            this.agentIconPanel.Size = new System.Drawing.Size(870, 95);
             this.agentIconPanel.TabIndex = 15;
             // 
             // agentPie
@@ -413,7 +413,7 @@
             this.agentPie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.agentPie.Location = new System.Drawing.Point(222, 0);
             this.agentPie.Name = "agentPie";
-            this.agentPie.Size = new System.Drawing.Size(772, 95);
+            this.agentPie.Size = new System.Drawing.Size(648, 95);
             this.agentPie.TabIndex = 14;
             this.agentPie.TabStop = false;
             this.agentPie.VisibleChanged += new System.EventHandler(this.agentPie_VisibleChanged);
@@ -607,7 +607,7 @@
             this.agentStatusListView.MultiSelect = false;
             this.agentStatusListView.Name = "agentStatusListView";
             this.agentStatusListView.ShowItemToolTips = true;
-            this.agentStatusListView.Size = new System.Drawing.Size(969, 489);
+            this.agentStatusListView.Size = new System.Drawing.Size(845, 321);
             this.agentStatusListView.SmallImageList = this.smallImageList;
             this.agentStatusListView.TabIndex = 0;
             this.agentStatusListView.UseCompatibleStateImageBehavior = false;
@@ -653,7 +653,7 @@
             this.lineStatusPage.Location = new System.Drawing.Point(4, 23);
             this.lineStatusPage.Name = "lineStatusPage";
             this.lineStatusPage.Padding = new System.Windows.Forms.Padding(3);
-            this.lineStatusPage.Size = new System.Drawing.Size(1000, 632);
+            this.lineStatusPage.Size = new System.Drawing.Size(876, 464);
             this.lineStatusPage.TabIndex = 1;
             this.lineStatusPage.Text = "回線 状態";
             this.lineStatusPage.UseVisualStyleBackColor = true;
@@ -705,10 +705,10 @@
             this.lineIconListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lineIconListView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lineIconListView.Enabled = false;
-            this.lineIconListView.Location = new System.Drawing.Point(3, 569);
+            this.lineIconListView.Location = new System.Drawing.Point(3, 401);
             this.lineIconListView.Name = "lineIconListView";
             this.lineIconListView.Scrollable = false;
-            this.lineIconListView.Size = new System.Drawing.Size(994, 60);
+            this.lineIconListView.Size = new System.Drawing.Size(870, 60);
             this.lineIconListView.SmallImageList = this.smallImageList;
             this.lineIconListView.TabIndex = 12;
             this.lineIconListView.TabStop = false;
@@ -721,7 +721,7 @@
             this.tabMonitor.Location = new System.Drawing.Point(4, 23);
             this.tabMonitor.Name = "tabMonitor";
             this.tabMonitor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMonitor.Size = new System.Drawing.Size(1000, 632);
+            this.tabMonitor.Size = new System.Drawing.Size(876, 464);
             this.tabMonitor.TabIndex = 3;
             this.tabMonitor.Text = "モニタ";
             this.tabMonitor.UseVisualStyleBackColor = true;
@@ -735,7 +735,7 @@
             this.dvMonitor.MultiSelect = false;
             this.dvMonitor.Name = "dvMonitor";
             this.dvMonitor.RowTemplate.Height = 21;
-            this.dvMonitor.Size = new System.Drawing.Size(994, 626);
+            this.dvMonitor.Size = new System.Drawing.Size(870, 458);
             this.dvMonitor.TabIndex = 0;
             this.dvMonitor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvMonitor_CellDoubleClick);
             this.dvMonitor.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dvMonitor_DataError);
@@ -745,7 +745,7 @@
             this.tabWaitCall.Location = new System.Drawing.Point(4, 23);
             this.tabWaitCall.Name = "tabWaitCall";
             this.tabWaitCall.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWaitCall.Size = new System.Drawing.Size(1000, 632);
+            this.tabWaitCall.Size = new System.Drawing.Size(876, 464);
             this.tabWaitCall.TabIndex = 4;
             this.tabWaitCall.Text = "待ち呼";
             this.tabWaitCall.UseVisualStyleBackColor = true;
@@ -830,7 +830,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(672, 13);
+            this.label2.Location = new System.Drawing.Point(548, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 15;
@@ -843,7 +843,7 @@
             this.lineUseageProgressLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lineUseageProgressLabel.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lineUseageProgressLabel.ForeColor = System.Drawing.Color.White;
-            this.lineUseageProgressLabel.Location = new System.Drawing.Point(756, 13);
+            this.lineUseageProgressLabel.Location = new System.Drawing.Point(632, 13);
             this.lineUseageProgressLabel.Name = "lineUseageProgressLabel";
             this.lineUseageProgressLabel.Size = new System.Drawing.Size(240, 20);
             this.lineUseageProgressLabel.TabIndex = 16;
@@ -857,7 +857,7 @@
             this.menuLineGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.menuLineGroupBox.Location = new System.Drawing.Point(0, 24);
             this.menuLineGroupBox.Name = "menuLineGroupBox";
-            this.menuLineGroupBox.Size = new System.Drawing.Size(1008, 2);
+            this.menuLineGroupBox.Size = new System.Drawing.Size(884, 2);
             this.menuLineGroupBox.TabIndex = 0;
             this.menuLineGroupBox.TabStop = false;
             // 
@@ -869,7 +869,7 @@
             // useageLabel
             // 
             this.useageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.useageLabel.Location = new System.Drawing.Point(678, 25);
+            this.useageLabel.Location = new System.Drawing.Point(554, 25);
             this.useageLabel.Name = "useageLabel";
             this.useageLabel.Size = new System.Drawing.Size(64, 16);
             this.useageLabel.TabIndex = 17;
@@ -1002,7 +1002,7 @@
             this.listViewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewPanel.Location = new System.Drawing.Point(0, 70);
             this.listViewPanel.Name = "listViewPanel";
-            this.listViewPanel.Size = new System.Drawing.Size(1008, 659);
+            this.listViewPanel.Size = new System.Drawing.Size(884, 491);
             this.listViewPanel.TabIndex = 23;
             // 
             // groupSumTabCtrl
@@ -1060,7 +1060,7 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 26);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1008, 44);
+            this.panelTop.Size = new System.Drawing.Size(884, 44);
             this.panelTop.TabIndex = 15;
             this.panelTop.Visible = false;
             // 
@@ -1076,11 +1076,10 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoScroll = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.listViewPanel);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.menuLineGroupBox);
@@ -1090,8 +1089,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenu;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StatusMonitor";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);

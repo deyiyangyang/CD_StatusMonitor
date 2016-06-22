@@ -1186,7 +1186,7 @@ namespace StatusMonitor
                 ShowSettingFileWidth();
                 ShowSortColumn();
 
-      
+
             }
             catch (Exception ex)
             {
@@ -1326,12 +1326,13 @@ namespace StatusMonitor
             //add,xzg,2009/02/06,S----------------
             else
             {
-                SaveListViewColumnWidth(this.agentStatusListView);
-                SaveListViewColumnWidth(this.lineStatusListView);
-                SaveListViewColumnWidth((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView);
-                SaveListViewColumnWidth(this.totalListView);
-                SaveGridViewColumnWidth(this.dvMonitor);
-                SaveSplitContainerWidth();
+                //SaveListViewColumnWidth(this.agentStatusListView);
+                //SaveListViewColumnWidth(this.lineStatusListView);
+                //SaveListViewColumnWidth((this.ListTabPagesForms[0] as QueueCallForm).quecallStatusListView);
+                //SaveListViewColumnWidth(this.totalListView);
+                if (this.WindowState != FormWindowState.Maximized)
+                    SaveGridViewColumnWidth(this.dvMonitor);
+                //SaveSplitContainerWidth();
                 SaveSortColumn();
                 int msgCount = 0;
                 int loop = 0;
@@ -4485,7 +4486,7 @@ namespace StatusMonitor
                 column.DataPropertyName = "answerPer";
                 column.Visible = _MonitorItemManager.MonitorItems[3].Visible;
                 dvMonitor.Columns.Add(column);
-              
+
                 column = new DataGridViewTextBoxColumn();
                 column.HeaderText = _MonitorItemManager.MonitorItems[4].DisplayName;// "待呼数";
                 column.Name = "queCallCnt";
@@ -4494,7 +4495,7 @@ namespace StatusMonitor
                 //column.Width = 60;
                 column.DataPropertyName = "queCallCnt";
                 column.Visible = _MonitorItemManager.MonitorItems[4].Visible;
-                dvMonitor.Columns.Add(column);              
+                dvMonitor.Columns.Add(column);
 
                 column = new DataGridViewTextBoxColumn();
                 column.HeaderText = _MonitorItemManager.MonitorItems[5].DisplayName;// "放棄数";
@@ -4564,7 +4565,7 @@ namespace StatusMonitor
                 dtMontor.Columns.Add("groupKId", typeof(int)); //局番ID
 
                 dvMonitor.DataSource = dsMontor.Tables["dtMonitor"];
-                
+
                 setDoubleBuffered(this.dvMonitor, true);
 
                 DicOriginMonitorGridColumnWidth.Clear();
@@ -4608,7 +4609,7 @@ namespace StatusMonitor
                 System.Threading.Thread callThread = new System.Threading.Thread(delegate () { setMonitorCall1(); });
                 callThread.IsBackground = true;
                 callThread.Start();
-                return;               
+                return;
             }
             catch (Exception ex)
             {
@@ -4836,7 +4837,7 @@ namespace StatusMonitor
                 {
                     SetDvTotalRow("CALLLEG", true);
                 }
-     
+
             }
             catch (Exception ex)
             {
