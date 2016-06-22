@@ -526,6 +526,8 @@ namespace StatusMonitor
                 statusTabCtrl.TabPages.Remove(agentStatusPage);
                 statusTabCtrl.TabPages.Remove(lineStatusPage);
                 statusTabCtrl.TabPages.Remove(tabWaitCall);
+
+                
             }
             catch (Exception ex)
             {
@@ -933,7 +935,7 @@ namespace StatusMonitor
                 //add,xzg,2009/05/20,E---------
 
                 this.subMenuReFresh.Text = res.GetString("SM0020062");
-                autoCtlSize(this.listViewPanel);
+                //autoCtlSize(this.listViewPanel);
 
             }
             catch (Exception ex)
@@ -1010,7 +1012,7 @@ namespace StatusMonitor
         private void MainForm_Shown(object sender, EventArgs e)
         {
             //add,xzg,2011/08/10,S
-
+            
             try
             {
 
@@ -1185,8 +1187,7 @@ namespace StatusMonitor
                 AjustListFontSize();
                 ShowSettingFileWidth();
                 ShowSortColumn();
-
-
+                ShowInCenter();
             }
             catch (Exception ex)
             {
@@ -1199,6 +1200,11 @@ namespace StatusMonitor
             }
         }
 
+
+        private void ShowInCenter()
+        {
+            this.CenterToScreen();
+        }
         private void setAgentStatusView()
         {
             try
@@ -1646,8 +1652,8 @@ namespace StatusMonitor
         {
             this.Visible = !this.Visible;
             //modified by Zhu 2014/04/09
-            if (this.Visible) this.WindowState = FormWindowState.Normal;
-            if (this.Visible) this.WindowState = FormWindowState.Maximized;
+            //if (this.Visible) this.WindowState = FormWindowState.Normal;
+            //if (this.Visible) this.WindowState = FormWindowState.Maximized;
             //end modified
         }
 
@@ -1655,8 +1661,8 @@ namespace StatusMonitor
         {
             this.Visible = !this.Visible;
             //modified by Zhu 2014/04/09
-            if (this.Visible) this.WindowState = FormWindowState.Normal;
-            if (this.Visible) this.WindowState = FormWindowState.Maximized;
+            //if (this.Visible) this.WindowState = FormWindowState.Normal;
+            //if (this.Visible) this.WindowState = FormWindowState.Maximized;
             //end modified
         }
 
