@@ -173,3 +173,7 @@ UM_POPQUE vAgentID='XXXXX',iSessionProfileID=XXXX vAgentIDは分配先のエージェント
 
 2016/06/21
 1，add close option,1) cofirm then close form. 2) hide it。default is confirm then close
+
+
+2016/06/28
+1，add function whether show worktime reason or not in othersettingform 

@@ -7039,6 +7039,7 @@ namespace StatusMonitor
                 SettingFields_ListFontSize = frm.ListFontSize;
                 SettingFields_LineCutShow = frm.LineCut;
                 SettingFields_CloseOrHidden = frm.CloseOrHidden;
+                SettingFields_ShowWorkTimeReason = frm.ShowWorkTimeReason;
                 if (SettingFields_MonitorTabShow == "0")
                 {
                     if (statusTabCtrl.TabPages.Contains(tabMonitor))

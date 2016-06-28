@@ -44,6 +44,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rabHidden = new System.Windows.Forms.RadioButton();
             this.rabClose = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.chkWorkTimeReason = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +70,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(204, 265);
+            this.btnClose.Location = new System.Drawing.Point(240, 297);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(64, 29);
             this.btnClose.TabIndex = 7;
@@ -78,7 +80,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(134, 265);
+            this.btnOK.Location = new System.Drawing.Point(170, 297);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(64, 29);
             this.btnOK.TabIndex = 6;
@@ -204,11 +206,32 @@
             this.rabClose.UseVisualStyleBackColor = true;
             this.rabClose.Click += new System.EventHandler(this.rabClose_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(35, 241);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 12);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "後処理理由表示";
+            // 
+            // chkWorkTimeReason
+            // 
+            this.chkWorkTimeReason.AutoSize = true;
+            this.chkWorkTimeReason.Location = new System.Drawing.Point(170, 241);
+            this.chkWorkTimeReason.Name = "chkWorkTimeReason";
+            this.chkWorkTimeReason.Size = new System.Drawing.Size(48, 16);
+            this.chkWorkTimeReason.TabIndex = 24;
+            this.chkWorkTimeReason.Text = "表示";
+            this.chkWorkTimeReason.UseVisualStyleBackColor = true;
+            // 
             // OtherSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 306);
+            this.ClientSize = new System.Drawing.Size(325, 338);
+            this.Controls.Add(this.chkWorkTimeReason);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chkLineCutShow);
@@ -254,5 +277,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rabHidden;
         private System.Windows.Forms.RadioButton rabClose;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox chkWorkTimeReason;
     }
 }

@@ -140,6 +140,7 @@ namespace StatusMonitor
 
         public string SettingFields_HelpVoice = "";
         public string SettingFields_CloseOrHidden = "";
+        public string SettingFields_ShowWorkTimeReason = "";
 
         #region GetIniSettingValue
 
@@ -173,6 +174,7 @@ namespace StatusMonitor
                 SinglePlayerManager.AddPlayer(ConstEntity.HelpOnPlayer);
 
             SettingFields_CloseOrHidden = IniProfile.GetStringDefault(ConstEntity.CloseOrHidden, ConstEntity.CLOSE);
+            SettingFields_ShowWorkTimeReason = IniProfile.GetStringDefault(ConstEntity.ShowWorkTimeReason,string.Empty);
             //IniProfile.SelectSection("Alert");
             //SettingFields_AlertTotal = IniProfile.GetLongDefault("nTotal", 100);
             //SettingFields_AlertGroup = IniProfile.GetLongDefault("nGroup", 100);

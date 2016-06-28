@@ -22,6 +22,7 @@ namespace StatusMonitor
         public string LineCut;
         public bool FontSizeChanged = false;
         public string CloseOrHidden;
+        public string ShowWorkTimeReason;
         public OtherSettingForm(TksProfileClass iniProfile)
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace StatusMonitor
             AgentGraphShow = _iniProfile.GetStringDefault(ConstEntity.AGENTGRAPH, string.Empty);
             ListFontSize = float.Parse(_iniProfile.GetStringDefault(ConstEntity.LISTFONTSIZE, "1"));
             CloseOrHidden = _iniProfile.GetStringDefault(ConstEntity.CloseOrHidden, ConstEntity.CLOSE);
+            ShowWorkTimeReason = _iniProfile.GetStringDefault(ConstEntity.ShowWorkTimeReason, string.Empty);
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -41,13 +43,14 @@ namespace StatusMonitor
             MonitorTab = this.chkMonitorShow.Checked ? "1" : "0";
             MessagePop = this.chkMessageShow.Checked ? "1" : "0";
             AgentGraphShow = this.chkAgentGraph.Checked ? "1" : "0";
-
+            ShowWorkTimeReason = this.chkWorkTimeReason.Checked ? "1" : "0";
             _iniProfile.SelectSection("SVSet");
             _iniProfile.SetString(ConstEntity.LINECUT, LineCut);
             _iniProfile.SetString(ConstEntity.MONITORTAB, MonitorTab);
             _iniProfile.SetString(ConstEntity.MESSAGEPOP, MessagePop);
             _iniProfile.SetString(ConstEntity.AGENTGRAPH, AgentGraphShow);
             _iniProfile.SetString(ConstEntity.CloseOrHidden, CloseOrHidden);
+            _iniProfile.SetString(ConstEntity.ShowWorkTimeReason, ShowWorkTimeReason);
 
             float currentFontSize = float.Parse( (this.cmbListFontSize.SelectedItem as ComboBoxItem).Value.ToString());
 
@@ -100,6 +103,15 @@ namespace StatusMonitor
             {
                 this.chkLineCutShow.Checked = true;
             }
+            if(ShowWorkTimeReason=="1")
+            {
+                this.chkWorkTimeReason.Checked = true;
+            }
+            else
+            {
+                this.chkWorkTimeReason.Checked = false;
+            }
+
             InitCmbListFontSize();
             if (ListFontSize.ToString() == "1")
                 this.cmbListFontSize.SelectedIndex = 0;

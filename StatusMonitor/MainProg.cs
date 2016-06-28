@@ -1555,10 +1555,22 @@ namespace StatusMonitor
                     //離席理由表示
                     ListViewItem.ListViewSubItem subState = new ListViewItem.ListViewSubItem(item, "");
                     string strState = "";
-                    if (!string.IsNullOrEmpty(obj.vReason) && (obj.Status == 6 || obj.Status == 5))
-                        strState = obj.vReason;
-                    else
+                    if (!string.IsNullOrEmpty(obj.vReason))
+                    {
+                        if (obj.Status == 6)
+                            strState = obj.vReason;
+                        else if (obj.Status == 5)
+                        {
+                            if (SettingFields_ShowWorkTimeReason == "1")
+                                strState = obj.vReason;
+                        }
+                    }
+
+                    if(string.IsNullOrEmpty(strState))
+                    {
                         strState = res.GetString(status.StatusName);
+                    }
+
                     subState.Text = strState;
                     subState.Name = "State";
                     item.SubItems.Add(subState);

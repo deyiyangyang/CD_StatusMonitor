@@ -109,6 +109,7 @@ namespace StatusMonitor.SettingFile
         public const string QuickAnswerSeconds2 = "QuickAnswerSeconds2";
         public const string QuickAnswerSeconds3 = "QuickAnswerSeconds3";
         public const string CloseOrHidden = "CloseOrHidden";
+        public const string ShowWorkTimeReason = "ShowWorkTimeReason";
 
         public const string HIDDEN = "0";
         public const string CLOSE = "1";
