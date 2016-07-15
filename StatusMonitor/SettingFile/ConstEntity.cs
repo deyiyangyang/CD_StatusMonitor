@@ -108,7 +108,11 @@ namespace StatusMonitor.SettingFile
         public const string QuickAnswerSeconds1 = "QuickAnswerMinutes";
         public const string QuickAnswerSeconds2 = "QuickAnswerSeconds2";
         public const string QuickAnswerSeconds3 = "QuickAnswerSeconds3";
+        public const string CloseOrHidden = "CloseOrHidden";
 
+
+        public const string HIDDEN = "0";
+        public const string CLOSE = "1";
 
         #region sound player
         public const string HelpOnPlayer = "HelpOnPlayer";

@@ -139,7 +139,7 @@ namespace StatusMonitor
         public Dictionary<string, string> Dic_SettingFields_SkillQuecall = new Dictionary<string, string>();
 
         public string SettingFields_HelpVoice = "";
-
+        public string SettingFields_CloseOrHidden = "";
         #region GetIniSettingValue
 
         private void GetIniSettingValueInLoadEvent()
@@ -170,7 +170,7 @@ namespace StatusMonitor
             SettingFields_HelpVoice = IniProfile.GetStringDefault(ConstEntity.HelpVoice, "");
             if (!string.IsNullOrEmpty(SettingFields_HelpVoice))
                 SinglePlayerManager.AddPlayer(ConstEntity.HelpOnPlayer);
-
+            SettingFields_CloseOrHidden = IniProfile.GetStringDefault(ConstEntity.CloseOrHidden, ConstEntity.CLOSE);
             //IniProfile.SelectSection("Alert");
             //SettingFields_AlertTotal = IniProfile.GetLongDefault("nTotal", 100);
             //SettingFields_AlertGroup = IniProfile.GetLongDefault("nGroup", 100);

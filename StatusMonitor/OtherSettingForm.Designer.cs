@@ -40,12 +40,17 @@
             this.cmbListFontSize = new System.Windows.Forms.ComboBox();
             this.chkLineCutShow = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rabHidden = new System.Windows.Forms.RadioButton();
+            this.rabClose = new System.Windows.Forms.RadioButton();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // chkMonitorShow
             // 
             this.chkMonitorShow.AutoSize = true;
-            this.chkMonitorShow.Location = new System.Drawing.Point(166, 179);
+            this.chkMonitorShow.Location = new System.Drawing.Point(166, 265);
             this.chkMonitorShow.Name = "chkMonitorShow";
             this.chkMonitorShow.Size = new System.Drawing.Size(48, 16);
             this.chkMonitorShow.TabIndex = 9;
@@ -56,7 +61,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 180);
+            this.label1.Location = new System.Drawing.Point(31, 266);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 12);
             this.label1.TabIndex = 8;
@@ -65,7 +70,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(208, 87);
+            this.btnClose.Location = new System.Drawing.Point(247, 175);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(64, 29);
             this.btnClose.TabIndex = 7;
@@ -75,7 +80,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(120, 87);
+            this.btnOK.Location = new System.Drawing.Point(166, 175);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(64, 29);
             this.btnOK.TabIndex = 6;
@@ -86,7 +91,7 @@
             // chkMessageShow
             // 
             this.chkMessageShow.AutoSize = true;
-            this.chkMessageShow.Location = new System.Drawing.Point(166, 207);
+            this.chkMessageShow.Location = new System.Drawing.Point(166, 293);
             this.chkMessageShow.Name = "chkMessageShow";
             this.chkMessageShow.Size = new System.Drawing.Size(48, 16);
             this.chkMessageShow.TabIndex = 11;
@@ -97,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 208);
+            this.label2.Location = new System.Drawing.Point(31, 294);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 12);
             this.label2.TabIndex = 10;
@@ -107,7 +112,7 @@
             // chkAgentGraph
             // 
             this.chkAgentGraph.AutoSize = true;
-            this.chkAgentGraph.Location = new System.Drawing.Point(166, 237);
+            this.chkAgentGraph.Location = new System.Drawing.Point(166, 323);
             this.chkAgentGraph.Name = "chkAgentGraph";
             this.chkAgentGraph.Size = new System.Drawing.Size(48, 16);
             this.chkAgentGraph.TabIndex = 13;
@@ -118,7 +123,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 238);
+            this.label3.Location = new System.Drawing.Point(31, 324);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 12);
             this.label3.TabIndex = 12;
@@ -146,7 +151,7 @@
             // chkLineCutShow
             // 
             this.chkLineCutShow.AutoSize = true;
-            this.chkLineCutShow.Location = new System.Drawing.Point(166, 150);
+            this.chkLineCutShow.Location = new System.Drawing.Point(166, 236);
             this.chkLineCutShow.Name = "chkLineCutShow";
             this.chkLineCutShow.Size = new System.Drawing.Size(48, 16);
             this.chkLineCutShow.TabIndex = 17;
@@ -157,18 +162,63 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 150);
+            this.label5.Location = new System.Drawing.Point(31, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 12);
             this.label5.TabIndex = 16;
             this.label5.Text = "回線切断表示";
             this.label5.Visible = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(31, 90);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 12);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "閉じる時";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rabHidden);
+            this.groupBox1.Controls.Add(this.rabClose);
+            this.groupBox1.Location = new System.Drawing.Point(166, 75);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(145, 58);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            // 
+            // rabHidden
+            // 
+            this.rabHidden.AutoSize = true;
+            this.rabHidden.Location = new System.Drawing.Point(6, 33);
+            this.rabHidden.Name = "rabHidden";
+            this.rabHidden.Size = new System.Drawing.Size(59, 16);
+            this.rabHidden.TabIndex = 1;
+            this.rabHidden.TabStop = true;
+            this.rabHidden.Text = "最小化";
+            this.rabHidden.UseVisualStyleBackColor = true;
+            this.rabHidden.Click += new System.EventHandler(this.rabHidden_Click);
+            // 
+            // rabClose
+            // 
+            this.rabClose.AutoSize = true;
+            this.rabClose.Location = new System.Drawing.Point(6, 12);
+            this.rabClose.Name = "rabClose";
+            this.rabClose.Size = new System.Drawing.Size(53, 16);
+            this.rabClose.TabIndex = 0;
+            this.rabClose.TabStop = true;
+            this.rabClose.Text = "閉じる";
+            this.rabClose.UseVisualStyleBackColor = true;
+            this.rabClose.Click += new System.EventHandler(this.rabClose_Click);
+            // 
             // OtherSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 174);
+            this.ClientSize = new System.Drawing.Size(350, 227);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chkLineCutShow);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbListFontSize);
@@ -187,6 +237,8 @@
             this.Name = "OtherSettingForm";
             this.Text = "その他";
             this.Load += new System.EventHandler(this.OtherSettingForm_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,5 +258,9 @@
         private System.Windows.Forms.ComboBox cmbListFontSize;
         private System.Windows.Forms.CheckBox chkLineCutShow;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rabHidden;
+        private System.Windows.Forms.RadioButton rabClose;
     }
 }

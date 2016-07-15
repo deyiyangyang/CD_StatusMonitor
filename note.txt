@@ -197,3 +197,7 @@ UM_POPQUE vAgentID='XXXXX',iSessionProfileID=XXXX vAgentIDは分配先のエージェント
 1，change datagridview fill all the form
 2,change version from 6.3.6 to 6.3.6.3
 3,sent to xie-san and make install file
+
+2016/07/15
+1，add close option,1) cofirm then close form. 2) hide it。default is confirm then close
+2,sent to xie-san

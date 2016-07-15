@@ -21,6 +21,7 @@ namespace StatusMonitor
         public float ListFontSize;
         public string LineCut;
         public bool FontSizeChanged = false;
+        public string CloseOrHidden;
         public OtherSettingForm(TksProfileClass iniProfile)
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace StatusMonitor
             MessagePop = _iniProfile.GetStringDefault(ConstEntity.MESSAGEPOP, string.Empty);
             AgentGraphShow = _iniProfile.GetStringDefault(ConstEntity.AGENTGRAPH, string.Empty);
             ListFontSize = float.Parse(_iniProfile.GetStringDefault(ConstEntity.LISTFONTSIZE, "1"));
+            CloseOrHidden = _iniProfile.GetStringDefault(ConstEntity.CloseOrHidden, ConstEntity.CLOSE);
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -45,6 +47,7 @@ namespace StatusMonitor
             _iniProfile.SetString(ConstEntity.MONITORTAB, MonitorTab);
             _iniProfile.SetString(ConstEntity.MESSAGEPOP, MessagePop);
             _iniProfile.SetString(ConstEntity.AGENTGRAPH, AgentGraphShow);
+            _iniProfile.SetString(ConstEntity.CloseOrHidden, CloseOrHidden);
 
             float currentFontSize = float.Parse( (this.cmbListFontSize.SelectedItem as ComboBoxItem).Value.ToString());
 
@@ -120,6 +123,11 @@ namespace StatusMonitor
                 this.cmbListFontSize.SelectedIndex = 9;
             else if (ListFontSize.ToString() == "6")
                 this.cmbListFontSize.SelectedIndex = 10;
+
+            if (CloseOrHidden == ConstEntity.CLOSE)
+                this.rabClose.Checked = true;
+            else if (CloseOrHidden == ConstEntity.HIDDEN)
+                this.rabHidden.Checked = true;
         }
 
         private void InitCmbListFontSize()
@@ -135,6 +143,16 @@ namespace StatusMonitor
             this.cmbListFontSize.Items.Add(new ComboBoxItem { Value = "5", Text = "500%" });
             this.cmbListFontSize.Items.Add(new ComboBoxItem { Value = "5.5", Text = "550%" });
             this.cmbListFontSize.Items.Add(new ComboBoxItem { Value = "6", Text = "600%" });
+        }
+
+        private void rabClose_Click(object sender, EventArgs e)
+        {
+            this.CloseOrHidden = ConstEntity.CLOSE;
+        }
+
+        private void rabHidden_Click(object sender, EventArgs e)
+        {
+            this.CloseOrHidden = ConstEntity.HIDDEN;
         }
     }
 }
