@@ -74,7 +74,7 @@
             this.MinimizeBox = false;
             this.Name = "SkillQueCallSetting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "待ち呼警告設定（個別）";
+            this.Text = "待ち呼警告設定";
             this.Load += new System.EventHandler(this.SkillShowSet_Load);
             this.ResumeLayout(false);
 

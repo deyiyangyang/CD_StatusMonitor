@@ -177,3 +177,11 @@ UM_POPQUE vAgentID='XXXXX',iSessionProfileID=XXXX vAgentIDは分配先のエージェント
 
 2016/06/28
 1，add function whether show worktime reason or not in othersettingform 
+
+2016/07/07
+1，Suite上の待ち呼警告設定のメニューが最大で3つになってしまうので、１つにまとめる
+
+2016/07/19
+1，set 即答数②,即答率②,即答数③,即答率③ default is invisbile 
+2,change version from 6.3.6 to 6.3.7 
+3,sent to xie-san and made install file

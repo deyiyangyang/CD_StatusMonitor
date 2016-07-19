@@ -303,7 +303,7 @@ namespace StatusMonitor
             UpdateContinueTimer = new System.Timers.Timer();
             UpdateContinueTimer.Elapsed += new System.Timers.ElapsedEventHandler(ContinueTimer);
             //end added
-            writeLog("current version is 6.3.6");
+            writeLog("current version is 6.3.7");
         }
 
 
@@ -7769,7 +7769,7 @@ namespace StatusMonitor
                 (this.ListTabPagesForms[0] as QueueCallForm).quecallDDLParentGroup.Visible = true;
 
                 //menu
-                待ち呼警告設定親グループToolStripMenuItem.Visible = true;
+                //待ち呼警告設定親グループToolStripMenuItem.Visible = true;
                 受付可警告設定親グループToolStripMenuItem.Visible = true;
             }
         }

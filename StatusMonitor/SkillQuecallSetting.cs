@@ -53,6 +53,49 @@ namespace StatusMonitor
                 this.plSkillShow.Controls.Add(chk);
                 this.plSkillShow.Controls.Add(btn);
             }
+
+            foreach (var item in MainForm.DicParentGroup)
+            {
+                var parentGroupName = item.Key.Split(',')[1];
+                var parentGroupID = item.Key.Split(',')[0];
+                var groupIds = item.Value;
+                if (item.Value == "-1") continue;
+                index++;
+                Label label = new Label();
+                label.Name = parentGroupID;
+                label.Text = parentGroupName;
+                label.Location = new System.Drawing.Point(12, 12 * index + (index - 1) * offsetHeight);
+                label.Size = new System.Drawing.Size(180, 25);
+                //chk.Checked = GetCheckedStatus(chk.Name);
+                //chk.Click += chk_Click;
+
+                Button btn = new Button();
+                btn.Name = "btnParentSkillQuecall_" + parentGroupID;
+                btn.Text = "待ち呼警告設定";
+                btn.Location = new System.Drawing.Point(200, 12 * index + (index - 1) * offsetHeight);
+                btn.Size = new System.Drawing.Size(100, 25);
+                btn.Click += btnQueCallSetting_Click;
+                this.plSkillShow.Controls.Add(label);
+                this.plSkillShow.Controls.Add(btn);
+            }
+
+            //add all 
+            index++;
+            Label labelAll = new Label();
+            labelAll.Name = "lblAll";
+            labelAll.Text = "全体";
+            labelAll.Location = new System.Drawing.Point(12, 12 * index + (index - 1) * offsetHeight);
+            labelAll.Size = new System.Drawing.Size(180, 25);
+
+            Button btnAll = new Button();
+            btnAll.Name = "btnAlltSkillQuecall_";
+            btnAll.Text = "待ち呼警告設定";
+            btnAll.Location = new System.Drawing.Point(200, 12 * index + (index - 1) * offsetHeight);
+            btnAll.Size = new System.Drawing.Size(100, 25);
+            btnAll.Click += btnQueCallSetting_Click;
+            this.plSkillShow.Controls.Add(labelAll);
+            this.plSkillShow.Controls.Add(btnAll);
+
         }
 
         private void btnQueCallSetting_Click(object sender, EventArgs e)
@@ -63,8 +106,46 @@ namespace StatusMonitor
                 {
                     Button btn = (Button)sender;
                     string skillGroupID = btn.Name.Substring(btn.Name.LastIndexOf('_') + 1);
-                    SkillQueCallSetForm quecallSet = new SkillQueCallSetForm(skillGroupID, _iniProfile, MainForm);
-                    quecallSet.ShowDialog();
+                    if (btn.Name.StartsWith("btnParent"))
+                    {
+                        frmParentGroupQueCallSetForm quecallSet = new frmParentGroupQueCallSetForm(skillGroupID, _iniProfile, MainForm);
+                        quecallSet.ShowDialog();
+                    }
+                    else if (btn.Name.StartsWith("btnSkill"))
+                    {
+                        SkillQueCallSetForm quecallSet = new SkillQueCallSetForm(skillGroupID, _iniProfile, MainForm);
+                        quecallSet.ShowDialog();
+                    }
+                    else if (btn.Name.StartsWith("btnAll"))
+                    {
+                        _iniProfile.SelectSection("SVSet");
+                        string QuePeriod1 = "";
+                        string QuePeriodVoice1 = "";
+                        string QuePeriod2 = "";
+                        string QuePeriodVoice2 = "";
+                        string QuePeriod3 = "";
+                        string QuePeriodVoice3 = "";
+                        QuePeriod1 = _iniProfile.GetStringDefault("QuePeriod1", "");
+                        QuePeriodVoice1 = _iniProfile.GetStringDefault("QuePeriodVoice1", "");
+
+                        QuePeriod2 = _iniProfile.GetStringDefault("QuePeriod2", "");
+                        QuePeriodVoice2 = _iniProfile.GetStringDefault("QuePeriodVoice2", "");
+
+                        QuePeriod3 = _iniProfile.GetStringDefault("QuePeriod3", "");
+                        QuePeriodVoice3 = _iniProfile.GetStringDefault("QuePeriodVoice3", "");
+
+                        QueCallSet qc = new QueCallSet();
+                        qc.mainF = this.MainForm;
+                        qc.Period1 = QuePeriod1;
+                        qc.Period2 = QuePeriod2;
+                        qc.Period3 = QuePeriod3;
+                        qc.PeriodVoice1 = QuePeriodVoice1;
+                        qc.PeriodVoice2 = QuePeriodVoice2;
+                        qc.PeriodVoice3 = QuePeriodVoice3;
+
+                        qc.ShowDialog();
+                    }
+
                 }
             }
             catch (Exception ex)

@@ -167,6 +167,12 @@ namespace StatusMonitor.Model
                 {
                     arrItemShows[i] = "1";
                 }
+                //added by zhu 2016/07/19 set ,即答数②,即答率②,即答数③,即答率③ default is invisbile 
+                arrItemShows[10] = "0";
+                arrItemShows[11] = "0";
+                arrItemShows[12] = "0";
+                arrItemShows[13] = "0";
+                //end added
             }
             else
             {
