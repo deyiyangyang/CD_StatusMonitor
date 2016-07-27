@@ -185,3 +185,11 @@ UM_POPQUE vAgentID='XXXXX',iSessionProfileID=XXXX vAgentIDは分配先のエージェント
 1，set 即答数②,即答率②,即答数③,即答率③ default is invisbile 
 2,change version from 6.3.6 to 6.3.7 
 3,sent to xie-san and made install file
+
+2016/07/27
+1, get 局番グループID and 局番グループ名前 for agentStatus.iSkillID  agentStatus.vSkillName 
+2, in function sendFirstMsg, use
+      cpfParam.AddLong("iSkillID", obj.iSkillID);
+                   
+ 	cpfParam.AddString("vSkillName", obj.vSkillName);
+3,not send to anyone
