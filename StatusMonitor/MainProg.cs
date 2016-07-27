@@ -94,6 +94,18 @@ namespace StatusMonitor
         public int iSkillGroupID;
         // end added
         public string Conntype;
+
+        //added by zhu 2016/07/27
+        /// <summary>
+        /// 局番グループid
+        /// </summary>
+        public int iSkillID; //局番グループid
+
+        /// <summary>
+        /// 局番グループ名前
+        /// </summary>
+        public string vSkillName;//局番グループ名前
+        //end added
     }
 
     public class LineStatus
@@ -732,6 +744,10 @@ namespace StatusMonitor
                             //added by zhu 2015/05/27
                             agentStatus.iSkillGroupID = recvParams.GetLongDefault("iSkillGroupID", 0);
                             agentStatus.Conntype = recvParams.GetStringDefault("iCallType", "");
+                            //added by zhu 2016/07/27 get 局番グループID and 局番グループ名前
+                            agentStatus.iSkillID = recvParams.GetLongDefault("iSkillID", 0);
+                            agentStatus.vSkillName = recvParams.GetStringDefault("vSkillName", "");
+                            //end adde
                             //DataRow[] foundRows1 = dsMontor.Tables["dtGroupPersonal"].Select("groupId=" + agentStatus.iSkillGroupID);
                             //if(foundRows1.Length>0)
                             //{

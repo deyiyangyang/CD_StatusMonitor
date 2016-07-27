@@ -825,8 +825,12 @@ namespace StatusMonitor
                     //add,xzg,2011/09/15,E
 
                     cpfParam = new CpfParams();
-                    cpfParam.AddLong("iSkillID", obj.Group);
-                    cpfParam.AddString("vSkillName", obj.GroupName);
+                    //modified by zhu 2016/07/27 use 局番グループID and 　局番グループName
+                    //cpfParam.AddLong("iSkillID", obj.Group);
+                    //cpfParam.AddString("vSkillName", obj.GroupName);
+                    cpfParam.AddLong("iSkillID", obj.iSkillID);
+                    cpfParam.AddString("vSkillName", obj.vSkillName);
+                    //end modified
                     cpfParam.AddString("vAgentID", obj.Agent);
                     cpfParam.AddString("vAgentName", obj.AgentName);
                     cpfParam.AddString("vExtension", obj.Extension);
